@@ -4,7 +4,7 @@ const D=window.HSO5;if(!D){console.error("Dados H_Sex_Ostomy indisponíveis");re
 const $=s=>document.getElementById(s);
 const E=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const link=(id,label,style="secondary")=>'<a class="button '+style+'" href="#'+id+'" data-go="'+id+'">'+E(label)+'</a>';
-const P={page:"inicio",comp:"permissao",chapter:"apresentacao",query:"",trail:"inicio",past:[],seen:new Set(["inicio"]),case:0,choice:null,slide:0,topic:"Todos",selected:[],scores:{iief:Array(15).fill(""),qsm:Array(10).fill("")}};
+const P={page:"inicio",comp:"permissao",chapter:"apresentacao",query:"",trail:"inicio",past:[],seen:new Set(["inicio"]),case:0,choice:null,slide:0,topic:"Todos",selected:[],scores:{iief:Array(15).fill(""),qsm:Array(10).fill("")},step:{iief:0,qsm:0}};
 const slideData=[
 ["Boas-vindas ao H_Sex_Ostomy","Conheça uma proposta de reabilitação da sexualidade masculina na prática de enfermagem.","sobre"],
 ["Finalidade e identidade","Instrumentalizar enfermeiros, valorizando autonomia, acolhimento, reconhecimento, intersubjetividade e ética.","sobre"],
@@ -104,18 +104,36 @@ function calcQSM(values){
 }
 function drawScore(type){
  const root=$(type+"-content");if(!root)return;
- const conf=forms[type],s=P.scores[type],complete=s.every(x=>x!=="");
- const itemHtml=s.map((v,i)=>'<div class="item-score"><label for="'+type+'-'+(i+1)+'">Item '+(i+1)+'</label><select id="'+type+'-'+(i+1)+'" data-score="'+type+'" data-index="'+i+'" aria-label="Pontuação do item '+(i+1)+'"><option value="">Selecione</option>'+Array.from({length:6-conf.min(i)},(_,j)=>j+conf.min(i)).map(n=>'<option value="'+n+'" '+(v===String(n)?"selected":"")+'>'+n+'</option>').join("")+'</select></div>').join("");
- let result='<p class="small">Responda todos os itens para calcular. Valores não respondidos não são tratados como zero.</p>';
+ const questions=window.HSO_QUESTIONS?.[type];if(!questions){root.innerHTML='<p class="caution">As perguntas deste instrumento não estão disponíveis. Verifique os arquivos do site.</p>';return}
+ const s=P.scores[type],answered=s.filter(x=>x!=="").length,complete=answered===questions.length;
+ const step=Math.max(0,Math.min(questions.length-1,P.step[type]));P.step[type]=step;
+ const q=questions[step],val=s[step],pct=Math.round(answered/questions.length*100);
+ const alternatives=q.choices.map(([num,label])=>'<label class="scale-option '+(String(num)===val?"picked":"")+'"><input type="radio" name="'+type+'-item-'+step+'" data-score="'+type+'" data-index="'+step+'" value="'+num+'" '+(String(num)===val?"checked":"")+'><span class="scale-value">'+num+'</span><span>'+E(label)+'</span></label>').join("");
+ const markers=questions.map((v,i)=>'<button type="button" aria-label="Ir para questão '+(i+1)+'" title="Questão '+(i+1)+'" class="scale-marker '+(i===step?"active ":"")+(s[i]!==""?"answered":"")+'" data-scalejump="'+i+'" data-scaletype="'+type+'">'+(i+1)+'</button>').join("");
+ let result="";
  if(complete && type==="iief"){
   const x=calcIIEF(s);
-  result='<div class="result-strip">'+x.domains.map(([name,val,max])=>'<div class="metric"><small>'+E(name)+'</small><strong>'+val+' / '+max+'</strong><div class="progress-track"><span style="width:'+(100*val/max).toFixed(2)+'%"></span></div></div>').join("")+'</div><div class="info section-space"><strong>Função erétil:</strong> '+E(x.severity)+'. <span class="small">Classificação baseada nos itens 1–5 e 15, não no escore total.</span></div>'+
- (x.warning?'<div class="caution section-space">'+E(x.warning)+'</div>':"")+'<p class="small section-space">Soma descritiva dos 15 itens: '+x.total+'. A interpretação deve priorizar cada domínio, e não uma classificação global da soma.</p>';
+  result='<div class="score-results" id="scale-results"><span class="eyebrow">RESULTADOS CALCULADOS</span><h3>Escores por domínio</h3><div class="result-strip">'+x.domains.map(([name,val,max])=>'<div class="metric"><small>'+E(name)+'</small><strong>'+val+' / '+max+'</strong><div class="progress-track"><span style="width:'+Math.round(100*val/max)+'%"></span></div></div>').join("")+'</div>'+
+   '<div class="info section-space"><strong>Domínio função erétil:</strong> '+E(x.severity)+'. Os pontos de corte se aplicam aos itens 1 a 5 e 15, não ao total da escala.</div>'+
+   (x.warning?'<div class="caution section-space">'+E(x.warning)+'</div>':"")+
+   '<p class="small">A soma dos 15 itens ('+x.total+') é descritiva e não recebe classificação global neste instrumento.</p></div>';
  } else if(complete){
   const x=calcQSM(s);
-  result='<div class="result-strip"><div class="metric"><small>Escore total QS-M</small><strong>'+x.score+' / 100</strong><p>'+E(x.severity)+'</p></div><div class="metric"><small>Soma dos dez itens</small><strong>'+(x.score/2)+' / 50</strong><p>Resultado × 2</p></div></div><div class="info section-space">Faixa de interpretação segundo as categorias apresentadas no manual. O escore descreve função e satisfação sexual e não estabelece diagnóstico clínico.</div>';
+  result='<div class="score-results" id="scale-results"><span class="eyebrow">RESULTADO CALCULADO</span><div class="result-strip"><div class="metric"><small>Escore global QS-M</small><strong>'+x.score+' / 100</strong><p>'+E(x.severity)+'</p></div><div class="metric"><small>Soma das respostas</small><strong>'+x.score/2+' / 50</strong><p>Multiplicada por 2</p></div></div><p class="small section-space">Faixa interpretativa do Anexo B, p. 74. Não substitui avaliação clínica.</p></div>';
  }
- root.innerHTML='<div class="card"><div class="grid-2"><div><span class="eyebrow">ENTRADA DE PONTUAÇÕES</span><h2>'+conf.name+'</h2><p class="small">Use o instrumento original para ler as perguntas e respostas. Esta ferramenta mostra apenas os números dos itens, respeitando direitos de reprodução.</p></div><div class="info"><strong>Regras:</strong> '+conf.range+'<br><strong>Referência no manual:</strong> '+(type==="iief"?"Anexo A, pp. 70–72.":"Anexo B, pp. 73–74.")+'</div></div><div class="caution section-space">Calculadora educativa sem armazenamento remoto. Não digite dados identificáveis de pacientes. A ausência de atividade sexual pode limitar a interpretação do IIEF-15.</div><div class="form-grid section-space">'+itemHtml+'</div><div class="section-space"><h3>Resultado</h3>'+result+'</div><div class="calc-actions"><button class="button" type="button" data-reset="'+type+'">Limpar respostas</button><button class="button primary" data-print="'+type+'" '+(!complete?"disabled":"")+'>Imprimir resultado</button></div></div>';
+ root.innerHTML='<div class="assessment-layout"><section class="card scale-main"><div class="scale-header"><div><span class="eyebrow">APLICAÇÃO GUIADA · '+(type==="iief"?"IIEF-15":"QS-M")+'</span><h2>Pergunta '+(step+1)+' de '+questions.length+'</h2></div><span class="pill green">'+answered+'/'+questions.length+' respondidas</span></div>'+
+ '<div class="progress-track progress-large" role="progressbar" aria-valuemin="0" aria-valuemax="'+questions.length+'" aria-valuenow="'+answered+'" aria-label="Questões respondidas"><span style="width:'+pct+'%"></span></div>'+
+ '<fieldset class="scale-fieldset"><legend>'+E(q.q)+'</legend><p class="small">Escolha uma resposta.</p><div class="scale-options">'+alternatives+'</div></fieldset>'+
+ '<div class="scale-controls"><button type="button" class="button" data-scorenav="-1" data-scaletype="'+type+'" '+(step===0?"disabled":"")+'>← Anterior</button>'+
+ '<button type="button" class="button primary" data-scorenav="1" data-scaletype="'+type+'" '+(step===questions.length-1?"disabled":"")+'>Próxima pergunta →</button></div>'+
+ '<div class="scale-markers" aria-label="Ir para uma questão">'+markers+'</div>'+
+ (complete?result:'<div class="info section-space">Responda todas as questões para visualizar o resultado. Você pode retornar a qualquer pergunta para alterar sua resposta.</div>')+
+ '<div class="calc-actions"><button class="button" data-reset="'+type+'">Limpar respostas</button><button class="button primary" data-print="'+type+'" '+(!complete?"disabled":"")+'>Imprimir resultados</button></div></section>'+
+ '<aside class="card scale-aside"><span class="eyebrow">SOBRE O INSTRUMENTO</span><h3>'+(type==="iief"?"Índice Internacional de Função Erétil":"Quociente Sexual — Versão Masculina")+'</h3>'+
+ '<p>'+(type==="iief"?"15 questões que abrangem cinco domínios da função sexual masculina. A classificação de gravidade refere-se ao domínio de função erétil.":"10 questões que exploram dimensões físicas e emocionais do desempenho e da satisfação sexual.")+'</p>'+
+ '<p class="small">Perguntas e alternativas reproduzidas do '+(type==="iief"?"Anexo A (pp. 70–72).":"Anexo B (pp. 73–74).")+' do manual H_Sex_Ostomy.</p>'+
+ '<div class="caution"><strong>Importante:</strong> este formulário tem finalidade educativa. Utilize somente dados fictícios nesta versão pública e confirme as condições de reprodução da escala antes da divulgação ampliada. As respostas ficam apenas na memória desta página e não são enviadas a servidores.</div>'+
+ '<div class="button-row section-space">'+link("avaliacao","Voltar à Central de Avaliação")+'</div></aside></div>';
 }
 function renderCare(){
  const topics=["Todos",...new Set(D.diagnoses.map(x=>x.topic))];
@@ -159,7 +177,9 @@ document.addEventListener("click",ev=>{
  const go=ev.target.closest("[data-go]");if(go){ev.preventDefault();nav(go.dataset.go);return}
  const comp=ev.target.closest("[data-comp]");if(comp){P.comp=comp.dataset.comp;renderProgram();return}
  const chapter=ev.target.closest("[data-chapter]");if(chapter){P.chapter=chapter.dataset.chapter;renderReader();return}
- const reset=ev.target.closest("[data-reset]");if(reset){P.scores[reset.dataset.reset].fill("");drawScore(reset.dataset.reset);return}
+ const scaleJump=ev.target.closest("[data-scalejump]");if(scaleJump){P.step[scaleJump.dataset.scaletype]=Number(scaleJump.dataset.scalejump);drawScore(scaleJump.dataset.scaletype);return}
+ const scaleNav=ev.target.closest("[data-scorenav]");if(scaleNav){P.step[scaleNav.dataset.scaletype]+=Number(scaleNav.dataset.scorenav);drawScore(scaleNav.dataset.scaletype);return}
+ const reset=ev.target.closest("[data-reset]");if(reset){P.scores[reset.dataset.reset].fill("");P.step[reset.dataset.reset]=0;drawScore(reset.dataset.reset);return}
  const printing=ev.target.closest("[data-print],[data-printplan]");if(printing){window.print();return}
  const topic=ev.target.closest("[data-topic]");if(topic){P.topic=topic.dataset.topic;renderCare();return}
  const add=ev.target.closest("[data-adddiag]");if(add){if(!P.selected.includes(add.dataset.adddiag))P.selected.push(add.dataset.adddiag);renderCare();return}
