@@ -170,3 +170,50 @@ body.v7-print-mode .v7-report-section h2{font-size:12pt}
 body.v7-print-mode .v7-report-section{padding:8pt 0}
 body.v7-print-mode .v7-report-section li,body.v7-print-mode .v7-report-section p{font-size:9pt}
 }
+
+/* Calculadoras: introdução clínica sem duplicar o planejador */
+.v7-calcs-intro{display:grid;grid-template-columns:1.2fr .8fr;gap:25px;background:#eaf5ef;border-radius:13px;border:1px solid #cce5db;padding:28px;align-items:start}
+.v7-calcs-intro>div:first-child p{color:#496b76;line-height:1.75}
+.v7-calcs-note{background:white;border-left:4px solid #6a9dbf;padding:20px;border-radius:9px}
+.v7-calcs-note h3{font-size:17px}
+.v7-calcs-note p{font-size:13px}
+.v7-calcs-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:20px 0}
+.v7-calc-card{border:1px solid #dae7e6;background:white;border-radius:14px;padding:28px;position:relative}
+.v7-calc-card:nth-child(2){border-top:4px solid #83b9d7}
+.v7-calc-card:first-child{border-top:4px solid #0ba075}
+.v7-calc-card h2{font-size:24px}
+.v7-calc-card p{color:#567784;font-size:14px}
+.v7-calc-card ul{padding-left:20px;color:#3e6471;font-size:13px;min-height:110px}
+.v7-calc-card li{margin:9px 0}
+.v7-calc-number{font-size:42px;font-weight:900;line-height:1.2;color:#c7dedc;position:absolute;right:24px;top:21px}
+.v7-calcs-footer{border-radius:9px;padding:17px;background:#f4f8f7;color:#55717c;font-size:12px}
+/* Caso longitudinal: narrativa e retorno, não quiz de memorização */
+.v7-case-layout{display:grid;grid-template-columns:270px minmax(0,1fr);gap:20px;align-items:start}
+.v7-case-profile,.v7-case-main{background:white;border:1px solid #d8e6e3;border-radius:14px;padding:24px}
+.v7-case-profile{position:sticky;top:93px}
+.v7-case-avatar{display:grid;place-items:center;margin:15px auto 15px;width:94px;height:94px;background:#e4f2e9;border-radius:50%;font-size:55px}
+.v7-case-profile h2{text-align:center;font-size:24px}
+.v7-case-profile>p{font-size:13px;color:#577781}
+.v7-case-timeline{border-left:2px solid #8ac5b4;padding-left:13px;display:grid;gap:7px;margin:20px 0 18px}
+.v7-case-timeline button{border:1px solid #dbe8e5;border-radius:9px;background:#f9fbfa;display:flex;align-items:center;gap:9px;padding:9px 11px;text-align:left;color:#35596b}
+.v7-case-timeline button.active{background:#e7f7ee;border-color:#72bda9}
+.v7-case-timeline button>span{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#d9f2e7;font-size:11px;font-weight:800;color:#087456;flex:none}
+.v7-case-timeline button strong,.v7-case-timeline button small{display:block}
+.v7-case-timeline button strong{font-size:13px}
+.v7-case-timeline button small{font-size:11px;color:#63818f}
+.v7-case-main{padding:30px}
+.v7-case-main>h2{font-size:30px}
+.v7-case-main h3{font-size:17px;margin-top:24px}
+.v7-case-story{background:#eff5f6;border-left:4px solid #64a4c4;border-radius:8px;padding:18px 20px;margin:16px 0 24px}
+.v7-case-story strong{color:#1a536b}
+.v7-case-story p{font-size:15px;color:#365a68}
+.v7-case-options{display:grid;gap:10px;margin:15px 0}
+.v7-case-options button{background:white;border:1px solid #cfdedc;border-radius:9px;text-align:left;padding:15px 17px;color:#244f60;font-weight:650;font-size:14px}
+.v7-case-options button:hover{background:#eef8f2;border-color:#49b28c}
+.v7-case-options button:disabled{opacity:.77;cursor:default}
+.v7-case-reflection{background:#f6faf8;border:1px solid #b4dccc;border-radius:11px;padding:22px;margin:20px 0}
+.v7-case-reflection blockquote{margin:14px 0;font-size:15px;line-height:1.75;border-left:3px solid #19a174;padding:9px 19px;background:white;color:#315b68}
+.v7-case-reflection p{font-size:14px}
+.v7-case-controls{border-top:1px solid #e0e9e8;display:flex;justify-content:space-between;gap:9px;flex-wrap:wrap;margin-top:28px;padding-top:17px}
+@media(max-width:1000px){.v7-case-layout{grid-template-columns:1fr}.v7-case-profile{position:static}.v7-case-timeline{display:grid;grid-template-columns:1fr 1fr;border-left:0;gap:7px;padding:0}.v7-calcs-intro{grid-template-columns:1fr}}
+@media(max-width:650px){.v7-calcs-grid{grid-template-columns:1fr}.v7-calcs-intro,.v7-calc-card,.v7-case-profile,.v7-case-main{padding:17px}.v7-case-timeline{grid-template-columns:1fr}.v7-case-main>h2{font-size:24px}.v7-case-controls .button{width:100%}}
