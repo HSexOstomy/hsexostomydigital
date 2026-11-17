@@ -1,54 +1,72 @@
-# H_Sex_Ostomy Digital — versão 0.4
+# H_Sex_Ostomy Digital
 
-**Ambiente educacional digital sobre o H_Sex_Ostomy — Programa de Reabilitação da Sexualidade Masculina**
+**Ambiente de aprendizagem e apoio ao raciocínio de enfermagem** baseado no *H_Sex_Ostomy — Programa de Reabilitação da Sexualidade Masculina*.
 
-Acesse o site público: **https://hsexostomy.github.io/hsexostomydigital/**
+**Site público:** https://hsexostomy.github.io/hsexostomydigital/
 
-Hospedagem: GitHub Pages, sem cadastro, sem banco de dados, com HTML, CSS e JavaScript estáticos.
+## Versão 0.5 — 17 de novembro de 2026
 
-## Organização da plataforma
+Esta versão substitui a estrutura anterior por um portal editorial com navegação hierárquica e conteúdos sem duplicações desnecessárias.
 
-A arquitetura separa a apresentação institucional do conteúdo e da demonstração, seguindo a lógica de menus e submenus de um portal acadêmico.
-
-| Menu principal | Subáreas |
+| Área | Conteúdo |
 | --- | --- |
-| Início | Visão geral e acessos rápidos |
-| Sobre | O projeto; Quem somos; Finalidade, missão, visão e valores |
-| O Programa | Componentes do EX-PLISSIT; Fluxograma; Metodologia de aplicação; Rede; Implantação |
-| Aprenda | Trilha com decisões Sim/Não; Casos simulados; Exploração livre |
-| Biblioteca | Índice do manual; Instrumentos, recursos e anexos |
-| Workshop | Apresentação guiada com oito momentos e atalhos para a trilha |
-| Contato | E-mail da pesquisadora e vínculo acadêmico |
+| **Início** | Apresentação visual e quatro caminhos de entrada |
+| **Sobre** | Finalidade, missão, visão, valores, público-alvo, autoria e vínculos acadêmicos |
+| **O Programa** | Componentes EX-PLISSIT, fluxograma, leitor de capítulos do manual |
+| **Ferramentas** | Calculadora IIEF-15, calculadora QS-M, Planejador de Cuidados |
+| **Aprenda** | Trilha de decisões Sim/Não, retornos e casos clínicos fictícios |
+| **Workshop** | Apresentação guiada, navegação entre conteúdos e ferramentas |
+| **Contato** | Canal acadêmico e informações institucionais |
 
-## Trilha interativa
+### Leitor do manual
 
-A trilha é baseada na **Figura 3 do manual, p. 28**, e permite:
-- navegar diretamente a qualquer ponto do fluxograma;
-- escolher a resposta **Sim** ou **Não** nos pontos de decisão;
-- seguir a via de **recusa da Permissão**: respeitar a decisão, prosseguir com atendimento clínico geral, registrar e informar a possibilidade de retomada;
-- seguir a via de **ausência de demandas específicas**, mantendo acompanhamento e disponibilidade futura;
-- acessar encaminhamento especializado somente quando indicado, mantendo continuidade;
-- voltar, rever e reiniciar a exploração.
+O leitor usa a **organização e numeração de capítulos do PDF original (75 páginas)**, com fichas de leitura, tópicos, figuras e referências às páginas de origem. **Esta versão não contém a transcrição integral de todas as 75 páginas**; as sínteses devem ser confrontadas com o documento original.
 
-A trilha tem finalidade **exclusivamente educativa**. Não automatiza decisões clínicas nem dispensa Permissão, julgamento profissional e acompanhamento individualizado.
+### Figuras e identidade
 
-## Conteúdo-base
+- Capa do manual na abertura.
+- Sete esquemas **digitais adaptados** das figuras e quadros do documento, com cores e organização derivadas do programa: EX-PLISSIT, fluxograma, Permissão, Revisão, rede de cuidados, material-síntese e indicadores.
+- Marcas cedidas na conversa: Escola de Enfermagem da UFBA e Programa de Pós-Graduação em Enfermagem e Saúde.
+- A indicação institucional identifica vinculação acadêmica; não representa endosso formal à versão experimental.
 
-O manual de referência é de **Ariana Luiza Rabelo e Anderson Reis de Sousa (2026)**, com 75 páginas. O índice digital contempla capítulos e subitens com resumos e páginas de referência, mas **ainda não é a transcrição integral do manual**. Os casos são fictícios e são usados para aprendizagem formativa, não para avaliar eficácia do programa.
+### Calculadoras
 
-A identificação visual utiliza a paleta do manual, a ilustração de capa e uma imagem comemorativa da Escola de Enfermagem da UFBA, apontando para seu domínio oficial. A marca é apresentada no contexto da vinculação acadêmica, **sem declarar endosso da instituição à versão experimental**. Conferir permissão e diretrizes para uso da marca, material ilustrativo e eventuais instrumentos protegidos antes de divulgação final.
+- **IIEF-15:** entrada de 15 valores (itens 1–10 aceitam 0–5; itens 11–15 aceitam 1–5); calcula função erétil, função orgásmica, desejo, satisfação com a relação e satisfação geral. Classifica o **domínio função erétil**, com alerta sobre ausência de atividade.
+- **QS-M:** entrada de 10 valores (0–5), soma multiplicada por dois, escore 0–100 e cinco faixas de interpretação conforme o Anexo B do manual, p. 74.
+- As perguntas completas dos instrumentos não foram reproduzidas na calculadora; use a versão autorizada do instrumento. É preciso completar todos os itens para obter os resultados.
+- As calculadoras **não coletam, transmitem ou armazenam remotamente** as respostas. Neste site público, use apenas **dados fictícios**.
+- As pontuações não substituem avaliação clínica nem equivalem a diagnósticos.
 
-## Contato e privacidade
+### Planejador de Cuidados
 
-Contato acadêmico identificado no formulário do workshop: **arianaluiza-cajuru@hotmail.com**. O link abre um e-mail externo; não há formulário de coleta de dados no próprio site. Não inserir dados de pacientes, respostas de pesquisa ou dados confidenciais no repositório público.
+O Quadro 6 do manual, pp. 45–59, serve como base para oito diagnósticos para consideração e suas relações com resultados NOC e intervenções NIC:
 
-## Arquivos
+1. Imagem corporal conturbada (00497)
+2. Ansiedade excessiva (00400)
+3. Medo excessivo (00390)
+4. Função sexual prejudicada (00386)
+5. Autoestima inadequada situacional (00481)
+6. Conhecimento de saúde inadequado (00435)
+7. Identidade pessoal conturbada (00494)
+8. Relacionamento ineficaz com parceiro íntimo (00449)
 
-- `index.html`: páginas semânticas e estrutura de navegação;
-- `v03-data.js`: informações didáticas baseadas no sumário e nos conteúdos do manual;
-- `v03.js`: índices, simulação fictícia e apresentação guiada;
-- `v03.css`: estilos principais;
-- `v04.css`: organização hierárquica e cores por componente;
-- `v04.js`: fluxograma interativo e menus.
+É uma ferramenta de exploração e planejamento **educativo**, não um motor diagnóstico. A seleção é revisável e pode ser impressa. Sempre confira os códigos, a edição e os direitos de uso das classificações originais.
 
-A versão foi estruturada para continuar acessível na página inicial mesmo se o JavaScript não iniciar. Novas revisões clínicas e pedagógicas são necessárias antes de uso assistencial.
+### Fluxograma e workshop
+
+A trilha segue a lógica da Figura 3, p. 28, e oferece percursos **Sim/Não**, incluindo acolhimento da recusa, continuidade do cuidado geral, Revisão e retorno futuro à Permissão. A navegação permite pular para qualquer ponto como recurso de aprendizagem.
+
+O workshop conserva o índice do slide enquanto o facilitador acessa outras páginas. Os instrumentos científicos do pré e pós-teste são externos e não são confundidos com as simulações.
+
+## Limitações e salvaguardas
+
+- Nenhuma função possui login ou banco de dados de pacientes.
+- Não use o site para registrar dados de saúde identificáveis: GitHub Pages é hospedagem pública estática.
+- Não trate o programa como instrumento validado de decisão clínica automatizada.
+- A abordagem e os planos assistenciais dependem de Permissão, avaliação individualizada, julgamento do enfermeiro e normas profissionais.
+- Aplicação e reprodução de imagens, marcas e classificações devem respeitar autorizações e licenças pertinentes.
+- Revisão científica e testes com usuários são necessários antes de apresentar a plataforma como ferramenta de uso assistencial validada.
+
+## Tecnologia e implantação
+
+HTML, CSS, SVG e JavaScript sem frameworks, dependências pagas nem serviços externos. Publicação por GitHub Pages usando `main` e `/(root)`. Os arquivos atuais são `index.html`, `v05.css`, `v05-data.js`, `v05.js` e `assets/`. Arquivos `v03` e `v04` foram preservados como histórico técnico e não são carregados pela página atual.
