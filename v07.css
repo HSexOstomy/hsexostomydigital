@@ -217,3 +217,13 @@ body.v7-print-mode .v7-report-section li,body.v7-print-mode .v7-report-section p
 .v7-case-controls{border-top:1px solid #e0e9e8;display:flex;justify-content:space-between;gap:9px;flex-wrap:wrap;margin-top:28px;padding-top:17px}
 @media(max-width:1000px){.v7-case-layout{grid-template-columns:1fr}.v7-case-profile{position:static}.v7-case-timeline{display:grid;grid-template-columns:1fr 1fr;border-left:0;gap:7px;padding:0}.v7-calcs-intro{grid-template-columns:1fr}}
 @media(max-width:650px){.v7-calcs-grid{grid-template-columns:1fr}.v7-calcs-intro,.v7-calc-card,.v7-case-profile,.v7-case-main{padding:17px}.v7-case-timeline{grid-template-columns:1fr}.v7-case-main>h2{font-size:24px}.v7-case-controls .button{width:100%}}
+
+.v7-course-content{background:#f4f8f7;border:1px solid #e0ebe8;border-radius:10px;padding:20px;margin-top:19px}
+.v7-course-content li{margin:9px 0;line-height:1.65;color:#3f6370}
+.v7-course-content .button-row{margin-top:18px}
+.v7-course-question{margin-top:20px;background:#f3f3f9;border-left:4px solid #a58bbb;border-radius:10px;padding:20px}
+.v7-course-question>h3{font-size:18px}
+.v7-course-question>button{display:block;width:100%;margin:8px 0;padding:12px 15px;border:1px solid #d5d7e4;border-radius:8px;background:white;color:#304e61;text-align:left;font-weight:650}
+.v7-course-question>button:hover{border-color:#9784b8}
+.v7-course-question>button.selected{background:#ece8f6;border-color:#927cb3}
+.v7-course-feedback{background:#fff;border:1px solid #d6dfdb;padding:14px;border-radius:8px;color:#466775;font-size:13px}
