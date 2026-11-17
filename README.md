@@ -1,50 +1,40 @@
-# H_Sex_Ostomy Digital — protótipo v0.1
+# H_Sex_Ostomy Digital — protótipo web v0.1
 
-Ambiente educativo interativo para apresentar e explorar os fundamentos e componentes do **H_Sex_Ostomy — Programa de Reabilitação da Sexualidade Masculina**.
+Ambiente educativo interativo para apresentar e explorar os fundamentos e componentes do **H_Sex_Ostomy: Programa de Reabilitação da Sexualidade Masculina**, de Ariana Luiza Rabelo e Anderson Reis de Sousa (2026).
 
-**Fonte-base:** Rabelo, Ariana Luiza; Sousa, Anderson Reis de. *H_Sex_Ostomy: Programa de Reabilitação da Sexualidade Masculina*. Salvador, 2026. Manual fornecido pelos autores para elaboração deste protótipo.
+## Estado atual
 
-## Recursos já implementados
+A primeira versão publicada neste repositório é uma **versão inicial independente e autocontida**: todo o HTML, CSS e JavaScript está em `index.html`. Ela pode ser hospedada diretamente no GitHub Pages e **não exige servidor, banco de dados, instalação ou dependências pagas**.
 
-- Mapa clínico interativo, com entrada direta nas fases do programa.
-- Conteúdos educativos por tema e por abas (essencial, aplicação, prática, figura do manual quando disponível).
-- Dicas contextuais reveladas ao clicar.
-- Modo apresentação para conduzir workshop, com setas ← e → para navegar, e Esc para sair.
-- Modo exploração livre para acesso individual pelo mesmo link.
-- Simulação fictícia de três momentos do cuidado, com escolhas e feedback formativo, sem pontuação.
-- Progresso local de conteúdos explorados, sem cadastro.
-- Layout responsivo para computador e celular.
-- Imagens selecionadas do manual original (verificar autorização de publicação com titulares dos direitos antes de tornar público).
+Contém:
+- 11 áreas temáticas;
+- menu e mapa clicáveis;
+- modos apresentação e exploração individual;
+- dicas contextualizadas;
+- simulação fictícia de três cenas com feedback formativo;
+- progresso local de exploração salvo apenas neste navegador;
+- layout adaptado a computadores e celulares.
 
-## Publicar GRATUITAMENTE no GitHub Pages
+Esta edição inicial **não incorpora ainda as imagens completas do manual nem todas as interações do pacote de protótipo offline**. Esses elementos poderão ser incorporados em próximas versões.
 
-1. Crie uma conta em https://github.com/ ou entre na sua conta.
-2. O repositório público já foi criado: `HSexOstomy/hsexostomydigital`.
-3. Faça upload **do conteúdo desta pasta** (arquivos `index.html`, `styles.css`, `content.js`, `app.js`, `.nojekyll`, `README.md` e a pasta `assets`) na raiz do repositório.
-4. Clique em **Settings → Pages**.
-5. Em **Build and deployment**, escolha **Deploy from a branch**. Selecione branch `main`, pasta `/(root)` e clique em **Save**.
-6. Abra o endereço exibido pelo GitHub Pages. Em geral, será `https://HSexOstomy.github.io/hsexostomydigital/` (depende do nome escolhido).
+## Publicação no GitHub Pages
 
-> No GitHub Free, o Pages para repositórios é gratuito quando o repositório é **público**. Não envie dados sensíveis, planilhas de pesquisa, respostas individuais dos participantes nem materiais de terceiros sem autorização.
+1. No repositório, abra **Settings → Pages**.
+2. Em **Build and deployment**, selecione **Deploy from a branch**.
+3. Selecione branch `main`, diretório `/(root)` e clique em **Save**.
+4. Após a implantação, o endereço esperado será: https://hsexostomy.github.io/hsexostomydigital/
 
-## Testar no computador
+O site é destinado à educação; **não automatiza decisões clínicas** e não substitui avaliação ou julgamento do profissional.
 
-Abra `index.html` no navegador. Também pode executar `python -m http.server 8000` nesta pasta e abrir `http://localhost:8000/`.
+## Cuidados antes de divulgar
 
-## Organização dos arquivos
+- Revisar cientificamente as sínteses, exemplos e feedbacks com os responsáveis pelo programa.
+- Obter autorização para eventual publicação de ilustrações, fotografias, instrumentos e outros materiais protegidos.
+- Não inserir aqui respostas individuais do workshop, dados de participantes ou dados de pacientes.
+- O pré e o pós-teste do estudo permanecem separados da plataforma.
 
-- `index.html` — estrutura da plataforma e mapa.
-- `styles.css` — identidade visual e layout.
-- `content.js` — textos dos módulos e caso fictício. É o arquivo principal para atualização científica.
-- `app.js` — navegação, apresentação, dicas, simulação e marcação de progresso.
-- `assets/*.webp` — figuras selecionadas do manual e capa.
+## Próximas etapas
 
-## Pontos que precisam de revisão antes da publicação definitiva
+Expandir os conteúdos do manual, aperfeiçoar mapa não linear, recursos audiovisuais, simulações, acessibilidade e navegação para aprendizagem autônoma.
 
-- Revisão científica por responsáveis pelo programa, inclusive das sínteses didáticas.
-- Conferência das autorizações de uso das ilustrações, do manual e de instrumentos.
-- Revisão de acessibilidade e testes com usuários, incluindo dispositivos móveis.
-- Decisão sobre qual instrumento da pesquisa e link será usado no workshop; pré/pós-teste **não estão incorporados** ao protótipo.
-- Se for necessário sincronizar progresso entre dispositivos, incluir cadastros ou relatórios, será preciso planejar tratamento de dados, consentimento e infraestrutura além do GitHub Pages puro.
-
-**Importante:** a plataforma é um recurso educativo. Não foi validada como ferramenta clínica nem avaliada quanto à eficácia pedagógica. Não coleta informações de pacientes e não salva respostas de questionários de pesquisa.
+**Nota metodológica:** este é um protótipo educativo, não um programa clínico implementado nem uma tecnologia com eficácia pedagógica já validada.
