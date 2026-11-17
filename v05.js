@@ -93,7 +93,7 @@ qsm:{n:10,max:5,name:"QS-M",min:i=>0,range:"0–5 em todos os itens."}
 function calcIIEF(values){
  const sum=idx=>idx.reduce((acc,i)=>acc+Number(values[i-1]),0);
  const domains=[["Função erétil",sum([1,2,3,4,5,15]),30],["Função orgásmica",sum([9,10]),10],["Desejo sexual",sum([11,12]),10],["Satisfação com a relação",sum([6,7,8]),15],["Satisfação geral",sum([13,14]),10]];
- const ef=domains[0][1];let severity=ef>=26?"Sem disfunção erétil":ef>=22?"Disfunção erétil leve":ef>=17?"Disfunção erétil leve a moderada":ef>=11?"Disfunção erétil moderada":ef>=1?"Disfunção erétil grave":"Não classificável";
+ const ef=domains[0][1];let severity=ef>=26?"Sem disfunção erétil":ef>=22?"Disfunção erétil leve":ef>=17?"Disfunção erétil leve a moderada":ef>=11?"Disfunção erétil moderada":ef>=6?"Disfunção erétil grave":"Pontuação fora das faixas classificatórias do manual; revisar o contexto";
  const noActivity=values.slice(0,5).every(v=>Number(v)===0);
  if(noActivity)severity="Interpretação limitada: sem atividade/tentativas nas questões de função erétil";
  return {domains,severity,total:sum([...Array(15)].map((_,i)=>i+1)),warning:values.slice(0,10).some(v=>Number(v)===0)?"Há resposta(s) zero indicando ausência de atividade ou tentativa. Considere o contexto antes de interpretar o domínio de função erétil.":""};
