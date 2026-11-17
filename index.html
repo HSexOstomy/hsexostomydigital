@@ -1,31 +1,117 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0d3455"><title>H_Sex_Ostomy Digital | Jornada do cuidado</title>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#103758">
+<meta name="description" content="H_Sex_Ostomy Digital: conheça, aprenda e explore o Programa de Reabilitação da Sexualidade Masculina com mapa interativo e recursos pedagógicos.">
+<meta name="color-scheme" content="light">
+<title>H_Sex_Ostomy Digital · Conhecer, aprender e aplicar</title>
+<link rel="stylesheet" href="./v03.css?v=3">
+<script src="./v03-data.js?v=3" defer></script><script src="./v03.js?v=3" defer></script>
 <style>
-:root{--navy:#103453;--blue:#2866a4;--green:#0aaf82;--soft:#f3f7f9;--border:#dce7ee;--ink:#173951}*{box-sizing:border-box}body{margin:0;color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;background:#eef3f6}button{font:inherit;cursor:pointer}button:focus-visible{outline:3px solid #f6c65c;outline-offset:3px}a{color:var(--blue)}.app{min-height:100vh;display:grid;grid-template-columns:238px minmax(0,1fr)}.sidebar{background:var(--navy);color:white;padding:26px 16px;display:flex;flex-direction:column;gap:18px}.brand{font-size:23px;font-weight:900;letter-spacing:-.7px}.brand b{color:#4bd4b0}.small{font-size:12px;opacity:.72;letter-spacing:.8px}.nav{display:flex;flex-direction:column;gap:5px}.nav button{width:100%;border:0;border-radius:10px;padding:11px 12px;text-align:left;background:transparent;color:#d6e5ed}.nav button:hover,.nav button.active{background:#245575;color:white}.sidebar-footer{font-size:12px;opacity:.8;margin-top:auto}.right{min-width:0}.top{background:white;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:1px solid var(--border)}.pill{font-size:12px;border-radius:999px;background:#e7f6f1;color:#007c5c;padding:5px 10px;font-weight:700}.mode{border:1px solid #bdd4e0;background:white;color:#124568;border-radius:10px;padding:9px 12px}.layout{max-width:1500px;margin:auto;display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:20px;padding:25px}.panel,.map{background:#fff;border:1px solid var(--border);border-radius:18px;box-shadow:0 8px 28px #143b5110}.panel{padding:29px;min-height:600px}h1{font-size:clamp(26px,3vw,40px);line-height:1.14;margin:9px 0 17px;color:var(--navy);letter-spacing:-.9px}h2{font-size:20px;margin:23px 0 10px;color:var(--navy)}h3{font-size:17px;margin:18px 0 8px}.eyebrow{text-transform:uppercase;color:#138e77;font-size:12px;font-weight:800;letter-spacing:1.2px}.lead{font-size:18px;color:#4b6778}.map{padding:20px;position:sticky;top:20px;align-self:start}.map h2{margin:0 0 6px}.map p{font-size:13px;color:#658191;margin:0 0 12px}.route{position:relative;padding:8px 0;display:grid;gap:8px}.route::before{content:"";position:absolute;left:20px;top:10px;bottom:10px;width:2px;background:#b7d8dc}.route button{position:relative;text-align:left;background:#f5f9fb;border:1px solid var(--border);border-radius:12px;padding:10px 9px;display:flex;gap:10px;align-items:center;color:var(--ink);font-size:13px;font-weight:700}.route button.active{background:#e1f6ed;border-color:#15a77f}.node{display:grid;place-items:center;width:30px;height:30px;flex-shrink:0;border-radius:50%;background:#fff;border:2px solid #58b6a4;color:#04765e;font-size:12px}.hint{font-size:12px;border-radius:12px;background:#f0f8f7;padding:12px;color:#47736a}.card{border:1px solid var(--border);border-radius:13px;padding:17px;background:#f8fafb;margin:15px 0}.card p{margin:8px 0}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin:20px 0}.tabs button,.action{border:1px solid #b6d9d6;border-radius:9px;background:white;color:#0c6c62;padding:10px 14px;font-weight:700}.tabs button.active,.action.primary{background:#047e70;color:white}.action{margin:5px 6px 5px 0}.tip{background:#eaf6ee;border-left:4px solid #14a277;border-radius:8px;padding:15px;margin:16px 0}.lesson{font-size:15px}.kicker{font-size:13px;color:#607b8e}.choices{display:grid;gap:9px;margin:18px 0}.choices button{border:1px solid #bed4db;background:#fff;border-radius:12px;text-align:left;padding:14px}.choices button:hover{border-color:var(--green);background:#f1fbf7}.feedback{border-radius:12px;background:#eaf6f0;padding:17px;margin-top:15px}.footer{font-size:12px;color:#718692;padding:12px 28px 30px}.progress{height:7px;background:#345c76;border-radius:6px;overflow:hidden}.progress div{height:100%;background:#40d5ad;width:0;transition:width .2s}.quiz-count{color:#007e67;font-size:13px;font-weight:700}.mode-present .sidebar{display:none}.mode-present .app{grid-template-columns:1fr}.mode-present .panel{min-height:78vh}.mode-present .layout{max-width:1600px}.mode-present .map{top:15px}@media(max-width:1050px){.app{grid-template-columns:200px minmax(0,1fr)}.layout{grid-template-columns:1fr}.map{position:static;order:-1}.route{display:flex;flex-wrap:wrap}.route::before{display:none}.route button{flex:1 1 140px}}@media(max-width:680px){.app{display:block}.sidebar{padding:18px}.nav{display:flex;flex-direction:row;overflow-x:auto}.nav button{white-space:nowrap;width:auto;flex:none}.sidebar-footer{display:none}.top{padding:13px 16px}.layout{padding:12px}.panel{padding:18px;min-height:420px}.map{padding:15px}.top .pill{display:none}}
-</style><style>
-/* Interface progressiva: o site permanece legível mesmo sem scripts */
-.nav a{display:block;width:100%;border:0;border-radius:10px;padding:11px 12px;text-align:left;background:transparent;color:#d6e5ed;text-decoration:none}
-.nav a:hover,.nav a:focus-visible{background:#245575;color:white}
-.route a{position:relative;text-align:left;background:#f5f9fb;border:1px solid var(--border);border-radius:12px;padding:10px 9px;display:flex;gap:10px;align-items:center;color:var(--ink);font-size:13px;font-weight:700;text-decoration:none}
-.route a:hover{background:#e1f6ed;border-color:#15a77f}
-.fallback-hero{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;border-radius:15px;background:linear-gradient(105deg,#ebfaf5,#eaf4fb);padding:25px;margin-bottom:20px}
-.fallback-hero h2{margin:0 0 5px;font-size:24px}
-.fallback-hero p{margin:5px 0}
-.fallback-art{font-size:65px;line-height:1}
-.fallback-detail{border:1px solid var(--border);border-radius:12px;padding:14px 16px;background:#fff;margin:12px 0;scroll-margin-top:20px}
-.fallback-detail summary{cursor:pointer;color:var(--navy);font-weight:800}
-.fallback-detail p{font-size:14px;margin-bottom:0}
-@media(max-width:650px){.fallback-hero{grid-template-columns:1fr}.fallback-art{display:none}}
-</style></head><body><div class="app"><aside class="sidebar"><div><div class="brand">H<b>_</b>Sex<b>_</b>Ostomy</div><div class="small">AMBIENTE DIGITAL DE APRENDIZAGEM</div></div><nav class="nav" id="nav" aria-label="Navegação"><a href="#fundamentos">✦ Fundamentos</a><a href="#fluxo">⌁ Fluxo do programa</a><a href="#permissao">01 Permissão</a><a href="#informacao">02 Informação Limitada</a><a href="#sugestoes">03 Sugestões Específicas</a><a href="#terapia">↗ Terapia Intensiva</a><a href="#revisao">↻ Revisão</a><a href="#rede">✣ Rede de cuidados</a><a href="#implantacao">▦ Implantação</a></nav><div class="sidebar-footer">Conteúdos explorados <strong id="progressText">0/11</strong><div class="progress"><div id="progressFill"></div></div><p>O progresso é armazenado neste navegador.</p></div></aside><div class="right"><header class="top"><div><strong>Jornada do cuidado</strong> <span class="pill">Protótipo educativo v0.1.2</span></div><div><button class="mode" id="modeBtn">Modo apresentação</button> <button class="mode" id="share">Copiar link</button></div></header><div class="layout"><main id="main" class="panel" aria-live="polite"><div class="fallback-hero"><div><span class="eyebrow">Ambiente digital de aprendizagem</span><h2>Conheça o H_Sex_Ostomy</h2><p>Explore o Programa de Reabilitação da Sexualidade Masculina por meio de seus fundamentos, componentes, aplicações práticas e articulação em rede.</p><p class="kicker">Material educativo em desenvolvimento · Rabelo & Sousa (2026)</p></div><div class="fallback-art" aria-hidden="true">✦</div></div>
-<h1>Jornada do cuidado</h1><p class="lead">O programa é flexível, longitudinal e centrado nas necessidades do homem com estoma. Abra um tema abaixo para começar.</p>
-<details class="fallback-detail" id="fundamentos" open><summary>Fundamentos do programa</summary><p>O H_Sex_Ostomy articula a Teoria de Enfermagem de Reabilitação para o Bem-Viver ao modelo EX-PLISSIT, valorizando a autonomia e a singularidade no processo de reabilitação.</p></details>
-<details class="fallback-detail" id="fluxo"><summary>Fluxo e níveis de intervenção</summary><p>O cuidado articula Permissão, Informação Limitada, Sugestões Específicas, possível encaminhamento para Terapia Intensiva e Revisão contínua, com retomadas conforme as demandas.</p></details>
-<details class="fallback-detail" id="permissao"><summary>Permissão</summary><p>Normalizar o diálogo sobre sexualidade, garantir privacidade, solicitar autorização e respeitar o tempo e a decisão de cada pessoa.</p></details>
-<details class="fallback-detail" id="informacao"><summary>Informação Limitada</summary><p>Oferecer orientações oportunas e compreensíveis, adequadas às preocupações da pessoa com estoma, sem sobrecarregá-la.</p></details>
-<details class="fallback-detail" id="sugestoes"><summary>Sugestões Específicas</summary><p>Investigar demandas concretas, aprofundar a avaliação e construir intervenções de enfermagem individualizadas.</p></details>
-<details class="fallback-detail" id="terapia"><summary>Terapia Intensiva</summary><p>Considerar encaminhamento especializado quando as demandas excederem o escopo da intervenção de enfermagem, mantendo a continuidade do cuidado.</p></details>
-<details class="fallback-detail" id="revisao"><summary>Revisão contínua</summary><p>Reavaliar orientações, mudanças e novas necessidades no acompanhamento longitudinal; a Revisão não é uma fase final rígida.</p></details>
-<details class="fallback-detail" id="rede"><summary>Rede e continuidade do cuidado</summary><p>Articular serviços de atenção primária, atenção especializada, equipe multiprofissional e redes de apoio de acordo com as necessidades.</p></details>
-<details class="fallback-detail" id="implantacao"><summary>Implantação do programa</summary><p>Planejar sensibilização, capacitação, privacidade, fluxos e recursos disponíveis para integrar o programa à prática assistencial.</p></details>
-<p class="kicker">Esta é uma visualização de segurança. Se os recursos interativos estiverem disponíveis, eles substituirão automaticamente este conteúdo.</p></main><aside class="map"><span class="eyebrow">Navegação visual</span><h2>Mapa do cuidado</h2><p>Explore os componentes sem uma ordem rígida.</p><div class="route" id="route"><a href="#permissao"><span class="node">01</span>Permissão</a><a href="#informacao"><span class="node">02</span>Informação Limitada</a><a href="#sugestoes"><span class="node">03</span>Sugestões Específicas</a><a href="#terapia"><span class="node">↗</span>Terapia Intensiva</a><a href="#revisao"><span class="node">↻</span>Revisão contínua</a></div><div class="hint">↻ A Permissão e a Revisão são contínuas. A Terapia Intensiva depende da necessidade de encaminhamento especializado.</div></aside></div><footer class="footer">Adaptado para fins educativos de Rabelo & Sousa (2026). Protótipo em revisão científica; não é ferramenta automatizada de decisão clínica.</footer></div></div>
-<script src="./site.js?v=20261117-02" defer></script></body></html>
+/* A primeira área permanece acessível mesmo que o JavaScript não seja carregado */
+body:not(.ready) section.view:first-of-type{display:block}
+body.present .site-head{position:static}body.present #workshop .slide{min-height:66vh}
+body.present #workshop .slide h2{font-size:clamp(32px,4vw,58px)}
+.notice-toast{position:fixed;bottom:16px;right:16px;z-index:100;max-width:320px;border:1px solid #d2e4df;background:#fff;padding:13px;border-radius:13px;box-shadow:0 12px 34px #163c5b33}
+</style>
+</head><body class="no-js"><script>document.body.classList.remove('no-js')</script>
+<a class="skip" href="#content">Pular para o conteúdo</a>
+<header class="site-head">
+ <a class="brand" href="#apresentacao" data-view="apresentacao" aria-label="H_Sex_Ostomy Digital, início"><span class="brand-mark">H_</span><span><strong>H_Sex_Ostomy</strong><small>PROGRAMA DIGITAL DE APRENDIZAGEM</small></span></a>
+ <nav class="top-nav" aria-label="Áreas do ambiente">
+  <a href="#apresentacao" data-view="apresentacao" class="active">Conheça</a>
+  <a href="#manual" data-view="manual">Manual completo</a>
+  <a href="#percurso" data-view="percurso">Mapa do cuidado</a>
+  <a href="#simulacao" data-view="simulacao">Pratique</a>
+  <a href="#workshop" data-view="workshop">Demonstração</a>
+  <a href="#recursos" data-view="recursos">Recursos</a>
+ </nav>
+ <button id="copy-link" type="button" class="head-action" title="Copiar endereço do site">↗ Compartilhar</button>
+</header>
+<main id="content">
+
+<section class="view active" id="apresentacao" aria-label="Conheça o programa">
+ <div class="hero">
+  <div class="hero-content"><span class="eyebrow">Programa de Reabilitação da Sexualidade Masculina</span>
+  <h1>O cuidado tem <b>novos caminhos.</b></h1>
+  <p class="lead">Conheça o H_Sex_Ostomy por dentro: sua identidade, seus fundamentos e o percurso assistencial que orienta a abordagem da sexualidade de homens com estomas de eliminação.</p>
+  <div class="button-row"><a class="btn primary" href="#manual" data-view="manual">Explorar todo o manual →</a><a class="btn" href="#percurso" data-view="percurso">Ver mapa interativo ◇</a></div>
+  <div class="hero-stats"><span>Manual de referência · 75 páginas</span><span>Cuidado centrado na pessoa</span><span>EX-PLISSIT + Bem-Viver</span></div>
+  </div>
+  <div class="hero-image"><img class="manual-cover" src="./assets/capa.webp" alt="Ilustração de capa do manual H_Sex_Ostomy, com profissionais de enfermagem e homens com estomas" onerror="this.hidden=true;this.nextElementSibling.hidden=false" /><div class="art-fallback" hidden aria-hidden="true">H_</div></div>
+ </div>
+ <div class="section-title"><h2>Escolha como deseja conhecer o H_Sex_Ostomy</h2><small>Quatro experiências distintas para diferentes objetivos de aprendizagem.</small></div>
+ <div class="route-choice">
+  <a class="choice" href="#apresentacao" data-view="apresentacao"><div class="glyph">✧</div><strong>Conhecer o programa</strong><p>O que é, finalidade, missão, visão, valores, público-alvo e bases conceituais.</p><em>Entender a proposta →</em></a>
+  <a class="choice" href="#manual" data-view="manual"><div class="glyph">▤</div><strong>Estudar o manual</strong><p>Todos os capítulos, subitens, anexos e apêndice, com acesso por tema e página.</p><em>Abrir a biblioteca →</em></a>
+  <a class="choice" href="#percurso" data-view="percurso"><div class="glyph">⌁</div><strong>Programa na prática</strong><p>Conheça as fases e como elas se articulam na consulta de enfermagem.</p><em>Explorar o cuidado →</em></a>
+  <a class="choice" href="#workshop" data-view="workshop"><div class="glyph">▣</div><strong>Demonstração guiada</strong><p>Uma apresentação simplificada e controlável para condução do workshop.</p><em>Apresentar ao grupo →</em></a>
+ </div>
+ <div class="section-title"><span class="eyebrow">Identidade do programa</span><h2>O que queremos transformar no cuidado?</h2></div>
+ <div class="three">
+  <article class="panel"><span class="eyebrow">01 / Finalidade</span><h3>O que o programa faz</h3><p id="purpose">Apoiar enfermeiros na abordagem da saúde sexual e do Bem-Viver de homens com estomas de eliminação por meio de intervenções educativas, psicossociais e clínicas fundamentadas no método EX-PLISSIT e na Teoria de Enfermagem de Reabilitação para o Bem-Viver.</p><span class="source">Manual, página 10</span></article>
+  <article class="panel"><span class="eyebrow">02 / Missão</span><h3>Por que existimos</h3><p id="mission">Instrumentalizar enfermeiros para abordagem da sexualidade de homens com estomas de eliminação em serviços de saúde na perspectiva da reabilitação para o Bem-Viver.</p><span class="source">Manual, página 10</span></article>
+  <article class="panel"><span class="eyebrow">03 / Visão</span><h3>Onde queremos chegar</h3><p id="vision">Ser reconhecido como um programa de referência para guiar a abordagem da sexualidade de homens com estomias de eliminação, na perspectiva da reabilitação para o Bem-Viver, reconhecido pela valorização da intersubjetividade, autonomia e reconstruções no processo de reabilitação.</p><span class="source">Manual, página 10</span></article>
+ </div>
+ <div class="section-title"><span class="eyebrow">04 / Princípios do H_Sex_Ostomy</span><h2>Cinco valores que orientam o cuidado</h2></div>
+ <div class="values" id="values">
+  <div class="value"><strong>Acolhimento</strong><p>Espaço seguro e sem julgamentos.</p></div>
+  <div class="value"><strong>Reconhecimento</strong><p>Visibilidade às necessidades sexuais.</p></div>
+  <div class="value"><strong>Autonomia</strong><p>A pessoa conduz sua reabilitação.</p></div>
+  <div class="value"><strong>Intersubjetividade</strong><p>Encontro e relação de cuidado.</p></div>
+  <div class="value"><strong>Ética</strong><p>Responsabilidade em todas as fases.</p></div>
+ </div>
+ <div class="section-title"><span class="eyebrow">05 / Público-alvo</span><h2>Para quem o programa foi desenvolvido?</h2></div>
+ <div class="split" id="audience"><div class="panel">Enfermeiros(as) são os usuários diretos do programa.</div><div class="panel">Homens com estomas de eliminação são as pessoas beneficiárias do cuidado.</div></div>
+ <div class="section-title"><h2>Dois referenciais, uma proposta de cuidado</h2></div>
+ <div class="split">
+  <article class="quote-card"><span class="eyebrow" style="color:#9ce6cd">Referencial teórico-filosófico</span><h3>Teoria de Enfermagem de Reabilitação para o Bem-Viver</h3><p>Valoriza a singularidade, a relação intersubjetiva, a autonomia e as possibilidades de reconstrução da vida no processo de reabilitação.</p><span class="source" style="color:#d2e0e8">Manual, seção 6.1</span></article>
+  <article class="quote-card" style="background:linear-gradient(135deg,#147c79,#103758)"><span class="eyebrow" style="color:#baf5e1">Modelo de intervenção</span><h3>Extended PLISSIT — EX-PLISSIT</h3><p>Orienta o diálogo, informações, sugestões e encaminhamentos conforme a necessidade, tendo Permissão e Revisão como processos contínuos.</p><span class="source" style="color:#d2e0e8">Manual, seção 6.2</span></article>
+ </div>
+ <p class="notice" style="margin-top:24px">O H_Sex_Ostomy não representa uma sequência rígida de condutas. A aplicação clínica deve respeitar a autonomia e as necessidades de cada pessoa, as condições do serviço e o julgamento profissional.</p>
+</section>
+
+<section class="view" id="manual" aria-label="Índice completo do manual">
+ <div class="section-intro"><div><span class="eyebrow">Biblioteca do programa</span><h1>Todo o manual, organizado para navegar.</h1><p class="lead">Localize os capítulos, todos os subitens e os recursos que fundamentam o H_Sex_Ostomy. Cada entrada mostra seu papel e a página correspondente no documento de referência.</p></div><span class="hero-stats"><span>Capítulos 1–9</span><span>Anexos e apêndice</span></span></div>
+ <div class="toc-layout">
+  <aside class="panel toc-side"><h3>Índice navegável</h3><div class="toc-links" id="manual-menu"></div><div class="notice" style="margin-top:16px">As descrições são sínteses didáticas e não substituem a leitura do manual integral.</div></aside>
+  <div class="panel toc-content"><div class="searchbar"><span aria-hidden="true">⌕</span><input id="manual-search" type="search" placeholder="Buscar um item neste capítulo..." aria-label="Buscar no capítulo selecionado"/></div><div id="manual-content" style="margin-top:20px"><h2>Explore o conteúdo do manual</h2><p>Os itens serão organizados por capítulos.</p></div></div>
+ </div>
+</section>
+
+<section class="view" id="percurso" aria-label="Programa na prática">
+ <div class="section-intro"><div><span class="eyebrow">Programa na prática</span><h1>Como o cuidado se articula?</h1><p class="lead">Um mapa interativo dos componentes que orientam a consulta de enfermagem. Selecione um elemento para conhecer seus objetivos e possibilidades de atuação.</p></div><a class="btn" href="#manual" data-view="manual">Consultar o manual completo ↗</a></div>
+ <div class="path-layout"><div class="map-surface" id="flow-map"><h2>Mapa do cuidado</h2><p>Permissão, Informação Limitada, Sugestões Específicas, Terapia Intensiva e Revisão.</p></div><aside class="panel map-feedback" id="flow-detail"><h2>Selecione um componente</h2></aside></div>
+ <div class="three" style="margin-top:18px">
+  <div class="panel"><span class="eyebrow">Permissão</span><h3>Transversal</h3><p>A autorização e o respeito à autonomia atravessam todo o cuidado.</p></div>
+  <div class="panel"><span class="eyebrow">Revisão</span><h3>Contínua</h3><p>O acompanhamento identifica novas demandas e permite reorientar intervenções.</p></div>
+  <div class="panel"><span class="eyebrow">Terapia Intensiva</span><h3>Quando necessária</h3><p>A articulação especializada depende da demanda, sem encerrar a continuidade de enfermagem.</p></div>
+ </div>
+ <p class="source">Representação educativa baseada nas seções 7.8 e 7.9 do manual; não constitui algoritmo de decisão clínica.</p>
+</section>
+
+<section class="view" id="simulacao" aria-label="Simulação clínica formativa">
+ <div class="section-intro"><div><span class="eyebrow">Aprendizagem ativa</span><h1>Laboratório de decisões.</h1><p class="lead">Um cenário fictício para exercitar como os princípios do programa orientam a conversa, as informações oferecidas e a continuidade do acompanhamento.</p></div><button id="restart-case" class="btn small" type="button">↺ Reiniciar cenário</button></div>
+ <div class="case-layout">
+  <article class="panel" id="scenario"><h2>Uma situação de aprendizagem</h2><p>Ao selecionar uma opção, você receberá um feedback educativo.</p></article>
+  <aside class="panel"><span class="eyebrow">Explore com autonomia</span><h3>Como funciona</h3><p class="note">O ambiente apresenta situações simplificadas e possíveis raciocínios profissionais, sem substituir avaliação clínica.</p><div class="assistive"><strong>Progresso do cenário</strong><p id="case-step">1 / 3</p><p>Não há pontuação, certificado ou avaliação da prática profissional neste protótipo.</p></div><a class="btn small" href="#percurso" data-view="percurso" style="margin-top:16px">Rever o mapa ↗</a></aside>
+ </div>
+</section>
+
+<section class="view" id="workshop" aria-label="Demonstração guiada no workshop">
+ <div class="section-intro"><div><span class="eyebrow">Ambiente de apresentação · Workshop participativo</span><h1>Demonstração guiada.</h1><p class="lead">Um roteiro para conduzir a apresentação em grupo, separado do conteúdo de aplicação clínica do programa. Use os controles para avançar durante o encontro.</p></div><button type="button" class="btn" id="present-mode" aria-pressed="false">▣ Ampliar apresentação</button></div>
+ <div class="workshop-shell"><div class="panel"><div class="slide" id="slide-content"><h2>Apresentando o programa</h2><p>Um roteiro visual estará disponível nesta área.</p></div><div class="workshop-controls"><div class="button-row"><button type="button" class="btn" id="slide-prev">← Anterior</button><button type="button" class="btn primary" id="slide-next">Avançar →</button></div><span class="note" id="slide-count">1 de 8</span></div><div class="slide-index" id="slide-index" style="margin-top:16px"></div></div>
+ <aside class="panel"><h3>Ferramentas de facilitação</h3><button type="button" class="btn small" id="toggle-notes">Mostrar / ocultar orientações</button><div class="speaker" id="speaker-notes" style="margin-top:15px">Notas para quem conduz.</div><div class="notice" style="margin-top:16px"><strong>Importante:</strong> esta apresentação demonstra a tecnologia e os componentes do H_Sex_Ostomy. Não substitui sua aplicação assistencial nem representa uma avaliação da eficácia do programa.</div><p class="note">Atalho: use as setas do teclado quando estiver no modo de apresentação.</p></aside></div>
+</section>
+
+<section class="view" id="recursos" aria-label="Recursos e materiais">
+ <div class="section-intro"><div><span class="eyebrow">Materiais do programa</span><h1>Recursos para consultar e aprofundar.</h1><p class="lead">Encontre instrumentos, capítulos, modelos e materiais-síntese descritos no manual original.</p></div></div>
+ <div class="resource-grid" id="resources"></div>
+ <div class="panel" style="margin-top:20px"><h2>Sobre o H_Sex_Ostomy</h2><p><strong>Programa:</strong> H_Sex_Ostomy — Programa de Reabilitação da Sexualidade Masculina.</p><p><strong>Manual de referência:</strong> Ariana Luiza Rabelo; Anderson Reis de Sousa. Salvador, Bahia, 2026.</p><p><strong>Desenvolvimento acadêmico:</strong> Escola de Enfermagem, Universidade Federal da Bahia.</p><div class="notice">Esta plataforma é uma versão educativa digital em desenvolvimento. O material clínico e as sínteses exigem conferência dos autores antes de uso formal na formação e na assistência. O site não coleta informações de pacientes.</div></div>
+</section>
+
+</main>
+<footer><span>H_Sex_Ostomy Digital · Rabelo & Sousa (2026) · Tecnologia educativa em desenvolvimento</span><span>Exploração local: <strong id="visited">1 / 6</strong> áreas <span style="display:inline-block;vertical-align:middle;width:80px;background:#d5e5e3;border-radius:5px;height:5px;overflow:hidden"><span id="progress" style="display:block;background:#169b70;height:100%;width:16%"></span></span></span></footer>
+<div class="notice-toast" id="notice" role="status" aria-live="polite" hidden></div>
+<noscript><div class="notice" style="margin:20px">Ative o JavaScript para navegar entre as áreas interativas. A visão geral do programa continua disponível nesta página.</div></noscript>
+</body></html>
