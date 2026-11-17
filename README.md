@@ -1,40 +1,48 @@
-# H_Sex_Ostomy Digital — protótipo web v0.1
+# H_Sex_Ostomy Digital — versão 0.3
 
-Ambiente educativo interativo para apresentar e explorar os fundamentos e componentes do **H_Sex_Ostomy: Programa de Reabilitação da Sexualidade Masculina**, de Ariana Luiza Rabelo e Anderson Reis de Sousa (2026).
+**Ambiente digital de aprendizagem sobre o H_Sex_Ostomy: Programa de Reabilitação da Sexualidade Masculina.**
 
-## Estado atual
+Referência-base: Ariana Luiza Rabelo; Anderson Reis de Sousa. *H_Sex_Ostomy: Programa de Reabilitação da Sexualidade Masculina*. Salvador, 2026. Manual de 75 páginas fornecido à equipe do projeto.
 
-A primeira versão publicada neste repositório é uma **versão inicial independente e autocontida**: todo o HTML, CSS e JavaScript está em `index.html`. Ela pode ser hospedada diretamente no GitHub Pages e **não exige servidor, banco de dados, instalação ou dependências pagas**.
+## Acesse
 
-Contém:
-- 11 áreas temáticas;
-- menu e mapa clicáveis;
-- modos apresentação e exploração individual;
-- dicas contextualizadas;
-- simulação fictícia de três cenas com feedback formativo;
-- progresso local de exploração salvo apenas neste navegador;
-- layout adaptado a computadores e celulares.
+https://hsexostomy.github.io/hsexostomydigital/
 
-Esta edição inicial **não incorpora ainda as imagens completas do manual nem todas as interações do pacote de protótipo offline**. Esses elementos poderão ser incorporados em próximas versões.
+GitHub Pages gratuito, sem banco de dados e sem cadastro obrigatório.
 
-## Publicação no GitHub Pages
+## Arquitetura pedagógica
 
-1. No repositório, abra **Settings → Pages**.
-2. Em **Build and deployment**, selecione **Deploy from a branch**.
-3. Selecione branch `main`, diretório `/(root)` e clique em **Save**.
-4. Após a implantação, o endereço esperado será: https://hsexostomy.github.io/hsexostomydigital/
+Esta versão diferencia cinco situações de uso:
 
-O site é destinado à educação; **não automatiza decisões clínicas** e não substitui avaliação ou julgamento do profissional.
+1. **Conheça o programa:** finalidade, missão, visão, valores, público-alvo e referenciais, com textos e sínteses fundamentados no manual.
+2. **Manual completo (índice navegável):** acesso por capítulos e subitens, com 38 entradas, resumos didáticos e indicação das páginas. **Não é uma transcrição integral nem disponibiliza o PDF completo.**
+3. **Mapa do cuidado / programa na prática:** componentes do EX-PLISSIT, Permissão e Revisão contínuas, e Terapia Intensiva apenas quando necessária.
+4. **Pratique:** caso clínico fictício em três momentos com alternativas e feedback formativo.
+5. **Demonstração:** roteiro para apresentação em workshop, separado do funcionamento assistencial do programa.
+6. **Recursos:** caminhos de consulta para anexos, indicadores e materiais do manual.
 
-## Cuidados antes de divulgar
+## Arquivos ativos
 
-- Revisar cientificamente as sínteses, exemplos e feedbacks com os responsáveis pelo programa.
-- Obter autorização para eventual publicação de ilustrações, fotografias, instrumentos e outros materiais protegidos.
-- Não inserir aqui respostas individuais do workshop, dados de participantes ou dados de pacientes.
-- O pré e o pós-teste do estudo permanecem separados da plataforma.
+- `index.html`: conteúdo inicial em HTML, com fallback legível sem JavaScript
+- `v03.css`: identidade visual em azul e verde inspirada no manual
+- `v03-data.js`: conteúdos estruturados, páginas e atividades
+- `v03.js`: navegação, mapa, apresentação e simulação
+- `assets/capa.webp`: imagem da capa do manual, otimizada para web
 
-## Próximas etapas
+Arquivos `site.js` da versão anterior foram mantidos temporariamente por histórico, mas **não são usados** pela edição atual.
 
-Expandir os conteúdos do manual, aperfeiçoar mapa não linear, recursos audiovisuais, simulações, acessibilidade e navegação para aprendizagem autônoma.
+## Contexto científico
 
-**Nota metodológica:** este é um protótipo educativo, não um programa clínico implementado nem uma tecnologia com eficácia pedagógica já validada.
+O site é uma **tradução didática digital de um programa em desenvolvimento**, e não um software validado para decisões clínicas. Os exemplos e respostas de simulação são formativos e fictícios. A experiência do workshop não demonstra a eficácia clínica ou pedagógica do programa.
+
+As descrições devem ser conferidas pelos autores contra o manual antes de divulgação como versão final. Não inserir no repositório público dados de participantes, respostas de pré/pós-teste, prontuários ou informações de pacientes.
+
+O PDF integral do manual e instrumentos completos não foram publicados aqui; qualquer disponibilização integral deverá observar a autorização dos titulares e as condições de uso dos instrumentos.
+
+## Próximos aprimoramentos
+
+- Textos pedagógicos completos e revisados para cada seção do manual
+- Inclusão de figuras adicionais do manual em resolução adequada e com autorização
+- Casos adicionais, caminhos de exploração, verificações de aprendizagem
+- Aprimorar recursos de acessibilidade, download e consulta assistencial
+- Testes com participantes e revisão técnico-científica
