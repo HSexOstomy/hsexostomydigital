@@ -170,7 +170,14 @@ function renderContact(){
 function init(){
  renderAbout();renderTeam();renderProgram();renderFlow();renderReader();renderAssessment();drawScore("iief");drawScore("qsm");renderCare();drawTrail();renderCases();renderWorkshop();renderContact();
  const ids=["inicio","sobre","equipe","programa","fluxo","manual","avaliacao","iief","qsm","plano","trilha","casos","workshop","contato"];
- const mobile=$("mobile-navigation");mobile.innerHTML=ids.map(id=>'<a href="#'+id+'" data-go="'+id+'">'+({inicio:"Início",sobre:"O projeto",equipe:"Quem somos",programa:"Componentes",fluxo:"Fluxograma",manual:"Manual",avaliacao:"Avaliação",iief:"IIEF-15",qsm:"QS-M",plano:"Plano de cuidados",trilha:"Trilha",casos:"Casos",workshop:"Workshop",contato:"Contato"})[id]+'</a>').join("");
+ const mobile=$("mobile-navigation");
+ const mobileMenu=[
+ ["O Programa",[["programa","Componentes do cuidado"],["fluxo","Fluxograma"],["manual","Sumário do manual"]]],
+ ["Ferramentas",[["avaliacao","Central de Avaliação"],["iief","IIEF-15"],["qsm","QS-M"],["plano","Planejador de Cuidados"]]],
+ ["Aprenda",[["trilha","Trilha interativa"],["casos","Simulações"]]],
+ ["Sobre",[["sobre","O projeto"],["equipe","Quem somos"],["contato","Contato"]]]
+ ];
+ mobile.innerHTML='<a href="#inicio" data-go="inicio">Início</a>'+mobileMenu.map(([name,links])=>'<details><summary>'+name+'</summary>'+links.map(([id,label])=>'<a href="#'+id+'" data-go="'+id+'">'+label+'</a>').join("")+'</details>').join("")+'<a href="#workshop" data-go="workshop">Workshop</a>';
  const initial=location.hash.replace("#","");nav(ids.includes(initial)?initial:"inicio",false);
 }
 document.addEventListener("click",ev=>{
