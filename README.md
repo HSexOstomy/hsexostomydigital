@@ -1,43 +1,54 @@
 # H_Sex_Ostomy Digital
 
-**Endereço público:** https://hsexostomy.github.io/hsexostomydigital/
+**Site:** https://hsexostomy.github.io/hsexostomydigital/
 
-Ambiente educacional digital associado ao manual **H_Sex_Ostomy: Programa de Reabilitação da Sexualidade Masculina** (2026). A versão atual organiza os conteúdos em áreas distintas e evita repetir as mesmas informações nos menus.
+Ambiente digital educativo desenvolvido a partir do manual *H_Sex_Ostomy: Programa de Reabilitação da Sexualidade Masculina* (2026).
 
-## Navegação
+## Navegação principal
 
-- **O Programa:** componentes do cuidado, fluxograma e sumário do manual
-- **Ferramentas:** Central de Avaliação, formulários IIEF-15 (15 perguntas) e QS-M (10 perguntas) e Planejador de Cuidados
-- **Aprenda:** trilha de decisões Sim/Não e situações clínicas simuladas
-- **Sobre:** projeto, equipe, vínculos acadêmicos e contato
-- **Workshop:** roteiro de demonstração com atalhos para as ferramentas
+1. **Sobre:** O projeto, equipe e instituições, contato
+2. **O Programa:** Fundamentos e componentes, fluxograma interativo, sumário do manual
+3. **Aprenda:** Aulas em percurso guiado ou livre, trilha de decisões, caso clínico longitudinal
+4. **Ferramentas:** Calculadoras (IIEF-15 e QS-M) e Planejador de Cuidados
+5. **Workshop:** Roteiro e atalhos para demonstração
 
-O logotipo retorna ao início. No celular os quatro grupos aparecem recolhidos para reduzir a quantidade de links simultâneos.
+O nome do programa no cabeçalho retorna ao **Início**; não existe um menu principal separado repetindo o conteúdo da home.
 
-## Instrumentos
+## Como editar autorias, fotografias e instituições
 
-Os questionários foram transcritos dos anexos A (pp. 70–72) e B (pp. 73–74) do manual. Cada pergunta apresenta suas alternativas, permite voltar, avançar e revisar respostas. O resultado só é exibido depois de responder aos itens.
+Edite **`v07-config.js`** no GitHub, sem alterar HTML ou CSS:
 
-- IIEF-15: cinco domínios; classificação da função erétil pelos itens 1–5 e 15, conforme os pontos de corte apresentados no manual; atenção às respostas zero quando não houve atividade ou tentativa
-- QS-M: soma das dez respostas, multiplicada por dois, com faixa de interpretação correspondente à pontuação 0–100
+- `authors`: nome, titulação, papel, biografia e caminho da fotografia (exemplo: `assets/foto-autora.webp`). Sem fotografia, aparece um emoji simbólico.
+- `institutions`: nome, logotipo, endereço web. Permite adicionar instituições futuras.
+- `contactEmail`: contato acadêmico.
+- `manualPdfUrl`: endereço HTTPS do PDF na nuvem. Enquanto vazio, o site apresenta uma área reservada.
 
-**Condições de uso:** estas ferramentas têm finalidade educativa e devem utilizar dados fictícios no GitHub Pages público. Não solicitar nome, prontuário ou qualquer identificador de paciente. As respostas ficam apenas na memória da página, sem armazenamento remoto. Antes de uso assistencial e divulgação ampla, revisar os direitos de reprodução dos instrumentos, a fidelidade psicométrica e os requisitos de segurança.
+Para acrescentar fotografias, envie arquivos aos caminhos definidos em `assets/`. A marca institucional identifica vínculos acadêmicos; **não implica endosso institucional** da plataforma em desenvolvimento.
 
-## Planejamento do cuidado
+## Arquivos novos da v0.7
 
-Apresenta os diagnósticos de enfermagem, resultados NOC e intervenções NIC selecionados do Quadro 6 (pp. 45–59) do manual. O profissional pode filtrar, selecionar e retirar diagnósticos para elaborar uma síntese de estudo. **Não confirma diagnósticos nem prescreve cuidados automaticamente**. Conferir as classificações nas edições oficiais e validar toda a implementação antes de uso assistencial.
+- `assets/fluxograma-v07.svg`: organograma visual adaptado da Figura 3 do manual (p. 28), com caixas centrais, decisões e retornos
+- `v07-config.js`: dados institucionais editáveis
+- `v07-ui.js`: páginas Sobre, O Programa, sumário, fluxograma e nove aulas
+- `v07-care.js`: avaliação estruturada, nove diagnósticos NANDA-I, seleção de indicadores NOC e atividades NIC, relatório com impressão
+- `v07-calculadoras.js`: apresentação e contextualização do IIEF-15 e QS-M
+- `v07-casos.js`: caso longitudinal fictício em quatro consultas
+- `v07.css`: identidade visual, layout e estilos de impressão
+- `v06-questions.js`: 25 perguntas e respectivas opções de resposta
+- `v05.js` e `v05-data.js`: lógica e dados de base
 
-## Manual
+## Recursos educativos
 
-O sumário digital segue a ordem dos capítulos e remete às páginas reais do PDF, com figuras selecionadas, resumos e links contextuais. **Não é uma transcrição completa das 75 páginas.** O PDF integral não está hospedado aqui.
+**Aulas:** o enfermeiro escolhe entre uma sequência de nove unidades e exploração livre. Cada unidade oferece conteúdos essenciais, referência às páginas do manual, uma questão reflexiva com feedback e acesso à seção relacionada. O conteúdo integral do manual **ainda não está transcrito** na plataforma.
 
-## Versões e segurança
+**Fluxograma:** os hotspots posicionados sobre o organograma permitem navegar por Permissão, decisões Sim/Não, Informação Limitada, Sugestões Específicas, Terapia Intensiva e Revisão. Não é algoritmo clínico obrigatório.
 
-- A versão anterior à reorganização foi preservada na branch `backup-v05-before-menu-scales-fix`.
-- `index.html`: estrutura de páginas e navegação
-- `v05-data.js`: conteúdo resumido do manual e relações NANDA-I/NOC/NIC
-- `v06-questions.js`: enunciados e alternativas dos questionários
-- `v05.js`: navegação, cálculos, simuladores e planejador
-- `v05.css`: estilos responsivos
+**Planejador:** o Quadro 6 (pp. 45–58) embasa histórico clínico e sexual e nove diagnósticos de enfermagem. O profissional seleciona NANDA-I, indicadores NOC, atividades NIC, metas e acompanhamento, podendo imprimir ou salvar como PDF pelo navegador. **Os indicadores e atividades disponíveis são uma seleção didática do Quadro 6; não são a transcrição integral de todas as opções do manual.** Confirme os códigos e os direitos de reprodução nas edições oficiais das classificações.
 
-Site estático hospedado no GitHub Pages. A tecnologia encontra-se em desenvolvimento e não possui validação clínica ou pedagógica específica enquanto plataforma digital.
+**Calculadoras:** IIEF-15 e QS-M apresentam todas as perguntas e alternativas disponíveis nos anexos do manual. Os escores são calculados no navegador após as respostas; a interpretação deve respeitar as regras específicas dos instrumentos e as limitações de ausência de atividade sexual.
+
+## Segurança e limitações
+
+Esta plataforma ainda não foi validada como ferramenta clínica ou pedagógica digital. Os exemplos devem utilizar **dados fictícios**, sem informações identificáveis de pacientes. A hospedagem pública no GitHub Pages não é infraestrutura para prontuários ou armazenamento de informações de saúde. Avaliação, diagnósticos e intervenções exigem julgamento profissional e respeito à autonomia do homem.
+
+A versão anterior à reorganização está preservada na branch `backup-before-v07-learning-and-care`.
