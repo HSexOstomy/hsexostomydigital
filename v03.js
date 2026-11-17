@@ -4,13 +4,13 @@ const D=window.HSEX_DIGITAL;
 if(!D){console.warn("Conteúdo educativo indisponível.");return;}
 const $=id=>document.getElementById(id);
 const esc=t=>String(t??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const views=["apresentacao","manual","percurso","simulacao","workshop","recursos"];
+const views=["inicio","sobre","equipe","manual","percurso","trilha","simulacao","workshop","recursos","contato"];
 let currentSection="identidade",currentFlow="permissao",slide=0,scene=0,answer=null,showNotes=true;
 let visited=new Set();
 try{visited=new Set(JSON.parse(localStorage.getItem("hsex_digital_visited_v03")||"[]"))}catch(e){}
 const save=()=>{try{localStorage.setItem("hsex_digital_visited_v03",JSON.stringify([...visited]))}catch(e){}};
 const toast=(message)=>{let n=$("notice");if(n){n.textContent=message;n.hidden=false;setTimeout(()=>{n.hidden=true},3500)}};
-function openView(id){if(!views.includes(id))id="apresentacao";for(const v of document.querySelectorAll(".view"))v.classList.toggle("active",v.id===id);for(const a of document.querySelectorAll("[data-view]"))a.classList.toggle("active",a.getAttribute("data-view")===id);visited.add(id);save();try{history.replaceState(null,"","#"+id)}catch(e){};window.scrollTo({top:0,behavior:"instant"});if(id==="percurso")renderFlow();if(id==="manual")renderManual();if(id==="workshop")renderSlide();}
+function openView(id){if(!views.includes(id))id="inicio";for(const v of document.querySelectorAll(".view"))v.classList.toggle("active",v.id===id);for(const a of document.querySelectorAll("[data-view]"))a.classList.toggle("active",a.getAttribute("data-view")===id);visited.add(id);save();try{history.replaceState(null,"","#"+id)}catch(e){};window.scrollTo({top:0,behavior:"instant"});if(id==="percurso")renderFlow();if(id==="manual")renderManual();if(id==="workshop")renderSlide(); window.dispatchEvent(new CustomEvent("hsex:view",{detail:{id}}));}
 function renderIdentity(){const d=D.identity;$("purpose").textContent=d.purpose;$("mission").textContent=d.mission;$("vision").textContent=d.vision;
 $("values").innerHTML=d.values.map((v,i)=>'<div class="value"><span class="eyebrow">0'+(i+1)+'</span><strong>'+esc(v[0])+'</strong><p>'+esc(v[1])+'</p></div>').join("");
 $("audience").innerHTML=d.audience.map((t,i)=>'<div class="panel"><span class="eyebrow">'+(i?"Pessoas beneficiárias":"Usuários diretos")+'</span><p>'+esc(t)+'</p></div>').join("");
@@ -32,7 +32,7 @@ $("flow-detail").innerHTML='<span class="eyebrow">Componente · Manual pp. '+esc
 }
 function renderSlide(){
 const s=D.slides[slide];
-$("slide-content").innerHTML='<span class="slide-num">DEMONSTRAÇÃO GUIADA · '+(slide+1).toString().padStart(2,"0")+' / '+D.slides.length+'</span><h2>'+esc(s[0])+'</h2><p>'+esc(s[1])+'</p><div class="button-row" style="margin-top:25px"><a class="btn small" href="#'+(slide===4?"percurso":slide===5?"simulacao":slide===6?"manual":"apresentacao")+'" data-view="'+(slide===4?"percurso":slide===5?"simulacao":slide===6?"manual":"apresentacao")+'">Explorar este assunto ↗</a></div>';
+$("slide-content").innerHTML='<span class="slide-num">DEMONSTRAÇÃO GUIADA · '+(slide+1).toString().padStart(2,"0")+' / '+D.slides.length+'</span><h2>'+esc(s[0])+'</h2><p>'+esc(s[1])+'</p><div class="button-row" style="margin-top:25px"><a class="btn small" href="#'+(slide===4?"percurso":slide===5?"simulacao":slide===6?"manual":"sobre")+'" data-view="'+(slide===4?"percurso":slide===5?"simulacao":slide===6?"manual":"sobre")+'">Explorar este assunto ↗</a></div>';
 $("speaker-notes").innerHTML='<strong>Orientação para quem conduz</strong><p>'+esc(s[2])+'</p><p class="note">Este roteiro serve à apresentação do workshop. Não corresponde a uma sessão real do programa.</p>';$("speaker-notes").hidden=!showNotes;
 $("slide-count").textContent=(slide+1)+" de "+D.slides.length;
 $("slide-prev").disabled=slide===0;$("slide-next").textContent=slide===D.slides.length-1?"Recomeçar ↺":"Avançar →";
@@ -45,7 +45,7 @@ $("case-step").textContent=(scene+1)+" / "+D.scenarios.length;
 }
 function renderResources(){
 const resources=[
-["01","Conheça o programa","Finalidade, missão, visão, valores, público-alvo e fundamentação.","apresentacao"],
+["01","Conheça o programa","Finalidade, missão, visão, valores, público-alvo e fundamentação.","sobre"],
 ["02","Índice completo do manual","Capítulos 1 a 9, referências, anexos e apêndice, com indicação de páginas.","manual"],
 ["03","Fluxo do cuidado","Percurso clicável baseado nos componentes do EX-PLISSIT adaptado ao programa.","percurso"],
 ["04","Resumo assistencial","Apêndice A, página 75: material-síntese para apoio à consulta de enfermagem.","manual"],
@@ -58,10 +58,11 @@ function updateStats(){const n=visited.size;$("visited").textContent=n+" / "+vie
 function init(){
 renderIdentity();renderManual();renderFlow();renderSlide();renderCase();renderResources();
 document.body.classList.add("ready");
-const id=location.hash.slice(1);openView(id||"apresentacao");updateStats();
+const id=location.hash.slice(1);openView(id||"inicio");updateStats();
 }
 document.addEventListener("click",e=>{
 const el=e.target.closest("button,a");if(!el)return;
+if(el.hasAttribute("data-view")&&el.hasAttribute("data-section")){currentSection=el.dataset.section;renderManual();e.preventDefault();openView(el.dataset.view);updateStats();return}
 if(el.hasAttribute("data-view")){e.preventDefault();openView(el.dataset.view);updateStats();return}
 if(el.hasAttribute("data-section")){
   currentSection=el.dataset.section;renderManual();
