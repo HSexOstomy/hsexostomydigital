@@ -1,183 +1,69 @@
 <!doctype html>
-<html lang="pt-BR"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#103758">
-<meta name="description" content="H_Sex_Ostomy Digital: conheça, aprenda e explore o Programa de Reabilitação da Sexualidade Masculina com mapa interativo e recursos pedagógicos.">
-<meta name="color-scheme" content="light">
-<title>H_Sex_Ostomy Digital · Conhecer, aprender e aplicar</title>
-<link rel="stylesheet" href="./v03.css?v=4">
-<script src="./v03-data.js?v=4" defer></script><script src="./v03.js?v=4" defer></script><script src="./v04.js?v=4b" defer></script>
-<style>
-/* A primeira área permanece acessível mesmo que o JavaScript não seja carregado */
-body:not(.ready) section.view:first-of-type{display:block}
-body.present .site-head{position:static}body.present #workshop .slide{min-height:66vh}
-body.present #workshop .slide h2{font-size:clamp(32px,4vw,58px)}
-.notice-toast{position:fixed;bottom:16px;right:16px;z-index:100;max-width:320px;border:1px solid #d2e4df;background:#fff;padding:13px;border-radius:13px;box-shadow:0 12px 34px #163c5b33}
-</style>
-<link rel="stylesheet" href="./v04.css?v=4b">
-</head><body class="no-js"><script>document.body.classList.remove('no-js')</script>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#12375a"><meta name="description" content="H_Sex_Ostomy Digital: programa de reabilitação da sexualidade masculina, ambiente educativo e ferramentas de apoio ao cuidado.">
+<title>H_Sex_Ostomy Digital | Programa de Reabilitação da Sexualidade Masculina</title>
+<link rel="stylesheet" href="./v05.css?v=05f"></head>
+<body>
 <a class="skip" href="#content">Pular para o conteúdo</a>
-<header class="site-head">
- <a class="brand" href="#inicio" data-view="inicio" aria-label="H_Sex_Ostomy Digital, página inicial"><span class="brand-mark">H_</span><span><strong>H_Sex_Ostomy</strong><small>PROGRAMA DIGITAL DE APRENDIZAGEM</small></span></a>
- <nav class="top-nav" aria-label="Menu principal">
-  <a href="#inicio" data-view="inicio" class="active">Início</a>
-  <details class="nav-dd"><summary>Sobre <span aria-hidden="true">⌄</span></summary><div class="nav-items">
-   <a href="#sobre" data-view="sobre">O projeto</a><a href="#equipe" data-view="equipe">Quem somos</a><a href="#sobre" data-view="sobre" data-scroll="purpose">Finalidade, missão e visão</a><a href="#sobre" data-view="sobre" data-scroll="values">Valores e público-alvo</a>
+<header class="header"><div class="header-inner">
+ <a class="brand" href="#inicio" data-go="inicio" aria-label="Início H_Sex_Ostomy Digital"><span class="brand-symbol">H<span>_</span></span><span><strong>H_Sex_Ostomy</strong><small>Ambiente digital de aprendizagem</small></span></a>
+ <nav class="navigation" aria-label="Navegação principal">
+  <a href="#inicio" data-go="inicio" class="active">Início</a>
+  <details class="nav-group"><summary>Sobre</summary><div class="nav-drop">
+    <a href="#sobre" data-go="sobre">O projeto</a><a href="#equipe" data-go="equipe">Quem somos e instituições</a>
   </div></details>
-  <details class="nav-dd"><summary>O Programa <span aria-hidden="true">⌄</span></summary><div class="nav-items">
-   <a href="#percurso" data-view="percurso">Componentes do EX-PLISSIT</a><a href="#trilha" data-view="trilha">Fluxograma interativo</a><a href="#manual" data-view="manual" data-section="metodologia" data-openmanual="1">Metodologia de aplicação</a><a href="#manual" data-view="manual" data-section="rede" data-openmanual="1">Articulação em rede</a><a href="#manual" data-view="manual" data-section="implantacao" data-openmanual="1">Implantação e avaliação</a>
+  <details class="nav-group"><summary>O Programa</summary><div class="nav-drop">
+    <a href="#programa" data-go="programa">Visão geral e componentes</a><a href="#fluxo" data-go="fluxo">Fluxograma do cuidado</a>
+    <a href="#manual" data-go="manual">Manual técnico e educativo</a>
   </div></details>
-  <details class="nav-dd"><summary>Aprenda <span aria-hidden="true">⌄</span></summary><div class="nav-items">
-   <a href="#trilha" data-view="trilha">Trilha de decisões</a><a href="#simulacao" data-view="simulacao">Casos clínicos simulados</a><a href="#percurso" data-view="percurso">Explorar etapas livremente</a>
+  <details class="nav-group"><summary>Ferramentas</summary><div class="nav-drop">
+    <a href="#avaliacao" data-go="avaliacao">Central de avaliação</a><a href="#iief" data-go="iief">Calculadora IIEF-15</a>
+    <a href="#qsm" data-go="qsm">Calculadora QS-M</a><a href="#plano" data-go="plano">Planejador de cuidados</a>
   </div></details>
-  <details class="nav-dd"><summary>Biblioteca <span aria-hidden="true">⌄</span></summary><div class="nav-items">
-   <a href="#manual" data-view="manual">Índice do manual</a><a href="#recursos" data-view="recursos">Instrumentos e recursos</a><a href="#manual" data-view="manual" data-section="recursos" data-openmanual="1">Anexos e material-síntese</a>
+  <details class="nav-group"><summary>Aprenda</summary><div class="nav-drop">
+    <a href="#trilha" data-go="trilha">Trilha de decisões</a><a href="#casos" data-go="casos">Casos clínicos simulados</a>
   </div></details>
-  <a href="#workshop" data-view="workshop">Workshop</a>
-  <a href="#contato" data-view="contato">Contato</a>
+  <a href="#workshop" data-go="workshop">Workshop</a><a href="#contato" data-go="contato">Contato</a>
  </nav>
- <a class="school-head-mark" href="https://enfermagem.ufba.br/" target="_blank" rel="noopener" aria-label="Escola de Enfermagem da UFBA: acessar portal institucional"><img src="https://enfermagem.ufba.br/sites/enfermagem.ufba.br/files/styles/thumbnail/public/enfermagem_logotipo_80_anos_cores_principal.png?itok=95WjcLRs" alt="Símbolo da Escola de Enfermagem da Universidade Federal da Bahia" onerror="this.parentElement.hidden=true" /></a>
- <button id="copy-link" type="button" class="head-action" title="Copiar endereço do site">↗ Compartilhar</button>
-</header>
-<main id="content">
-
-
-<section class="view active" id="inicio" aria-label="Início do H_Sex_Ostomy">
- <div class="hero home-hero"><div class="hero-content"><span class="eyebrow">Escola de Enfermagem da Universidade Federal da Bahia · Programa de Reabilitação da Sexualidade Masculina</span><h1>O cuidado tem <b>novos caminhos.</b></h1>
- <p class="lead">Um ambiente para conhecer o H_Sex_Ostomy, aprender seus componentes e explorar, de forma interativa, decisões que apoiam a abordagem da sexualidade na reabilitação de homens com estomas de eliminação.</p>
- <div class="button-row"><a class="btn primary" href="#trilha" data-view="trilha">▶ Explorar a trilha interativa</a><a class="btn dark" href="#workshop" data-view="workshop">▣ Apresentar no workshop</a></div>
- <div class="hero-stats"><span>Exploração livre</span><span>Exemplos clínicos com feedback</span><span>Baseado no manual de 2026</span></div></div>
- <div class="hero-image"><img class="manual-cover" src="./assets/capa.webp" alt="Ilustração original da capa do manual H_Sex_Ostomy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><div class="art-fallback" hidden>H_</div></div></div>
- <div class="section-title"><span class="eyebrow">Escolha sua experiência</span><h2>Três maneiras de entrar no programa</h2><small>As áreas têm propósitos distintos, mas permanecem conectadas.</small></div>
- <div class="route-choice home-choices">
-  <a class="choice about" href="#sobre" data-view="sobre"><span class="glyph">⌂</span><strong>1 · Conheça o programa</strong><p>O projeto, quem somos, finalidade, missão, valores, público-alvo e fundamentos.</p><em>Visão institucional →</em></a>
-  <a class="choice program" href="#percurso" data-view="percurso"><span class="glyph">✥</span><strong>2 · O programa na prática</strong><p>O EX-PLISSIT, os componentes do cuidado e as orientações assistenciais.</p><em>Estudar a aplicação →</em></a>
-  <a class="choice discover" href="#trilha" data-view="trilha"><span class="glyph">↝</span><strong>3 · Trilha de decisões</strong><p>Explore perguntas, respostas “Sim” e “Não”, retornos e novos caminhos do fluxograma.</p><em>Experimentar o organograma →</em></a>
-  <a class="choice library" href="#manual" data-view="manual"><span class="glyph">▤</span><strong>Biblioteca do programa</strong><p>Localize capítulos e subitens do manual, instrumentos, esquemas e materiais-síntese.</p><em>Acessar índice →</em></a>
+ <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-navigation">Menu ☰</button>
+</div></header>
+<nav class="mobile-navigation" id="mobile-navigation" aria-label="Navegação para celular" hidden></nav>
+<main id="content" class="shell">
+<section class="page is-active" id="page-inicio" aria-labelledby="home-title">
+ <div class="hero">
+ <div><span class="eyebrow">ESCOLA DE ENFERMAGEM DA UFBA · ENFERMAGEM E SAÚDE</span>
+ <h1 id="home-title">A sexualidade também faz parte da <em>reabilitação.</em></h1>
+ <p class="intro">Conheça o H_Sex_Ostomy, estude seu manual e explore situações de cuidado em um ambiente desenvolvido para apoiar a aprendizagem de enfermeiros.</p>
+ <div class="actions"><a class="button primary" href="#programa" data-go="programa">Conhecer o programa <span>→</span></a>
+ <a class="button secondary" href="#trilha" data-go="trilha">Experimentar a trilha <span>↗</span></a></div>
+ <p class="micro">Programa científico • Navegação livre • Aprendizagem interativa</p></div>
+ <div class="hero-art"><img src="./assets/capa.webp" alt="Capa ilustrada do H_Sex_Ostomy, com enfermeiros e homens com estomas" width="420" height="500"><span>Capa original do manual, 2026</span></div>
  </div>
- <div class="home-two"><div class="panel"><span class="eyebrow">Identidade</span><h2>Missão do H_Sex_Ostomy</h2><p>Instrumentalizar enfermeiros para abordagem da sexualidade de homens com estomas de eliminação em serviços de saúde na perspectiva da reabilitação para o Bem-Viver.</p><a class="btn small" href="#sobre" data-view="sobre">Sobre o projeto →</a></div>
- <div class="panel"><span class="eyebrow">Demonstração ≠ assistência</span><h2>O que você encontrará aqui?</h2><p>Uma tecnologia educativa para apresentar o programa e simular sua lógica de cuidado. No serviço, o H_Sex_Ostomy depende do julgamento clínico, da Permissão e da singularidade de cada pessoa.</p><a class="btn small" href="#workshop" data-view="workshop">Ver demonstração guiada →</a></div></div>
+ <div class="entry-grid">
+ <a class="entry" href="#sobre" data-go="sobre"><span class="entry-number">01</span><h2>Conheça</h2><p>Finalidade, missão, valores, autoria e fundamentos do programa.</p><b>Sobre o H_Sex_Ostomy →</b></a>
+ <a class="entry" href="#programa" data-go="programa"><span class="entry-number">02</span><h2>Estude</h2><p>Componentes EX-PLISSIT, metodologia, fluxograma e manual organizado.</p><b>Explorar o programa →</b></a>
+ <a class="entry" href="#avaliacao" data-go="avaliacao"><span class="entry-number">03</span><h2>Utilize as ferramentas</h2><p>Calculadoras de escalas e construção assistida do plano de cuidados.</p><b>Abrir ferramentas →</b></a>
+ <a class="entry" href="#workshop" data-go="workshop"><span class="entry-number">04</span><h2>Aprenda fazendo</h2><p>Trilha de decisões e simulações com feedback, também para o workshop.</p><b>Entrar no workshop →</b></a>
+ </div>
+ <div class="home-bottom"><div><span class="eyebrow">NÚCLEO DO PROGRAMA</span><h2>Um cuidado contínuo, sem etapas rígidas.</h2><p>Permissão e Revisão acompanham todo o percurso. Informações, orientações individualizadas e suporte especializado respondem às demandas e às decisões da pessoa.</p><a href="#fluxo" data-go="fluxo" class="text-link">Como funciona o fluxo →</a></div><img src="./assets/sintese.webp" alt="Material-síntese do programa nas cinco fases, do manual original" loading="lazy"></div>
 </section>
 
-<section class="view" id="sobre" aria-label="Sobre o programa">
- <div class="section-intro"><div><span class="eyebrow">Sobre › O projeto</span><h1>O H_Sex_Ostomy por dentro</h1><p class="lead">Conheça os fundamentos, a identidade e a finalidade do Programa de Reabilitação da Sexualidade Masculina, desenvolvido para instrumentalizar enfermeiros na abordagem da sexualidade de homens com estomas de eliminação.</p></div></div>
- <div class="button-row" style="margin-bottom:18px"><a class="btn" href="#equipe" data-view="equipe">Quem somos →</a><a class="btn" href="#manual" data-view="manual">Localizar fundamentos no manual →</a><a class="btn primary" href="#trilha" data-view="trilha">Explorar fluxograma →</a></div>
- <div class="section-title"><span class="eyebrow">Identidade do programa</span><h2>O que queremos transformar no cuidado?</h2></div>
- <div class="three">
-  <article class="panel"><span class="eyebrow">01 / Finalidade</span><h3>O que o programa faz</h3><p id="purpose">Apoiar enfermeiros na abordagem da saúde sexual e do Bem-Viver de homens com estomas de eliminação por meio de intervenções educativas, psicossociais e clínicas fundamentadas no método EX-PLISSIT e na Teoria de Enfermagem de Reabilitação para o Bem-Viver.</p><span class="source">Manual, página 10</span></article>
-  <article class="panel"><span class="eyebrow">02 / Missão</span><h3>Por que existimos</h3><p id="mission">Instrumentalizar enfermeiros para abordagem da sexualidade de homens com estomas de eliminação em serviços de saúde na perspectiva da reabilitação para o Bem-Viver.</p><span class="source">Manual, página 10</span></article>
-  <article class="panel"><span class="eyebrow">03 / Visão</span><h3>Onde queremos chegar</h3><p id="vision">Ser reconhecido como um programa de referência para guiar a abordagem da sexualidade de homens com estomias de eliminação, na perspectiva da reabilitação para o Bem-Viver, reconhecido pela valorização da intersubjetividade, autonomia e reconstruções no processo de reabilitação.</p><span class="source">Manual, página 10</span></article>
- </div>
- <div class="section-title"><span class="eyebrow">04 / Princípios do H_Sex_Ostomy</span><h2>Cinco valores que orientam o cuidado</h2></div>
- <div class="values" id="values">
-  <div class="value"><strong>Acolhimento</strong><p>Espaço seguro e sem julgamentos.</p></div>
-  <div class="value"><strong>Reconhecimento</strong><p>Visibilidade às necessidades sexuais.</p></div>
-  <div class="value"><strong>Autonomia</strong><p>A pessoa conduz sua reabilitação.</p></div>
-  <div class="value"><strong>Intersubjetividade</strong><p>Encontro e relação de cuidado.</p></div>
-  <div class="value"><strong>Ética</strong><p>Responsabilidade em todas as fases.</p></div>
- </div>
- <div class="section-title"><span class="eyebrow">05 / Público-alvo</span><h2>Para quem o programa foi desenvolvido?</h2></div>
- <div class="split" id="audience"><div class="panel">Enfermeiros(as) são os usuários diretos do programa.</div><div class="panel">Homens com estomas de eliminação são as pessoas beneficiárias do cuidado.</div></div>
- <div class="section-title"><h2>Dois referenciais, uma proposta de cuidado</h2></div>
- <div class="split">
-  <article class="quote-card"><span class="eyebrow" style="color:#9ce6cd">Referencial teórico-filosófico</span><h3>Teoria de Enfermagem de Reabilitação para o Bem-Viver</h3><p>Valoriza a singularidade, a relação intersubjetiva, a autonomia e as possibilidades de reconstrução da vida no processo de reabilitação.</p><span class="source" style="color:#d2e0e8">Manual, seção 6.1</span></article>
-  <article class="quote-card" style="background:linear-gradient(135deg,#147c79,#103758)"><span class="eyebrow" style="color:#baf5e1">Modelo de intervenção</span><h3>Extended PLISSIT — EX-PLISSIT</h3><p>Orienta o diálogo, informações, sugestões e encaminhamentos conforme a necessidade, tendo Permissão e Revisão como processos contínuos.</p><span class="source" style="color:#d2e0e8">Manual, seção 6.2</span></article>
- </div>
- <p class="notice" style="margin-top:24px">O H_Sex_Ostomy não representa uma sequência rígida de condutas. A aplicação clínica deve respeitar a autonomia e as necessidades de cada pessoa, as condições do serviço e o julgamento profissional.</p>
-</section>
-
-
-<section class="view" id="equipe" aria-label="Quem somos">
- <div class="section-intro"><div><span class="eyebrow">Sobre › Quem somos</span><h1>Quem somos</h1><p class="lead">Conheça a autoria acadêmica e a origem do H_Sex_Ostomy, um programa fundamentado na pesquisa em enfermagem e saúde.</p></div></div>
- <div class="three"><article class="panel"><span class="eyebrow">Desenvolvimento do programa</span><h2>Ariana Luiza Rabelo</h2><p>Pesquisadora e doutoranda em Enfermagem e Saúde da Universidade Federal da Bahia, identificada no material do workshop como responsável pela pesquisa.</p></article>
- <article class="panel"><span class="eyebrow">Orientação acadêmica</span><h2>Anderson Reis de Sousa</h2><p>Professor Dr. Anderson Reis de Sousa, orientador acadêmico indicado no material do workshop e na autoria do manual de referência.</p></article>
- <article class="panel institutional"><span class="eyebrow">Vinculação acadêmica</span><h2>Escola de Enfermagem · UFBA</h2><img class="institution-logo" src="https://enfermagem.ufba.br/sites/enfermagem.ufba.br/files/styles/thumbnail/public/enfermagem_logotipo_80_anos_cores_principal.png?itok=95WjcLRs" alt="Símbolo comemorativo da Escola de Enfermagem da Universidade Federal da Bahia, 80 anos" loading="lazy"><p><a href="https://enfermagem.ufba.br/" target="_blank" rel="noopener">Conheça o portal da Escola de Enfermagem ↗</a></p></article></div>
- <div class="notice" style="margin-top:20px">A identificação da instituição refere-se à vinculação acadêmica descrita no material do estudo. A presença da marca não significa endosso institucional da versão digital, ainda em desenvolvimento.</div>
- <div class="button-row" style="margin-top:20px"><a href="#sobre" data-view="sobre" class="btn">O projeto →</a><a href="#contato" data-view="contato" class="btn primary">Fale conosco →</a></div>
-</section>
-<section class="view" id="manual" aria-label="Índice completo do manual">
- <div class="section-intro"><div><span class="eyebrow">Biblioteca do programa</span><h1>O manual, capítulo por capítulo.</h1><p class="lead">Localize os capítulos, todos os subitens e os recursos que fundamentam o H_Sex_Ostomy. Cada entrada mostra seu papel e a página correspondente no documento de referência.</p></div><span class="hero-stats"><span>Capítulos 1–9</span><span>Anexos e apêndice</span></span></div>
- <div class="toc-layout">
-  <aside class="panel toc-side"><h3>Índice navegável</h3><div class="toc-links" id="manual-menu"></div><div class="notice" style="margin-top:16px">As descrições são sínteses didáticas e não substituem a leitura do manual integral.</div></aside>
-  <div class="panel toc-content"><div class="searchbar"><span aria-hidden="true">⌕</span><input id="manual-search" type="search" placeholder="Buscar um item neste capítulo..." aria-label="Buscar no capítulo selecionado"/></div><div id="manual-content" style="margin-top:20px"><h2>Explore o conteúdo do manual</h2><p>Os itens serão organizados por capítulos.</p></div></div>
- </div>
-</section>
-
-<section class="view" id="percurso" aria-label="Programa na prática">
- <div class="section-intro"><div><span class="eyebrow">Programa na prática</span><h1>Como o cuidado se articula?</h1><p class="lead">Um mapa interativo dos componentes que orientam a consulta de enfermagem. Selecione um elemento para conhecer seus objetivos e possibilidades de atuação.</p></div><a class="btn" href="#manual" data-view="manual">Consultar o índice do manual ↗</a></div>
- <div class="button-row" style="margin-bottom:18px"><a class="btn primary" href="#trilha" data-view="trilha">↝ Experimentar o fluxograma com respostas Sim/Não</a><a class="btn" href="#workshop" data-view="workshop">▣ Demonstrar no workshop</a></div>
- <div class="path-layout"><div class="map-surface" id="flow-map"><h2>Mapa do cuidado</h2><p>Permissão, Informação Limitada, Sugestões Específicas, Terapia Intensiva e Revisão.</p></div><aside class="panel map-feedback" id="flow-detail"><h2>Selecione um componente</h2></aside></div>
- <div class="three" style="margin-top:18px">
-  <div class="panel"><span class="eyebrow">Permissão</span><h3>Transversal</h3><p>A autorização e o respeito à autonomia atravessam todo o cuidado.</p></div>
-  <div class="panel"><span class="eyebrow">Revisão</span><h3>Contínua</h3><p>O acompanhamento identifica novas demandas e permite reorientar intervenções.</p></div>
-  <div class="panel"><span class="eyebrow">Terapia Intensiva</span><h3>Quando necessária</h3><p>A articulação especializada depende da demanda, sem encerrar a continuidade de enfermagem.</p></div>
- </div>
- <p class="source">Representação educativa baseada nas seções 7.8 e 7.9 do manual; não constitui algoritmo de decisão clínica.</p>
-</section>
-
-
-<section class="view" id="trilha" aria-label="Trilha interativa do programa">
- <div class="section-intro"><div><span class="eyebrow">Aprenda › Trilha de decisões</span><h1>Explore o fluxograma, escolha caminhos.</h1><p class="lead">Recriamos a lógica do fluxograma do manual em uma demonstração clicável. Cada resposta abre uma ação, inclusive quando a pessoa diz <strong>não</strong>. Você pode avançar, voltar ou pular para outro ponto.</p></div><button class="btn small" type="button" id="trail-restart">↺ Recomeçar trilha</button></div>
- <div class="trail-key"><span><b class="dot green"></b> Ação</span><span><b class="dot amber"></b> Decisão</span><span><b class="dot violet"></b> Apoio especializado</span><span><b class="dot mint"></b> Revisão e retorno</span></div>
- <div class="trail-layout">
- <div class="trail-graphic panel"><div class="trail-graphic-head"><span class="eyebrow">Mapa interativo do H_Sex_Ostomy</span><h2>Fluxo de cuidado</h2><p class="note">Clique em qualquer ponto para saltar diretamente. As linhas são uma orientação geral, não uma ordem obrigatória.</p></div>
- <div id="trail-map" class="trail-map" aria-label="Mapa de decisões"> 
- <button class="trail-node" data-trail="admissao">Admissão no programa</button>
- <button class="trail-node" data-trail="permissao">Permissão</button>
- <button class="trail-node" data-trail="autoriza">Usuário autoriza discussão?</button>
- <button class="trail-node" data-trail="recusa">Não → cuidado geral</button>
- <button class="trail-node" data-trail="informacao">Sim → Informação Limitada</button>
- <button class="trail-node" data-trail="demanda">Há demandas específicas?</button>
- <button class="trail-node" data-trail="sem-demanda">Não → acompanhamento</button>
- <button class="trail-node" data-trail="sugestoes">Sim → Sugestões Específicas</button>
- <button class="trail-node" data-trail="apoio">Necessita de apoio especializado?</button>
- <button class="trail-node" data-trail="terapia">Sim → Terapia Intensiva</button>
- <button class="trail-node" data-trail="revisao">Não / após encaminhamento → Revisão</button>
- </div>
- <div class="trail-loop">↻ <strong>O acompanhamento é longitudinal.</strong> Permissão e Revisão atravessam o percurso e podem ser retomadas.</div>
- </div>
- <aside class="panel trail-inspector" id="trail-detail" aria-live="polite"><span class="eyebrow">Como usar</span><h2>Selecione um ponto</h2><p>As opções e explicações aparecerão aqui.</p></aside>
- </div>
- <div class="panel trail-note" style="margin-top:18px"><h3>Compare com o fluxograma do manual</h3><p class="note">A demonstração interativa segue a Figura 3 do H_Sex_Ostomy, página 28. O manual esclarece que, se a pessoa não autorizar a abordagem, a decisão deve ser acolhida e registrada; o acompanhamento e a possibilidade de retomada permanecem.</p><div class="button-row"><a class="btn small" href="#percurso" data-view="percurso">Entender cada componente →</a><a class="btn small" href="#workshop" data-view="workshop">Abrir apresentação guiada →</a><a class="btn small" href="#simulacao" data-view="simulacao">Praticar um caso fictício →</a></div></div>
-</section>
-<section class="view" id="simulacao" aria-label="Simulação clínica formativa">
- <div class="section-intro"><div><span class="eyebrow">Aprendizagem ativa</span><h1>Laboratório de decisões.</h1><p class="lead">Um cenário fictício para exercitar como os princípios do programa orientam a conversa, as informações oferecidas e a continuidade do acompanhamento.</p></div><button id="restart-case" class="btn small" type="button">↺ Reiniciar cenário</button></div>
- <div class="case-layout">
-  <article class="panel" id="scenario"><h2>Uma situação de aprendizagem</h2><p>Ao selecionar uma opção, você receberá um feedback educativo.</p></article>
-  <aside class="panel"><span class="eyebrow">Explore com autonomia</span><h3>Como funciona</h3><p class="note">O ambiente apresenta situações simplificadas e possíveis raciocínios profissionais, sem substituir avaliação clínica.</p><div class="assistive"><strong>Progresso do cenário</strong><p id="case-step">1 / 3</p><p>Não há pontuação, certificado ou avaliação da prática profissional neste protótipo.</p></div><div class="button-row" style="margin-top:16px"><a class="btn small" href="#trilha" data-view="trilha">↝ Trilha interativa</a><a class="btn small" href="#workshop" data-view="workshop">▣ Retornar ao workshop</a></div></aside>
- </div>
-</section>
-
-<section class="view" id="workshop" aria-label="Demonstração guiada no workshop">
- <div class="section-intro"><div><span class="eyebrow">Ambiente de apresentação · Workshop participativo</span><h1>Demonstração guiada do programa.</h1><p class="lead">Um roteiro para conduzir a apresentação em grupo, separado do conteúdo de aplicação clínica do programa. Use os controles para avançar durante o encontro.</p></div><button type="button" class="btn" id="present-mode" aria-pressed="false">▣ Ampliar apresentação</button></div>
- <div class="workshop-shell"><div class="panel"><div class="slide" id="slide-content"><h2>Apresentando o programa</h2><p>Um roteiro visual estará disponível nesta área.</p></div><div class="workshop-controls"><div class="button-row"><button type="button" class="btn" id="slide-prev">← Anterior</button><button type="button" class="btn primary" id="slide-next">Avançar →</button></div><span class="note" id="slide-count">1 de 8</span></div><div class="slide-index" id="slide-index" style="margin-top:16px"></div></div>
- <aside class="panel"><h3>Ferramentas de facilitação</h3><button type="button" class="btn small" id="toggle-notes">Mostrar / ocultar orientações</button><div class="speaker" id="speaker-notes" style="margin-top:15px">Notas para quem conduz.</div><div class="notice" style="margin-top:16px"><strong>Importante:</strong> esta apresentação demonstra a tecnologia e os componentes do H_Sex_Ostomy. Não substitui sua aplicação assistencial nem representa uma avaliação da eficácia do programa.</div>
- <h3 style="margin-top:20px">Acesso rápido durante o workshop</h3>
- <div class="workshop-shortcuts"><a href="#sobre" data-view="sobre" class="btn small">⌂ Identidade do programa</a><a href="#trilha" data-view="trilha" class="btn small primary">↝ Abrir organograma interativo</a><a href="#percurso" data-view="percurso" class="btn small">✥ Componentes do programa</a><a href="#simulacao" data-view="simulacao" class="btn small">▣ Simular situação clínica</a></div><p class="note">Atalho: use as setas do teclado quando estiver no modo de apresentação.</p></aside></div>
-</section>
-
-<section class="view" id="recursos" aria-label="Recursos e materiais">
- <div class="section-intro"><div><span class="eyebrow">Materiais do programa</span><h1>Recursos para consultar e aprofundar.</h1><p class="lead">Encontre instrumentos, capítulos, modelos e materiais-síntese descritos no manual original.</p></div></div>
- <div class="resource-grid" id="resources"></div>
- <div class="panel" style="margin-top:20px"><h2>Sobre o H_Sex_Ostomy</h2><p><strong>Programa:</strong> H_Sex_Ostomy — Programa de Reabilitação da Sexualidade Masculina.</p><p><strong>Manual de referência:</strong> Ariana Luiza Rabelo; Anderson Reis de Sousa. Salvador, Bahia, 2026.</p><p><strong>Desenvolvimento acadêmico:</strong> Escola de Enfermagem, Universidade Federal da Bahia.</p><div class="notice">Esta plataforma é uma versão educativa digital em desenvolvimento. O material clínico e as sínteses exigem conferência dos autores antes de uso formal na formação e na assistência. O site não coleta informações de pacientes.</div></div>
-</section>
-
-
-<section class="view" id="contato" aria-label="Fale conosco">
- <div class="section-intro"><div><span class="eyebrow">Fale conosco</span><h1>Vamos conversar sobre o H_Sex_Ostomy?</h1><p class="lead">Dúvidas sobre o programa, interesse acadêmico, sugestões e comunicação relacionada à pesquisa.</p></div></div>
- <div class="split">
- <article class="panel contact-card"><span class="eyebrow">Contato da pesquisa</span><h2>Fale com a pesquisadora</h2><p><strong>Ariana Luiza Rabelo</strong></p><p>O canal abaixo foi indicado no formulário oficial do workshop participativo.</p>
- <p><a class="mail-address" href="mailto:arianaluiza-cajuru@hotmail.com?subject=Contato%20sobre%20H_Sex_Ostomy">arianaluiza-cajuru@hotmail.com</a></p>
- <a href="mailto:arianaluiza-cajuru@hotmail.com?subject=Contato%20sobre%20H_Sex_Ostomy" class="btn primary">✉ Escrever e-mail</a>
- </article>
- <article class="panel institutional contact-card"><span class="eyebrow">Vinculação acadêmica</span><h2>Escola de Enfermagem · UFBA</h2><img class="institution-logo" src="https://enfermagem.ufba.br/sites/enfermagem.ufba.br/files/styles/thumbnail/public/enfermagem_logotipo_80_anos_cores_principal.png?itok=95WjcLRs" alt="Símbolo oficial comemorativo de 80 anos da Escola de Enfermagem da Universidade Federal da Bahia" loading="lazy" onerror="this.hidden=true"><p>Campus do Canela, Salvador, Bahia, Brasil.</p><a class="btn" href="https://enfermagem.ufba.br/" target="_blank" rel="noopener">Acessar site institucional ↗</a></article>
- </div>
- <div class="notice" style="margin-top:18px"><strong>Privacidade:</strong> esta versão não possui formulário interno nem coleta dados pessoais dos participantes. O botão de e-mail abre seu aplicativo de correio eletrônico. Não envie informações identificáveis de pacientes por esse canal.</div>
- <div class="button-row" style="margin-top:18px"><a class="btn" href="#sobre" data-view="sobre">O projeto →</a><a class="btn" href="#equipe" data-view="equipe">Quem somos →</a></div>
-</section>
-
+<section class="page" id="page-sobre"><div class="page-head"><span class="eyebrow">SOBRE · O PROJETO</span><h1>O que é o H_Sex_Ostomy?</h1><p>Uma proposta de cuidado de enfermagem voltada à saúde sexual e à reabilitação de homens com estomas de eliminação.</p></div><div id="about-content"></div></section>
+<section class="page" id="page-equipe"><div class="page-head"><span class="eyebrow">SOBRE · VINCULAÇÃO ACADÊMICA</span><h1>Quem somos</h1><p>Autoria, orientação e vínculos institucionais do programa.</p></div><div id="team-content"></div></section>
+<section class="page" id="page-programa"><div class="page-head"><span class="eyebrow">O PROGRAMA · COMPONENTES</span><h1>Programa em prática</h1><p>Compreenda cada componente, sua finalidade e seu lugar no acompanhamento longitudinal. Explore em qualquer ordem.</p></div><div id="program-content"></div></section>
+<section class="page" id="page-fluxo"><div class="page-head"><span class="eyebrow">O PROGRAMA · FIGURA 3 DO MANUAL</span><h1>Fluxograma do cuidado</h1><p>Consulte a figura original e explore os caminhos interativos do programa.</p></div><div id="flux-content"></div></section>
+<section class="page" id="page-manual"><div class="page-head"><span class="eyebrow">O PROGRAMA · LEITURA</span><h1>Manual técnico e educativo</h1><p>Sumário organizado conforme os capítulos e as páginas originais, com leitura orientada, imagens selecionadas e acesso a tópicos relacionados.</p></div><div id="manual-content"></div></section>
+<section class="page" id="page-avaliacao"><div class="page-head"><span class="eyebrow">FERRAMENTAS · AVALIAÇÃO</span><h1>Central de Avaliação da Sexualidade</h1><p>Instrumentos padronizados com cálculos de escores e apoio à interpretação, e um roteiro de avaliação clínica específico do programa.</p></div><div id="assessment-content"></div></section>
+<section class="page" id="page-iief"><div class="page-head"><span class="eyebrow">FERRAMENTAS · IIEF-15</span><h1>Calculadora IIEF-15</h1><p>Insira os valores de cada item da versão autorizada do instrumento. A plataforma calcula os cinco domínios e interpreta o domínio de função erétil.</p></div><div id="iief-content"></div></section>
+<section class="page" id="page-qsm"><div class="page-head"><span class="eyebrow">FERRAMENTAS · QS-M</span><h1>Calculadora QS-M</h1><p>Insira os valores dos dez itens do Quociente Sexual — Versão Masculina para obter o escore de 0 a 100 e a faixa de interpretação.</p></div><div id="qsm-content"></div></section>
+<section class="page" id="page-plano"><div class="page-head"><span class="eyebrow">FERRAMENTAS · PROCESSO DE ENFERMAGEM</span><h1>Planejador de Cuidados</h1><p>Consulte relações NANDA-I, NOC e NIC apresentadas no manual e elabore um plano educativo revisável, sem diagnóstico automático.</p></div><div id="care-content"></div></section>
+<section class="page" id="page-trilha"><div class="page-head"><span class="eyebrow">APRENDA · EXPLORAÇÃO INTERATIVA</span><h1>Trilha de decisões</h1><p>Experimente o fluxograma original. Escolha “Sim” ou “Não”, observe o que fazer e avance ou retorne livremente.</p></div><div id="trail-content"></div></section>
+<section class="page" id="page-casos"><div class="page-head"><span class="eyebrow">APRENDA · SIMULAÇÃO CLÍNICA</span><h1>Casos para aprender fazendo</h1><p>Três momentos de um atendimento fictício. Escolha uma conduta e receba feedback pedagógico.</p></div><div id="cases-content"></div></section>
+<section class="page" id="page-workshop"><div class="page-head"><span class="eyebrow">WORKSHOP PARTICIPATIVO</span><h1>Modo facilitador</h1><p>Uma apresentação curta com atalhos para o fluxograma, o manual e as simulações, sem perder seu lugar no roteiro.</p></div><div id="workshop-content"></div></section>
+<section class="page" id="page-contato"><div class="page-head"><span class="eyebrow">FALE CONOSCO</span><h1>Contato</h1><p>Informações e comunicação acadêmica sobre o H_Sex_Ostomy.</p></div><div id="contact-content"></div></section>
 </main>
-<footer class="site-foot"><span>H_Sex_Ostomy Digital · Rabelo & Sousa (2026) · Tecnologia educativa em desenvolvimento</span><span>Exploração local: <strong id="visited">1 / 6</strong> áreas <span style="display:inline-block;vertical-align:middle;width:80px;background:#d5e5e3;border-radius:5px;height:5px;overflow:hidden"><span id="progress" style="display:block;background:#169b70;height:100%;width:16%"></span></span></span> <span class="footer-school"><img src="https://enfermagem.ufba.br/sites/enfermagem.ufba.br/files/styles/thumbnail/public/enfermagem_logotipo_80_anos_cores_principal.png?itok=95WjcLRs" alt="Escola de Enfermagem da UFBA, 80 anos" loading="lazy"> <a href="https://enfermagem.ufba.br/" target="_blank" rel="noopener">Escola de Enfermagem · UFBA</a> · <a href="#contato" data-view="contato">Fale conosco</a></span></footer>
-<div class="notice-toast" id="notice" role="status" aria-live="polite" hidden></div>
-<noscript><div class="notice" style="margin:20px">Ative o JavaScript para navegar entre as áreas interativas. A visão geral do programa continua disponível nesta página.</div></noscript>
+<footer class="footer"><div class="footer-inner"><div class="footer-about"><strong>H_Sex_Ostomy Digital</strong><span>Programa de Reabilitação da Sexualidade Masculina · versão educativa em desenvolvimento</span></div><div class="footer-logos"><img src="./assets/eef_ufba.webp" alt="Escola de Enfermagem da UFBA" loading="lazy" onerror="this.hidden=true"><img src="./assets/ppgenf.webp" alt="Programa de Pós-Graduação em Enfermagem e Saúde, UFBA" loading="lazy" onerror="this.hidden=true"></div><div class="footer-links"><a href="#contato" data-go="contato">Contato</a><a href="#manual" data-go="manual">Manual</a><a href="https://enfermagem.ufba.br/" target="_blank" rel="noopener noreferrer">EEUFBA ↗</a></div></div></footer>
+<div class="modal" id="image-modal" hidden role="dialog" aria-modal="true" aria-label="Ampliar imagem"><button id="modal-close" class="modal-close" aria-label="Fechar imagem">✕</button><img id="modal-img" alt=""><p id="modal-caption"></p></div>
+<script src="./v05-data.js?v=05f" defer></script><script src="./v05.js?v=05f" defer></script>
+<noscript><div class="no-js"><strong>Para acessar recursos interativos, habilite JavaScript.</strong><p>A apresentação, a finalidade e os caminhos do programa estão descritos na página inicial.</p></div></noscript>
 </body></html>
