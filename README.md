@@ -1,48 +1,54 @@
-# H_Sex_Ostomy Digital — versão 0.3
+# H_Sex_Ostomy Digital — versão 0.4
 
-**Ambiente digital de aprendizagem sobre o H_Sex_Ostomy: Programa de Reabilitação da Sexualidade Masculina.**
+**Ambiente educacional digital sobre o H_Sex_Ostomy — Programa de Reabilitação da Sexualidade Masculina**
 
-Referência-base: Ariana Luiza Rabelo; Anderson Reis de Sousa. *H_Sex_Ostomy: Programa de Reabilitação da Sexualidade Masculina*. Salvador, 2026. Manual de 75 páginas fornecido à equipe do projeto.
+Acesse o site público: **https://hsexostomy.github.io/hsexostomydigital/**
 
-## Acesse
+Hospedagem: GitHub Pages, sem cadastro, sem banco de dados, com HTML, CSS e JavaScript estáticos.
 
-https://hsexostomy.github.io/hsexostomydigital/
+## Organização da plataforma
 
-GitHub Pages gratuito, sem banco de dados e sem cadastro obrigatório.
+A arquitetura separa a apresentação institucional do conteúdo e da demonstração, seguindo a lógica de menus e submenus de um portal acadêmico.
 
-## Arquitetura pedagógica
+| Menu principal | Subáreas |
+| --- | --- |
+| Início | Visão geral e acessos rápidos |
+| Sobre | O projeto; Quem somos; Finalidade, missão, visão e valores |
+| O Programa | Componentes do EX-PLISSIT; Fluxograma; Metodologia de aplicação; Rede; Implantação |
+| Aprenda | Trilha com decisões Sim/Não; Casos simulados; Exploração livre |
+| Biblioteca | Índice do manual; Instrumentos, recursos e anexos |
+| Workshop | Apresentação guiada com oito momentos e atalhos para a trilha |
+| Contato | E-mail da pesquisadora e vínculo acadêmico |
 
-Esta versão diferencia cinco situações de uso:
+## Trilha interativa
 
-1. **Conheça o programa:** finalidade, missão, visão, valores, público-alvo e referenciais, com textos e sínteses fundamentados no manual.
-2. **Manual completo (índice navegável):** acesso por capítulos e subitens, com 38 entradas, resumos didáticos e indicação das páginas. **Não é uma transcrição integral nem disponibiliza o PDF completo.**
-3. **Mapa do cuidado / programa na prática:** componentes do EX-PLISSIT, Permissão e Revisão contínuas, e Terapia Intensiva apenas quando necessária.
-4. **Pratique:** caso clínico fictício em três momentos com alternativas e feedback formativo.
-5. **Demonstração:** roteiro para apresentação em workshop, separado do funcionamento assistencial do programa.
-6. **Recursos:** caminhos de consulta para anexos, indicadores e materiais do manual.
+A trilha é baseada na **Figura 3 do manual, p. 28**, e permite:
+- navegar diretamente a qualquer ponto do fluxograma;
+- escolher a resposta **Sim** ou **Não** nos pontos de decisão;
+- seguir a via de **recusa da Permissão**: respeitar a decisão, prosseguir com atendimento clínico geral, registrar e informar a possibilidade de retomada;
+- seguir a via de **ausência de demandas específicas**, mantendo acompanhamento e disponibilidade futura;
+- acessar encaminhamento especializado somente quando indicado, mantendo continuidade;
+- voltar, rever e reiniciar a exploração.
 
-## Arquivos ativos
+A trilha tem finalidade **exclusivamente educativa**. Não automatiza decisões clínicas nem dispensa Permissão, julgamento profissional e acompanhamento individualizado.
 
-- `index.html`: conteúdo inicial em HTML, com fallback legível sem JavaScript
-- `v03.css`: identidade visual em azul e verde inspirada no manual
-- `v03-data.js`: conteúdos estruturados, páginas e atividades
-- `v03.js`: navegação, mapa, apresentação e simulação
-- `assets/capa.webp`: imagem da capa do manual, otimizada para web
+## Conteúdo-base
 
-Arquivos `site.js` da versão anterior foram mantidos temporariamente por histórico, mas **não são usados** pela edição atual.
+O manual de referência é de **Ariana Luiza Rabelo e Anderson Reis de Sousa (2026)**, com 75 páginas. O índice digital contempla capítulos e subitens com resumos e páginas de referência, mas **ainda não é a transcrição integral do manual**. Os casos são fictícios e são usados para aprendizagem formativa, não para avaliar eficácia do programa.
 
-## Contexto científico
+A identificação visual utiliza a paleta do manual, a ilustração de capa e uma imagem comemorativa da Escola de Enfermagem da UFBA, apontando para seu domínio oficial. A marca é apresentada no contexto da vinculação acadêmica, **sem declarar endosso da instituição à versão experimental**. Conferir permissão e diretrizes para uso da marca, material ilustrativo e eventuais instrumentos protegidos antes de divulgação final.
 
-O site é uma **tradução didática digital de um programa em desenvolvimento**, e não um software validado para decisões clínicas. Os exemplos e respostas de simulação são formativos e fictícios. A experiência do workshop não demonstra a eficácia clínica ou pedagógica do programa.
+## Contato e privacidade
 
-As descrições devem ser conferidas pelos autores contra o manual antes de divulgação como versão final. Não inserir no repositório público dados de participantes, respostas de pré/pós-teste, prontuários ou informações de pacientes.
+Contato acadêmico identificado no formulário do workshop: **arianaluiza-cajuru@hotmail.com**. O link abre um e-mail externo; não há formulário de coleta de dados no próprio site. Não inserir dados de pacientes, respostas de pesquisa ou dados confidenciais no repositório público.
 
-O PDF integral do manual e instrumentos completos não foram publicados aqui; qualquer disponibilização integral deverá observar a autorização dos titulares e as condições de uso dos instrumentos.
+## Arquivos
 
-## Próximos aprimoramentos
+- `index.html`: páginas semânticas e estrutura de navegação;
+- `v03-data.js`: informações didáticas baseadas no sumário e nos conteúdos do manual;
+- `v03.js`: índices, simulação fictícia e apresentação guiada;
+- `v03.css`: estilos principais;
+- `v04.css`: organização hierárquica e cores por componente;
+- `v04.js`: fluxograma interativo e menus.
 
-- Textos pedagógicos completos e revisados para cada seção do manual
-- Inclusão de figuras adicionais do manual em resolução adequada e com autorização
-- Casos adicionais, caminhos de exploração, verificações de aprendizagem
-- Aprimorar recursos de acessibilidade, download e consulta assistencial
-- Testes com participantes e revisão técnico-científica
+A versão foi estruturada para continuar acessível na página inicial mesmo se o JavaScript não iniciar. Novas revisões clínicas e pedagógicas são necessárias antes de uso assistencial.
