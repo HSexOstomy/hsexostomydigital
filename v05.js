@@ -169,13 +169,13 @@ function renderContact(){
 }
 function init(){
  renderAbout();renderTeam();renderProgram();renderFlow();renderReader();renderAssessment();drawScore("iief");drawScore("qsm");renderCare();drawTrail();renderCases();renderWorkshop();renderContact();
- const ids=["inicio","sobre","equipe","programa","fluxo","manual","avaliacao","iief","qsm","plano","trilha","casos","workshop","contato"];
+ const ids=["inicio","sobre","equipe","programa","fluxo","manual","avaliacao","iief","qsm","plano","aulas","trilha","casos","workshop","contato"];
  const mobile=$("mobile-navigation");
  const mobileMenu=[
- ["O Programa",[["programa","Componentes do cuidado"],["fluxo","Fluxograma"],["manual","Sumário do manual"]]],
- ["Ferramentas",[["avaliacao","Central de Avaliação"],["iief","IIEF-15"],["qsm","QS-M"],["plano","Planejador de Cuidados"]]],
- ["Aprenda",[["trilha","Trilha interativa"],["casos","Simulações"]]],
- ["Sobre",[["sobre","O projeto"],["equipe","Quem somos"],["contato","Contato"]]]
+ ["Sobre",[["sobre","O projeto, missão e valores"],["equipe","Equipe e instituições"],["contato","Fale conosco"]]],
+ ["O Programa",[["programa","Componentes e fundamentos"],["fluxo","Fluxograma interativo"],["manual","Sumário do manual"]]],
+ ["Aprenda",[["aulas","Aulas guiadas ou livres"],["trilha","Trilha do cuidado"],["casos","Simulação clínica"]]],
+ ["Ferramentas",[["avaliacao","Calculadoras"],["plano","Planejador de Cuidados"]]]
  ];
  mobile.innerHTML='<a href="#inicio" data-go="inicio">Início</a>'+mobileMenu.map(([name,links])=>'<details><summary>'+name+'</summary>'+links.map(([id,label])=>'<a href="#'+id+'" data-go="'+id+'">'+label+'</a>').join("")+'</details>').join("")+'<a href="#workshop" data-go="workshop">Workshop</a>';
  const initial=location.hash.replace("#","");nav(ids.includes(initial)?initial:"inicio",false);
