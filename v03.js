@@ -32,7 +32,7 @@ $("flow-detail").innerHTML='<span class="eyebrow">Componente · Manual pp. '+esc
 }
 function renderSlide(){
 const s=D.slides[slide];
-$("slide-content").innerHTML='<span class="slide-num">DEMONSTRAÇÃO GUIADA · '+(slide+1).toString().padStart(2,"0")+' / '+D.slides.length+'</span><h2>'+esc(s[0])+'</h2><p>'+esc(s[1])+'</p><div class="button-row" style="margin-top:25px"><a class="btn small" href="#'+(slide===4?"percurso":slide===5?"simulacao":slide===6?"manual":"sobre")+'" data-view="'+(slide===4?"percurso":slide===5?"simulacao":slide===6?"manual":"sobre")+'">Explorar este assunto ↗</a></div>';
+$("slide-content").innerHTML='<span class="slide-num">DEMONSTRAÇÃO GUIADA · '+(slide+1).toString().padStart(2,"0")+' / '+D.slides.length+'</span><h2>'+esc(s[0])+'</h2><p>'+esc(s[1])+'</p><div class="button-row" style="margin-top:25px"><a class="btn small" href="#'+(slide===4?"trilha":slide===5?"simulacao":slide===6?"manual":"sobre")+'" data-view="'+(slide===4?"trilha":slide===5?"simulacao":slide===6?"manual":"sobre")+'">Explorar este assunto ↗</a></div>';
 $("speaker-notes").innerHTML='<strong>Orientação para quem conduz</strong><p>'+esc(s[2])+'</p><p class="note">Este roteiro serve à apresentação do workshop. Não corresponde a uma sessão real do programa.</p>';$("speaker-notes").hidden=!showNotes;
 $("slide-count").textContent=(slide+1)+" de "+D.slides.length;
 $("slide-prev").disabled=slide===0;$("slide-next").textContent=slide===D.slides.length-1?"Recomeçar ↺":"Avançar →";
@@ -47,7 +47,8 @@ function renderResources(){
 const resources=[
 ["01","Conheça o programa","Finalidade, missão, visão, valores, público-alvo e fundamentação.","sobre"],
 ["02","Índice completo do manual","Capítulos 1 a 9, referências, anexos e apêndice, com indicação de páginas.","manual"],
-["03","Fluxo do cuidado","Percurso clicável baseado nos componentes do EX-PLISSIT adaptado ao programa.","percurso"],
+["03","Fluxograma interativo","Trilha clicável com decisões Sim/Não, acolhimento de recusa e caminhos de retorno.","trilha"],
+["03B","Componentes do programa","Mapa livre dos níveis do EX-PLISSIT, suas orientações e ações de enfermagem.","percurso"],
 ["04","Resumo assistencial","Apêndice A, página 75: material-síntese para apoio à consulta de enfermagem.","manual"],
 ["05","IIEF-15 e QS-M","Anexos A e B, páginas 70–74: instrumentos citados no manual; conferir condições de uso e reprodução.","manual"],
 ["06","Implantação e indicadores","Capítulo 9, páginas 63–67: diretrizes e indicadores de estrutura, processo e resultado.","manual"]
