@@ -1,0 +1,11 @@
+{
+  "name": "H_Sex_Ostomy Digital",
+  "short_name": "H_Sex_Ostomy",
+  "description": "Programa de Reabilitação da Sexualidade Masculina: manual, ferramentas e formação para enfermeiros(as).",
+  "start_url": "./#inicio",
+  "display": "standalone",
+  "background_color": "#f4f3ef",
+  "theme_color": "#172a52",
+  "lang": "pt-BR",
+  "icons": [{ "src": "assets/img/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

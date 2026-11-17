@@ -1,0 +1,93 @@
+/* ==========================================================
+   H_Sex_Ostomy Digital · Tokens de design
+   Identidade derivada do manual: tipografia Fira Sans,
+   azul-marinho do título, azul do "Sex", verde dos sublinhados,
+   anel violeta da capa e cores dos componentes (Apêndice A).
+   ========================================================== */
+
+@font-face { font-family: "Fira Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url("../assets/fonts/fira-sans-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Fira Sans"; font-style: italic; font-weight: 400; font-display: swap; src: url("../assets/fonts/fira-sans-latin-400-italic.woff2") format("woff2"); }
+@font-face { font-family: "Fira Sans"; font-style: normal; font-weight: 500; font-display: swap; src: url("../assets/fonts/fira-sans-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Fira Sans"; font-style: normal; font-weight: 600; font-display: swap; src: url("../assets/fonts/fira-sans-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Fira Sans"; font-style: normal; font-weight: 700; font-display: swap; src: url("../assets/fonts/fira-sans-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Fira Sans Condensed"; font-style: normal; font-weight: 500; font-display: swap; src: url("../assets/fonts/fira-sans-condensed-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Fira Sans Condensed"; font-style: normal; font-weight: 600; font-display: swap; src: url("../assets/fonts/fira-sans-condensed-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Fira Sans Condensed"; font-style: normal; font-weight: 700; font-display: swap; src: url("../assets/fonts/fira-sans-condensed-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Fira Sans Condensed"; font-style: normal; font-weight: 800; font-display: swap; src: url("../assets/fonts/fira-sans-condensed-latin-800-normal.woff2") format("woff2"); }
+
+:root {
+  /* Marca */
+  --navy-950: #0d1a36;
+  --navy-900: #172a52;
+  --navy-800: #203060;
+  --navy-700: #2a3f78;
+  --navy-600: #3a5191;
+  --blue-600: #4060aa;
+  --blue-500: #4868b0;
+  --sky-500: #2f8fd0;
+  --sky-300: #7cc6f0;
+  --sky-100: #e4f3fc;
+  --green-800: #0f5c38;
+  --green-700: #146c43;
+  --green-600: #177a49;
+  --green-500: #38b070;
+  --green-300: #8fd3a8;
+  --green-100: #e2f4e8;
+  --violet-700: #4b4a8c;
+  --violet-500: #6c6ca8;
+  --violet-300: #aeacd8;
+  --violet-100: #eeedf8;
+  --coral-600: #c0453a;
+
+  /* Componentes do programa (Apêndice A) */
+  --p: #276b3f;      --p-bg: #e6f3ea;   --p-line: #a9d5b6;
+  --r: #1e4f74;      --r-bg: #e3eff7;   --r-line: #a8c9e1;
+  --li: #8a5c00;     --li-bg: #fdf2d4;  --li-line: #ecd08a;
+  --ss: #61509e;     --ss-bg: #efebf8;  --ss-line: #c9bfe6;
+  --it: #b3392f;     --it-bg: #fbe6e3;  --it-line: #efb7af;
+
+  /* Superfícies e texto */
+  --paper: #f4f3ef;
+  --paper-2: #ecebe5;
+  --surface: #ffffff;
+  --surface-2: #f8f8f6;
+  --line: #dcdfe5;
+  --line-strong: #c3c8d2;
+  --ink: #1a2336;
+  --ink-2: #33405a;
+  --muted: #5a647a;
+  --on-dark: #ffffff;
+  --on-dark-muted: #c7d0e6;
+
+  /* Estado */
+  --ok: #1d8a55;
+  --warn: #8a5c00;
+  --danger: #b3392f;
+  --focus: #2f8fd0;
+
+  /* Tipografia */
+  --font-body: "Fira Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Fira Sans Condensed", "Fira Sans", "Arial Narrow", system-ui, sans-serif;
+  --fs-xs: .8125rem;
+  --fs-sm: .9063rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.375rem;
+  --fs-2xl: clamp(1.6rem, 1.2rem + 1.4vw, 2.125rem);
+  --fs-3xl: clamp(2rem, 1.4rem + 2.4vw, 3rem);
+  --fs-4xl: clamp(2.4rem, 1.5rem + 3.6vw, 4rem);
+  --lh: 1.6;
+
+  /* Espaços e formas */
+  --sp-1: .25rem; --sp-2: .5rem; --sp-3: .75rem; --sp-4: 1rem; --sp-5: 1.5rem; --sp-6: 2rem; --sp-7: 3rem; --sp-8: 4.5rem;
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+  --shadow-1: 0 1px 2px rgba(16, 28, 56, .06), 0 1px 1px rgba(16, 28, 56, .04);
+  --shadow-2: 0 6px 18px rgba(16, 28, 56, .08), 0 2px 4px rgba(16, 28, 56, .05);
+  --shadow-3: 0 18px 40px rgba(16, 28, 56, .14);
+  --container: 1200px;
+  --header-h: 68px;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+}

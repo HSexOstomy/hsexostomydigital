@@ -1,0 +1,25 @@
+/* Impressão: folheto, síntese, fluxograma, plano de cuidados, roteiro */
+@page { margin: 14mm; }
+body { background: #fff !important; font-size: 11pt; }
+.site-header, .site-footer, .skip-link, .toast, .btn, .btn-row, .head-actions, .breadcrumb, .print-hide, .sidebar, .stepper, .etapa-nav, .flow-inspector, .calc-markers, .calc-nav, .qr-overlay, .reader-nav, .reader-tools, .callout-alerta { display: none !important; }
+.page-head { background: none !important; border: 0 !important; padding: 0 0 6mm !important; margin: 0 !important; }
+.page-head::after { display: none; }
+.page-head .lead { font-size: 10pt; }
+.container, .container-narrow { width: 100% !important; }
+.card, .reader, .consulta-body, .folheto, .sintese, .figure-box, .agenda-card { box-shadow: none !important; break-inside: avoid; }
+.print-only { display: block !important; }
+.with-sidebar { display: block; }
+a { color: inherit; text-decoration: none; }
+.folheto-head, .sintese-head, .ws-hero { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.dica, .dica-destaque, .sintese-card, .comp-tile { -webkit-print-color-adjust: exact; print-color-adjust: exact; break-inside: avoid; }
+.dicas { grid-template-columns: 1fr 1fr !important; }
+.figure-scroll > svg { min-width: 0 !important; }
+.flow-svg { display: block !important; }
+.flow-mobile { display: none !important; }
+.flow-layout { display: block; }
+.planner .stack-lg > *:not(.plan-print) { display: none !important; }
+.plan-print pre { font-size: 10.5pt; }
+.ws-hero { background: none !important; color: #000 !important; padding: 0 !important; }
+.ws-hero h1, .ws-hero .wordmark { color: #000 !important; }
+.ws-count { display: none; }
+.page { animation: none !important; }

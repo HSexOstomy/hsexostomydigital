@@ -1,57 +1,125 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#12375a"><meta name="description" content="H_Sex_Ostomy Digital: programa de reabilitação da sexualidade masculina, ambiente educativo e ferramentas de apoio ao cuidado.">
-<title>H_Sex_Ostomy Digital | Programa de Reabilitação da Sexualidade Masculina</title>
-<link rel="stylesheet" href="./v05.css?v=07c"><link rel="stylesheet" href="./v07.css?v=07c"></head>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>H_Sex_Ostomy Digital · Programa de Reabilitação da Sexualidade Masculina</title>
+<meta name="description" content="Plataforma educacional do H_Sex_Ostomy: programa de enfermagem para a abordagem da sexualidade de homens com estomas de eliminação. Manual, ferramentas de consulta, aulas e workshop.">
+<meta name="theme-color" content="#172a52">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<meta property="og:title" content="H_Sex_Ostomy Digital">
+<meta property="og:description" content="Programa de Reabilitação da Sexualidade Masculina: manual, ferramentas e formação para enfermeiros(as).">
+<meta property="og:image" content="assets/img/capa.webp">
+<link rel="preload" href="assets/fonts/fira-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/fira-sans-condensed-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles/tokens.css?v=8">
+<link rel="stylesheet" href="styles/base.css?v=8">
+<link rel="stylesheet" href="styles/layout.css?v=8">
+<link rel="stylesheet" href="styles/components.css?v=8">
+<link rel="stylesheet" href="styles/figures.css?v=8">
+<link rel="stylesheet" href="styles/pages.css?v=8">
+<link rel="stylesheet" href="styles/workshop.css?v=8">
+<link rel="stylesheet" href="styles/print.css?v=8" media="print">
+<script src="site.config.js?v=8"></script>
+<script src="assets/vendor/qrcode.js" defer></script>
+<script type="module" src="src/main.js?v=8"></script>
+</head>
 <body>
-<a class="skip" href="#content">Pular para o conteúdo</a>
-<header class="header"><div class="header-inner">
- <a class="brand" href="#inicio" data-go="inicio" aria-label="Início H_Sex_Ostomy Digital"><span class="brand-symbol">H<span>_</span></span><span><strong>H_Sex_Ostomy</strong><small>Ambiente digital de aprendizagem</small></span></a>
- <nav class="navigation" aria-label="Navegação principal">
-<details class="nav-group"><summary>Sobre</summary><div class="nav-drop"><a data-go="sobre" href="#sobre">O projeto, missão e valores</a><a data-go="equipe" href="#equipe">Equipe e instituições</a><a data-go="contato" href="#contato">Fale conosco</a></div></details>
-<details class="nav-group"><summary>O Programa</summary><div class="nav-drop"><a data-go="programa" href="#programa">Componentes e fundamentação</a><a data-go="fluxo" href="#fluxo">Fluxograma interativo</a><a data-go="manual" href="#manual">Sumário do manual</a></div></details>
-<details class="nav-group"><summary>Aprenda</summary><div class="nav-drop"><a data-go="aulas" href="#aulas">Aulas: guiadas ou livres</a><a data-go="trilha" href="#trilha">Trilha do cuidado</a><a data-go="casos" href="#casos">Simulação clínica</a></div></details>
-<details class="nav-group"><summary>Ferramentas</summary><div class="nav-drop"><a data-go="avaliacao" href="#avaliacao">Calculadoras</a><a data-go="plano" href="#plano">Planejador de Cuidados</a></div></details>
-<a class="workshop-link" data-go="workshop" href="#workshop">Workshop</a>
-</nav>
- <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-navigation">Menu ☰</button>
-</div></header>
-<nav class="mobile-navigation" id="mobile-navigation" aria-label="Navegação para celular" hidden></nav>
-<main id="content" class="shell">
-<section class="page is-active" id="page-inicio" aria-labelledby="home-title">
- <div class="hero">
- <div><span class="eyebrow">ESCOLA DE ENFERMAGEM DA UFBA · ENFERMAGEM E SAÚDE</span>
- <h1 id="home-title">A sexualidade também faz parte da <em>reabilitação.</em></h1>
- <p class="intro">Conheça o H_Sex_Ostomy, estude seu manual e explore situações de cuidado em um ambiente desenvolvido para apoiar a aprendizagem de enfermeiros.</p>
- <div class="actions"><a class="button primary" href="#programa" data-go="programa">Conhecer o programa <span>→</span></a>
- <a class="button secondary" href="#trilha" data-go="trilha">Experimentar a trilha <span>↗</span></a></div>
- <p class="micro">Programa científico • Navegação livre • Aprendizagem interativa</p></div>
- <div class="hero-art"><img src="./assets/capa.webp" alt="Capa ilustrada do H_Sex_Ostomy, com enfermeiros e homens com estomas" width="420" height="500"><span>Capa original do manual, 2026</span></div>
- </div>
- <div class="entry-grid entry-grid-clean">
- <a class="entry" href="#programa" data-go="programa"><span class="entry-number">01 · O PROGRAMA</span><h2>Conhecer</h2><p>Componentes, fundamentos e acesso ao conteúdo do manual.</p><b>Entrar no programa →</b></a>
- <a class="entry" href="#avaliacao" data-go="avaliacao"><span class="entry-number">02 · FERRAMENTAS</span><h2>Avaliar e planejar</h2><p>Questionários completos e organização assistida do plano de cuidados.</p><b>Abrir ferramentas →</b></a>
- <a class="entry" href="#trilha" data-go="trilha"><span class="entry-number">03 · APRENDA</span><h2>Explorar decisões</h2><p>Trilha clicável e simulações para aprender fazendo.</p><b>Experimentar a trilha →</b></a>
- </div>
-</section>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-<section class="page" id="page-sobre"><div class="page-head"><span class="eyebrow">SOBRE · O PROJETO</span><h1>O que é o H_Sex_Ostomy?</h1><p>Uma proposta de cuidado de enfermagem voltada à saúde sexual e à reabilitação de homens com estomas de eliminação.</p></div><div id="about-content"></div></section>
-<section class="page" id="page-equipe"><div class="page-head"><span class="eyebrow">SOBRE · VINCULAÇÃO ACADÊMICA</span><h1>Quem somos</h1><p>Autoria, orientação e vínculos institucionais do programa.</p></div><div id="team-content"></div></section>
-<section class="page" id="page-programa"><div class="page-head"><span class="eyebrow">O PROGRAMA · COMPONENTES</span><h1>Programa em prática</h1><p>Compreenda cada componente, sua finalidade e seu lugar no acompanhamento longitudinal. Explore em qualquer ordem.</p></div><div id="program-content"></div></section>
-<section class="page" id="page-fluxo"><div class="page-head"><span class="eyebrow">O PROGRAMA · FIGURA 3 DO MANUAL</span><h1>Fluxograma do cuidado</h1><p>Consulte a figura original e explore os caminhos interativos do programa.</p></div><div id="flux-content"></div></section>
-<section class="page" id="page-manual"><div class="page-head"><span class="eyebrow">O PROGRAMA · LEITURA</span><h1>Sumário do manual</h1><p>Localize as seções e páginas reais do manual, com figuras selecionadas e acesso aos recursos associados. Não é uma transcrição integral do documento.</p></div><div id="manual-content"></div></section>
-<section class="page" id="page-avaliacao"><div class="page-head"><span class="eyebrow">FERRAMENTAS · AVALIAÇÃO</span><h1>Calculadoras de sexualidade</h1><p>Instrumentos para avaliar aspectos da função e satisfação sexual masculina. Saiba quando utilizá-los, como interpretar os escores e quando aprofundar a avaliação clínica.</p></div><div id="assessment-content"></div></section>
-<section class="page" id="page-iief"><div class="page-head"><span class="eyebrow">FERRAMENTAS · IIEF-15</span><h1>Questionário IIEF-15</h1><p>Responda às 15 perguntas do instrumento conforme o anexo do manual. A plataforma calcula os cinco domínios e interpreta o domínio de função erétil.</p></div><div id="iief-content"></div></section>
-<section class="page" id="page-qsm"><div class="page-head"><span class="eyebrow">FERRAMENTAS · QS-M</span><h1>Questionário QS-M</h1><p>Responda às dez perguntas do Quociente Sexual — Versão Masculina para obter o escore de 0 a 100 e a faixa de interpretação.</p></div><div id="qsm-content"></div></section>
-<section class="page" id="page-plano"><div class="page-head"><span class="eyebrow">FERRAMENTAS · PROCESSO DE ENFERMAGEM</span><h1>Planejador de Cuidados</h1><p>Organize avaliação, diagnósticos para consideração, indicadores NOC e atividades NIC de acordo com as necessidades identificadas. Gere uma síntese educativa revisável.</p></div><div id="care-content"></div></section>
-<section class="page" id="page-trilha"><div class="page-head"><span class="eyebrow">APRENDA · EXPLORAÇÃO INTERATIVA</span><h1>Trilha interativa do cuidado</h1><p>Explore o percurso fiel à Figura 3 do manual e acompanhe decisões, caminhos alternativos e retornos.</p></div><div id="trail-content"></div></section>
-<section class="page" id="page-aulas"><div class="page-head"><span class="eyebrow">APRENDA · FORMAÇÃO</span><h1>Aulas interativas</h1><p>Escolha uma jornada guiada ou explore as unidades no seu próprio ritmo.</p></div><div id="lessons-content"></div></section>
-<section class="page" id="page-casos"><div class="page-head"><span class="eyebrow">APRENDA · SIMULAÇÃO CLÍNICA</span><h1>Casos para aprender fazendo</h1><p>Três momentos de um atendimento fictício. Escolha uma conduta e receba feedback pedagógico.</p></div><div id="cases-content"></div></section>
-<section class="page" id="page-workshop"><div class="page-head"><span class="eyebrow">WORKSHOP PARTICIPATIVO</span><h1>Modo facilitador</h1><p>Uma apresentação curta com atalhos para o fluxograma, o manual e as simulações, sem perder seu lugar no roteiro.</p></div><div id="workshop-content"></div></section>
-<section class="page" id="page-contato"><div class="page-head"><span class="eyebrow">FALE CONOSCO</span><h1>Contato</h1><p>Informações e comunicação acadêmica sobre o H_Sex_Ostomy.</p></div><div id="contact-content"></div></section>
-</main><div id="v7-print-paper" aria-hidden="true"></div>
-<footer class="footer"><div class="footer-inner"><div class="footer-about"><strong>H_Sex_Ostomy Digital</strong><span>Programa de Reabilitação da Sexualidade Masculina · versão educativa em desenvolvimento</span></div><div class="footer-logos"><img src="./assets/eef_ufba.webp" alt="Escola de Enfermagem da UFBA" loading="lazy" onerror="this.hidden=true"><img src="./assets/ppgenf.webp" alt="Programa de Pós-Graduação em Enfermagem e Saúde, UFBA" loading="lazy" onerror="this.hidden=true"></div><div class="footer-links"><a href="#contato" data-go="contato">Contato</a><a href="#manual" data-go="manual">Manual</a><a href="https://enfermagem.ufba.br/" target="_blank" rel="noopener noreferrer">EEUFBA ↗</a></div></div></footer>
-<div class="modal" id="image-modal" hidden role="dialog" aria-modal="true" aria-label="Ampliar imagem"><button id="modal-close" class="modal-close" aria-label="Fechar imagem">✕</button><img id="modal-img" alt=""><p id="modal-caption"></p></div>
-<script defer src="./v05-data.js?v=07c"></script><script defer src="./v07-config.js?v=07c"></script><script defer src="./v06-questions.js?v=07c"></script><script defer src="./v05.js?v=07c"></script><script defer src="./v07-ui.js?v=07c"></script><script defer src="./v07-care.js?v=07c"></script><script defer src="./v07-calculadoras.js?v=07c"></script><script defer src="./v07-casos.js?v=07c"></script>
-<noscript><div class="no-js"><strong>Para acessar recursos interativos, habilite JavaScript.</strong><p>A apresentação, a finalidade e os caminhos do programa estão descritos na página inicial.</p></div></noscript>
-</body></html>
+<header class="site-header" id="topo">
+  <div class="header-inner">
+    <a class="brand" href="#inicio" aria-label="H_Sex_Ostomy Digital, página inicial">
+      <span class="brand-mark" aria-hidden="true">H<i>_</i></span>
+      <span class="brand-text">
+        <span class="wordmark">H<i>_</i><b>Sex</b><i>_</i>Ostomy</span>
+        <small>Programa de Reabilitação da Sexualidade Masculina</small>
+      </span>
+    </a>
+
+    <nav class="main-nav" aria-label="Navegação principal">
+      <ul class="nav-list" id="nav-list">
+        <li class="nav-item">
+          <button class="nav-trigger" aria-expanded="false" aria-controls="menu-sobre" data-menu>Sobre</button>
+          <ul class="nav-menu" id="menu-sobre">
+            <li><a href="#sobre"><strong>O projeto</strong><span>Apresentação, missão e valores</span></a></li>
+            <li><a href="#equipe"><strong>Equipe e ficha técnica</strong><span>Autoria e instituições</span></a></li>
+            <li><a href="#contato"><strong>Contato</strong><span>Fale com a equipe</span></a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <button class="nav-trigger" aria-expanded="false" aria-controls="menu-programa" data-menu>O Programa</button>
+          <ul class="nav-menu" id="menu-programa">
+            <li><a href="#programa"><strong>Componentes</strong><span>Os cinco níveis do cuidado</span></a></li>
+            <li><a href="#fundamentos"><strong>Fundamentos</strong><span>Bem-Viver e EX-PLISSIT</span></a></li>
+            <li><a href="#fluxograma"><strong>Fluxograma</strong><span>Figura 3 interativa</span></a></li>
+            <li><a href="#manual"><strong>Manual</strong><span>Leitura por seções</span></a></li>
+            <li><a href="#sintese"><strong>Síntese de bolso</strong><span>O programa em uma página</span></a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <button class="nav-trigger" aria-expanded="false" aria-controls="menu-ferramentas" data-menu>Ferramentas</button>
+          <ul class="nav-menu" id="menu-ferramentas">
+            <li><a href="#consulta"><strong>Na consulta</strong><span>Roteiro e falas prontas</span></a></li>
+            <li><a href="#orientacoes"><strong>Orientações ao paciente</strong><span>Dicas para imprimir</span></a></li>
+            <li><a href="#calculadoras"><strong>Calculadoras</strong><span>IIEF-15 e QS-M</span></a></li>
+            <li><a href="#planejador"><strong>Planejador de cuidados</strong><span>NANDA-I, NOC, NIC e evolução</span></a></li>
+            <li><a href="#encaminhamento"><strong>Encaminhamento e rede</strong><span>Terapia Intensiva</span></a></li>
+            <li><a href="#implantacao"><strong>Implantação</strong><span>Diretrizes e indicadores</span></a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <button class="nav-trigger" aria-expanded="false" aria-controls="menu-aprenda" data-menu>Aprenda</button>
+          <ul class="nav-menu" id="menu-aprenda">
+            <li><a href="#aulas"><strong>Aulas</strong><span>Nove unidades com prática</span></a></li>
+            <li><a href="#casos"><strong>Casos clínicos</strong><span>Decisões com feedback</span></a></li>
+            <li><a href="#mitos"><strong>Mito ou fato</strong><span>Teste rápido</span></a></li>
+          </ul>
+        </li>
+        <li class="nav-item nav-cta"><a class="nav-workshop" href="#workshop">Workshop</a></li>
+      </ul>
+    </nav>
+
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-list">
+      <span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-label">Menu</span>
+    </button>
+  </div>
+</header>
+
+<main id="conteudo" tabindex="-1">
+  <div id="app" class="app" aria-live="off">
+    <div class="loading" role="status"><span class="spinner" aria-hidden="true"></span>Carregando…</div>
+  </div>
+  <noscript>
+    <div class="container noscript">
+      <h1>H_Sex_Ostomy Digital</h1>
+      <p>Para usar as ferramentas, aulas e o workshop, habilite o JavaScript no navegador.</p>
+    </div>
+  </noscript>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="wordmark wordmark-light">H<i>_</i><b>Sex</b><i>_</i>Ostomy</span>
+      <p>Programa de Reabilitação da Sexualidade Masculina. Ambiente educativo e de apoio à prática de enfermagem.</p>
+      <p class="footer-version" id="footer-version"></p>
+    </div>
+    <nav class="footer-nav" aria-label="Rodapé">
+      <a href="#manual">Manual</a>
+      <a href="#consulta">Na consulta</a>
+      <a href="#aulas">Aulas</a>
+      <a href="#workshop">Workshop</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="footer-logos" id="footer-logos"></div>
+  </div>
+  <div class="footer-legal">
+    <p>Conteúdo baseado no manual <em>H_Sex_Ostomy: Programa de Reabilitação da Sexualidade Masculina</em> (Rabelo; Sousa, 2026). Ferramenta educativa e de apoio: não substitui o julgamento clínico. Use apenas dados fictícios ou não identificáveis. Nada do que é digitado aqui é enviado a servidores.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
