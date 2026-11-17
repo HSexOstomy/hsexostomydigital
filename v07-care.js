@@ -15,7 +15,11 @@ const extra={
 };
 const refs=D.diagnoses.map(x=>({...x,...extra[x.id]}));
 refs.push({id:"00055",name:"Desempenho de papel ineficaz",topic:"Adaptação",page:"57–58",focus:"Dificuldades em ajustar comportamentos e expectativas de papéis às mudanças do processo de reabilitação.",check:["Mudanças percebidas em papéis pessoais e familiares","Expectativas e recursos de enfrentamento"],noc:[["1302","Enfrentamento"]],nic:[["5230","Melhora do enfrentamento"]],...extra["00055"]});
-const clinical=["Histórico de doença e cirurgia","Tipo e tempo de estoma","Comorbidades e medicamentos","Situação conjugal e rede de apoio","Mudanças na imagem corporal","Dúvidas sobre intimidade e desejo","Experiências com dispositivo coletor","Mudanças na função e satisfação sexual"];
+const clinical=[
+"Idade","Orientação sexual","Interação socioafetiva","Religião","Situação conjugal",
+"Tipo de estoma","Tipo de cirurgia/procedimento cirúrgico","Tempo de estoma","Condição clínica do estoma","Comorbidades","Medicamentos em uso",
+"Possui vida sexual ativa?","Manteve relações sexuais após a estomia?","Mudanças na vida sexual ou íntima?","Percepção do corpo após a cirurgia?","Impacto do estoma na intimidade?","Conforto para conversar com a parceria?","Mudanças na ereção, desejo, excitação ou ejaculação?","Sofrimento ou preocupação com essas mudanças?","Insegurança com a bolsa durante a relação sexual?"
+]
 const state={step:0,filter:"Todos",selected:[],chosen:{},assessment:new Set(),goal:"",review:"",notes:""};
 const topics=["Todos",...new Set(refs.map(x=>x.topic))];
 const options=(id,kind)=>state.chosen[id]?.[kind]||new Set();
@@ -45,7 +49,7 @@ let a=e.target;if(a.matches("[data-v7assess]")){const i=Number(a.dataset.v7asses
 if(a.matches("[data-v7dx]")){const id=a.dataset.v7dx;state.selected=a.checked?[...new Set([...state.selected,id])]:state.selected.filter(x=>x!==id);return}
 if(a.matches("[data-v7item]")){const [id,kind,j]=a.dataset.v7item.split(":");if(!state.chosen[id])state.chosen[id]={ind:new Set(),act:new Set()};a.checked?state.chosen[id][kind].add(Number(j)):state.chosen[id][kind].delete(Number(j));return}
 });
-document.addEventListener("input",e=>{const a=e.target;if(a.matches("[data-v7field]"))state[a.dataset.v7field]=a.value});
+document.addEventListener("input",e=>{const a=e.target;if(a.matches("[data-v7field]")){state[a.dataset.v7field]=a.value;const preview=document.querySelector(".v7-report-preview");if(preview)preview.innerHTML=reportHtml()}});
 window.addEventListener("hashchange",()=>{if(location.hash==="#plano")setTimeout(renderCare,0)});
 renderCare();
 window.HSO_CARE={render:renderCare,diagnosisCount:refs.length};
