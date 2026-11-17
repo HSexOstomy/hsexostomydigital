@@ -50,11 +50,11 @@ function renderProgram(){
  '<article class="card content-panel"><span class="component-tag">'+E(c.tag)+' · MANUAL PP. '+E(c.pages)+'</span><h2>'+E(c.name)+'</h2><p style="font-size:17px">'+E(c.summary)+'</p>'+
  '<h3>Como traduzir esse componente em cuidado?</h3><ul>'+c.actions.map(x=>'<li>'+E(x)+'</li>').join("")+'</ul>'+
  '<div class="info"><strong>Exemplo de aplicação:</strong> '+E(c.example)+'</div>'+
- (c.figure?fig(c.figure,"Figura original de "+c.name,"Ilustração extraída do manual H_Sex_Ostomy."): "")+
+ (c.figure?fig(c.figure,"Figura original de "+c.name,"Adaptação digital da figura do manual H_Sex_Ostomy."): "")+
  '<div class="button-row section-space">'+link("trilha","Explorar no fluxograma →","primary")+link("manual","Localizar no manual →")+'</div>'+credit+'</article></div>';
 }
 function renderFlow(){
- $("flux-content").innerHTML='<div class="card">'+fig("fluxograma","Fluxograma original do H_Sex_Ostomy na página 28","Figura 3, p. 28. Fluxo longitudinal, com decisões e retornos.")+
+ $("flux-content").innerHTML='<div class="card">'+fig("fluxograma","Esquema digital do fluxograma do H_Sex_Ostomy na página 28","Adaptação da Figura 3, p. 28. Fluxo longitudinal, com decisões e retornos.")+
  '<div class="info"><strong>Interprete a figura:</strong> mesmo quando a resposta é negativa, o cuidado continua. A Permissão e a Revisão atravessam o percurso.</div>'+
  '<div class="button-row section-space">'+link("trilha","Abrir fluxograma clicável →","primary")+link("programa","Estudar componentes →")+'</div></div>';
 }
@@ -71,7 +71,7 @@ function renderReader(){
  if(c.id==="anexoa")supplement=link("iief","Abrir calculadora IIEF-15","primary");
  if(c.id==="anexob")supplement=link("qsm","Abrir calculadora QS-M","primary");
  if(c.id==="apendice")supplement=link("programa","Consultar guia dos componentes");
- let art=c.figure?fig(c.figure,E(c.title),"Imagem selecionada do manual, p. "+c.pages+". Clique para ampliar."): "";
+ let art=c.figure?fig(c.figure,E(c.title),"Esquema digital adaptado do manual, p. "+c.pages+". Clique para ampliar."): "";
  const pos=D.chapters.findIndex(x=>x.id===c.id);
  $("manual-content").innerHTML='<div class="reader"><aside class="reader-list"><label for="reader-search" class="eyebrow">PESQUISAR CAPÍTULOS E TÍTULOS</label><input id="reader-search" class="reader-search" type="search" placeholder="Ex.: permissão, rede, implantação" value="'+E(P.query)+'"><div id="reader-buttons">'+(filtered.length?filtered.map(readerButton).join(""):'<p class="empty">Nenhum capítulo encontrado.</p>')+'</div></aside>'+
  '<article class="reader-main"><header><span class="eyebrow">MANUAL · '+E(c.num||"SEÇÃO")+' · PÁGINAS '+E(c.pages)+'</span><h2>'+E(c.title)+'</h2><p>'+E(c.blurb)+'</p></header>'+
@@ -100,7 +100,7 @@ function calcIIEF(values){
 }
 function calcQSM(values){
  const score=values.reduce((a,b)=>a+Number(b),0)*2;
- return {score,severity:score>=82?"Bom a excelente":score>=62?"Regular a bom":score>=42?"Desfavorável a regular":score>=22?"Ruim a desfavorável":"Nulo a ruim"};
+ return {score,severity:score>=82?"Muito satisfeito":score>=62?"Parcialmente satisfeito":score>=42?"Médio":score>=22?"Insatisfeito":"Muito insatisfeito"};
 }
 function drawScore(type){
  const root=$(type+"-content");if(!root)return;
