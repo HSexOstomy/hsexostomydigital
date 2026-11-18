@@ -2,7 +2,7 @@ import { html, $, on } from "../core/dom.js";
 import { pageHead, icon, callout, fala } from "../core/ui.js";
 import { permissao, revisao, quadro5 } from "../data/quadros.js";
 import { historico } from "../data/cuidado.js";
-import { figPermissao, figRevisao } from "../figures/outras.js";
+import { figuraImg } from "../figures/imagem.js";
 import { objetivoMeta, quadro2Tabs, terapia, ligarAbas } from "./blocos.js";
 
 const ETAPAS = [
@@ -46,7 +46,9 @@ function conteudo(id) {
       </div>`;
     case "permissao": return html`
       ${objetivoMeta("permissao")}
-      ${figPermissao()}
+      <figure class="figure"><div class="figure-box figure-orig">${figuraImg("permissao")}</div><figcaption class="small muted">Figura 4 do manual (p. 30).</figcaption></figure>
+      <h3>Falas para iniciar a discussão</h3>
+      <div class="grid grid-2">${permissao.exemplos.map((ex, i) => fala(`Exemplo ${i + 1}`, ex, "p"))}</div>
       <section class="section-sm"><h3>Fala para Sugestões Específicas (Quadro 5)</h3>${fala("Pedir permissão para aprofundar", quadro5.fala, "ss")}<p class="small muted">${quadro5.nota}</p></section>
       <section class="section-sm"><h3>Se ele não quiser conversar</h3>
         ${callout("nota", "Acolha e registre", html`<p>${permissao.recusa}</p>`)}
@@ -54,7 +56,9 @@ function conteudo(id) {
       </section>`;
     case "revisao": return html`
       ${objetivoMeta("revisao")}
-      ${figRevisao()}
+      <figure class="figure"><div class="figure-box figure-orig">${figuraImg("revisao")}</div><figcaption class="small muted">Figura 5 do manual (p. 32).</figcaption></figure>
+      <h3>Falas para iniciar a revisão</h3>
+      <div class="grid grid-2">${revisao.exemplos.map((ex, i) => fala(`Exemplo ${i + 1}`, ex, "r"))}</div>
       <section class="section-sm"><h3>Perguntas de acompanhamento (p. 58)</h3>
         <div class="grid grid-3">${["Houve mudança? Por quê?", "Persistem dúvidas? Por quê?", "Novas preocupações? Por quê?"].map((t) => html`<div class="card card-tint"><p style="margin:0;font-weight:600">${t}</p></div>`)}</div>
         <p class="small muted" style="margin-top:.6rem">Use os resultados NOC registrados no Planejador para evidenciar a evolução entre as consultas.</p>
@@ -62,13 +66,18 @@ function conteudo(id) {
     case "informacao": return html`
       ${objetivoMeta("informacao")}
       ${callout("nota", "Selecione, não despeje", html`<p>Em uma mesma consulta não é preciso abordar todos os temas. Escolha o que faz sentido para a pessoa naquele momento. Considere mitos, tabus, linguagem e letramento. Na dúvida, cuidadosamente pergunte!</p>`)}
+      <div class="grid grid-2" style="margin-top:var(--sp-4)">
+        ${callout("alerta", "Segurança do paciente", html`<p>O estoma nunca deve ser penetrado ou manipulado na relação sexual. Após remoção do reto, o sexo anal pode ficar impossibilitado: informe com clareza e explore alternativas.</p>`)}
+        ${callout("nota", "Erro comum", html`<p>Minimizar o medo de gases, ruídos ou vazamento. O incômodo é real: reconheça e ofereça estratégias.</p>`)}
+      </div>
       <div style="margin-top:var(--sp-5)">${quadro2Tabs("cq2")}</div>
       <div class="btn-row" style="margin-top:var(--sp-4)"><a class="btn btn-primary" href="#orientacoes">${icon("print")}Orientações para entregar ao paciente</a><a class="btn" href="#orientacoes/disfuncoes">Disfunções por tipo de cirurgia</a></div>`;
     case "sugestoes": return html`
       ${objetivoMeta("sugestoes")}
       <div class="grid grid-2">
         <section class="card"><h3>${icon("clipboard")}Histórico clínico</h3><ul class="small">${historico.clinico.map((h) => html`<li>${h.rotulo}</li>`)}</ul>
-          ${callout("alerta", "Medicações", html`<p class="small">Verifique anti-hipertensivos, antidepressivos e opioides como possíveis causas iatrogênicas de disfunção sexual.</p>`)}</section>
+          ${callout("alerta", "Medicações", html`<p class="small">Verifique anti-hipertensivos, antidepressivos e opioides como possíveis causas iatrogênicas de disfunção sexual.</p>`)}
+          ${callout("nota", "Erro comum no IIEF-15", html`<p class="small">Resposta “sem atividade sexual” pontua zero e não equivale a disfunção. Escore baixo com muitos zeros tem interpretação limitada.</p>`)}</section>
         <section class="card"><h3>${icon("chat")}Histórico sexual</h3><ul class="small">${historico.sexual.map((h) => html`<li>${h.rotulo}</li>`)}</ul></section>
       </div>
       <div class="next-tools">
@@ -91,7 +100,7 @@ export default {
     const atual = ETAPAS.find((e) => e.id === ctx.params[0]) || ETAPAS[0];
     const i = ETAPAS.indexOf(atual);
     return html`<div class="page">
-      ${pageHead({ kicker: "Ferramentas", title: "Na consulta", lead: "Um roteiro para conduzir a abordagem da sexualidade, etapa por etapa, com as falas sugeridas pelo manual prontas para copiar. Não é um roteiro rígido: avance, volte ou pule conforme a pessoa.", crumbs: [[null, "Na consulta"]] })}
+      ${pageHead({ kicker: "Ferramentas", title: "Na consulta", lead: "Um roteiro para conduzir a abordagem da sexualidade, etapa por etapa, com as falas sugeridas pelo manual prontas para copiar. Não é um roteiro rígido: avance, volte ou pule conforme a pessoa.", crumbs: [[null, "Na consulta"]], art: "enfermeira-fita" })}
       <div class="container">
         <ol class="stepper consulta-steps" aria-label="Etapas da consulta">
           ${ETAPAS.map((e, k) => html`<li><a class="step-btn ${e.cor ? "c-" + e.cor : ""} ${k < i ? "is-done" : ""}" href="#consulta/${e.id}" aria-current="${e.id === atual.id ? "step" : "false"}"><span class="n">${k + 1}</span><span><span class="step-name">${e.nome}</span><small>${e.sub}</small></span></a></li>`)}

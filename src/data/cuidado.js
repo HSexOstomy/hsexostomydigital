@@ -136,3 +136,24 @@ export const diagnosticos = [
 export const referenciasQuadro6 = "Herdman et al., 2024; Butcher et al., 2020; Moorhead, 2024; Paula et al., 2021; Rabelo et al., 2025; United Ostomy Associations of America, 2018; Assis et al., 2026.";
 
 export const exemploRegistro = "Diagnóstico de Enfermagem: Função sexual prejudicada caracterizado por comportamentos sexuais alterados e escore inadequado em instrumento de avaliação da função sexual padronizado e validado (IIEF-15), relacionado a medo da intimidade e não aceitação de uma condição (estoma). Resultado esperado: Funcionamento Sexual, usuário expressará conforto com o próprio corpo, evoluindo de levemente comprometido para pouco comprometido em 90 dias, e exprimirá conforto com a expressão sexual, evoluindo de gravemente comprometido para moderadamente comprometido em 90 dias. Intervenção: Aconselhamento Sexual, encorajada verbalização de temores relacionados à intimidade e à autoimagem corporal após a colostomia; auxiliado o paciente a expressar sentimentos de tristeza e insegurança quanto à alteração da aparência corporal; discutido o efeito da cirurgia sobre a autoestima e a percepção de si, desfazendo crenças equivocadas; orientadas formas alternativas de expressão de afeto e intimidade, não restritas ao ato sexual. Encaminhado à consulta médica com urologista para avaliação complementar da função erétil/ejaculatória, considerando possível componente orgânico associado à cirurgia pélvica.";
+
+/* Plano inicial sugerido por diagnóstico (índices dos indicadores NOC, atividades NIC e pontos de atenção).
+   Ponto de partida editável; a seleção final é do julgamento clínico. */
+export const sugestaoPlano = {
+  "00497": { ind: [0, 6, 14], ativ: [3, 4, 8, 10], pts: [1, 3] },
+  "00400": { ind: [4, 5, 15], ativ: [0, 2, 4, 6], pts: [0, 1] },
+  "00390": { ind: [15, 16, 17], ativ: [0, 1, 2, 6], pts: [0, 1] },
+  "00386": { ind: [2, 4, 10], ativ: [3, 6, 10, 19], pts: [0, 2, 3] },
+  "00481": { ind: [0, 10, 16], ativ: [1, 2, 6, 7], pts: [0, 1, 3] },
+  "00435": { ind: [8, 10, 12], ativ: [0, 2, 5], pts: [0, 1, 4] },
+  "00494": { ind: [0, 4, 11], ativ: [0, 2, 6, 12], pts: [1, 2] },
+  "00449": { ind: [5, 10, 19], ativ: [1, 2, 4], pts: [0, 1, 2] },
+  "00055": { ind: [0, 2, 4], ativ: [0, 3, 4, 12], pts: [3, 4, 5] }
+};
+
+export const passosPlano = [
+  ["Avaliação", "Colete o histórico clínico e sexual do Quadro 6 e, se pertinente, aplique o IIEF-15 e o QS-M. As respostas alimentam as sugestões das etapas seguintes."],
+  ["Diagnósticos", "Escolha os diagnósticos NANDA-I que explicam o que você encontrou. A plataforma destaca os mais prováveis; confirme com seu julgamento e descreva características definidoras e fatores relacionados."],
+  ["Resultados e intervenções", "Para cada diagnóstico: onde a pessoa está e aonde quer chegar (escala NOC de 1 a 5, com prazo) e o que você vai fazer (atividades NIC e pontos de atenção). Um plano inicial já vem sugerido; ajuste."],
+  ["Registro", "A evolução é escrita automaticamente no formato do exemplo do manual (p. 59), com encaminhamentos e retorno sugeridos a partir dos dados. Revise, complete, copie para o prontuário ou imprima."]
+];

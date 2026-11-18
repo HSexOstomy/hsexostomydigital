@@ -1,7 +1,7 @@
 import { html, $, $$, on, norm } from "../core/dom.js";
 import { pageHead, icon, callout } from "../core/ui.js";
-import { conceitos, parcimonia } from "../data/programa.js";
-import { figTeoria } from "../figures/outras.js";
+import { conceitos, parcimonia, modeloTeorico as T } from "../data/programa.js";
+import { figuraImg } from "../figures/imagem.js";
 
 const find = (nome) => conceitos.find(([c]) => norm(c) === norm(nome) || norm(c) === norm(nome).replace(/s$/, ""));
 
@@ -34,9 +34,10 @@ export default {
         </section>
 
         <section class="section">
-          <div class="section-head"><div><p class="kicker">Figura 1</p><h2>Os conceitos do modelo teórico</h2><p>Toque em um conceito para ver como ele se aplica no H_Sex_Ostomy (Quadro 1).</p></div></div>
+          <div class="section-head"><div><p class="kicker">Figura 1</p><h2>Os conceitos do modelo teórico</h2><p>Toque em um conceito abaixo da figura para ver como ele se aplica no H_Sex_Ostomy (Quadro 1).</p></div></div>
           <div class="theory-layout">
-            <div>${figTeoria({ clicavel: true })}<p class="small muted">Redesenho da Figura 1 do manual (p. 12). Fonte original: Zuchetto.</p></div>
+            <div><div class="figure-box figure-orig">${figuraImg("teoria")}</div><p class="small muted">Figura 1 do manual (p. 12). Fonte: Zuchetto (adaptado).</p>
+              <div class="chip-groups">${[["Enfermeira", T.enfermeira, "enf"], ["Enfermagem de reabilitação", T.enfermagem, "rea"], ["Pessoa cuidada", T.pessoa, "pes"], ["Ambiente", T.ambiente, "amb"], ["Tempo", T.tempo, "tem"], ["Bem-Viver", T.bemViver, "bv"]].map(([t, arr, k]) => html`<div class="chip-group cg-${k}"><p>${t}</p><div>${arr.map((c) => html`<button type="button" class="chip-btn" data-conceito="${c}">${c}</button>`)}</div></div>`)}</div></div>
             <aside class="concept-panel" id="concept-panel" aria-live="polite">
               <p class="kicker">Conceito</p><h3>Selecione um conceito</h3><p class="muted">A explicação aparece aqui.</p>
             </aside>

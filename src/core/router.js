@@ -21,8 +21,8 @@ export const routes = {
   planejador:     { load: () => import("../pages/planejador.js"), titulo: "Planejador de cuidados", grupo: "ferramentas" },
   encaminhamento: { load: () => import("../pages/encaminhamento.js"), titulo: "Encaminhamento e rede", grupo: "ferramentas" },
   implantacao:    { load: () => import("../pages/implantacao.js"), titulo: "Implantação e indicadores", grupo: "ferramentas" },
-  aulas:          { load: () => import("../pages/aulas.js"), titulo: "Aulas", grupo: "aprenda" },
-  casos:          { load: () => import("../pages/casos.js"), titulo: "Casos clínicos", grupo: "aprenda" },
+  capacitacao:    { load: () => import("../pages/capacitacao.js"), titulo: "Capacitação profissional", grupo: "aprenda" },
+  casos:          { load: () => import("../pages/casos.js"), titulo: "Simulação clínica", grupo: "aprenda" },
   mitos:          { load: () => import("../pages/mitos.js"), titulo: "Mito ou fato", grupo: "aprenda" },
   workshop:       { load: () => import("../pages/workshop.js"), titulo: "Workshop", grupo: "workshop" },
   apresentar:     { load: () => import("../pages/apresentar.js"), titulo: "Apresentação do workshop", grupo: "workshop", modo: "present" },
@@ -30,7 +30,7 @@ export const routes = {
 };
 
 /* Endereços da versão anterior continuam funcionando */
-const aliases = { plano: "planejador", avaliacao: "calculadoras", trilha: "fluxograma", fluxo: "fluxograma", "": "inicio" };
+const aliases = { aulas: "capacitacao", plano: "planejador", avaliacao: "calculadoras", trilha: "fluxograma", fluxo: "fluxograma", "": "inicio" };
 
 export function parse(hash = location.hash) {
   const clean = decodeURIComponent(hash.replace(/^#\/?/, ""));
@@ -48,6 +48,7 @@ export async function navigate() {
   if (route.path === current.path && !firstRender) return;
 
   closeMenus();
+  document.getElementById("toast")?.classList.remove("is-on");
   if (typeof current.cleanup === "function") { try { current.cleanup(); } catch { /* ignora */ } }
 
   const def = routes[route.name] || { load: () => import("../pages/404.js"), titulo: "Página não encontrada" };

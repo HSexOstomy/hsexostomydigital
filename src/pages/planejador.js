@@ -1,11 +1,11 @@
 import { html, $, $$, on } from "../core/dom.js";
 import { pageHead, icon, callout, toast, copyText } from "../core/ui.js";
-import { historico, diagnosticos, escalas } from "../data/cuidado.js";
+import { historico, diagnosticos, escalas, sugestaoPlano, passosPlano } from "../data/cuidado.js";
 import { terapiaIntensiva } from "../data/quadros.js";
 import { session, memory } from "../core/store.js";
 
-const PASSOS = ["Avaliação", "Diagnósticos", "Resultados e intervenções", "Registro"];
-const novo = () => ({ passo: 0, id: "", data: new Date().toISOString().slice(0, 10), h: {}, med: [], com: [], sx: {}, sxNota: {}, dx: [], car: {}, fat: {}, ind: {}, prazo: {}, ativ: {}, pts: {}, enc: [], encOutro: "", obs: "", retorno: "", rev: {}, texto: "", textoEditado: false });
+const PASSOS = passosPlano.map((p) => p[0]);
+const novo = () => ({ passo: 0, id: "", data: new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10), h: {}, med: [], com: [], sx: {}, sxNota: {}, dx: [], car: {}, fat: {}, ind: {}, prazo: {}, ativ: {}, pts: {}, auto: {}, enc: [], encOutro: "", obs: "", retorno: "", rev: {}, texto: "", textoEditado: false });
 let S = Object.assign(novo(), session.read("plano", {}));
 const salvar = () => session.write("plano", S);
 const dxDe = (cod) => diagnosticos.find((d) => d.codigo === cod);
@@ -21,6 +21,27 @@ function sugeridos() {
   if (nao("parceria") || sim("intimidade")) s.add("00449");
   if (sim("mudancas")) s.add("00435");
   return s;
+}
+
+/* Aplica o plano inicial sugerido a um diagnóstico */
+function aplicarSugestao(cod, forcar = false) {
+  if (S.auto[cod] && !forcar) return;
+  const sg = sugestaoPlano[cod]; if (!sg) return;
+  S.ind[cod] = {}; sg.ind.forEach((i) => { S.ind[cod][i] = { a: "", m: "" }; });
+  S.ativ[cod] = [...sg.ativ]; S.pts[cod] = [...sg.pts];
+  S.prazo[cod] = S.prazo[cod] ?? 90; S.auto[cod] = true;
+}
+
+/* Encaminhamentos sugeridos a partir dos dados (Terapia Intensiva, 7.9.5) */
+function encSugeridos() {
+  const out = new Map(), sc = memory.scores;
+  if (sc.iief && sc.iief.valor <= 16) out.set("Urologia", "função erétil ≤ 16 no IIEF-15");
+  if (S.sx.sofrimento === "Sim") out.set("Psicologia", "mudanças geram sofrimento ou preocupação");
+  if (S.dx.includes("00400") || S.dx.includes("00390")) out.set("Psicologia", "ansiedade ou medo excessivos");
+  if (S.dx.includes("00449")) out.set("Terapia de casal/familiar", "conflito relacional com a parceria");
+  if (S.dx.includes("00494")) out.set("Sexologia", "identidade conturbada ligada à sexualidade");
+  if (S.med.some((m) => ["Anti-hipertensivos", "Antidepressivos", "Opioides"].includes(m)) && S.sx.funcao === "Sim") out.set("Urologia", "possível causa iatrogênica a revisar com a equipe médica");
+  return [...out].filter(([p]) => !S.enc.includes(p));
 }
 
 /* ---------- Passo 1: avaliação ---------- */
@@ -61,7 +82,7 @@ function passoAvaliacao() {
 function passoDiagnosticos() {
   const sug = sugeridos();
   return html`<div class="stack-lg">
-    ${callout("info", "Diagnósticos para consideração", html`<p>Os nove diagnósticos do Quadro 6 foram identificados a partir de problemas relatados por homens com estoma. Os marcados como <strong>sugeridos</strong> se relacionam às respostas da avaliação, mas a decisão é do seu julgamento clínico.</p>`)}
+    ${sug.size ? html`<div class="sug-bar"><p>${icon("spark")}<span><strong>${sug.size} ${sug.size === 1 ? "diagnóstico sugerido" : "diagnósticos sugeridos"}</strong> a partir da avaliação: ${[...sug].map((c) => dxDe(c).nome).join(", ")}.</span></p><button class="btn btn-sm btn-primary" data-aplicar-dx>Aplicar sugestões</button></div>` : callout("info", "Sem sugestões ainda", html`<p>Preencha o histórico sexual na etapa 1 para receber sugestões. Você pode escolher livremente abaixo.</p>`)}
     <div class="dx-grid">${diagnosticos.map((d) => {
       const on = S.dx.includes(d.codigo);
       return html`<article class="dx-card ${on ? "is-on" : ""}">
@@ -86,7 +107,7 @@ function passoResultados() {
   return html`<div class="stack-lg">${S.dx.map((cod) => {
     const d = dxDe(cod), ind = S.ind[cod] || {}, at = S.ativ[cod] || [], pt = S.pts[cod] || [];
     return html`<section class="card plan-dx">
-      <header class="plan-dx-head"><span class="dx-code">${d.codigo}</span><h3>${d.nome}</h3></header>
+      <header class="plan-dx-head"><span class="dx-code">${d.codigo}</span><h3>${d.nome}</h3>${S.auto[cod] ? html`<span class="tag tag-warn">${icon("spark")}Plano sugerido, revise</span>` : ""}<button class="btn btn-sm btn-ghost" data-resugerir="${cod}">Restaurar sugestão</button></header>
       <div class="plan-cols">
         <div>
           <h4>Resultado NOC: ${d.noc.nome} (${d.noc.codigo})</h4>
@@ -158,8 +179,11 @@ export function gerarTexto() {
 }
 
 function passoRegistro() {
+  if (!S.retorno) S.retorno = "em até 3 meses (mínimo trimestral), com teleatendimento intermediário se necessário";
   if (!S.textoEditado) S.texto = gerarTexto();
+  const sugEnc = encSugeridos();
   return html`<div class="stack-lg">
+    ${sugEnc.length ? html`<div class="sug-bar"><p>${icon("spark")}<span><strong>Encaminhamentos sugeridos:</strong> ${sugEnc.map(([p, m]) => `${p} (${m})`).join("; ")}.</span></p><button class="btn btn-sm btn-primary" data-aplicar-enc>Aplicar</button></div>` : ""}
     <section class="card"><h3>${icon("network")}Observações e encaminhamentos</h3>
       <fieldset class="field"><legend class="label">Encaminhamentos realizados</legend><div class="choice-grid">${terapiaIntensiva.profissionais.map((p) => html`<label class="choice"><input type="checkbox" data-enc value="${p}" ${S.enc.includes(p) ? "checked" : ""}><span>${p}</span></label>`)}</div></fieldset>
       <div class="form-grid" style="margin-top:var(--sp-4)">
@@ -186,8 +210,9 @@ function passoRegistro() {
 const PASSO_FN = [passoAvaliacao, passoDiagnosticos, passoResultados, passoRegistro];
 
 function corpo() {
-  return html`<ol class="stepper" aria-label="Etapas do plano">${PASSOS.map((p, i) => html`<li><button type="button" class="step-btn ${i < S.passo ? "is-done" : ""}" data-ir="${i}" aria-current="${i === S.passo ? "step" : "false"}"><span class="n">${i + 1}</span>${p}</button></li>`)}</ol>
-    <h2 class="sr-only">Etapa ${S.passo + 1}: ${PASSOS[S.passo]}</h2><div id="passo">${PASSO_FN[S.passo]()}</div>
+  return html`<ol class="stepper" aria-label="Etapas do plano">${PASSOS.map((p, i) => html`<li><button type="button" class="step-btn ${i < S.passo ? "is-done" : ""}" data-ir="${i}" aria-current="${i === S.passo ? "step" : "false"}"><span class="n">${String(i + 1).padStart(2, "0")}</span>${p}</button></li>`)}</ol>
+    <div class="passo-intro"><span class="passo-n">${String(S.passo + 1).padStart(2, "0")}</span><div><h2 class="h4">${PASSOS[S.passo]}</h2><p>${passosPlano[S.passo][1]}</p></div></div>
+    <div id="passo">${PASSO_FN[S.passo]()}</div>
     <div class="etapa-nav">
       ${S.passo > 0 ? html`<button class="btn" data-ir="${S.passo - 1}">${icon("back")}${PASSOS[S.passo - 1]}</button>` : html`<button class="btn btn-ghost" data-novo>${icon("trash")}Começar novo plano</button>`}
       <span class="small muted">${S.dx.length} ${S.dx.length === 1 ? "diagnóstico selecionado" : "diagnósticos selecionados"}</span>
@@ -198,7 +223,7 @@ function corpo() {
 export default {
   render() {
     return html`<div class="page">
-      ${pageHead({ kicker: "Ferramentas · Sugestões Específicas", title: "Planejador de cuidados", lead: "Do histórico ao registro: organize avaliação, diagnósticos NANDA-I, resultados NOC com escala e prazo, intervenções NIC e pontos de atenção do Quadro 6, e gere o texto da evolução.", crumbs: [[null, "Planejador"]] })}
+      ${pageHead({ kicker: "Ferramentas · Sugestões Específicas", title: "Planejador de cuidados", lead: "Do histórico ao registro: organize avaliação, diagnósticos NANDA-I, resultados NOC com escala e prazo, intervenções NIC e pontos de atenção do Quadro 6, e gere o texto da evolução.", crumbs: [[null, "Planejador"]], art: "enfermeiro-fita" })}
       <div class="container">
         ${callout("alerta", "Privacidade", html`<p>Use apenas casos fictícios ou dados não identificáveis. O plano fica somente nesta aba do navegador e é apagado ao fechá-la. Nada é enviado.</p>`)}
         <div class="planner" id="planner">${corpo()}</div>
@@ -226,12 +251,15 @@ export default {
       on(box, "change", "[data-multi]", (ev, el) => set(() => { const k = el.dataset.multi === "medicacoes" ? "med" : "com"; S[k] = toggle(S[k], el.value); }, el.dataset.multi === "medicacoes")),
       on(box, "change", "[data-sx]", (ev, el) => set(() => { S.sx[el.dataset.sx] = el.value; })),
       on(box, "input", "[data-sxnota]", (ev, el) => set(() => { S.sxNota[el.dataset.sxnota] = el.value; })),
-      on(box, "change", "[data-dx]", (ev, el) => set(() => { S.dx = toggle(S.dx, el.dataset.dx); S.dx.sort((a, b) => diagnosticos.findIndex((d) => d.codigo === a) - diagnosticos.findIndex((d) => d.codigo === b)); }, true)),
+      on(box, "click", "[data-aplicar-dx]", () => set(() => { sugeridos().forEach((c) => { if (!S.dx.includes(c)) S.dx.push(c); }); S.dx.sort((a, b) => diagnosticos.findIndex((d) => d.codigo === a) - diagnosticos.findIndex((d) => d.codigo === b)); S.dx.forEach((c) => aplicarSugestao(c)); toast("Diagnósticos sugeridos aplicados"); }, true)),
+      on(box, "click", "[data-resugerir]", (ev, b) => set(() => { aplicarSugestao(b.dataset.resugerir, true); toast("Sugestão restaurada"); }, true)),
+      on(box, "click", "[data-aplicar-enc]", () => set(() => { encSugeridos().forEach(([p]) => S.enc.push(p)); S.textoEditado = false; toast("Encaminhamentos aplicados"); }, true)),
+      on(box, "change", "[data-dx]", (ev, el) => set(() => { S.dx = toggle(S.dx, el.dataset.dx); if (S.dx.includes(el.dataset.dx)) aplicarSugestao(el.dataset.dx); S.dx.sort((a, b) => diagnosticos.findIndex((d) => d.codigo === a) - diagnosticos.findIndex((d) => d.codigo === b)); }, true)),
       on(box, "input", "[data-car]", (ev, el) => set(() => { S.car[el.dataset.car] = el.value; })),
       on(box, "input", "[data-fat]", (ev, el) => set(() => { S.fat[el.dataset.fat] = el.value; })),
       on(box, "input", "[data-prazo]", (ev, el) => set(() => { S.prazo[el.dataset.prazo] = el.value; })),
       on(box, "change", "[data-ind]", (ev, el) => set(() => { const [c, i] = par(el.dataset.ind); S.ind[c] = S.ind[c] || {}; if (S.ind[c][i]) delete S.ind[c][i]; else S.ind[c][i] = { a: "", m: "" }; }, true)),
-      on(box, "change", "[data-indv]", (ev, el) => set(() => { const [c, i, k] = par(el.dataset.indv); S.ind[c][i][k] = el.value; })),
+      on(box, "change", "[data-indv]", (ev, el) => set(() => { const [c, i, k] = par(el.dataset.indv); S.ind[c][i][k] = el.value; if (k === "a" && el.value && !S.ind[c][i].m) S.ind[c][i].m = String(Math.min(5, Number(el.value) + 2)); }, true)),
       on(box, "change", "[data-ativ]", (ev, el) => set(() => { const [c, i] = par(el.dataset.ativ); S.ativ[c] = toggle(S.ativ[c] || [], Number(i)); el.closest(".check").classList.toggle("is-on", el.checked); })),
       on(box, "change", "[data-pt]", (ev, el) => set(() => { const [c, i] = par(el.dataset.pt); S.pts[c] = toggle(S.pts[c] || [], Number(i)); el.closest(".check").classList.toggle("is-on", el.checked); })),
       on(box, "change", "[data-enc]", (ev, el) => set(() => { S.enc = toggle(S.enc, el.value); }, true)),

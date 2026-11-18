@@ -1,17 +1,19 @@
 import { html, $, $$, on } from "../core/dom.js";
 import { pageHead, icon } from "../core/ui.js";
-import { fluxograma, fluxogramaLista, fluxogramaLegenda, nos } from "../figures/fluxograma.js";
+import { fluxogramaLista, nos } from "../figures/fluxograma.js";
+import { figuraInterativa } from "../figures/imagem.js";
 
 const TIPO = { inicio: "Início", processo: "Processo-ação", decisao: "Ponto de decisão", alternativo: "Caminho alternativo", loop: "Processo contínuo" };
 const visitados = new Set(["admissao"]);
 let atual = "admissao";
 
 function inspector() {
-  const n = nos[atual];
-  const total = Object.keys(nos).length;
-  return html`<span class="tag ${n.cor ? "" : "tag-navy"} ${n.cor ? "c-" + n.cor : ""}" style="${n.cor ? "background:var(--c-bg);color:var(--c);border-color:var(--c-line)" : ""}">${TIPO[n.tipo]}</span>
+  const n = nos[atual], total = Object.keys(nos).length;
+  return html`<span class="tag ${n.cor ? "c-" + n.cor + " tag-comp" : "tag-navy"}">${TIPO[n.tipo]}</span>
     <h2 tabindex="-1" id="insp-title">${n.titulo}</h2>
     <p>${n.texto}</p>
+    ${n.exemplo ? html`<div class="exemplo"><p class="exemplo-t">${icon("users")}Exemplo na prática</p><p>${n.exemplo}</p></div>` : ""}
+    ${n.duvida ? html`<details class="duvida"><summary>${icon("info")}${n.duvida[0]}</summary><p>${n.duvida[1]}</p></details>` : ""}
     <h3 class="h4">${n.tipo === "decisao" ? "Qual é a resposta?" : "Próximo passo"}</h3>
     <div class="next-list">${n.proximo.map(([rot, id]) => html`<button type="button" class="next-btn ${rot.startsWith("Não") ? "is-no" : ""}" data-go-node="${id}"><span>${rot}</span>${icon("arrow")}</button>`)}</div>
     ${n.secao || n.ferramenta ? html`<div class="btn-row insp-links">
@@ -25,18 +27,17 @@ function inspector() {
 export default {
   render() {
     return html`<div class="page">
-      ${pageHead({ kicker: "O Programa · Figura 3", title: "Fluxograma do cuidado", lead: "O acompanhamento longitudinal do homem com estoma, com pontos de decisão, caminhos alternativos e o loop contínuo. Selecione qualquer etapa para entender o que fazer e para onde seguir.", crumbs: [["programa", "O Programa"], [null, "Fluxograma"]],
-        actions: html`<button class="btn" data-print>${icon("print")}Imprimir fluxograma</button>` })}
+      ${pageHead({ kicker: "O Programa · Figura 3", title: "Fluxograma do cuidado", lead: "A Figura 3 do manual, interativa. Toque em qualquer etapa para ver o que fazer, um exemplo na prática e a dúvida mais comum.", crumbs: [["programa", "O Programa"], [null, "Fluxograma"]], art: "homem-roxo-fita",
+        actions: html`<a class="btn" href="assets/img/fig3-fluxograma.webp" target="_blank" rel="noopener">${icon("download")}Abrir figura original</a>` })}
       <div class="container">
         <div class="flow-layout">
           <div class="flow-canvas">
-            <div class="flow-svg figure-box">${fluxograma({ id: "fx" })}</div>
+            <div class="flow-svg figure-box figure-orig">${figuraInterativa("fluxograma", "data-node")}</div>
             <div class="flow-mobile">${fluxogramaLista()}</div>
+            <p class="small muted" style="margin-top:.6rem">Fonte: manual H_Sex_Ostomy, Figura 3, p. 28. Use como orientação geral: o julgamento clínico adapta o processo a cada pessoa.</p>
           </div>
           <aside class="flow-inspector card" id="inspector" aria-live="polite">${inspector()}</aside>
         </div>
-        ${fluxogramaLegenda()}
-        <p class="small muted" style="margin-top:1rem">Fonte: manual H_Sex_Ostomy, Figura 3, p. 28 (elaboração própria, 2026). Use como orientação geral: o julgamento clínico adapta o processo às singularidades de cada pessoa.</p>
       </div>
     </div>`;
   },
@@ -51,7 +52,7 @@ export default {
     ir(atual);
     const offs = [
       on(root, "click", "[data-node]", (ev, el) => ir(el.dataset.node)),
-      on(root, "keydown", ".fig-hot", (ev, el) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); ir(el.dataset.node, true); } }),
+      on(root, "keydown", ".hot", (ev, el) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); ir(el.dataset.node, true); } }),
       on(root, "click", "[data-go-node]", (ev, b) => ir(b.dataset.goNode, true)),
       on(root, "click", "[data-reset]", () => { visitados.clear(); visitados.add("admissao"); ir("admissao", true); })
     ];

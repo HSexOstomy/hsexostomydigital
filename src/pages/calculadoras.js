@@ -25,7 +25,7 @@ export function calcQSM(r) {
 
 function visaoGeral() {
   return html`<div class="page">
-    ${pageHead({ kicker: "Ferramentas", title: "Calculadoras", lead: "Instrumentos validados para a população brasileira que apoiam a avaliação da função e da satisfação sexual masculina. São autoaplicáveis e podem ser usados por enfermeiros(as), inclusive de forma assistida.", crumbs: [[null, "Calculadoras"]] })}
+    ${pageHead({ kicker: "Ferramentas", title: "Calculadoras", lead: "Instrumentos validados para a população brasileira que apoiam a avaliação da função e da satisfação sexual masculina. São autoaplicáveis e podem ser usados por enfermeiros(as), inclusive de forma assistida.", crumbs: [[null, "Calculadoras"]], art: "enfermeiro" })}
     <div class="container">
       <div class="grid grid-2">
         ${["iief", "qsm"].map((k) => html`<article class="card calc-card">

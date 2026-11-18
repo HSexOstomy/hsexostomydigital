@@ -2,10 +2,9 @@ import { html, $, $$, on } from "../core/dom.js";
 import { pageHead, icon, compBadge, tagPage, callout } from "../core/ui.js";
 import { componentes } from "../data/programa.js";
 import { permissao, revisao, informacaoLimitada, sugestoes, terapiaIntensiva } from "../data/quadros.js";
-import { explissit } from "../figures/explissit.js";
+import { figuraInterativa } from "../figures/imagem.js";
 
 const metas = { permissao, revisao, informacao: informacaoLimitada, sugestoes, terapia: terapiaIntensiva };
-let lang = "pt";
 
 function detalhe(id) {
   const c = componentes.find((x) => x.id === id) || componentes[0];
@@ -30,19 +29,12 @@ export default {
   render(ctx) {
     const sel = componentes.some((c) => c.id === ctx.params[0]) ? ctx.params[0] : "permissao";
     return html`<div class="page">
-      ${pageHead({ kicker: "O Programa", title: "Cinco componentes, um cuidado contínuo", lead: "O H_Sex_Ostomy adapta o modelo EX-PLISSIT à reabilitação sexual do homem com estoma. Selecione um componente na figura para ver objetivo, meta e como aplicar.", crumbs: [[null, "Componentes"]] })}
+      ${pageHead({ kicker: "O Programa", title: "Cinco componentes, um cuidado contínuo", lead: "O H_Sex_Ostomy adapta o modelo EX-PLISSIT à reabilitação sexual do homem com estoma. Toque em um componente da figura para ver objetivo, meta e como aplicar.", crumbs: [[null, "Componentes"]], art: "homem-branco-fita" })}
       <div class="container">
         <div class="explorer">
           <figure class="explorer-fig">
-            <div class="fig-toolbar">
-              <span class="small muted">Figura 2 do manual, redesenhada</span>
-              <div class="pills" role="group" aria-label="Idioma dos rótulos">
-                <button type="button" class="pill-btn" data-lang="pt" aria-pressed="${lang === "pt"}">Português</button>
-                <button type="button" class="pill-btn" data-lang="en" aria-pressed="${lang === "en"}">Original (inglês)</button>
-              </div>
-            </div>
-            <div class="figure-box" id="exp-holder">${explissit({ lang, id: "prog" })}</div>
-            <figcaption class="small muted">Modelo EX-PLISSIT. Adaptado de Taylor e Davis (2007).</figcaption>
+            <div class="figure-box figure-orig" id="exp-holder">${figuraInterativa("explissit", "data-comp")}</div>
+            <figcaption class="small muted">Figura 2 do manual: Modelo EX-PLISSIT (Taylor; Davis, 2007). Toque em P, LI, SS, IT ou no círculo externo.</figcaption>
           </figure>
           <div id="comp-detail">${detalhe(sel)}</div>
         </div>
@@ -65,23 +57,16 @@ export default {
   mount(root, ctx) {
     const select = (id, push = true) => {
       $("#comp-detail", root).innerHTML = String(detalhe(id));
-      $$(".fig-hot", root).forEach((g) => g.classList.toggle("is-active", g.dataset.comp === id));
+      $$(".hot", root).forEach((g) => g.classList.toggle("is-active", g.dataset.comp === id));
       if (push) history.replaceState(null, "", `#programa/${id}`);
     };
     const current = componentes.some((c) => c.id === ctx.params[0]) ? ctx.params[0] : "permissao";
-    $$(".fig-hot", root).forEach((g) => g.classList.toggle("is-active", g.dataset.comp === current));
+    $$(".hot", root).forEach((g) => g.classList.toggle("is-active", g.dataset.comp === current));
 
     const offs = [
-      on(root, "click", ".fig-hot", (ev, g) => { select(g.dataset.comp); if (window.innerWidth < 900) $("#comp-detail", root).scrollIntoView({ behavior: "smooth" }); }),
-      on(root, "keydown", ".fig-hot", (ev, g) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); select(g.dataset.comp); } }),
-      on(root, "click", "[data-pick]", (ev, a) => { ev.preventDefault(); select(a.dataset.pick); $(".explorer", root).scrollIntoView({ behavior: "smooth" }); }),
-      on(root, "click", "[data-lang]", (ev, b) => {
-        lang = b.dataset.lang;
-        $$("[data-lang]", root).forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
-        $("#exp-holder", root).innerHTML = String(explissit({ lang, id: "prog" }));
-        const active = (location.hash.split("/")[1]) || "permissao";
-        $$(".fig-hot", root).forEach((g) => g.classList.toggle("is-active", g.dataset.comp === active));
-      })
+      on(root, "click", ".hot", (ev, g) => { select(g.dataset.comp); if (window.innerWidth < 900) $("#comp-detail", root).scrollIntoView({ behavior: "smooth" }); }),
+      on(root, "keydown", ".hot", (ev, g) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); select(g.dataset.comp); } }),
+      on(root, "click", "[data-pick]", (ev, a) => { ev.preventDefault(); select(a.dataset.pick); $(".explorer", root).scrollIntoView({ behavior: "smooth" }); })
     ];
     return () => offs.forEach((f) => f());
   }

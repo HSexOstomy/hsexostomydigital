@@ -34,7 +34,7 @@ export default {
             </ul>
           </div>
           <div class="hero-art">
-            <div class="hero-ring"><img src="assets/img/equipe-grupo.webp" alt="Ilustração do manual: uma enfermeira, um enfermeiro e três homens, um deles com bolsa de estomia." width="760" height="870"></div>
+            <div class="hero-ring"><img src="assets/img/equipe-grupo.webp" alt="Ilustração do manual: uma enfermeira, um enfermeiro e três homens, um deles com bolsa de estomia." width="1100" height="1255"></div>
           </div>
         </div>
       </section>
@@ -45,7 +45,7 @@ export default {
             ["consulta", "chat", "Na consulta", "Roteiro passo a passo com falas prontas para pedir Permissão, informar e revisar."],
             ["planejador", "clipboard", "Planejador de cuidados", "Do histórico ao registro: NANDA-I, escala NOC, NIC e evolução pronta."],
             ["manual", "book", "Manual", "Todas as seções, quadros e figuras do manual, com busca."],
-            ["aulas", "cap", "Aulas", "Nove unidades curtas com exercícios e feedback imediato."]
+            ["capacitacao", "cap", "Capacitação", "Nove módulos clínicos com alertas e situações para análise."]
           ].map(([href, ic, t, d]) => html`<a class="card card-link quick" href="#${href}"><span class="card-icon">${icon(ic)}</span><h2 class="h3">${t}</h2><p>${d}</p><span class="go">Abrir ${icon("arrow")}</span></a>`)}
         </div>
       </section>
@@ -67,13 +67,13 @@ export default {
             <p>O programa nasceu de uma revisão de escopo, de observação participante em um serviço de reabilitação, de um estudo de métodos mistos com homens com estomas e de um processo de cocriação com enfermeiras da reabilitação.</p>
             ${figPercurso()}
           </div>
-          <img class="band-art" src="assets/img/homem-enfermeira.webp" alt="Ilustração do manual: um homem com bolsa de estomia ao lado de uma enfermeira" width="760" height="676" loading="lazy">
+          <img class="band-art" src="assets/img/homem-enfermeira.webp" alt="Ilustração do manual: um homem com bolsa de estomia ao lado de uma enfermeira" width="1200" height="1066" loading="lazy">
         </div>
       </section>
 
       <section class="container section">
         <div class="grid grid-3 uses">
-          <article class="card"><span class="card-icon">${icon("book")}</span><h3>Para estudar</h3><p>Leia o manual por seções, explore o fluxograma, os conceitos da teoria e faça as aulas no seu ritmo.</p><a href="#manual">Abrir o manual</a></article>
+          <article class="card"><span class="card-icon">${icon("book")}</span><h3>Para estudar</h3><p>Leia o manual por seções, explore o fluxograma, os conceitos da teoria e faça os módulos de capacitação.</p><a href="#manual">Abrir o manual</a></article>
           <article class="card"><span class="card-icon">${icon("heart")}</span><h3>Para atender</h3><p>Use as falas sugeridas, aplique o IIEF-15 e o QS-M, monte o plano de cuidados e imprima orientações ao paciente.</p><a href="#consulta">Ir para a consulta</a></article>
           <article class="card"><span class="card-icon">${icon("users")}</span><h3>Para formar equipes</h3><p>Conduza oficinas com o roteiro do workshop e planeje a implantação com as diretrizes e indicadores do manual.</p><a href="#implantacao">Planejar a implantação</a></article>
         </div>

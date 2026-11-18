@@ -18,13 +18,27 @@ window.HSO_CONFIG = {
       titulacao: "Prof. Dr., Escola de Enfermagem da UFBA",
       foto: "",
       bio: "Orientador da pesquisa e coordenador do programa."
+    },
+    {
+      papel: "Coorientação",
+      nome: "Óscar Javier Vergara Escobar",
+      titulacao: "Enfermeiro, Universidad El Bosque (Bogotá, Colômbia)",
+      foto: "",
+      bio: "Coorientador da pesquisa. Pesquisador em enfermagem e saúde de homens."
     }
   ],
 
   instituicoes: [
     { nome: "Universidade Federal da Bahia", logo: "assets/img/logo-ufba.webp", url: "https://www.ufba.br/" },
     { nome: "Programa de Pós-Graduação em Enfermagem e Saúde, Escola de Enfermagem da UFBA", logo: "assets/img/logo-ppgenf.webp", url: "https://enfermagem.ufba.br/" },
-    { nome: "NECTA: Núcleo de Estudos de Cuidado e Tecnologia da Saúde do Adulto", logo: "assets/img/logo-necta.webp", url: "" }
+    { nome: "Universidad El Bosque, Bogotá, Colômbia", logo: "", url: "https://www.unbosque.edu.co/" }
+  ],
+
+  /* Apoio e financiamento (aparecem no rodapé e na página Equipe) */
+  apoio: [
+    { nome: "CAPES: Coordenação de Aperfeiçoamento de Pessoal de Nível Superior", logo: "assets/img/logo-capes.webp", url: "https://www.gov.br/capes/" },
+    { nome: "CNPq: Conselho Nacional de Desenvolvimento Científico e Tecnológico", logo: "assets/img/logo-cnpq.webp", url: "https://www.gov.br/cnpq/" },
+    { nome: "NECTA: Núcleo de Estudos de Cuidado e Tecnologia da Saúde do Adulto, EEUFBA", logo: "assets/img/logo-necta.webp", url: "" }
   ],
 
   contato: {

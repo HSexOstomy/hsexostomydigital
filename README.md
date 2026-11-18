@@ -9,9 +9,9 @@ Plataforma educacional do *H_Sex_Ostomy: Programa de Reabilitação da Sexualida
 | Área | Páginas | Para que serve |
 |---|---|---|
 | **Sobre** | `#sobre`, `#equipe`, `#contato` | Apresentação, identidade, autoria, ficha técnica, instituições |
-| **O Programa** | `#programa`, `#fundamentos`, `#fluxograma`, `#manual`, `#sintese` | EX-PLISSIT interativo, Teoria do Bem-Viver com os 41 conceitos, Figura 3 interativa, leitor do manual com busca, Apêndice A para imprimir |
+| **O Programa** | `#programa`, `#fundamentos`, `#fluxograma`, `#manual`, `#sintese` | Figuras originais do manual em alta resolução com áreas clicáveis (Figura 2 e Figura 3), exemplos práticos em cada etapa do fluxograma, os 41 conceitos da teoria, leitor do manual com busca, Apêndice A para imprimir |
 | **Ferramentas** | `#consulta`, `#orientacoes`, `#calculadoras`, `#iief`, `#qsm`, `#planejador`, `#encaminhamento`, `#implantacao` | Roteiro com falas prontas, folheto ao paciente, IIEF-15 e QS-M, plano de cuidados com evolução, gerador de encaminhamento, indicadores do Quadro 7 |
-| **Aprenda** | `#aulas`, `#casos`, `#mitos` | Nove aulas com exercícios, três casos clínicos fictícios, mito ou fato |
+| **Aprenda** | `#capacitacao`, `#casos`, `#mitos` | Capacitação profissional em nove módulos clínicos com alertas; simulação clínica ramificada (o caso muda conforme as escolhas); mito ou fato |
 | **Workshop** | `#workshop`, `#apresentar`, `#participar` | Roteiro de 3 horas, apresentação em tela cheia com notas, modo participante por QR code |
 
 ## Como editar sem mexer no código
@@ -20,7 +20,7 @@ Plataforma educacional do *H_Sex_Ostomy: Programa de Reabilitação da Sexualida
 Edite **`site.config.js`** pelo GitHub (abra o arquivo, clique no lápis, altere o texto entre aspas e clique em *Commit changes*):
 
 - `autores`: nome, titulação, foto (`assets/img/arquivo.webp`) e biografia
-- `instituicoes`: nome, logo e endereço
+- `instituicoes` e `apoio`: nome, logo e endereço (CAPES, CNPq, NECTA/EEUFBA)
 - `contato.email`
 - `manualPdf`: link público do PDF do manual (aparece o botão "Baixar PDF")
 - `workshop`: data, horário, duração, modalidade e os links do **Meet**, **pré-teste** e **pós-teste**. O endereço em `enderecoSite` gera os QR codes.
@@ -35,7 +35,8 @@ O conteúdo fica separado da interface, em `src/data/`:
 | `cuidado.js` | Quadro 6 completo: histórico, 9 diagnósticos com NOC, NIC e pontos de atenção; escalas NOC; exemplo de registro |
 | `instrumentos.js` | IIEF-15 e QS-M (Anexos A e B), domínios e faixas |
 | `manual.js` | Seções do leitor do manual, textos e referências |
-| `aprendizagem.js` | Aulas, casos clínicos, mito ou fato, treino de falas |
+| `capacitacao.js` | Módulos da capacitação: conteúdo, alertas, situações e questões |
+| `aprendizagem.js` | Simulação clínica ramificada (casos e desfechos), mito ou fato, treino de falas |
 | `workshop.js` | Roteiro (agenda), checklist, eixos da discussão e slides com notas do apresentador |
 
 Ao editar, mantenha as aspas e vírgulas. Se algo quebrar, o histórico do GitHub permite voltar à versão anterior.
@@ -51,10 +52,10 @@ styles/               tokens.css (cores e fontes do manual), base, layout, compo
 src/main.js           inicialização, menu acessível, ações globais
 src/core/             dom.js (renderização com escape automático), router.js (rotas por hash), store.js, ui.js
 src/data/             conteúdo do manual
-src/figures/          figuras redesenhadas em SVG/HTML (EX-PLISSIT, fluxograma, estratégias, modelo teórico, rede, síntese)
+src/figures/          figuras originais do manual com áreas clicáveis (imagem.js), etapas do fluxograma, síntese
 src/pages/            uma página por arquivo, carregada sob demanda
 assets/fonts/         Fira Sans e Fira Sans Condensed (tipografia do manual, licença OFL)
-assets/img/           capa, ilustrações e logos extraídos do manual
+assets/img/           capa, figuras 1 a 6 e ilustrações extraídas do PDF a 300 dpi, com fundo transparente; logos
 assets/vendor/        qrcode-generator (MIT)
 ```
 

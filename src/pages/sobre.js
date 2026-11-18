@@ -7,7 +7,7 @@ const cfg = window.HSO_CONFIG || {};
 
 function sobre() {
   return html`<div class="page">
-    ${pageHead({ kicker: "Sobre", title: "O que é o H_Sex_Ostomy", lead: "Um programa de saúde para apoiar enfermeiros(as) na abordagem da sexualidade e no cuidado à saúde sexual de homens com estomas de eliminação, ao longo da reabilitação.", crumbs: [[null, "O projeto"]] })}
+    ${pageHead({ kicker: "Sobre", title: "O que é o H_Sex_Ostomy", lead: "Um programa de saúde para apoiar enfermeiros(as) na abordagem da sexualidade e no cuidado à saúde sexual de homens com estomas de eliminação, ao longo da reabilitação.", crumbs: [[null, "O projeto"]], art: "enfermeiros-dupla" })}
     <div class="container">
       <div class="about-grid">
         <div class="prose">
@@ -44,14 +44,16 @@ function sobre() {
   </div>`;
 }
 
+const inst = (i) => html`<div class="card inst">${i.logo ? html`<img src="${i.logo}" alt="" loading="lazy">` : html`<span class="inst-text">${i.nome.split(",")[0]}</span>`}<p>${i.url ? html`<a href="${i.url}" target="_blank" rel="noopener">${i.nome}</a>` : i.nome}</p></div>`;
+
 function equipe() {
   const autores = cfg.autores || [];
   return html`<div class="page">
     ${pageHead({ kicker: "Sobre", title: "Equipe e ficha técnica", lead: "Autoria, orientação e instituições envolvidas no desenvolvimento do H_Sex_Ostomy.", crumbs: [["sobre", "Sobre"], [null, "Equipe"]] })}
     <div class="container">
-      <div class="grid grid-2">
+      <div class="grid grid-3 people">
         ${autores.map((a) => html`<article class="card person">
-          ${a.foto ? html`<img class="person-photo" src="${a.foto}" alt="Fotografia de ${a.nome}" loading="lazy">` : html`<span class="person-initials" aria-hidden="true">${a.nome.split(" ").filter((p) => p.length > 2).slice(0, 2).map((p) => p[0]).join("")}</span>`}
+          ${a.foto ? html`<img class="person-photo" src="${a.foto}" alt="Fotografia de ${a.nome}" loading="lazy">` : html`<span class="person-initials" aria-hidden="true">${(() => { const p = a.nome.split(" ").filter((x) => x.length > 2); return p[0][0] + p[p.length - 1][0]; })()}</span>`}
           <div><p class="kicker">${a.papel}</p><h2 class="h3">${a.nome}</h2><p class="muted">${a.titulacao}</p><p>${a.bio}</p></div>
         </article>`)}
       </div>
@@ -63,7 +65,11 @@ function equipe() {
 
       <section class="section">
         <h2>Instituições</h2>
-        <div class="inst-grid">${(cfg.instituicoes || []).map((i) => html`<div class="card inst"><img src="${i.logo}" alt="" loading="lazy"><p>${i.url ? html`<a href="${i.url}" target="_blank" rel="noopener">${i.nome}</a>` : i.nome}</p></div>`)}</div>
+        <div class="inst-grid">${(cfg.instituicoes || []).map(inst)}</div>
+      </section>
+      <section class="section">
+        <h2>Apoio</h2>
+        <div class="inst-grid">${(cfg.apoio || []).map(inst)}</div>
         <p class="small muted">As marcas identificam vínculos acadêmicos e não implicam endosso institucional da plataforma.</p>
       </section>
     </div>

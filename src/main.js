@@ -75,12 +75,14 @@ function setupGlobal() {
 
 /* ---------- Rodapé a partir da configuração ---------- */
 function setupFooter() {
-  const logos = $("#footer-logos");
-  if (logos && Array.isArray(cfg.instituicoes)) {
-    logos.innerHTML = String(html`${cfg.instituicoes.map((i) => i.url
-      ? html`<a href="${i.url}" target="_blank" rel="noopener" title="${i.nome}"><img src="${i.logo}" alt="${i.nome}" loading="lazy"></a>`
-      : html`<span title="${i.nome}"><img src="${i.logo}" alt="${i.nome}" loading="lazy"></span>`)}`);
-  }
+  const logo = (i) => {
+    const inner = i.logo ? html`<img src="${i.logo}" alt="${i.nome}" loading="lazy">` : html`<span class="logo-text">${i.nome}</span>`;
+    return i.url ? html`<a href="${i.url}" target="_blank" rel="noopener" title="${i.nome}">${inner}</a>` : html`<span title="${i.nome}">${inner}</span>`;
+  };
+  const box = $("#footer-logos");
+  if (box) box.innerHTML = String(html`
+    <div class="logo-group"><p>Realização</p><div>${(cfg.instituicoes || []).map(logo)}</div></div>
+    ${(cfg.apoio || []).length ? html`<div class="logo-group"><p>Apoio</p><div>${cfg.apoio.map(logo)}</div></div>` : ""}`);
   const v = $("#footer-version");
   if (v && cfg.versao) v.textContent = "Versão " + cfg.versao;
 }

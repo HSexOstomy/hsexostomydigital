@@ -1,7 +1,8 @@
 /* Atividades interativas compartilhadas: mito ou fato, escolha a melhor fala e casos clínicos */
 import { html, on } from "../core/dom.js";
 import { icon } from "../core/ui.js";
-import { mitos, falasTreino, casos } from "../data/aprendizagem.js";
+import { mitos, falasTreino, casos, finais } from "../data/aprendizagem.js";
+import { figuraDestaque } from "../figures/imagem.js";
 
 const LETRAS = "ABCDE";
 
@@ -69,48 +70,63 @@ export function bindFalas(root, st, redraw) {
   ];
 }
 
-/* ---------- Casos clínicos ---------- */
-const FASE = { permissao: ["P", "p", "Permissão"], informacao: ["LI", "li", "Informação Limitada"], sugestoes: ["SS", "ss", "Sugestões Específicas"], terapia: ["IT", "it", "Terapia Intensiva"] };
-export const novoCaso = (id) => ({ id, e: 0, resp: {} });
+/* ---------- Simulação clínica ramificada ---------- */
+const NOME_FASE = { admissao: "Admissão", permissao: "Permissão", nao1: "Continuidade do atendimento", d2: "Demandas específicas?", nao2: "Continuidade do acompanhamento", informacao: "Informação Limitada", sugestoes: "Sugestões Específicas", d3: "Suporte especializado?", terapia: "Terapia Intensiva", avaliacao: "Avaliação, Revisão e Reflexão", loop: "Loop" };
+export const novoCaso = (id) => { const c = casos.find((x) => x.id === id); return { id, no: c.inicio, hist: [], escolha: null, vinculo: 0 }; };
 
 export function listaCasos(base = "casos") {
   return html`<div class="grid grid-3">${casos.map((c) => html`<a class="card card-link case-card" href="#${base}/${c.id}">
     <span class="case-avatar" aria-hidden="true">${c.nome.replace("Seu ", "")[0]}</span>
     <h3>${c.nome}, ${c.idade} anos</h3><p class="small">${c.resumo}</p>
-    <div class="tags">${c.tags.map((t) => html`<span class="tag">${t}</span>`)}<span class="tag">${c.encontros.length} encontros</span></div>
+    <div class="tags">${c.tags.map((t) => html`<span class="tag">${t}</span>`)}</div>
     <span class="go">Começar ${icon("arrow")}</span></a>`)}</div>`;
+}
+
+function vinculoMeter(v) {
+  const n = Math.max(-3, Math.min(5, v)), pct = ((n + 3) / 8) * 100;
+  const rot = v >= 3 ? "Vínculo forte" : v >= 1 ? "Vínculo em construção" : v === 0 ? "Vínculo neutro" : "Vínculo fragilizado";
+  return html`<div class="vinculo"><div class="vinculo-top"><span>${icon("heart")}Vínculo com a pessoa</span><strong>${rot}</strong></div><div class="vinculo-bar"><span style="width:${pct}%" class="${v < 0 ? "neg" : ""}"></span></div></div>`;
 }
 
 export function viewCaso(st, base = "casos") {
   const c = casos.find((x) => x.id === st.id);
-  const fim = st.e >= c.encontros.length;
-  const timeline = html`<ol class="case-timeline" aria-label="Encontros">${c.encontros.map((en, k) => html`<li class="${k === st.e ? "is-current" : ""} ${st.resp[k] !== undefined ? "is-done" : ""}"><button type="button" data-enc="${k}" ${k > Object.keys(st.resp).length ? "disabled" : ""}><span class="n">${k + 1}</span><span>${en.titulo}</span></button></li>`)}</ol>`;
+  const fim = finais[st.no];
+  const no = fim ? null : c.nos[st.no];
+  const fase = fim ? (st.no === "fim_bom" ? "loop" : "avaliacao") : no.fase;
+  const lado = html`<aside class="sim-side">
+    <div class="card sim-map"><p class="kicker">Onde estamos</p><p class="sim-fase">${NOME_FASE[fase] || ""}</p>${figuraDestaque("fluxograma", fase)}</div>
+    ${vinculoMeter(st.vinculo)}
+    ${st.hist.length ? html`<div class="card sim-hist"><p class="kicker">Suas decisões</p><ol>${st.hist.map((h) => html`<li class="${h.efeito > 0 ? "pos" : h.efeito < 0 ? "neg" : ""}"><strong>${h.titulo}</strong><span>${h.t}</span></li>`)}</ol></div>` : ""}
+  </aside>`;
   if (fim) {
-    const ok = c.encontros.filter((en, k) => en.opcoes[st.resp[k]]?.certo).length;
-    return html`<div class="case-wrap">${timeline}<div class="act-card act-end"><p class="kicker">Fim do caso</p><h2>${c.nome}: ${ok} de ${c.encontros.length} condutas alinhadas ao programa</h2>
-      <p>Repare como Permissão e Revisão aparecem em todos os encontros e como as demandas evoluem ao longo do tempo.</p>
-      <div class="btn-row"><button class="btn btn-primary" data-caso-reset>${icon("spark")}Refazer o caso</button><a class="btn" href="#${base}">Escolher outro caso</a></div></div></div>`;
+    return html`<div class="sim">${lado}<article class="act-card sim-end sim-${fim.tipo}"><p class="kicker">Desfecho</p><h2>${fim.titulo}</h2><p>${fim.texto}</p>
+      <p class="small muted">${st.hist.filter((h) => h.efeito > 0).length} de ${st.hist.length} decisões fortaleceram o cuidado.</p>
+      <div class="btn-row"><button class="btn btn-primary" data-caso-reset>${icon("spark")}Refazer por outro caminho</button><a class="btn" href="#${base}">Escolher outro caso</a></div></article></div>`;
   }
-  const en = c.encontros[st.e], r = st.resp[st.e], [sig, cor, nomeFase] = FASE[en.fase];
-  return html`<div class="case-wrap">
-    ${timeline}
-    <article class="act-card case-scene c-${cor}">
-      <div class="act-top"><span class="tag">Encontro ${st.e + 1} · ${en.titulo}</span><span class="comp-badge c-${cor}" title="${nomeFase}" style="min-width:34px;height:34px;font-size:.85rem">${sig}</span></div>
-      <p class="case-story">${en.cena}</p>
-      <p class="quiz-q">${en.pergunta}</p>
-      <div>${en.opcoes.map((o, k) => html`<button type="button" class="option ${r !== undefined && o.certo ? "is-right" : ""} ${r === k && !o.certo ? "is-wrong" : ""}" data-caso-op="${k}" ${r !== undefined ? "disabled" : ""}><span class="mark">${LETRAS[k]}</span><span>${o.t}</span></button>`)}</div>
-      ${r !== undefined ? html`<div class="feedback ${en.opcoes[r].certo ? "ok" : "no"}" role="status"><strong>${en.opcoes[r].certo ? "Conduta coerente com o programa." : "Vale repensar."}</strong>${en.opcoes[r].feedback}</div>
-        <div class="act-next">${!en.opcoes[r].certo ? html`<button type="button" class="btn" data-caso-retry>Tentar de novo</button>` : ""}<button type="button" class="btn btn-primary" data-caso-next>${st.e === c.encontros.length - 1 ? "Concluir caso" : "Próximo encontro"}${icon("arrow")}</button></div>` : ""}
+  const e = st.escolha !== null ? no.opcoes[st.escolha] : null;
+  return html`<div class="sim">${lado}
+    <article class="act-card case-scene">
+      <div class="act-top"><span class="tag">${no.titulo}</span><span class="small muted">Passo ${st.hist.length + 1}</span></div>
+      <p class="case-story">${no.cena}</p>
+      <p class="quiz-q">${no.pergunta}</p>
+      <div>${no.opcoes.map((o, k) => html`<button type="button" class="option ${e && k === st.escolha ? (o.efeito > 0 ? "is-right" : o.efeito < 0 ? "is-wrong" : "is-neutral") : ""}" data-caso-op="${k}" ${e ? "disabled" : ""}><span class="mark">${LETRAS[k]}</span><span>${o.t}</span></button>`)}</div>
+      ${e ? html`<div class="consequencia" role="status">
+          <p class="resposta">${e.resposta}</p>
+          <div class="feedback ${e.efeito > 0 ? "ok" : e.efeito < 0 ? "no" : "neutral"}"><strong>${e.efeito > 0 ? "O vínculo se fortaleceu." : e.efeito < 0 ? "O vínculo se fragilizou." : "Sem ganho de vínculo."}</strong>${e.feedback}</div>
+        </div>
+        <div class="act-next"><button type="button" class="btn btn-primary" data-caso-next>${finais[e.next] ? "Ver desfecho" : "Continuar a história"}${icon("arrow")}</button></div>` : ""}
     </article>
   </div>`;
 }
 
 export function bindCaso(root, st, redraw) {
   return [
-    on(root, "click", "[data-caso-op]", (ev, b) => { st.resp[st.e] = Number(b.dataset.casoOp); redraw(); root.querySelector("[data-caso-next]")?.focus(); }),
-    on(root, "click", "[data-caso-next]", () => { st.e++; redraw(); root.querySelector(".case-story")?.scrollIntoView({ behavior: "smooth", block: "center" }); }),
-    on(root, "click", "[data-caso-retry]", () => { delete st.resp[st.e]; redraw(); }),
-    on(root, "click", "[data-enc]", (ev, b) => { st.e = Number(b.dataset.enc); redraw(); }),
-    on(root, "click", "[data-caso-reset]", () => { st.e = 0; st.resp = {}; redraw(); })
+    on(root, "click", "[data-caso-op]", (ev, b) => { st.escolha = Number(b.dataset.casoOp); redraw(); root.querySelector("[data-caso-next]")?.focus({ preventScroll: true }); root.querySelector(".consequencia")?.scrollIntoView({ behavior: "smooth", block: "nearest" }); }),
+    on(root, "click", "[data-caso-next]", () => {
+      const c = casos.find((x) => x.id === st.id), no = c.nos[st.no], o = no.opcoes[st.escolha];
+      st.hist.push({ titulo: no.titulo, t: o.t, efeito: o.efeito }); st.vinculo += o.efeito; st.no = o.next; st.escolha = null;
+      redraw(); root.querySelector(".act-card")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }),
+    on(root, "click", "[data-caso-reset]", () => { Object.assign(st, novoCaso(st.id)); redraw(); })
   ];
 }

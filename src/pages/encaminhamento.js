@@ -23,7 +23,7 @@ function texto() {
 export default {
   render() {
     return html`<div class="page">
-      ${pageHead({ kicker: "Ferramentas · Terapia Intensiva", title: "Encaminhamento e rede", lead: "Quando a demanda excede o escopo de atuação autônoma do(a) enfermeiro(a), o encaminhamento qualificado garante acesso a cuidado especializado, sem encerrar o acompanhamento.", crumbs: [[null, "Encaminhamento"]] })}
+      ${pageHead({ kicker: "Ferramentas · Terapia Intensiva", title: "Encaminhamento e rede", lead: "Quando a demanda excede o escopo de atuação autônoma do(a) enfermeiro(a), o encaminhamento qualificado garante acesso a cuidado especializado, sem encerrar o acompanhamento.", crumbs: [[null, "Encaminhamento"]], art: "homem-negro-fita" })}
       <div class="container">
         <section class="section">
           <h2 class="sr-only">Quando, como e para quem encaminhar</h2>

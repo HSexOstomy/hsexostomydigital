@@ -16,7 +16,7 @@ function hub() {
   const itens = [
     ["participar/mitos", "spark", "Mito ou fato?", "10 afirmações rápidas", "Quebra-gelo"],
     ["participar/falas", "chat", "Escolha a melhor fala", "3 situações de consulta", "Informação Limitada"],
-    ["participar/casos", "cases", "Casos clínicos", "Decidam em grupo", "Atividade prática"],
+    ["participar/casos", "cases", "Simulação clínica", "O caso muda com suas escolhas", "Em grupo"],
     ["participar/reflexao", "bulb", "Minha reflexão", "Para a discussão final", "Discussão"]
   ];
   return html`<div class="page pt">
@@ -25,7 +25,7 @@ function hub() {
       <p class="pt-lead">Aqui ficam as atividades do encontro. Abra cada uma quando a facilitadora indicar. Suas respostas não são enviadas nem registradas.</p>
       <ul class="pt-list">${itens.map(([href, ic, t, d, tag]) => html`<li><a class="pt-item" href="#${href}"><span class="pt-ic">${icon(ic)}</span><span><strong>${t}</strong><small>${d}</small></span><span class="tag">${tag}</span></a></li>`)}</ul>
       <div class="pt-more"><p class="small muted">Depois do encontro, explore a plataforma completa:</p>
-        <div class="btn-row"><a class="btn btn-sm" href="#consulta">Na consulta</a><a class="btn btn-sm" href="#manual">Manual</a><a class="btn btn-sm" href="#aulas">Aulas</a></div></div>
+        <div class="btn-row"><a class="btn btn-sm" href="#consulta">Na consulta</a><a class="btn btn-sm" href="#manual">Manual</a><a class="btn btn-sm" href="#capacitacao">Capacitação</a></div></div>
     </div>
   </div>`;
 }
@@ -52,7 +52,7 @@ export default {
     if (a === "falas") return html`<div class="page pt">${topo("Escolha a melhor fala")}<div class="pt-body" id="pt-act">${viewFalas(sf)}</div></div>`;
     if (a === "casos" && casos.some((c) => c.id === id)) { sc[id] = sc[id] || novoCaso(id); const c = casos.find((x) => x.id === id);
       return html`<div class="page pt">${topo(`${c.nome}, ${c.idade} anos`)}<div class="pt-body"><p class="pt-lead">${c.resumo}</p><div id="pt-act">${viewCaso(sc[id], "participar/casos")}</div></div></div>`; }
-    if (a === "casos") return html`<div class="page pt">${topo("Casos clínicos")}<div class="pt-body"><h2 class="sr-only">Casos disponíveis</h2><p class="pt-lead">Escolham um caso em grupo. Leiam a cena, discutam e decidam juntos. Depois, compartilhem a justificativa com todos.</p>${listaCasos("participar/casos")}</div></div>`;
+    if (a === "casos") return html`<div class="page pt">${topo("Casos clínicos")}<div class="pt-body"><h2 class="sr-only">Casos disponíveis</h2><p class="pt-lead">Escolham um caso em grupo. Cada decisão muda a história. Discutam antes de escolher e anotem a justificativa para compartilhar.</p>${listaCasos("participar/casos")}</div></div>`;
     if (a === "reflexao") return viewReflexao();
     return hub();
   },

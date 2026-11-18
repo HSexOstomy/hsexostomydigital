@@ -126,12 +126,21 @@
 .footer-nav { display: grid; gap: .45rem; }
 .footer-nav a { color: #fff; text-decoration: none; font-size: var(--fs-sm); }
 .footer-nav a:hover { text-decoration: underline; color: #fff; }
-.footer-logos { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: flex-end; }
-.footer-logos a, .footer-logos span { background: #fff; border-radius: 12px; padding: .55rem .8rem; display: grid; place-items: center; height: 64px; }
-.footer-logos img { max-height: 46px; width: auto; }
+.footer-logos { display: grid; gap: .9rem; justify-items: end; }
+.logo-group p { margin: 0 0 .35rem; font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: .08em; color: #9aa6c3; text-align: right; }
+.logo-group > div { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: flex-end; }
+.logo-group a, .logo-group > div > span { background: #fff; border-radius: 12px; padding: .5rem .8rem; display: grid; place-items: center; height: 58px; }
+.logo-group img { max-height: 40px; max-width: 150px; width: auto; }
+.logo-text { font-family: var(--font-display); font-weight: 700; color: var(--navy-800); font-size: .85rem; line-height: 1.15; max-width: 150px; text-align: center; }
 .footer-legal { border-top: 1px solid rgba(255,255,255,.1); }
 .footer-legal p { width: min(100% - 2.5rem, var(--container)); margin: 0 auto; padding: var(--sp-4) 0 var(--sp-5); font-size: var(--fs-xs); color: #9aa6c3; }
-@media (max-width: 860px) { .footer-inner { grid-template-columns: 1fr; } .footer-logos { justify-content: flex-start; } }
+@media (max-width: 860px) { .footer-inner { grid-template-columns: 1fr; } .footer-logos, .logo-group > div { justify-items: start; justify-content: flex-start; } .logo-group p { text-align: left; } }
 
 .noscript { padding: 4rem 0; }
 .with-sidebar > *, .manual-main, .reader, .reader-body, .figure, .figure-quadro { min-width: 0; }
+
+.page-head.has-art { min-height: 300px; }
+.page-head.has-art .container > * { max-width: min(62%, 720px); }
+.head-art { position: absolute; right: max(1rem, calc((100vw - var(--container)) / 2 - 40px)); bottom: 0; height: 92%; max-height: 300px; width: auto; max-width: 44%; object-fit: contain; object-position: right bottom; z-index: 0; pointer-events: none; }
+@media (max-width: 900px) { .head-art { display: none; } .page-head.has-art { min-height: 0; } .page-head.has-art .container > * { max-width: none; } }
+.page-head.has-art::after { display: none; }

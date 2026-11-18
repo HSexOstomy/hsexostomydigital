@@ -6,7 +6,7 @@ export default {
   render(ctx) {
     const disf = ctx.params[0] === "disfuncoes";
     return html`<div class="page">
-      ${pageHead({ kicker: "Ferramentas", title: "Orientações ao paciente", lead: "Dicas práticas para mais conforto, segurança e bem-estar na intimidade (Quadro 3), prontas para conversar e imprimir. Inclui o quadro de disfunções sexuais por tipo de cirurgia para consulta do(a) profissional.", crumbs: [[null, "Orientações"]],
+      ${pageHead({ kicker: "Ferramentas", title: "Orientações ao paciente", lead: "Dicas práticas para mais conforto, segurança e bem-estar na intimidade (Quadro 3), prontas para conversar e imprimir. Inclui o quadro de disfunções sexuais por tipo de cirurgia para consulta do(a) profissional.", crumbs: [[null, "Orientações"]], art: "homem-branco-fita",
         actions: html`<button class="btn btn-primary" data-print>${icon("print")}Imprimir folheto</button><a class="btn" href="#consulta/informacao">Falas por tema</a>` })}
       <div class="container">
         <article class="folheto print-area" aria-labelledby="folheto-t">

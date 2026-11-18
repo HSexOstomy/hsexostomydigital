@@ -77,7 +77,7 @@
 @media (max-width: 700px) { .ficha { grid-template-columns: 1fr; } .ficha > div:nth-child(odd) { border-right: 0; } }
 .inst-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-4); margin-bottom: var(--sp-3); }
 .inst { display: grid; gap: .8rem; align-content: start; }
-.inst img { height: 64px; width: auto; object-fit: contain; justify-self: start; }
+.inst img { height: 56px; max-width: 200px; width: auto; object-fit: contain; justify-self: start; }
 .inst p { margin: 0; font-size: var(--fs-sm); }
 @media (max-width: 760px) { .inst-grid { grid-template-columns: 1fr; } }
 .contact-card { display: flex; gap: var(--sp-4); align-items: center; }
@@ -387,3 +387,32 @@ mark { background: #fdf0b7; color: inherit; padding: 0 .1em; border-radius: 3px;
 .enc-out { position: sticky; top: calc(var(--header-h) + 20px); border: 2px solid var(--navy-800); }
 .enc-text { background: #fffef9; border: 1px solid #ece4c6; border-radius: 10px; padding: 1rem; }
 @media (max-width: 900px) { .enc-layout { grid-template-columns: 1fr; } .enc-out { position: static; } }
+
+/* Exemplo e dúvida no fluxograma */
+.exemplo { background: var(--sky-100); border: 1px solid #bfdff3; border-radius: 12px; padding: .8rem 1rem; margin-bottom: .8rem; }
+.exemplo p { margin: 0; font-size: var(--fs-sm); }
+.exemplo .exemplo-t { display: flex; align-items: center; gap: .4rem; font-weight: 700; color: var(--r); margin-bottom: .3rem; font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: .05em; }
+.duvida { border: 1px dashed var(--line-strong); border-radius: 12px; padding: .1rem .9rem; margin-bottom: var(--sp-4); background: #fff; }
+.duvida summary { cursor: pointer; display: flex; align-items: center; gap: .45rem; font-weight: 600; color: var(--navy-800); padding: .55rem 0; font-size: var(--fs-sm); }
+.duvida p { font-size: var(--fs-sm); margin: 0 0 .7rem; }
+.tag-comp { background: var(--c-bg); color: var(--c); border-color: var(--c-line); }
+/* Conceitos da Figura 1 */
+.chip-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .6rem; margin-top: var(--sp-4); }
+.chip-group { background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--g, var(--navy-700)); border-radius: 12px; padding: .6rem .8rem; }
+.chip-group p { font-family: var(--font-display); font-weight: 700; color: var(--navy-800); margin: 0 0 .35rem; font-size: .95rem; }
+.chip-group div { display: flex; flex-wrap: wrap; gap: .25rem .55rem; font-size: var(--fs-sm); }
+.cg-enf { --g: #e39b2c; } .cg-rea { --g: #3a8f45; } .cg-pes { --g: #8b3f8f; } .cg-amb { --g: #777; } .cg-tem { --g: #4868b0; } .cg-bv { --g: var(--green-500); }
+.chip-btn { border: 0; background: transparent; padding: 0; font: inherit; color: var(--ink-2); text-decoration: underline dotted; text-underline-offset: 3px; cursor: pointer; }
+.chip-btn:hover, .chip-btn.is-on { color: var(--violet-700); }
+@media (max-width: 700px) { .chip-groups { grid-template-columns: 1fr 1fr; } }
+.inst-text { font-family: var(--font-display); font-weight: 800; font-size: 1.35rem; color: var(--navy-800); height: 64px; display: flex; align-items: center; }
+.people .person { flex-direction: column; }
+.passo-intro { display: flex; gap: 1rem; align-items: flex-start; background: #fff; border: 1px solid var(--line); border-left: 5px solid var(--ss); border-radius: var(--radius); padding: 1rem 1.2rem; margin-bottom: var(--sp-5); }
+.passo-n { font-family: var(--font-display); font-weight: 800; font-size: 2rem; line-height: 1; color: var(--ss); }
+.passo-intro h2 { margin: 0 0 .2rem; }
+.passo-intro p { margin: 0; font-size: var(--fs-sm); color: var(--ink-2); max-width: 80ch; }
+.sug-bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .8rem; background: var(--li-bg); border: 1px solid var(--li-line); border-radius: var(--radius); padding: .8rem 1rem; }
+.sug-bar p { margin: 0; display: flex; gap: .5rem; align-items: flex-start; font-size: var(--fs-sm); }
+.sug-bar p .icon { color: var(--li); margin-top: .15rem; }
+.plan-dx-head { flex-wrap: wrap; }
+.plan-dx-head .btn-ghost { margin-left: auto; }

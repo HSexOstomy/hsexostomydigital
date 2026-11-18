@@ -64,8 +64,9 @@ export async function copyText(text) {
 }
 
 /* Cabeçalho de página padrão */
-export function pageHead({ kicker, title, lead, crumbs = [], actions = "" }) {
-  return html`<header class="page-head">
+export function pageHead({ kicker, title, lead, crumbs = [], actions = "", art = "" }) {
+  return html`<header class="page-head ${art ? "has-art" : ""}">
+    ${art ? html`<img class="head-art" src="assets/img/${art}.webp" alt="" loading="lazy" decoding="async">` : ""}
     <div class="container">
       ${crumbs.length ? html`<nav aria-label="Você está em"><ol class="breadcrumb"><li><a href="#inicio">Início</a></li>${crumbs.map(([href, label]) => href ? html`<li><a href="#${href}">${label}</a></li>` : html`<li aria-current="page">${label}</li>`)}</ol></nav>` : ""}
       ${kicker ? html`<p class="kicker">${kicker}</p>` : ""}
