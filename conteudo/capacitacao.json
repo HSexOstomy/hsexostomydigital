@@ -4,11 +4,11 @@
       "id": "por-que",
       "titulo": "Por que abordar a sexualidade na reabilitação",
       "min": 12,
+      "objetivo": "Reconhecer a sexualidade como necessidade legítima de cuidado e entender por que o tema costuma ficar em silêncio.",
       "secoes": [
         "apresentacao",
         "7-5"
       ],
-      "objetivo": "Reconhecer a sexualidade como necessidade legítima de cuidado e entender por que o tema costuma ficar em silêncio.",
       "blocos": [
         {
           "titulo": "Uma lacuna da assistência",
@@ -47,18 +47,18 @@
           "opcoes": [
             {
               "t": "Que ele não quer falar do assunto e o tema deve ser evitado.",
-              "feedback": "O comentário indica uma crença sobre o fim da vida sexual, não uma recusa. É uma oportunidade para oferecer o espaço com Permissão.",
-              "certo": false
+              "certo": false,
+              "feedback": "O comentário indica uma crença sobre o fim da vida sexual, não uma recusa. É uma oportunidade para oferecer o espaço com Permissão."
             },
             {
               "t": "Que há uma crença a ser explorada; vale abrir o tema com Permissão e normalizar a dúvida.",
-              "feedback": "Isso. “Não posso mais ter vida sexual” é um dos mitos listados no Quadro 2 (p. 39).",
-              "certo": true
+              "certo": true,
+              "feedback": "Isso. “Não posso mais ter vida sexual” é um dos mitos listados no Quadro 2 (p. 39)."
             },
             {
               "t": "Que ele deve ser encaminhado à psicologia imediatamente.",
-              "feedback": "Ainda não há avaliação que indique encaminhamento. O primeiro passo é a escuta.",
-              "certo": false
+              "certo": false,
+              "feedback": "Ainda não há avaliação que indique encaminhamento. O primeiro passo é a escuta."
             }
           ]
         },
@@ -67,13 +67,13 @@
           "opcoes": [
             {
               "t": "Esperar que ele traga o tema espontaneamente.",
-              "feedback": "O manual recomenda a iniciativa do(a) enfermeiro(a), justamente porque muitos não falam.",
-              "certo": false
+              "certo": false,
+              "feedback": "O manual recomenda a iniciativa do(a) enfermeiro(a), justamente porque muitos não falam."
             },
             {
               "t": "Introduzir o tema de forma gradual já na primeira consulta e retomá-lo, no mínimo, a cada três meses.",
-              "feedback": "Correto (7.3).",
-              "certo": true
+              "certo": true,
+              "feedback": "Correto (7.3)."
             }
           ]
         }
@@ -83,12 +83,12 @@
       "id": "fundamentos",
       "titulo": "Bem-Viver e EX-PLISSIT na prática",
       "min": 15,
+      "objetivo": "Traduzir os dois referenciais do programa em atitudes concretas durante a consulta.",
       "secoes": [
         "6-1",
         "6-2",
         "7-9"
       ],
-      "objetivo": "Traduzir os dois referenciais do programa em atitudes concretas durante a consulta.",
       "blocos": [
         {
           "titulo": "Teoria de Enfermagem de Reabilitação para o Bem-Viver",
@@ -122,13 +122,13 @@
           "opcoes": [
             {
               "t": "A Revisão, com reflexão sobre a própria atuação e retomada do que importa para ele.",
-              "feedback": "Isso. A revisão é focada no profissional e ajuda a desafiar suposições.",
-              "certo": true
+              "certo": true,
+              "feedback": "Isso. A revisão é focada no profissional e ajuda a desafiar suposições."
             },
             {
               "t": "A Terapia Intensiva, encaminhando à terapia de casal.",
-              "feedback": "Antes de encaminhar, é preciso entender a demanda. Aqui o problema foi de foco na consulta.",
-              "certo": false
+              "certo": false,
+              "feedback": "Antes de encaminhar, é preciso entender a demanda. Aqui o problema foi de foco na consulta."
             }
           ]
         },
@@ -137,13 +137,13 @@
           "opcoes": [
             {
               "t": "Garantir que, com tratamento, tudo voltará ao normal.",
-              "feedback": "Promessas irreais contrariam o Esperançar, que se ancora no presente vivido.",
-              "certo": false
+              "certo": false,
+              "feedback": "Promessas irreais contrariam o Esperançar, que se ancora no presente vivido."
             },
             {
               "t": "Construir com ele metas concretas e possíveis, reconhecendo outras formas de intimidade e prazer.",
-              "feedback": "Correto. Quadro 1: Esperançar e Reconstrução.",
-              "certo": true
+              "certo": true,
+              "feedback": "Correto. Quadro 1: Esperançar e Reconstrução."
             }
           ]
         }
@@ -153,11 +153,11 @@
       "id": "permissao",
       "titulo": "Preparar o encontro e pedir Permissão",
       "min": 12,
+      "objetivo": "Conduzir a abertura do tema com segurança, respeitar a recusa e registrar adequadamente.",
       "secoes": [
         "7-3",
         "7-9-1"
       ],
-      "objetivo": "Conduzir a abertura do tema com segurança, respeitar a recusa e registrar adequadamente.",
       "blocos": [
         {
           "titulo": "Antes de falar",
@@ -199,13 +199,13 @@
           "opcoes": [
             {
               "t": "Conduzir com a filha presente, pois ela ajuda na comunicação.",
-              "feedback": "A presença de acompanhante depende do desejo do homem, e o tema pede privacidade.",
-              "certo": false
+              "certo": false,
+              "feedback": "A presença de acompanhante depende do desejo do homem, e o tema pede privacidade."
             },
             {
               "t": "Pedir, de forma natural, um momento a sós com ele e perguntar se deseja que a filha permaneça.",
-              "feedback": "Correto. Quadro 5 e Quadro 1 (Família).",
-              "certo": true
+              "certo": true,
+              "feedback": "Correto. Quadro 5 e Quadro 1 (Família)."
             }
           ]
         },
@@ -214,13 +214,13 @@
           "opcoes": [
             {
               "t": "“Paciente sem queixas sexuais.”",
-              "feedback": "Esse registro distorce o que aconteceu: ele não negou queixas, recusou a conversa naquele momento.",
-              "certo": false
+              "certo": false,
+              "feedback": "Esse registro distorce o que aconteceu: ele não negou queixas, recusou a conversa naquele momento."
             },
             {
               "t": "“Ofertada abordagem sobre sexualidade; usuário optou por não conversar no momento; orientado sobre disponibilidade para retomar.”",
-              "feedback": "Isso: oferta, decisão e possibilidade de retomada (p. 31).",
-              "certo": true
+              "certo": true,
+              "feedback": "Isso: oferta, decisão e possibilidade de retomada (p. 31)."
             }
           ]
         }
@@ -230,10 +230,10 @@
       "id": "informacao",
       "titulo": "Informação Limitada: o que dizer e como",
       "min": 18,
+      "objetivo": "Oferecer informações gerais, precisas e pertinentes, selecionando os temas do Quadro 2 conforme a pessoa.",
       "secoes": [
         "7-9-3"
       ],
-      "objetivo": "Oferecer informações gerais, precisas e pertinentes, selecionando os temas do Quadro 2 conforme a pessoa.",
       "blocos": [
         {
           "titulo": "Informações que todo homem com estoma deveria ouvir",
@@ -281,18 +281,18 @@
           "opcoes": [
             {
               "t": "Explicar que, com a remoção do reto, a prática pode ficar impossibilitada; que o estoma nunca deve ser penetrado; e explorar outras formas de prazer com ele e o parceiro.",
-              "feedback": "Correto e sem julgamento: Quadros 2 e 3.",
-              "certo": true
+              "certo": true,
+              "feedback": "Correto e sem julgamento: Quadros 2 e 3."
             },
             {
               "t": "Dizer que o assunto é delicado e encaminhar ao urologista.",
-              "feedback": "A orientação está no escopo da Informação Limitada; encaminhar sem orientar fecha a conversa.",
-              "certo": false
+              "certo": false,
+              "feedback": "A orientação está no escopo da Informação Limitada; encaminhar sem orientar fecha a conversa."
             },
             {
               "t": "Sugerir o estoma como alternativa, com bastante lubrificante.",
-              "feedback": "Nunca. Há risco de lesão e sangramento.",
-              "certo": false
+              "certo": false,
+              "feedback": "Nunca. Há risco de lesão e sangramento."
             }
           ]
         },
@@ -301,13 +301,13 @@
           "opcoes": [
             {
               "t": "Que sem ejaculação não há orgasmo.",
-              "feedback": "Incorreto. São vias nervosas distintas.",
-              "certo": false
+              "certo": false,
+              "feedback": "Incorreto. São vias nervosas distintas."
             },
             {
               "t": "Que orgasmo e ejaculação são funções distintas e que é possível ter orgasmo seco; e que a alteração merece avaliação.",
-              "feedback": "Isso (p. 42).",
-              "certo": true
+              "certo": true,
+              "feedback": "Isso (p. 42)."
             }
           ]
         },
@@ -316,13 +316,13 @@
           "opcoes": [
             {
               "t": "Dobrar a bolsa e fixá-la à pele com fita adesiva, porque o peristaltismo tende a aumentar após o orgasmo.",
-              "feedback": "Correto (p. 40).",
-              "certo": true
+              "certo": true,
+              "feedback": "Correto (p. 40)."
             },
             {
               "t": "Ficar em jejum por 24 horas antes da relação.",
-              "feedback": "Não há essa recomendação. A orientação é evitar alimentos que favorecem gases nas horas anteriores.",
-              "certo": false
+              "certo": false,
+              "feedback": "Não há essa recomendação. A orientação é evitar alimentos que favorecem gases nas horas anteriores."
             }
           ]
         }
@@ -332,10 +332,10 @@
       "id": "disfuncoes",
       "titulo": "Cirurgia, nervos e disfunções sexuais",
       "min": 14,
+      "objetivo": "Relacionar o tipo de cirurgia e outros fatores às disfunções possíveis, para orientar e encaminhar com fundamento.",
       "secoes": [
         "7-9-3-1"
       ],
-      "objetivo": "Relacionar o tipo de cirurgia e outros fatores às disfunções possíveis, para orientar e encaminhar com fundamento.",
       "blocos": [
         {
           "titulo": "Inervação e função",
@@ -377,18 +377,18 @@
           "opcoes": [
             {
               "t": "É esperado após cistectomia radical e há fatores somados (idade, HAS, DM); vale avaliar, orientar e considerar encaminhamento urológico.",
-              "feedback": "Correto: Quadro 4 e fatores da p. 42.",
-              "certo": true
+              "certo": true,
+              "feedback": "Correto: Quadro 4 e fatores da p. 42."
             },
             {
               "t": "A ausência de ejaculação indica que a cirurgia foi malsucedida.",
-              "feedback": "Alterações ejaculatórias são esperadas nesse procedimento.",
-              "certo": false
+              "certo": false,
+              "feedback": "Alterações ejaculatórias são esperadas nesse procedimento."
             },
             {
               "t": "Como o desejo está preservado, não há o que fazer.",
-              "feedback": "A função erétil e o sofrimento associado merecem avaliação e cuidado.",
-              "certo": false
+              "certo": false,
+              "feedback": "A função erétil e o sofrimento associado merecem avaliação e cuidado."
             }
           ]
         },
@@ -397,13 +397,13 @@
           "opcoes": [
             {
               "t": "O uso de anti-hipertensivo, possível causa iatrogênica, a ser discutida com a equipe médica.",
-              "feedback": "Isso. O Quadro 6 pede verificar anti-hipertensivos, antidepressivos e opioides.",
-              "certo": true
+              "certo": true,
+              "feedback": "Isso. O Quadro 6 pede verificar anti-hipertensivos, antidepressivos e opioides."
             },
             {
               "t": "O tempo de estoma, porque após 1 ano não há mais recuperação.",
-              "feedback": "Não há esse limite; a recuperação é variável e gradual.",
-              "certo": false
+              "certo": false,
+              "feedback": "Não há esse limite; a recuperação é variável e gradual."
             }
           ]
         }
@@ -413,12 +413,12 @@
       "id": "avaliacao",
       "titulo": "Histórico sexual e instrumentos",
       "min": 16,
+      "objetivo": "Conduzir o histórico do Quadro 6 e aplicar e interpretar o IIEF-15 e o QS-M com segurança.",
       "secoes": [
         "7-7",
         "anexo-a",
         "anexo-b"
       ],
-      "objetivo": "Conduzir o histórico do Quadro 6 e aplicar e interpretar o IIEF-15 e o QS-M com segurança.",
       "blocos": [
         {
           "titulo": "Histórico sexual",
@@ -460,13 +460,13 @@
           "opcoes": [
             {
               "t": "Disfunção erétil grave; encaminhar à urologia.",
-              "feedback": "O escore reflete a ausência de atividade, não necessariamente de função. A interpretação está limitada.",
-              "certo": false
+              "certo": false,
+              "feedback": "O escore reflete a ausência de atividade, não necessariamente de função. A interpretação está limitada."
             },
             {
               "t": "Interpretação limitada: as respostas zero indicam ausência de atividade. Explore os motivos (medo, vergonha, parceria) e reavalie depois.",
-              "feedback": "Correto.",
-              "certo": true
+              "certo": true,
+              "feedback": "Correto."
             }
           ]
         },
@@ -475,13 +475,13 @@
           "opcoes": [
             {
               "t": "Começar perguntando sobre ereção e ejaculação.",
-              "feedback": "O NIC 5248 orienta começar pelos tópicos menos sensíveis.",
-              "certo": false
+              "certo": false,
+              "feedback": "O NIC 5248 orienta começar pelos tópicos menos sensíveis."
             },
             {
               "t": "Começar por adaptação ao estoma e relação com o corpo, e só depois função sexual.",
-              "feedback": "Isso.",
-              "certo": true
+              "certo": true,
+              "feedback": "Isso."
             }
           ]
         }
@@ -491,10 +491,10 @@
       "id": "processo",
       "titulo": "Processo de enfermagem: diagnóstico ao registro",
       "min": 18,
+      "objetivo": "Formular diagnósticos, resultados com escala e prazo e intervenções, e registrar no padrão do exemplo da p. 59.",
       "secoes": [
         "7-9-4"
       ],
-      "objetivo": "Formular diagnósticos, resultados com escala e prazo e intervenções, e registrar no padrão do exemplo da p. 59.",
       "blocos": [
         {
           "titulo": "Os nove diagnósticos do Quadro 6",
@@ -509,7 +509,7 @@
           ]
         },
         {
-          "titulo": "Registro completo",
+          "titulo": "Evolução",
           "texto": [
             "Dados que fundamentam o diagnóstico (características definidoras e fatores relacionados), resultados e indicadores, atividades realizadas, encaminhamentos, resposta da pessoa e evolução, com data, hora e identificação profissional."
           ]
@@ -536,18 +536,18 @@
           "opcoes": [
             {
               "t": "Função sexual prejudicada (00386).",
-              "feedback": "A função erétil está na faixa leve; o foco do relato é a imagem corporal.",
-              "certo": false
+              "certo": false,
+              "feedback": "A função erétil está na faixa leve; o foco do relato é a imagem corporal."
             },
             {
               "t": "Imagem corporal conturbada (00497).",
-              "feedback": "Correto: imagem mental negativa em relação ao aspecto físico.",
-              "certo": true
+              "certo": true,
+              "feedback": "Correto: imagem mental negativa em relação ao aspecto físico."
             },
             {
               "t": "Desempenho de papel ineficaz (00055).",
-              "feedback": "Não há dados sobre mudança de papel.",
-              "certo": false
+              "certo": false,
+              "feedback": "Não há dados sobre mudança de papel."
             }
           ]
         },
@@ -556,13 +556,13 @@
           "opcoes": [
             {
               "t": "“Melhorar a autoestima.”",
-              "feedback": "Sem indicador, escala nem prazo, não é possível avaliar na Revisão.",
-              "certo": false
+              "certo": false,
+              "feedback": "Sem indicador, escala nem prazo, não é possível avaliar na Revisão."
             },
             {
               "t": "“Satisfação com a aparência do corpo: de 2 (raramente positivo) para 4 (frequentemente positivo) em 90 dias.”",
-              "feedback": "Isso: indicador, estado atual, meta e prazo.",
-              "certo": true
+              "certo": true,
+              "feedback": "Isso: indicador, estado atual, meta e prazo."
             }
           ]
         }
@@ -572,11 +572,11 @@
       "id": "rede",
       "titulo": "Terapia Intensiva, rede e continuidade",
       "min": 12,
+      "objetivo": "Reconhecer quando encaminhar, fazê-lo de forma qualificada e manter a continuidade do cuidado.",
       "secoes": [
         "7-9-5",
         "8"
       ],
-      "objetivo": "Reconhecer quando encaminhar, fazê-lo de forma qualificada e manter a continuidade do cuidado.",
       "blocos": [
         {
           "titulo": "Quando encaminhar",
@@ -618,13 +618,13 @@
           "opcoes": [
             {
               "t": "Encaminhar à urologia e encerrar o acompanhamento de enfermagem.",
-              "feedback": "O manual pede continuidade e contrarreferência.",
-              "certo": false
+              "certo": false,
+              "feedback": "O manual pede continuidade e contrarreferência."
             },
             {
               "t": "Pactuar encaminhamento à urologia e avaliação em saúde mental, manter a Revisão e acompanhar a efetivação.",
-              "feedback": "Correto: dois critérios de encaminhamento presentes e continuidade garantida.",
-              "certo": true
+              "certo": true,
+              "feedback": "Correto: dois critérios de encaminhamento presentes e continuidade garantida."
             }
           ]
         }
@@ -634,11 +634,11 @@
       "id": "diversidade",
       "titulo": "Masculinidades, diversidade e parceria",
       "min": 14,
+      "objetivo": "Conduzir a abordagem sem presumir orientação sexual, modelo de relação ou de masculinidade, e incluir a parceria quando desejado.",
       "secoes": [
         "7-9-3",
         "6-1"
       ],
-      "objetivo": "Conduzir a abordagem sem presumir orientação sexual, modelo de relação ou de masculinidade, e incluir a parceria quando desejado.",
       "blocos": [
         {
           "titulo": "Masculinidades",
@@ -680,18 +680,18 @@
           "opcoes": [
             {
               "t": "“Desculpe, Rafael. E o seu namorado, como tem reagido?”, e seguir com linguagem neutra.",
-              "feedback": "Correto: reconhece, corrige e mantém o foco nele.",
-              "certo": true
+              "certo": true,
+              "feedback": "Correto: reconhece, corrige e mantém o foco nele."
             },
             {
               "t": "Ignorar a correção para não constranger.",
-              "feedback": "Ignorar fragiliza o reconhecimento.",
-              "certo": false
+              "certo": false,
+              "feedback": "Ignorar fragiliza o reconhecimento."
             },
             {
               "t": "Mudar de assunto para os cuidados com a bolsa.",
-              "feedback": "Desviar reforça o silêncio que o programa busca romper.",
-              "certo": false
+              "certo": false,
+              "feedback": "Desviar reforça o silêncio que o programa busca romper."
             }
           ]
         },
@@ -700,13 +700,13 @@
           "opcoes": [
             {
               "t": "Concordar e mudar de assunto.",
-              "feedback": "Presumir desinteresse pela idade é estigma.",
-              "certo": false
+              "certo": false,
+              "feedback": "Presumir desinteresse pela idade é estigma."
             },
             {
               "t": "Acolher a pergunta, pedir Permissão e explorar o que ele quer saber.",
-              "feedback": "Isso: a pergunta é uma abertura.",
-              "certo": true
+              "certo": true,
+              "feedback": "Isso: a pergunta é uma abertura."
             }
           ]
         }
