@@ -5,30 +5,24 @@
       "nome": "Ariana Luiza Rabelo",
       "papel": "Autoria do manual",
       "titulacao": "Enfermeira. Doutoranda em Enfermagem e Saúde (PPGENF/UFBA)",
-      "foto": "",
       "enquadramento": "centro",
-      "bio": "Autora do H_Sex_Ostomy: Programa de Reabilitação da Sexualidade Masculina, desenvolvido no doutorado.",
-      "link": ""
+      "bio": "Autora do H_Sex_Ostomy: Programa de Reabilitação da Sexualidade Masculina, desenvolvido no doutorado."
     },
     {
       "grupo": "principal",
       "nome": "Anderson Reis de Sousa",
       "papel": "Orientação e coordenação",
       "titulacao": "Prof. Dr., Escola de Enfermagem da UFBA",
-      "foto": "",
       "enquadramento": "centro",
-      "bio": "Orientador da pesquisa e coordenador do programa.",
-      "link": ""
+      "bio": "Orientador da pesquisa e coordenador do programa."
     },
     {
       "grupo": "principal",
       "nome": "Óscar Javier Vergara Escobar",
       "papel": "Coorientação",
       "titulacao": "Enfermeiro, Universidad El Bosque (Bogotá, Colômbia)",
-      "foto": "",
       "enquadramento": "centro",
-      "bio": "Coorientador da pesquisa. Pesquisador em enfermagem e saúde de homens.",
-      "link": ""
+      "bio": "Coorientador da pesquisa. Pesquisador em enfermagem e saúde de homens."
     }
   ],
   "fichaTecnica": [
@@ -54,7 +48,7 @@
     },
     {
       "item": "Projeto de origem",
-      "valor": "Promoção da sexualidade na reabilitação de homens com estomas de eliminação: desenvolvimento do programa H_Sex_Ostomy"
+      "valor": "Tese de doutorado: Promoção da sexualidade na reabilitação de homens com estomas de eliminação: desenvolvimento do programa H_Sex_Ostomy"
     },
     {
       "item": "Edição",
