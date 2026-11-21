@@ -11,7 +11,7 @@ Plataforma educacional do *H_Sex_Ostomy: Programa de Reabilitação da Sexualida
 | **Sobre** | `#sobre`, `#equipe`, `#contato` | Apresentação, identidade, autoria, ficha técnica, instituições |
 | **O Programa** | `#programa`, `#fundamentos`, `#fluxograma`, `#manual`, `#sintese` | Figuras originais do manual em alta resolução com áreas clicáveis (Figura 2 e Figura 3), exemplos práticos em cada etapa do fluxograma, os 41 conceitos da teoria, leitor do manual com busca, Apêndice A para imprimir |
 | **Ferramentas** | `#consulta`, `#orientacoes`, `#calculadoras`, `#iief`, `#qsm`, `#planejador`, `#encaminhamento`, `#implantacao` | Roteiro com falas prontas, folheto ao paciente, IIEF-15 e QS-M, plano de cuidados com evolução, gerador de encaminhamento, indicadores do Quadro 7 |
-| **Aprenda** | `#capacitacao`, `#casos`, `#mitos` | Capacitação profissional em nove módulos clínicos com alertas; simulação clínica ramificada (o caso muda conforme as escolhas); mito ou fato |
+| **Aprenda** | `#capacitacao`, `#casos`, `#mitos` | Formação de Habilidades em nove módulos clínicos com alertas; simulação clínica ramificada (o caso muda conforme as escolhas); mito ou fato |
 | **Workshop** | `#workshop`, `#apresentar`, `#participar` | Roteiro de 3 horas, apresentação em tela cheia com notas, modo participante por QR code |
 
 ## Como editar sem mexer no código
@@ -23,14 +23,18 @@ Textos, fotos, links e equipe são editados com cliques pelo **Pages CMS** (grat
 2. Na primeira vez, instale o GitHub App do Pages CMS e libere o repositório `hsexostomydigital`.
 3. Abra o repositório. O menu mostra:
    - **Equipe e parceiros**: equipe principal, bolsistas e colaboradores(as) (foto recortada automaticamente no círculo, enquadramento, função, formação, minibiografia e link do currículo); ficha técnica; instituições de realização e apoio (com logos)
-   - **Textos do site**: página inicial (incluindo um aviso em destaque opcional), Sobre o programa, textos de abertura de cada página, folheto de orientações ao paciente (com contato do serviço), contato, rodapé, manual/guia em PDF e materiais para download
-   - **Workshop**: data, horário, links do Meet, pré-teste e pós-teste, roteiro, checklist, eixos da discussão; slides (títulos, tópicos e notas do apresentador)
-   - **Capacitação e atividades**: módulos da capacitação, Mito ou fato, Escolha a melhor fala e textos dos casos da simulação clínica
+   - **Textos do site**: página inicial (com aviso em destaque opcional), Sobre o programa, textos de abertura de cada página, folheto de orientações ao paciente, contato e rodapé
+   - **Manual**: PDF (arquivo ou link), capa, título, edição, autoria e outros botões de download
+   - **Interação**: registros de eventos (com fotos, materiais e caixa de comentários), notícias, documentos para baixar e o e-mail que recebe os comentários
+   - **Workshop**: data, horário, links do Meet, pré-teste e pós-teste, roteiro, checklist, eixos da discussão; slides (títulos, tópicos e notas)
+   - **Formação de Habilidades e atividades**: módulos, Mito ou fato, Escolha a melhor fala e textos dos casos da simulação clínica
 4. Altere, clique em **Save**. O site atualiza sozinho em 1 a 2 minutos.
 
 Os dados ficam em `conteudo/*.json` e a configuração do painel em `.pages.yml`. Fotos vão para `assets/img/` e PDFs para `assets/docs/`. Campos marcados "Não altere" são códigos internos.
 
 O painel não edita o visual, a ordem das abas, as escalas e instrumentos (IIEF-15, QS-M), os diagnósticos NANDA-I/NOC/NIC, o fluxograma, os textos e quadros do manual nem os caminhos da simulação. Isso continua no código (`src/`).
+
+Comentários dos eventos: enviados por e-mail pelo FormSubmit (formsubmit.co, gratuito). No primeiro comentário, o e-mail de destino recebe um pedido de ativação; clique em **Activate Form**. O destinatário é trocado em Interação > Comentários.
 
 Para convidar outras pessoas a editar sem conta no GitHub: no painel, **Collaborators** > e-mail. O que elas salvam vai direto para o ar.
 
@@ -88,6 +92,8 @@ Os módulos JavaScript não funcionam abrindo o `index.html` direto do disco; us
 ## Versões anteriores
 
 - `backup-site-2026-11-21`: site como estava antes do painel de edição
+- `backup-site-2026-11-21-tarde`: site antes das alterações da Ariana e da aba Interação
+- `acervo-imagens`: imagens originais em alta qualidade (não publicado)
 - `backup-before-v08-plataforma`: protótipo v0.7, antes da reconstrução como plataforma
 - `backup-before-v07-learning-and-care` e `backup-v05-before-menu-scales-fix`: versões mais antigas
 

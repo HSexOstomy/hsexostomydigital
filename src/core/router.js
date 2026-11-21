@@ -1,7 +1,7 @@
 /* Roteador por hash com carregamento sob demanda, títulos, foco e realce do menu */
 import { $, $$ } from "./dom.js";
 
-const SITE = "H_Sex_Ostomy Digital";
+const SITE = "H_Sex_Ostomy® Digital";
 
 export const routes = {
   inicio:         { load: () => import("../pages/inicio.js"), titulo: "Início" },
@@ -21,16 +21,19 @@ export const routes = {
   planejador:     { load: () => import("../pages/planejador.js"), titulo: "Planejador de cuidados", grupo: "ferramentas" },
   encaminhamento: { load: () => import("../pages/encaminhamento.js"), titulo: "Encaminhamento e rede", grupo: "ferramentas" },
   implantacao:    { load: () => import("../pages/implantacao.js"), titulo: "Implantação e indicadores", grupo: "ferramentas" },
-  capacitacao:    { load: () => import("../pages/capacitacao.js"), titulo: "Capacitação profissional", grupo: "aprenda" },
+  capacitacao:    { load: () => import("../pages/capacitacao.js"), titulo: "Formação de Habilidades", grupo: "aprenda" },
   casos:          { load: () => import("../pages/casos.js"), titulo: "Simulação clínica", grupo: "aprenda" },
   mitos:          { load: () => import("../pages/mitos.js"), titulo: "Mito ou fato", grupo: "aprenda" },
+  eventos:        { load: () => import("../pages/interacao.js"), titulo: "Registros de eventos", grupo: "interacao" },
+  noticias:       { load: () => import("../pages/interacao.js"), titulo: "Notícias", grupo: "interacao" },
+  documentos:     { load: () => import("../pages/interacao.js"), titulo: "Documentos", grupo: "interacao" },
   workshop:       { load: () => import("../pages/workshop.js"), titulo: "Workshop", grupo: "workshop" },
   apresentar:     { load: () => import("../pages/apresentar.js"), titulo: "Apresentação do workshop", grupo: "workshop", modo: "present" },
   participar:     { load: () => import("../pages/participar.js"), titulo: "Participe do workshop", grupo: "workshop" }
 };
 
 /* Endereços da versão anterior continuam funcionando */
-const aliases = { aulas: "capacitacao", plano: "planejador", avaliacao: "calculadoras", trilha: "fluxograma", fluxo: "fluxograma", "": "inicio" };
+const aliases = { interacao: "eventos", registros: "eventos", aulas: "capacitacao", plano: "planejador", avaliacao: "calculadoras", trilha: "fluxograma", fluxo: "fluxograma", "": "inicio" };
 
 export function parse(hash = location.hash) {
   const clean = decodeURIComponent(hash.replace(/^#\/?/, ""));

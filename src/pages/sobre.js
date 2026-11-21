@@ -8,7 +8,7 @@ const cfg = window.HSO_CONFIG || {};
 
 function sobre() {
   return html`<div class="page">
-    ${pageHead({ kicker: "Sobre", title: "O que é o H_Sex_Ostomy", lead: txt(C.sobre.lead), crumbs: [[null, "O projeto"]], art: "enfermeiros-dupla" })}
+    ${pageHead({ kicker: "Sobre", title: "O que é o H_Sex_Ostomy®", lead: txt(C.sobre.lead), crumbs: [[null, "O projeto"]], art: "enfermeiros-dupla" })}
     <div class="container">
       <div class="about-grid">
         <div class="prose">
@@ -17,7 +17,7 @@ function sobre() {
           <p class="small muted">Manual, pp. 8–9.</p>
         </div>
         <aside class="about-aside">
-          <img src="assets/img/capa.webp" alt="Capa do manual H_Sex_Ostomy: Programa de Reabilitação da Sexualidade Masculina" width="900" height="1273" loading="lazy">
+          <img src="${cfg.manual?.capa || "assets/img/capa.webp"}" alt="Capa do manual H_Sex_Ostomy: Programa de Reabilitação da Sexualidade Masculina" width="900" height="1273" loading="lazy">
           <a class="btn btn-primary" href="#manual">${icon("book")}Ler o manual</a>
         </aside>
       </div>

@@ -68,10 +68,13 @@ export async function copyText(text) {
 /* Textos de abertura das páginas editáveis pelo painel (conteudo/paginas.json); vazio mantém o texto padrão */
 const LEADS = new Map(arr(C.paginas.paginas).filter((p) => p && txt(p.titulo) && txt(p.texto).trim()).map((p) => [txt(p.titulo), txt(p.texto)]));
 
+/* Ilustrações muito largas ficam menores para não passar por baixo do texto */
+const ART_LARGA = { "homem-negro-fita": "head-art-larga", "dupla-homens-fita": "head-art-larga head-art-espelho" };
+
 export function pageHead({ kicker, title, lead, crumbs = [], actions = "", art = "" }) {
   if (typeof title === "string" && LEADS.has(title)) lead = LEADS.get(title);
   return html`<header class="page-head ${art ? "has-art" : ""}">
-    ${art ? html`<img class="head-art" src="assets/img/${art}.webp" alt="" loading="lazy" decoding="async">` : ""}
+    ${art ? (ART_LARGA[art] ? html`<img class="head-art ${ART_LARGA[art]}" src="assets/img/${art}.webp" alt="" loading="lazy" decoding="async">` : html`<img class="head-art" src="assets/img/${art}.webp" alt="" loading="lazy" decoding="async">`) : ""}
     <div class="container">
       ${crumbs.length ? html`<nav aria-label="Você está em"><ol class="breadcrumb"><li><a href="#inicio">Início</a></li>${crumbs.map(([href, label]) => href ? html`<li><a href="#${href}">${label}</a></li>` : html`<li aria-current="page">${label}</li>`)}</ol></nav>` : ""}
       ${kicker ? html`<p class="kicker">${kicker}</p>` : ""}

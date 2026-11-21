@@ -144,3 +144,5 @@
 .head-art { position: absolute; right: max(1rem, calc((100vw - var(--container)) / 2 - 40px)); bottom: 0; height: 92%; max-height: 300px; width: auto; max-width: 44%; object-fit: contain; object-position: right bottom; z-index: 0; pointer-events: none; }
 @media (max-width: 900px) { .head-art { display: none; } .page-head.has-art { min-height: 0; } .page-head.has-art .container > * { max-width: none; } }
 .page-head.has-art::after { display: none; }
+.head-art.head-art-larga { max-width: min(34%, 460px); }
+.head-art.head-art-espelho { transform: scaleX(-1); }

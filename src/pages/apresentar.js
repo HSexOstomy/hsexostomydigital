@@ -18,8 +18,7 @@ function slide(s, n) {
   switch (s.tipo) {
     case "capa": return html`<div class="sl sl-capa">
       <div><p class="sl-kicker">${s.kicker}</p><h1 class="sl-word"><span class="wordmark">H<i>_</i><b>Sex</b><i>_</i>Ostomy</span></h1><p class="sl-sub">${s.sub}</p>
-      <p class="sl-meta">${W.data ? new Date(`${W.data}T12:00:00-03:00`).toLocaleDateString("pt-BR", { day: "numeric", month: "long", year: "numeric" }) : ""} · ${W.modalidade || ""}</p>
-      <div class="sl-logos">${(cfg.instituicoes || []).map((i) => html`<img src="${i.logo}" alt="${i.nome}">`)}</div></div>
+      <p class="sl-meta">${W.data ? new Date(`${W.data}T12:00:00-03:00`).toLocaleDateString("pt-BR", { day: "numeric", month: "long", year: "numeric" }) : ""} · ${W.modalidade || ""}</p></div>
       <img class="sl-art" src="assets/img/equipe-grupo.webp" alt=""></div>`;
     case "pontos": return html`<div class="sl sl-pontos">${k}<h2>${s.titulo}</h2><ul>${s.pontos.map((p) => html`<li>${p}</li>`)}</ul>${s.rota ? html`<a class="sl-demo" href="#${s.rota}" target="_blank" rel="noopener">${icon("external")}Demonstrar no site</a>` : ""}</div>`;
     case "percurso": return html`<div class="sl sl-percurso">${k}<h2>${s.titulo}</h2>${figPercurso()}${s.texto ? html`<p class="sl-note">${s.texto}</p>` : ""}</div>`;

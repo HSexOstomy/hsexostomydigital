@@ -155,5 +155,5 @@ export const passosPlano = [
   ["Avaliação", "Colete o histórico clínico e sexual do Quadro 6 e, se pertinente, aplique o IIEF-15 e o QS-M. As respostas alimentam as sugestões das etapas seguintes."],
   ["Diagnósticos", "Escolha os diagnósticos NANDA-I que explicam o que você encontrou. A plataforma destaca os mais prováveis; confirme com seu julgamento e descreva características definidoras e fatores relacionados."],
   ["Resultados e intervenções", "Para cada diagnóstico: onde a pessoa está e aonde quer chegar (escala NOC de 1 a 5, com prazo) e o que você vai fazer (atividades NIC e pontos de atenção). Um plano inicial já vem sugerido; ajuste."],
-  ["Registro", "A evolução é escrita automaticamente no formato do exemplo do manual (p. 59), com encaminhamentos e retorno sugeridos a partir dos dados. Revise, complete, copie para o prontuário ou imprima."]
+  ["Evolução", "A evolução é escrita automaticamente no formato do exemplo do manual (p. 59), com encaminhamentos e retorno sugeridos a partir dos dados. Revise, complete, copie para o prontuário ou imprima."]
 ];

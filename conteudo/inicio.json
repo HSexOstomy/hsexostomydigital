@@ -32,7 +32,7 @@
       "texto": "Todas as seções, quadros e figuras do manual, com busca."
     },
     "capacitacao": {
-      "titulo": "Capacitação",
+      "titulo": "Formação de Habilidades",
       "texto": "Nove módulos clínicos com alertas e situações para análise."
     }
   },
@@ -49,7 +49,7 @@
   "usos": {
     "estudar": {
       "titulo": "Para estudar",
-      "texto": "Leia o manual por seções, explore o fluxograma, os conceitos da teoria e faça os módulos de capacitação.",
+      "texto": "Leia o manual por seções, explore o fluxograma, os conceitos da teoria e faça os módulos de formação de habilidades.",
       "link": "Abrir o manual"
     },
     "atender": {

@@ -25,7 +25,7 @@ function hub() {
       <p class="pt-lead">Aqui ficam as atividades do encontro. Abra cada uma quando a facilitadora indicar. Suas respostas não são enviadas nem registradas.</p>
       <ul class="pt-list">${itens.map(([href, ic, t, d, tag]) => html`<li><a class="pt-item" href="#${href}"><span class="pt-ic">${icon(ic)}</span><span><strong>${t}</strong><small>${d}</small></span><span class="tag">${tag}</span></a></li>`)}</ul>
       <div class="pt-more"><p class="small muted">Depois do encontro, explore a plataforma completa:</p>
-        <div class="btn-row"><a class="btn btn-sm" href="#consulta">Na consulta</a><a class="btn btn-sm" href="#manual">Manual</a><a class="btn btn-sm" href="#capacitacao">Capacitação</a></div></div>
+        <div class="btn-row"><a class="btn btn-sm" href="#consulta">Na consulta</a><a class="btn btn-sm" href="#manual">Manual</a><a class="btn btn-sm" href="#capacitacao">Formação de Habilidades</a></div></div>
     </div>
   </div>`;
 }

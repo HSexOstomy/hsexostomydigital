@@ -30,17 +30,17 @@ function toc(atual) {
 function visaoGeral() {
   return html`<div class="manual-overview">
     <div class="manual-intro card">
-      <img src="assets/img/capa.webp" alt="Capa do manual" width="900" height="1273" loading="lazy">
+      <img src="${cfg.manual?.capa || "assets/img/capa.webp"}" alt="Capa do manual" width="900" height="1273" loading="lazy">
       <div>
-        <p class="kicker">1ª edição · 2026 · 75 páginas</p>
-        <h2>H_Sex_Ostomy: Programa de Reabilitação da Sexualidade Masculina</h2>
-        <p class="muted">Ariana Luiza Rabelo · Anderson Reis de Sousa · Escola de Enfermagem da UFBA</p>
+        <p class="kicker">${cfg.manual?.edicao}</p>
+        <h2>${cfg.manual?.titulo}</h2>
+        <p class="muted">${cfg.manual?.autoria}</p>
         <p>O manual está organizado em seis partes. Cada seção abaixo mostra do que trata, o que contém (quadros, figuras, falas) e o tempo estimado de leitura. Os quadros estão completos e interativos.</p>
         <div class="btn-row">
           <a class="btn btn-primary" href="#manual/apresentacao">Começar a leitura ${icon("arrow")}</a>
+          <a class="btn" href="#sintese">${icon("print")}Síntese de bolso</a>
           ${cfg.manualPdf ? html`<a class="btn" href="${cfg.manualPdf}" target="_blank" rel="noopener">${icon("download")}Baixar PDF</a>` : ""}
           ${(cfg.materiais || []).map((m) => html`<a class="btn" href="${m.url}" target="_blank" rel="noopener">${icon("download")}${m.titulo}</a>`)}
-          <a class="btn" href="#sintese">${icon("print")}Síntese de bolso</a>
         </div>
       </div>
     </div>

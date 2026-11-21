@@ -13,7 +13,7 @@ function lista() {
   const pct = Math.round((feitos.size / modulos.length) * 100);
   const prox = modulos.find((m) => !feitos.has(m.id)) || modulos[0];
   return html`<div class="page">
-    ${pageHead({ kicker: "Aprenda", title: "Capacitação profissional", lead: `Nove módulos com o conteúdo clínico do manual, alertas de segurança, erros comuns na prática e questões de raciocínio a partir de situações reais. Cerca de ${Math.round(totalMin / 60 * 10) / 10} horas no total.`, crumbs: [[null, "Capacitação"]], art: "enfermeiros-dupla" })}
+    ${pageHead({ kicker: "Aprenda", title: "Formação de Habilidades", lead: `Nove módulos com o conteúdo clínico do manual, alertas de segurança, erros comuns na prática e questões de raciocínio a partir de situações reais. Cerca de ${Math.round(totalMin / 60 * 10) / 10} horas no total.`, crumbs: [[null, "Capacitação"]], art: "enfermeiros-dupla" })}
     <div class="container">
       <div class="course-bar card">
         <div><p class="kicker">Seu progresso</p><h2 class="h3">${feitos.size} de ${modulos.length} módulos concluídos</h2><div class="progress progress-lg"><span style="width:${pct}%"></span></div></div>
@@ -34,7 +34,7 @@ function modulo(m) {
   const secs = m.secoes.map((id) => secoes.find((s) => s.id === id)).filter(Boolean);
   const acertos = m.pratique.filter((q, k) => r[k] !== undefined && q.opcoes[r[k]].certo).length, feitas = Object.keys(r).length;
   return html`<div class="page">
-    ${pageHead({ kicker: `Módulo ${i + 1} de ${modulos.length} · ${m.min} min`, title: m.titulo, lead: m.objetivo, crumbs: [["capacitacao", "Capacitação"], [null, `Módulo ${i + 1}`]] })}
+    ${pageHead({ kicker: `Módulo ${i + 1} de ${modulos.length} · ${m.min} min`, title: m.titulo, lead: m.objetivo, crumbs: [["capacitacao", "Formação de Habilidades"], [null, `Módulo ${i + 1}`]] })}
     <div class="container lesson-layout">
       <article class="stack-lg">
         ${m.blocos.map((b, k) => html`<section class="mod-block"><h2 class="h3"><span class="mod-n">${i + 1}.${k + 1}</span>${b.titulo}</h2>${b.texto.map((t) => html`<p>${t}</p>`)}</section>`)}
@@ -61,7 +61,7 @@ function modulo(m) {
 }
 
 export default {
-  title: (ctx) => { const m = modulos.find((x) => x.id === ctx.params[0]); return m ? m.titulo : "Capacitação profissional"; },
+  title: (ctx) => { const m = modulos.find((x) => x.id === ctx.params[0]); return m ? m.titulo : "Formação de Habilidades"; },
   render(ctx) { const m = modulos.find((x) => x.id === ctx.params[0]); return m ? modulo(m) : lista(); },
   mount(root, ctx) {
     const m = modulos.find((x) => x.id === ctx.params[0]);

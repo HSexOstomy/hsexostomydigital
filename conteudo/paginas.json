@@ -59,6 +59,18 @@
     {
       "titulo": "Planejador de cuidados",
       "texto": "Do histórico ao registro: organize avaliação, diagnósticos NANDA-I, resultados NOC com escala e prazo, intervenções NIC e pontos de atenção do Quadro 6, e gere o texto da evolução."
+    },
+    {
+      "titulo": "Registros de eventos",
+      "texto": "Encontros, oficinas e atividades realizadas pelo grupo, com fotos, materiais e espaço para o seu comentário."
+    },
+    {
+      "titulo": "Notícias",
+      "texto": "Novidades, avisos e informações importantes do grupo H_Sex_Ostomy."
+    },
+    {
+      "titulo": "Documentos",
+      "texto": "Arquivos que o grupo disponibiliza: manuais, artigos, apresentações, formulários e materiais educativos."
     }
   ]
 }
