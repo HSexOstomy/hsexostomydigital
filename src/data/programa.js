@@ -1,36 +1,21 @@
 /* Identidade, componentes e fundamentos do H_Sex_Ostomy (manual, pp. 8–20). */
+import { C, arr, txt } from "../core/content.js";
+
+/* Textos editáveis pelo painel: conteudo/sobre.json e conteudo/equipe.json */
+const S = C.sobre;
+const par = (l) => arr(l).filter((x) => x && (x.titulo || x.texto)).map((x) => [txt(x.titulo), txt(x.texto)]);
 
 export const identidade = {
-  finalidade: "Apoiar enfermeiros na abordagem da saúde sexual e o Bem-Viver de homens com estomas de eliminação por meio de intervenções educativas, psicossociais e clínicas fundamentadas no método EX-PLISSIT e na Teoria de Enfermagem de Reabilitação para o Bem-Viver.",
-  missao: "Instrumentalizar enfermeiros para abordagem da sexualidade de homens com estomas de eliminação em serviços de saúde na perspectiva da reabilitação para o Bem-Viver.",
-  visao: "Ser reconhecido como um programa de referência para guiar a abordagem da sexualidade de homens com estomias de eliminação, na perspectiva da reabilitação para o Bem-Viver, reconhecido pela valorização da intersubjetividade, autonomia e reconstruções no processo de reabilitação.",
-  valores: [
-    ["Acolhimento", "A criação de um espaço seguro, livre de julgamentos, é condição inegociável para que o diálogo sobre sexualidade aconteça."],
-    ["Reconhecimento", "Compromisso com a visibilidade das necessidades sexuais do homem com estoma, combatendo estigmas e crenças que impactam na busca pelo Bem-Viver."],
-    ["Autonomia", "O paciente é o agente central de seu processo de reabilitação."],
-    ["Intersubjetividade", "A reabilitação acontece no encontro entre sujeitos, de modo que a relação enfermeiro–paciente é constitutiva do cuidado."],
-    ["Ética", "Exercício profissional com postura ética em todas as fases do cuidado de reabilitação, facilitando a busca pelo Bem-Viver da pessoa cuidada."]
-  ],
-  publico: [
-    ["Usuários diretos do programa", "Enfermeiros(as) que utilizarão o H_Sex_Ostomy para orientar e estruturar a abordagem da sexualidade na consulta de enfermagem."],
-    ["Pessoas beneficiárias do cuidado", "Homens com estomas de eliminação, reconhecidos como sujeitos ativos do processo de cuidado e de reconstrução em direção ao Bem-Viver."]
-  ]
+  finalidade: txt(S.finalidade),
+  missao: txt(S.missao),
+  visao: txt(S.visao),
+  valores: par(S.valores),
+  publico: par(S.publico)
 };
 
-export const apresentacao = [
-  "As necessidades relacionadas ao bem-estar sexual de pessoas com deficiência ainda são insuficientemente abordadas nos serviços de saúde, especialmente no âmbito da reabilitação. Na prática assistencial, a incorporação sistemática da sexualidade às consultas de enfermagem permanece limitada, sendo observada a escassez de instrumentos, tecnologias e materiais capazes de orientar os profissionais para uma abordagem qualificada dessa dimensão do cuidado. No contexto dos homens com estomas de eliminação, essa fragilidade assume particular relevância, considerando que a vivência da sexualidade pode ser atravessada por alterações corporais, repercussões psicossociais, mudanças na função e na satisfação sexual, além de barreiras relacionais e assistenciais.",
-  "O H_Sex_Ostomy resulta de um estudo mais amplo desenvolvido a partir de diferentes etapas investigativas relacionadas à sexualidade de homens com estomas de eliminação e ao cuidado de enfermagem nesse campo. Previamente à sua construção, foram realizadas uma revisão de escopo, destinada ao mapeamento das evidências disponíveis acerca de intervenções na sexualidade de homens com estomas; uma observação participante no contexto de um serviço especializado de reabilitação de pessoas com estomas; e um estudo de métodos mistos, que possibilitou integrar diferentes perspectivas sobre a satisfação sexual e as experiências vivenciadas por esses homens. Os conhecimentos produzidos nessas etapas contribuíram para a compreensão do fenômeno e para a identificação de necessidades, lacunas e elementos relevantes à estruturação do programa.",
-  "A construção do programa também incorporou um processo de cocriação com enfermeiras atuantes em um serviço de reabilitação de pessoas com estomas, aproximando o conhecimento produzido na pesquisa das condições concretas da prática assistencial. Participaram dessa etapa profissionais com diferentes níveis de formação e experiência na área: duas enfermeiras estomaterapeutas e pós-graduandas em reabilitação, uma enfermeira especialista em reabilitação e uma enfermeira capacitada para atuação nesse campo. A cocriação envolveu a análise e elaboração de conteúdos, proposição de novos conteúdos, exemplificação de situações assistenciais e correlação entre os referenciais teóricos e a prática clínica, considerando as vivências e experiências das enfermeiras no cuidado às pessoas com estomas.",
-  "Diante desse percurso, foi desenvolvido o H_Sex_Ostomy: Programa de Reabilitação da Sexualidade Masculina, compreendido como um programa de saúde constituído por um conjunto de atividades planejadas e organizadas, desenvolvidas ao longo do tempo para alcançar objetivos específicos relacionados à saúde. O programa foi concebido com o propósito de contribuir para a consulta de enfermagem ao homem com estoma de eliminação, oferecendo um referencial estruturado para a abordagem da sexualidade ao longo do processo de reabilitação.",
-  "O programa fundamenta-se na articulação entre o modelo EX-PLISSIT, que orienta uma abordagem clínica progressiva, contínua e centrada na pessoa, e a Teoria de Enfermagem de Reabilitação para o Bem-Viver, que sustenta o cuidado a partir da relação intersubjetiva e do reconhecimento da pessoa em sua singularidade, favorecendo processos de reconstrução, autonomia, autorrealização e emancipação. Assim, o H_Sex_Ostomy foi concebido para subsidiar a prática do enfermeiro na promoção da sexualidade e do Bem-Viver de homens com estomas de eliminação ao longo do processo de reabilitação."
-];
+export const apresentacao = arr(S.apresentacao).map(txt).filter(Boolean);
 
-export const percurso = [
-  ["Revisão de escopo", "Mapeamento das evidências sobre intervenções na sexualidade de homens com estomas."],
-  ["Observação participante", "Imersão em um serviço especializado de reabilitação de pessoas com estomas."],
-  ["Estudo de métodos mistos", "Integração de perspectivas sobre satisfação sexual e experiências desses homens."],
-  ["Cocriação com enfermeiras", "Análise, elaboração e exemplificação de conteúdos com quatro enfermeiras da reabilitação."]
-];
+export const percurso = par(S.percurso);
 
 /* Componentes do programa (EX-PLISSIT adaptado). Cores seguem o Apêndice A. */
 export const componentes = [
@@ -108,12 +93,4 @@ export const modeloTeorico = {
 
 export const parcimonia = "A relação entre enfermeira e pessoa cuidada em reabilitação contribui para o Bem-Viver acontecer.";
 
-export const fichaTecnica = [
-  ["Elaboração do texto", "Ariana Luiza Rabelo"],
-  ["Coordenação", "Anderson Reis de Sousa"],
-  ["Colaboração técnico-assistencial", "Enfermeiras participantes do processo de cocriação do H_Sex_Ostomy"],
-  ["Ilustrações, projeto gráfico e diagramação", "Davi Barreto"],
-  ["Instituição", "Universidade Federal da Bahia (UFBA), Escola de Enfermagem, Programa de Pós-Graduação em Enfermagem e Saúde"],
-  ["Projeto de origem", "Promoção da sexualidade na reabilitação de homens com estomas de eliminação: desenvolvimento do programa H_Sex_Ostomy"],
-  ["Edição", "1ª edição, 2026, versão eletrônica"]
-];
+export const fichaTecnica = arr(C.equipe.fichaTecnica).filter((x) => x && (x.item || x.valor)).map((x) => [txt(x.item), txt(x.valor)]);

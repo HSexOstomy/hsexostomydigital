@@ -1,5 +1,6 @@
 /* Aulas, casos clínicos e atividades de fixação. Conteúdo elaborado a partir do manual;
-   casos e personagens são fictícios. */
+   casos e personagens são fictícios. As frases de "Mito ou fato" ficam em conteudo/mitos.json (editável pelo painel). */
+import { C, arr, txt } from "../core/content.js";
 
 const q = (pergunta, opcoes) => ({ pergunta, opcoes });
 const o = (t, feedback, certo = false) => ({ t, feedback, certo });
@@ -129,18 +130,7 @@ export const finais = {
 };
 
 /* Mito ou fato: fixação para o workshop e para estudo */
-export const mitos = [
-  { frase: "O estoma, por si só, contraindica a atividade sexual.", fato: false, explica: "O estoma, por si só, não contraindica a atividade sexual (Quadro 2, p. 36)." },
-  { frase: "O orgasmo depende da ereção e da ejaculação.", fato: false, explica: "São funções reguladas por vias nervosas distintas. É possível ter orgasmo com ejaculação retrógrada ou orgasmo seco (p. 42)." },
-  { frase: "Se o homem não fala sobre sexualidade, é porque não tem preocupações.", fato: false, explica: "Vergonha e medo de ser mal interpretado silenciam muitos homens. Cabe ao(à) enfermeiro(a) abrir o espaço (7.5)." },
-  { frase: "Uma vez concedida, a Permissão vale para os encontros seguintes.", fato: false, explica: "A Permissão é renovada a cada encontro, respeitando a autonomia (Figura 3)." },
-  { frase: "Após amputação abdominoperineal do reto, o sexo anal receptivo pode ficar impossibilitado.", fato: true, explica: "A remoção total ou parcial do reto e do ânus pode impossibilitar a prática. Outras formas de prazer podem ser exploradas (Quadros 2 e 3)." },
-  { frase: "O estoma pode ser usado para penetração se houver cuidado e lubrificação.", fato: false, explica: "Nunca. O estoma não deve ser penetrado ou manipulado, pelo risco de lesão e sangramento (p. 41)." },
-  { frase: "Enfermeiros(as) podem aplicar o IIEF-15 e o QS-M.", fato: true, explica: "Ambos são autoaplicáveis e podem ser aplicados por enfermeiros(as), inclusive de forma assistida (p. 25)." },
-  { frase: "A disfunção sexual após cirurgia pélvica depende apenas da técnica cirúrgica.", fato: false, explica: "Idade, comorbidades, radioterapia, medicamentos, saúde mental e relacionamento também influenciam (p. 42)." },
-  { frase: "Encaminhar para Terapia Intensiva encerra a responsabilidade da enfermagem.", fato: false, explica: "O encaminhamento não encerra o cuidado. É preciso acompanhar a trajetória do homem na rede (p. 61)." },
-  { frase: "Gases e ruídos durante a intimidade são reações fisiológicas esperadas.", fato: true, explica: "São reações do organismo funcionando de uma nova forma, não falhas. Há estratégias de manejo (Quadro 2, p. 37)." }
-];
+export const mitos = arr(C.mitos.mitos).filter((m) => m && txt(m.frase)).map((m) => ({ frase: txt(m.frase), fato: m.fato === true, explica: txt(m.explica) }));
 
 /* Escolha a melhor fala */
 export const falasTreino = [

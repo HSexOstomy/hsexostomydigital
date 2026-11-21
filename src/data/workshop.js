@@ -1,48 +1,36 @@
 /* Workshop Participativo do H_Sex_Ostomy: roteiro de 3 horas, apresentação e atividades.
-   Datas, horários e links ficam em site.config.js. */
+   Datas, horários, links e textos do roteiro ficam em conteudo/workshop.json (editável pelo painel). */
+import { C, arr, txt } from "../core/content.js";
 
-export const agenda = [
-  { id: "abertura", titulo: "Abertura e acolhimento", min: 10, tipo: "expositivo",
-    objetivo: "Apresentar a equipe, os objetivos do encontro e os combinados.", recursos: [] },
-  { id: "quebragelo", titulo: "Quebra-gelo: mito ou fato?", min: 15, tipo: "atividade",
-    objetivo: "Mobilizar crenças e saberes prévios com afirmações rápidas.", recursos: [["participar/mitos", "Atividade no celular"]] },
-  { id: "porque", titulo: "Por que falar de sexualidade na reabilitação?", min: 15, tipo: "expositivo",
-    objetivo: "Situar a lacuna assistencial e o percurso de construção do programa.", recursos: [["sobre", "O projeto"]] },
-  { id: "fundamentos", titulo: "Fundamentos: Bem-Viver e EX-PLISSIT", min: 20, tipo: "expositivo",
-    objetivo: "Apresentar os dois referenciais e como se articulam.", recursos: [["fundamentos", "Fundamentos"], ["programa", "Componentes"]] },
-  { id: "acao", titulo: "O programa em ação: fluxograma, Permissão e Revisão", min: 20, tipo: "demonstracao",
-    objetivo: "Percorrer o fluxograma e treinar as falas de abertura e retomada.", recursos: [["fluxograma", "Fluxograma"], ["consulta/permissao", "Na consulta"]] },
-  { id: "informacao", titulo: "Informação Limitada: o que e como falar", min: 15, tipo: "atividade",
-    objetivo: "Explorar os seis temas do Quadro 2 e escolher falas adequadas.", recursos: [["consulta/informacao", "Falas por tema"], ["participar/falas", "Escolha a melhor fala"]] },
-  { id: "intervalo", titulo: "Intervalo", min: 10, tipo: "pausa", objetivo: "", recursos: [] },
-  { id: "sugestoes", titulo: "Sugestões Específicas e Terapia Intensiva", min: 20, tipo: "demonstracao",
-    objetivo: "Demonstrar calculadoras, Planejador de Cuidados e encaminhamento.", recursos: [["calculadoras", "Calculadoras"], ["planejador", "Planejador"], ["encaminhamento", "Encaminhamento"]] },
-  { id: "casos", titulo: "Atividade prática: casos clínicos", min: 25, tipo: "atividade",
-    objetivo: "Em grupos, percorrer um caso que evolui conforme as escolhas e justificar as decisões com o programa.", recursos: [["participar/casos", "Simulação no celular"]] },
-  { id: "discussao", titulo: "Discussão participativa", min: 20, tipo: "discussao",
-    objetivo: "Coletar percepções sobre aplicabilidade e contribuições para o aperfeiçoamento.", recursos: [] },
-  { id: "encerramento", titulo: "Pós-teste e encerramento", min: 10, tipo: "encerramento",
-    objetivo: "Orientar o preenchimento do pós-teste e da avaliação, e agradecer.", recursos: [] }
-];
-
-export const checklist = {
-  antes: [
-    "Confirmar que todos os inscritos responderam ao formulário de inscrição e pré-teste",
-    "Enviar o link do Meet aos participantes (e-mail e WhatsApp)",
-    "Testar o compartilhamento de tela com a apresentação em tela cheia",
-    "Testar o QR code do modo participante em um celular",
-    "Definir quem modera o chat e cronometra os blocos",
-    "Preparar o link do pós-teste para enviar no encerramento"
-  ],
-  cuidado: "Não divulgue o link deste site antes de todos terem respondido ao pré-teste. O contato prévio com o conteúdo pode alterar as respostas da linha de base."
+/* Tipo e recursos de cada bloco ficam aqui; título, duração e objetivo vêm do painel (conteudo/workshop.json). */
+const ESTRUTURA = {
+  abertura: { tipo: "expositivo", recursos: [] },
+  quebragelo: { tipo: "atividade", recursos: [["participar/mitos", "Atividade no celular"]] },
+  porque: { tipo: "expositivo", recursos: [["sobre", "O projeto"]] },
+  fundamentos: { tipo: "expositivo", recursos: [["fundamentos", "Fundamentos"], ["programa", "Componentes"]] },
+  acao: { tipo: "demonstracao", recursos: [["fluxograma", "Fluxograma"], ["consulta/permissao", "Na consulta"]] },
+  informacao: { tipo: "atividade", recursos: [["consulta/informacao", "Falas por tema"], ["participar/falas", "Escolha a melhor fala"]] },
+  intervalo: { tipo: "pausa", recursos: [] },
+  sugestoes: { tipo: "demonstracao", recursos: [["calculadoras", "Calculadoras"], ["planejador", "Planejador"], ["encaminhamento", "Encaminhamento"]] },
+  casos: { tipo: "atividade", recursos: [["participar/casos", "Simulação no celular"]] },
+  discussao: { tipo: "discussao", recursos: [] },
+  encerramento: { tipo: "encerramento", recursos: [] }
 };
 
-export const discussao = [
-  { eixo: "Aceitabilidade", pergunta: "O que mais chamou sua atenção no programa? Houve algo que causou estranhamento ou resistência?", apoio: "Explore sentimentos e percepções gerais sobre a proposta." },
-  { eixo: "Adequação", pergunta: "O programa responde às necessidades que você observa nos homens com estoma que atende ou atendeu? O que está faltando?", apoio: "Peça exemplos concretos da prática." },
-  { eixo: "Viabilidade", pergunta: "O que seria preciso no seu serviço para aplicar o programa? Quais barreiras você antecipa (tempo, espaço, equipe, rede)?", apoio: "Relacione com as diretrizes de implantação (9.1)." },
-  { eixo: "Aperfeiçoamento", pergunta: "O que você mudaria, acrescentaria ou retiraria do programa e deste ambiente digital?", apoio: "Registre as sugestões para a próxima versão." }
-];
+const W = C.workshop;
+
+export const agenda = arr(W.agenda).filter((a) => a && txt(a.titulo)).map((a, i) => {
+  const id = txt(a.id) || `bloco-${i + 1}`;
+  const e = ESTRUTURA[id] || { tipo: "expositivo", recursos: [] };
+  return { id, titulo: txt(a.titulo), min: Number(a.min) || 0, tipo: e.tipo, objetivo: txt(a.objetivo), recursos: e.recursos };
+});
+
+export const checklist = {
+  antes: arr(W.checklistAntes).map(txt).filter(Boolean),
+  cuidado: txt(W.checklistCuidado)
+};
+
+export const discussao = arr(W.discussao).filter((d) => d && txt(d.eixo)).map((d) => ({ eixo: txt(d.eixo), pergunta: txt(d.pergunta), apoio: txt(d.apoio) }));
 
 /* Slides da apresentação. tipo: capa | pontos | figura | componentes | atividade | qr | pausa | discussao | encerramento */
 export const slides = [

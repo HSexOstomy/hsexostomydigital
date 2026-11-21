@@ -32,7 +32,7 @@ function contagem() {
   return dias > 0 ? `Faltam ${dias} ${dias === 1 ? "dia" : "dias"} e ${horas}h` : `Faltam ${horas}h${String(Math.floor((diff % 36e5) / 6e4)).padStart(2, "0")}`;
 }
 
-const linkOu = (url, rotulo) => url ? html`<a class="btn btn-sm" href="${url}" target="_blank" rel="noopener">${icon("external")}${rotulo}</a>` : html`<span class="tag tag-warn" title="Configure em site.config.js">${rotulo}: não configurado</span>`;
+const linkOu = (url, rotulo) => url ? html`<a class="btn btn-sm" href="${url}" target="_blank" rel="noopener">${icon("external")}${rotulo}</a>` : html`<span class="tag tag-warn" title="Configure no painel de edição, menu Workshop">${rotulo}: não configurado</span>`;
 
 export default {
   render() {
@@ -91,7 +91,7 @@ export default {
           </article>
           <article class="card">
             <p class="kicker">Links do estudo</p><h2 class="h3">Pré-teste, Meet e pós-teste</h2>
-            <p class="small muted">Edite os endereços em <code>site.config.js</code> (seção workshop).</p>
+            <p class="small muted">Edite os endereços no painel de edição, menu Workshop.</p>
             <div class="ws-links">
               <div><strong>Inscrição e pré-teste</strong>${linkOu(W.linkPreTeste, "Formulário")}</div>
               <div><strong>Sala do encontro</strong>${linkOu(W.linkMeet, "Google Meet")}</div>

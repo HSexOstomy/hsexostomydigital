@@ -1,4 +1,5 @@
 /* Ponto de entrada da plataforma H_Sex_Ostomy Digital */
+import "./core/content.js"; /* carrega o conteúdo editável (pasta conteudo/) antes de tudo */
 import { navigate, closeMenus } from "./core/router.js";
 import { $, $$, on, html } from "./core/dom.js";
 import { copyText } from "./core/ui.js";

@@ -1,0 +1,70 @@
+{
+  "hero": {
+    "kicker": "Escola de Enfermagem da UFBA · PPGENF",
+    "titulo": "A sexualidade também faz parte da *reabilitação*.",
+    "texto": "O H_Sex_Ostomy apoia enfermeiros(as) na abordagem da sexualidade de homens com estomas de eliminação. Estude o programa, use as ferramentas na consulta e forme sua equipe.",
+    "numeros": [
+      {
+        "numero": "5",
+        "rotulo": "componentes do EX-PLISSIT"
+      },
+      {
+        "numero": "9",
+        "rotulo": "diagnósticos com NOC e NIC"
+      },
+      {
+        "numero": "17",
+        "rotulo": "falas prontas para a consulta"
+      }
+    ]
+  },
+  "atalhos": {
+    "consulta": {
+      "titulo": "Na consulta",
+      "texto": "Roteiro passo a passo com falas prontas para pedir Permissão, informar e revisar."
+    },
+    "planejador": {
+      "titulo": "Planejador de cuidados",
+      "texto": "Do histórico ao registro: NANDA-I, escala NOC, NIC e evolução pronta."
+    },
+    "manual": {
+      "titulo": "Manual",
+      "texto": "Todas as seções, quadros e figuras do manual, com busca."
+    },
+    "capacitacao": {
+      "titulo": "Capacitação",
+      "texto": "Nove módulos clínicos com alertas e situações para análise."
+    }
+  },
+  "programa": {
+    "kicker": "O programa",
+    "titulo": "Cinco componentes, um cuidado contínuo",
+    "texto": "Adaptados do modelo EX-PLISSIT e sustentados pela Teoria de Enfermagem de Reabilitação para o Bem-Viver. Permissão e Revisão acontecem em todo encontro."
+  },
+  "pesquisa": {
+    "kicker": "Da pesquisa à prática",
+    "titulo": "Construído com quem cuida",
+    "texto": "O programa nasceu de uma revisão de escopo, de observação participante em um serviço de reabilitação, de um estudo de métodos mistos com homens com estomas e de um processo de cocriação com enfermeiras da reabilitação."
+  },
+  "usos": {
+    "estudar": {
+      "titulo": "Para estudar",
+      "texto": "Leia o manual por seções, explore o fluxograma, os conceitos da teoria e faça os módulos de capacitação.",
+      "link": "Abrir o manual"
+    },
+    "atender": {
+      "titulo": "Para atender",
+      "texto": "Use as falas sugeridas, aplique o IIEF-15 e o QS-M, monte o plano de cuidados e imprima orientações ao paciente.",
+      "link": "Ir para a consulta"
+    },
+    "formar": {
+      "titulo": "Para formar equipes",
+      "texto": "Conduza oficinas com o roteiro do workshop e planeje a implantação com as diretrizes e indicadores do manual.",
+      "link": "Planejar a implantação"
+    }
+  },
+  "workshop": {
+    "kicker": "Workshop participativo",
+    "texto": "Fundamentos, demonstração das ferramentas, casos clínicos em grupo e discussão sobre a aplicabilidade do programa."
+  }
+}

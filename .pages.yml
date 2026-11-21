@@ -1,0 +1,598 @@
+# Painel de edição do H_Sex_Ostomy Digital (Pages CMS: https://app.pagescms.org)
+# Cada item abaixo vira um menu no painel. Os dados ficam na pasta conteudo/.
+# O visual, as abas, as escalas e o conteúdo técnico do manual NÃO são editados por aqui.
+
+media:
+- name: imagens
+  label: Fotos e logos
+  input: assets/img
+  output: assets/img
+  rename: safe
+  categories:
+  - image
+- name: documentos
+  label: Documentos (PDF)
+  input: assets/docs
+  output: assets/docs
+  rename: safe
+  categories:
+  - document
+content:
+- name: pessoas-e-parceiros
+  label: Equipe e parceiros
+  type: group
+  items:
+  - name: equipe
+    label: Equipe, bolsistas e colaboradores
+    type: file
+    path: conteudo/equipe.json
+    format: json
+    fields:
+    - name: pessoas
+      label: Pessoas
+      description: Aparecem na página Sobre > Equipe, na ordem desta lista. Arraste para reordenar.
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{nome}: {papel}'
+      fields:
+      - name: grupo
+        label: Onde aparece
+        type: select
+        required: true
+        options:
+          values:
+          - name: principal
+            label: Equipe principal (autoria e orientação)
+          - name: bolsistas
+            label: Bolsistas
+          - name: colaboradores
+            label: Colaboradores(as)
+      - name: nome
+        label: Nome completo
+        type: string
+        required: true
+      - name: papel
+        label: Função no projeto
+        description: 'Ex.: Coorientação; Bolsista de Iniciação Científica (PIBIC/CNPq); Revisão técnica'
+        type: string
+      - name: titulacao
+        label: Formação e instituição
+        description: 'Ex.: Enfermeira. Mestranda em Enfermagem (PPGENF/UFBA)'
+        type: string
+      - name: foto
+        label: Foto
+        description: Opcional. Prefira foto quadrada e leve (até 1 MB). Sem foto, aparecem as iniciais.
+        type: image
+        options:
+          media: imagens
+      - name: bio
+        label: Minibiografia
+        type: text
+      - name: link
+        label: Link do currículo (Lattes, ORCID ou outro)
+        description: Opcional. Começa com https://
+        type: string
+    - name: fichaTecnica
+      label: Ficha técnica do manual
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{item}'
+      fields:
+      - name: item
+        label: Item
+        type: string
+      - name: valor
+        label: Texto
+        type: text
+  - name: instituicoes
+    label: Instituições e apoio
+    type: file
+    path: conteudo/instituicoes.json
+    format: json
+    fields:
+    - name: realizacao
+      label: Realização (rodapé, Equipe e capa da apresentação)
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{nome}'
+      fields:
+      - name: nome
+        label: Nome
+        type: string
+        required: true
+      - name: logo
+        label: Logo
+        description: Opcional. PNG ou WebP com fundo transparente. Sem logo, aparece o nome.
+        type: image
+        options:
+          media: imagens
+      - name: url
+        label: Site
+        description: Opcional. Começa com https://
+        type: string
+    - name: apoio
+      label: Apoio e financiamento
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{nome}'
+      fields:
+      - name: nome
+        label: Nome
+        type: string
+        required: true
+      - name: logo
+        label: Logo
+        description: Opcional. PNG ou WebP com fundo transparente. Sem logo, aparece o nome.
+        type: image
+        options:
+          media: imagens
+      - name: url
+        label: Site
+        description: Opcional. Começa com https://
+        type: string
+- name: textos
+  label: Textos do site
+  type: group
+  items:
+  - name: inicio
+    label: Página inicial
+    type: file
+    path: conteudo/inicio.json
+    format: json
+    fields:
+    - name: hero
+      label: Abertura
+      type: object
+      fields:
+      - name: kicker
+        label: Linha acima do título
+        type: string
+      - name: titulo
+        label: Título
+        description: 'A palavra entre asteriscos fica em destaque. Ex.: A sexualidade também faz parte da *reabilitação*.'
+        type: string
+      - name: texto
+        label: Texto de apresentação
+        type: text
+      - name: numeros
+        label: Números em destaque
+        type: object
+        list:
+          max: 4
+        fields:
+        - name: numero
+          label: Número
+          type: string
+        - name: rotulo
+          label: Descrição
+          type: string
+    - name: atalhos
+      label: Cartões de atalho
+      type: object
+      fields:
+      - name: consulta
+        label: Cartão 1 (Na consulta)
+        type: object
+        fields:
+        - name: titulo
+          label: Título
+          type: string
+        - name: texto
+          label: Texto
+          type: text
+      - name: planejador
+        label: Cartão 2 (Planejador)
+        type: object
+        fields:
+        - name: titulo
+          label: Título
+          type: string
+        - name: texto
+          label: Texto
+          type: text
+      - name: manual
+        label: Cartão 3 (Manual)
+        type: object
+        fields:
+        - name: titulo
+          label: Título
+          type: string
+        - name: texto
+          label: Texto
+          type: text
+      - name: capacitacao
+        label: Cartão 4 (Capacitação)
+        type: object
+        fields:
+        - name: titulo
+          label: Título
+          type: string
+        - name: texto
+          label: Texto
+          type: text
+    - name: programa
+      label: Seção "O programa"
+      type: object
+      fields:
+      - name: kicker
+        label: Linha acima do título
+        type: string
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Texto
+        type: text
+    - name: pesquisa
+      label: Seção "Da pesquisa à prática"
+      type: object
+      fields:
+      - name: kicker
+        label: Linha acima do título
+        type: string
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Texto
+        type: text
+    - name: usos
+      label: Cartões "Para estudar / atender / formar equipes"
+      type: object
+      fields:
+      - name: estudar
+        label: Para estudar
+        type: object
+        fields:
+        - name: titulo
+          label: Título
+          type: string
+        - name: texto
+          label: Texto
+          type: text
+        - name: link
+          label: Texto do link
+          type: string
+      - name: atender
+        label: Para atender
+        type: object
+        fields:
+        - name: titulo
+          label: Título
+          type: string
+        - name: texto
+          label: Texto
+          type: text
+        - name: link
+          label: Texto do link
+          type: string
+      - name: formar
+        label: Para formar equipes
+        type: object
+        fields:
+        - name: titulo
+          label: Título
+          type: string
+        - name: texto
+          label: Texto
+          type: text
+        - name: link
+          label: Texto do link
+          type: string
+    - name: workshop
+      label: Faixa do workshop (aparece até o fim do evento)
+      type: object
+      fields:
+      - name: kicker
+        label: Linha acima do título
+        type: string
+      - name: texto
+        label: Texto
+        type: text
+  - name: sobre
+    label: Sobre o programa
+    type: file
+    path: conteudo/sobre.json
+    format: json
+    fields:
+    - name: lead
+      label: Texto abaixo do título
+      type: text
+    - name: apresentacao
+      label: Apresentação (parágrafos)
+      description: Também aparece na seção Apresentação do leitor do manual.
+      type: text
+      list: true
+    - name: finalidade
+      label: Finalidade
+      type: text
+    - name: missao
+      label: Missão
+      type: text
+    - name: visao
+      label: Visão
+      type: text
+    - name: valores
+      label: Valores
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{titulo}'
+      fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Texto
+        type: text
+    - name: publico
+      label: Público-alvo
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{titulo}'
+      fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Texto
+        type: text
+    - name: percurso
+      label: Percurso de construção (etapas)
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{titulo}'
+      fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Texto
+        type: text
+  - name: geral
+    label: Contato e manual em PDF
+    type: file
+    path: conteudo/geral.json
+    format: json
+    fields:
+    - name: contato
+      label: Contato
+      type: object
+      fields:
+      - name: email
+        label: E-mail de contato
+        type: string
+      - name: cepTelefone
+        label: Telefone do Comitê de Ética
+        type: string
+      - name: cepEmail
+        label: E-mail do Comitê de Ética
+        type: string
+    - name: manualArquivo
+      label: Manual ou guia em PDF (enviar arquivo)
+      description: Quando preenchido, aparece o botão Baixar PDF na página do Manual.
+      type: file
+      options:
+        media: documentos
+    - name: manualLink
+      label: Ou link externo do PDF (Google Drive, OneDrive)
+      description: Se preenchido, tem prioridade sobre o arquivo enviado.
+      type: string
+    - name: versao
+      label: Versão exibida no rodapé
+      type: string
+- name: workshop
+  label: Workshop
+  type: file
+  path: conteudo/workshop.json
+  format: json
+  fields:
+  - name: data
+    label: Data
+    type: date
+  - name: horario
+    label: Horário de início
+    description: Formato 19:00
+    type: string
+  - name: duracaoMin
+    label: Duração total (minutos)
+    type: number
+  - name: modalidade
+    label: Modalidade
+    type: string
+  - name: linkMeet
+    label: Link do Google Meet
+    type: string
+  - name: linkPreTeste
+    label: Link do pré-teste (Google Forms)
+    type: string
+  - name: linkPosTeste
+    label: Link do pós-teste (Google Forms)
+    description: Gera o QR code do último slide.
+    type: string
+  - name: enderecoSite
+    label: Endereço do site (QR code do modo participante)
+    type: string
+  - name: agenda
+    label: Roteiro (blocos)
+    description: Edite título, duração e objetivo. Os horários são recalculados sozinhos.
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{index}. {titulo} ({min} min)'
+    fields:
+    - name: id
+      label: Código interno
+      description: Não altere.
+      type: string
+      readonly: true
+    - name: titulo
+      label: Título
+      type: string
+    - name: min
+      label: Duração (minutos)
+      type: number
+    - name: objetivo
+      label: Objetivo
+      type: text
+  - name: checklistAntes
+    label: Checklist da equipe (antes do encontro)
+    type: string
+    list: true
+  - name: checklistCuidado
+    label: Alerta sobre o pré-teste
+    type: text
+  - name: discussao
+    label: Eixos da discussão participativa
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{eixo}'
+    fields:
+    - name: eixo
+      label: Eixo
+      type: string
+    - name: pergunta
+      label: Pergunta disparadora
+      type: text
+    - name: apoio
+      label: Orientação para quem conduz
+      type: text
+- name: capacitacao
+  label: Capacitação profissional
+  type: file
+  path: conteudo/capacitacao.json
+  format: json
+  fields:
+  - name: modulos
+    label: Módulos
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{index}. {titulo}'
+    fields:
+    - name: id
+      label: Código interno
+      description: Não altere (usado no endereço da página e no progresso salvo).
+      type: string
+      readonly: true
+    - name: titulo
+      label: Título do módulo
+      type: string
+    - name: min
+      label: Tempo estimado (minutos)
+      type: number
+    - name: objetivo
+      label: Objetivo
+      type: text
+    - name: secoes
+      label: Seções do manual relacionadas
+      description: Códigos internos. Não altere.
+      type: string
+      list: true
+      readonly: true
+    - name: blocos
+      label: Conteúdo
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{titulo}'
+      fields:
+      - name: titulo
+        label: Subtítulo
+        type: string
+      - name: texto
+        label: Parágrafos
+        type: text
+        list: true
+    - name: alertas
+      label: Alertas de aprendizagem
+      type: object
+      list: true
+      fields:
+      - name: tipo
+        label: Tipo
+        type: select
+        options:
+          values:
+          - name: seguranca
+            label: Segurança do paciente
+          - name: erro
+            label: Erro comum
+          - name: etica
+            label: Ética e registro
+          - name: dica
+            label: Pérola clínica
+      - name: texto
+        label: Texto
+        type: text
+    - name: vinheta
+      label: Situação para análise
+      type: text
+    - name: pratique
+      label: Questões
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{pergunta}'
+      fields:
+      - name: pergunta
+        label: Pergunta
+        type: text
+      - name: opcoes
+        label: Alternativas
+        type: object
+        list: true
+        fields:
+        - name: t
+          label: Alternativa
+          type: text
+        - name: certo
+          label: É a resposta correta
+          type: boolean
+        - name: feedback
+          label: Comentário exibido após responder
+          type: text
+- name: mitos
+  label: Mito ou fato
+  type: file
+  path: conteudo/mitos.json
+  format: json
+  fields:
+  - name: mitos
+    label: Afirmações
+    description: Usadas na página Mito ou fato e no quebra-gelo do workshop.
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{frase}'
+    fields:
+    - name: frase
+      label: Afirmação
+      type: text
+    - name: fato
+      label: É fato (verdadeira)
+      description: Desmarcado = mito.
+      type: boolean
+    - name: explica
+      label: Explicação
+      type: text

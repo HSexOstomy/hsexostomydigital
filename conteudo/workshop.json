@@ -1,0 +1,109 @@
+{
+  "data": "2026-11-23",
+  "horario": "19:00",
+  "duracaoMin": 180,
+  "modalidade": "On-line, pelo Google Meet",
+  "linkMeet": "",
+  "linkPreTeste": "",
+  "linkPosTeste": "",
+  "enderecoSite": "https://hsexostomy.github.io/hsexostomydigital/",
+  "agenda": [
+    {
+      "id": "abertura",
+      "titulo": "Abertura e acolhimento",
+      "min": 10,
+      "objetivo": "Apresentar a equipe, os objetivos do encontro e os combinados."
+    },
+    {
+      "id": "quebragelo",
+      "titulo": "Quebra-gelo: mito ou fato?",
+      "min": 15,
+      "objetivo": "Mobilizar crenças e saberes prévios com afirmações rápidas."
+    },
+    {
+      "id": "porque",
+      "titulo": "Por que falar de sexualidade na reabilitação?",
+      "min": 15,
+      "objetivo": "Situar a lacuna assistencial e o percurso de construção do programa."
+    },
+    {
+      "id": "fundamentos",
+      "titulo": "Fundamentos: Bem-Viver e EX-PLISSIT",
+      "min": 20,
+      "objetivo": "Apresentar os dois referenciais e como se articulam."
+    },
+    {
+      "id": "acao",
+      "titulo": "O programa em ação: fluxograma, Permissão e Revisão",
+      "min": 20,
+      "objetivo": "Percorrer o fluxograma e treinar as falas de abertura e retomada."
+    },
+    {
+      "id": "informacao",
+      "titulo": "Informação Limitada: o que e como falar",
+      "min": 15,
+      "objetivo": "Explorar os seis temas do Quadro 2 e escolher falas adequadas."
+    },
+    {
+      "id": "intervalo",
+      "titulo": "Intervalo",
+      "min": 10,
+      "objetivo": ""
+    },
+    {
+      "id": "sugestoes",
+      "titulo": "Sugestões Específicas e Terapia Intensiva",
+      "min": 20,
+      "objetivo": "Demonstrar calculadoras, Planejador de Cuidados e encaminhamento."
+    },
+    {
+      "id": "casos",
+      "titulo": "Atividade prática: casos clínicos",
+      "min": 25,
+      "objetivo": "Em grupos, percorrer um caso que evolui conforme as escolhas e justificar as decisões com o programa."
+    },
+    {
+      "id": "discussao",
+      "titulo": "Discussão participativa",
+      "min": 20,
+      "objetivo": "Coletar percepções sobre aplicabilidade e contribuições para o aperfeiçoamento."
+    },
+    {
+      "id": "encerramento",
+      "titulo": "Pós-teste e encerramento",
+      "min": 10,
+      "objetivo": "Orientar o preenchimento do pós-teste e da avaliação, e agradecer."
+    }
+  ],
+  "checklistAntes": [
+    "Confirmar que todos os inscritos responderam ao formulário de inscrição e pré-teste",
+    "Enviar o link do Meet aos participantes (e-mail e WhatsApp)",
+    "Testar o compartilhamento de tela com a apresentação em tela cheia",
+    "Testar o QR code do modo participante em um celular",
+    "Definir quem modera o chat e cronometra os blocos",
+    "Preparar o link do pós-teste para enviar no encerramento"
+  ],
+  "checklistCuidado": "Não divulgue o link deste site antes de todos terem respondido ao pré-teste. O contato prévio com o conteúdo pode alterar as respostas da linha de base.",
+  "discussao": [
+    {
+      "eixo": "Aceitabilidade",
+      "pergunta": "O que mais chamou sua atenção no programa? Houve algo que causou estranhamento ou resistência?",
+      "apoio": "Explore sentimentos e percepções gerais sobre a proposta."
+    },
+    {
+      "eixo": "Adequação",
+      "pergunta": "O programa responde às necessidades que você observa nos homens com estoma que atende ou atendeu? O que está faltando?",
+      "apoio": "Peça exemplos concretos da prática."
+    },
+    {
+      "eixo": "Viabilidade",
+      "pergunta": "O que seria preciso no seu serviço para aplicar o programa? Quais barreiras você antecipa (tempo, espaço, equipe, rede)?",
+      "apoio": "Relacione com as diretrizes de implantação (9.1)."
+    },
+    {
+      "eixo": "Aperfeiçoamento",
+      "pergunta": "O que você mudaria, acrescentaria ou retiraria do programa e deste ambiente digital?",
+      "apoio": "Registre as sugestões para a próxima versão."
+    }
+  ]
+}
