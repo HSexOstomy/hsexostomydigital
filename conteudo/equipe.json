@@ -29,6 +29,24 @@
       "enquadramento": "centro",
       "bio": "Coorientador da pesquisa. Pesquisador em enfermagem e saúde de homens.",
       "link": "https://orcid.org/0000-0003-3158-9017"
+    },
+    {
+      "grupo": "colaboradores",
+      "nome": "Nilo Manoel Pereira Vieira Barreto",
+      "papel": "Desenvolvimento e implementação digital",
+      "titulacao": "Doutorando. Mestre em Processos Interativos dos Órgãos e Sistemas (PPGPIOS/UFBA)",
+      "foto": "assets/img/whatsapp-image-2026-11-21-at-094107.jpeg",
+      "bio": "Médico em formação pela Universidade Federal da Bahia (UFBA) e doutorando em Enfermagem e Saúde pelo Programa de Pós-Graduação em Enfermagem da UFBA (PPGENF/UFBA). ",
+      "link": "http://lattes.cnpq.br/0009402578671537"
+    },
+    {
+      "grupo": "bolsistas",
+      "nome": "Stefane Santos de Jesus Pitanga",
+      "papel": "Bolsista PIBIC/UFBA",
+      "titulacao": "Estudante. Escola de Enfermagem (EEUFBA)",
+      "foto": "assets/img/whatsapp-image-2026-11-21-at-075432.jpeg",
+      "bio": "Estudante de graduação de enfermagem",
+      "link": "http://lattes.cnpq.br/4538629728843995"
     }
   ],
   "fichaTecnica": [
