@@ -16,7 +16,7 @@ function cards(filtro = "") {
 export default {
   render() {
     return html`<div class="page">
-      ${pageHead({ kicker: "O Programa", title: "Fundamentos do programa", lead: "O H_Sex_Ostomy articula a Teoria de Enfermagem de Reabilitação para o Bem-Viver, que sustenta o cuidado na relação intersubjetiva, e o modelo EX-PLISSIT, que orienta uma abordagem clínica progressiva e contínua.", crumbs: [[null, "Fundamentos"]] })}
+      ${pageHead({ kicker: "O Programa", title: "Fundamentos do Programa", lead: "O H_Sex_Ostomy articula a Teoria de Enfermagem de Reabilitação para o Bem-Viver, que sustenta o cuidado na relação intersubjetiva, e o modelo EX-PLISSIT, que orienta uma abordagem clínica progressiva e contínua.", crumbs: [[null, "Fundamentos"]] })}
       <div class="container">
         <section class="section">
           <div class="split split-top">
@@ -58,7 +58,7 @@ export default {
               <p>Proposto por Taylor e Davis (2007) para o bem-estar sexual de pessoas com deficiência adquirida ou doença crônica, o modelo amplia o PLISSIT de Annon (1976). Todas as intervenções começam com a permissão do indivíduo, e um ciclo de reflexão (foco no paciente) e revisão (foco no profissional) atravessa todos os níveis.</p>
               <div class="btn-row"><a class="btn btn-primary" href="#programa">Explorar o modelo ${icon("arrow")}</a><a class="btn" href="#manual/6-2">Ler a seção 6.2</a></div>
             </div>
-            ${callout("nota", "Direcionamento, não roteiro rígido", html`<p>O programa não se configura como um roteiro rígido de condutas. O julgamento clínico do(a) enfermeiro(a) é condição indispensável: o que se adequa a um homem em determinado contexto regional, cultural e socioeconômico pode não corresponder às necessidades de outro.</p>`)}
+            ${callout("nota", "Direcionamento, não roteiro rígido", html`<p>O Programa não se configura como um roteiro rígido de condutas. O julgamento clínico do(a) enfermeiro(a) é condição indispensável: o que se adequa a um homem em determinado contexto regional, cultural e socioeconômico pode não corresponder às necessidades de outro.</p>`)}
           </div>
         </section>
       </div>

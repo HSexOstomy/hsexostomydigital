@@ -17,7 +17,7 @@ export const apresentacao = arr(S.apresentacao).map(txt).filter(Boolean);
 
 export const percurso = par(S.percurso);
 
-/* Componentes do programa (EX-PLISSIT adaptado). Cores seguem o Apêndice A. */
+/* Componentes do Programa (EX-PLISSIT adaptado). Cores seguem o Apêndice A. */
 export const componentes = [
   { id: "permissao", sigla: "P", nome: "Permissão", rotulo: "Contínua", cor: "p", secao: "7-9-1", paginas: "29–31",
     resumo: "Abre e sustenta todas as etapas. Deve ser solicitada a cada encontro, com privacidade, acolhimento e respeito à recusa.",
@@ -49,11 +49,11 @@ export const conceitos = [
   ["Consciência", "Favorecer a reflexão sobre mudanças corporais, sentimentos, crenças, direitos, escolhas, obstáculos e facilitadores relacionados à sexualidade e à reabilitação."],
   ["Consciencialização", "Apoiar o processo contínuo de autoconhecimento. Ajudar o homem a reconhecer necessidades, questionar mitos e compreender possibilidades de cuidado e vivência da sexualidade."],
   ["Contemporaneidade", "Considerar que as necessidades da pessoa evoluem com o tempo, com as mudanças em seus relacionamentos e com o contexto de vida ao longo da reabilitação."],
-  ["Cuidado de enfermagem", "Operacionalizar o programa nas consultas de reabilitação. Iniciar a abordagem da sexualidade, respeitando a vontade da pessoa cuidada."],
+  ["Cuidado de enfermagem", "Operacionalizar o Programa nas consultas de reabilitação. Iniciar a abordagem da sexualidade, respeitando a vontade da pessoa cuidada."],
   ["Desigualdade", "Identificar barreiras econômicas, sociais, educacionais, raciais, territoriais, institucionais ou relacionadas à orientação sexual e à deficiência que dificultem o acesso, a participação ou a continuidade do cuidado no ambulatório e mediar conforme possibilidades."],
   ["Dignidade", "Reconhecer o homem como sujeito de direitos. Preservar privacidade, confidencialidade, integridade corporal, liberdade de escolha e tratamento respeitoso em todas as etapas do atendimento."],
   ["Diversidade", "Individualizar a abordagem. Adotar linguagem e condutas não normativas, sem presumir orientação sexual, monogamia ou um único modelo de masculinidade."],
-  ["Enfermagem", "Oferecer cuidado que articule dimensões biopsicossociais, utilizando o processo de enfermagem e os recursos do programa."],
+  ["Enfermagem", "Oferecer cuidado que articule dimensões biopsicossociais, utilizando o processo de enfermagem e os recursos do Programa."],
   ["Enfermagem de reabilitação", "Estruturar o cuidado à sexualidade em ações articuladas ao plano geral de reabilitação da pessoa com estoma, como parte do processo contínuo de reconstrução da pessoa em direção ao Bem-Viver."],
   ["Enfermeiro", "Atuar como facilitador do cuidado. Acolher, escutar e cuidar, articulando as dimensões biológicas, emocionais, relacionais, sociais, culturais e educacionais da sexualidade, respeitando sua autonomia e vontade."],
   ["Esperançar", "Estimular e apoiar a construção de expectativas futuras realistas e concretas, ancoradas no presente vivido, evitando promessas irreais."],

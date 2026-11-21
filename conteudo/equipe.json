@@ -17,7 +17,7 @@
       "titulacao": "Prof. Dr., Escola de Enfermagem da UFBA",
       "foto": "assets/img/whatsapp-image-2026-11-20-at-200532-1.jpeg",
       "enquadramento": "centro",
-      "bio": "Orientador da Pesquisa e Coordenador do programa.",
+      "bio": "Orientador da Pesquisa e Coordenador do Programa.",
       "link": "http://lattes.cnpq.br/0532233090665413"
     },
     {
@@ -71,20 +71,32 @@
       "valor": "Enfermeiras participantes do processo de cocriação do H_Sex_Ostomy"
     },
     {
-      "item": "Ilustrações, projeto gráfico e diagramação",
+      "item": "Projeto gráfico e diagramação",
       "valor": "Davi Barreto"
+    },
+    {
+      "item": "Ilustrações",
+      "valor": "Davi Barreto"
+    },
+    {
+      "item": "Revisão técnico-científica",
+      "valor": "Equipe de especialistas que validaram o conteúdo"
     },
     {
       "item": "Instituição",
       "valor": "Universidade Federal da Bahia (UFBA), Escola de Enfermagem, Programa de Pós-Graduação em Enfermagem e Saúde"
     },
     {
-      "item": "Projeto de origem",
-      "valor": "Tese de doutorado: Promoção da sexualidade na reabilitação de homens com estomas de eliminação: desenvolvimento do programa H_Sex_Ostomy"
+      "item": "Projeto de origem (tese de doutorado)",
+      "valor": "Promoção da sexualidade na reabilitação de homens com estomas de eliminação: desenvolvimento do Programa H_Sex_Ostomy"
     },
     {
       "item": "Edição",
       "valor": "1ª edição, 2026, versão eletrônica"
+    },
+    {
+      "item": "ISBN",
+      "valor": "978-65-02-50189-4"
     },
     {
       "item": "Financiamento",

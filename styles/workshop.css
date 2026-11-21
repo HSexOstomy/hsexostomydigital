@@ -144,10 +144,11 @@ body.mode-present { background: #0b1630; }
 .sl-logos img { height: 5cqw; width: auto; }
 .sl-art { height: 88%; width: auto; align-self: flex-end; margin-bottom: -5cqw; }
 .sl-percurso .percurso { --s: 1cqw; }
-.sl-percurso .percurso strong { font-size: 2cqw; }
-.sl-percurso .percurso span { font-size: 1.5cqw; }
-.sl-percurso .percurso .dot { width: 6cqw; height: 6cqw; font-size: 2.2cqw; }
-.sl-percurso .percurso::before { top: 3cqw; }
+.sl-percurso .percurso { gap: 1.4cqw; }
+.sl-percurso .percurso strong { font-size: 1.8cqw; }
+.sl-percurso .percurso span { font-size: 1.3cqw; line-height: 1.35; }
+.sl-percurso .percurso .dot { width: 5cqw; height: 5cqw; font-size: 2cqw; }
+.sl-percurso .percurso::before { top: 2.5cqw; }
 .sl-note { font-size: 1.6cqw; color: var(--muted); margin-top: 3cqw; max-width: 80%; }
 .sl-citacao { justify-content: center; }
 .sl-citacao blockquote p { font-family: var(--font-display); font-weight: 700; font-size: 5cqw; color: var(--navy-800); line-height: 1.15; border-left: 1cqw solid var(--green-500); padding-left: 3cqw; margin: 0 0 2cqw; }
@@ -245,3 +246,10 @@ body.mode-present { background: #0b1630; }
 @media (max-width: 900px) { .sim { grid-template-columns: 1fr; } .sim-side { position: static; order: 2; grid-template-columns: 1fr 1fr; } .sim-hist { grid-column: 1 / -1; } }
 @media (max-width: 560px) { .sim-side { grid-template-columns: 1fr; } }
 .pt .sim { grid-template-columns: 1fr; } .pt .sim-side { position: static; order: 2; grid-template-columns: 1fr 1fr; } .pt .sim-hist { grid-column: 1 / -1; }
+
+/* Mural de opiniões (só aparece com o link preenchido no painel) */
+.sl-disc.com-mural .sl-disc-grid { margin-right: 17cqw; }
+.sl-mural { position: absolute; right: 3.5cqw; bottom: 3.5cqw; width: 14cqw; text-align: center; }
+.sl-mural svg { width: 100%; height: auto; background: #fff; border-radius: 1cqw; padding: .6cqw; }
+.sl-mural p { margin: .6cqw 0 0; font-weight: 700; font-size: 1.3cqw; color: var(--navy-800); }
+.pt-mural { margin-bottom: .75rem; border: 2px solid var(--green-500); }

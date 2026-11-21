@@ -6,6 +6,9 @@
   "linkMeet": "",
   "linkPreTeste": "",
   "linkPosTeste": "",
+  "linkMural": "",
+  "muralTitulo": "Mural de opiniões",
+  "muralTexto": "Deixe sua opinião, dúvida ou sugestão sobre o encontro. As mensagens aparecem no mural compartilhado.",
   "enderecoSite": "https://hsexostomy.github.io/hsexostomydigital/",
   "agenda": [
     {
@@ -24,7 +27,7 @@
       "id": "porque",
       "titulo": "Por que falar de sexualidade na reabilitação?",
       "min": 15,
-      "objetivo": "Situar a lacuna assistencial e o percurso de construção do programa."
+      "objetivo": "Situar a lacuna assistencial e o percurso de construção do Programa."
     },
     {
       "id": "fundamentos",
@@ -34,7 +37,7 @@
     },
     {
       "id": "acao",
-      "titulo": "O programa em ação: fluxograma, Permissão e Revisão",
+      "titulo": "O Programa em ação: fluxograma, Permissão e Revisão",
       "min": 20,
       "objetivo": "Percorrer o fluxograma e treinar as falas de abertura e retomada."
     },
@@ -60,7 +63,7 @@
       "id": "casos",
       "titulo": "Atividade prática: casos clínicos",
       "min": 25,
-      "objetivo": "Em grupos, percorrer um caso que evolui conforme as escolhas e justificar as decisões com o programa."
+      "objetivo": "Em grupos, percorrer um caso que evolui conforme as escolhas e justificar as decisões com o Programa."
     },
     {
       "id": "discussao",
@@ -87,22 +90,22 @@
   "discussao": [
     {
       "eixo": "Aceitabilidade",
-      "pergunta": "O que mais chamou sua atenção no programa? Houve algo que causou estranhamento ou resistência?",
+      "pergunta": "O que mais chamou sua atenção no Programa? Houve algo que causou estranhamento ou resistência?",
       "apoio": "Explore sentimentos e percepções gerais sobre a proposta."
     },
     {
       "eixo": "Adequação",
-      "pergunta": "O programa responde às necessidades que você observa nos homens com estoma que atende ou atendeu? O que está faltando?",
+      "pergunta": "O Programa responde às necessidades que você observa nos homens com estoma que atende ou atendeu? O que está faltando?",
       "apoio": "Peça exemplos concretos da prática."
     },
     {
       "eixo": "Viabilidade",
-      "pergunta": "O que seria preciso no seu serviço para aplicar o programa? Quais barreiras você antecipa (tempo, espaço, equipe, rede)?",
+      "pergunta": "O que seria preciso no seu serviço para aplicar o Programa? Quais barreiras você antecipa (tempo, espaço, equipe, rede)?",
       "apoio": "Relacione com as diretrizes de implantação (9.1)."
     },
     {
       "eixo": "Aperfeiçoamento",
-      "pergunta": "O que você mudaria, acrescentaria ou retiraria do programa e deste ambiente digital?",
+      "pergunta": "O que você mudaria, acrescentaria ou retiraria do Programa e deste ambiente digital?",
       "apoio": "Registre as sugestões para a próxima versão."
     }
   ]

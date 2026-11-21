@@ -5,7 +5,7 @@ import { html, raw } from "../core/dom.js";
 export const FIG = {
   teoria: { src: "assets/img/fig1-teoria.webp", w: 1700, h: 856, alt: "Figura 1 do manual: diagrama do modelo teórico da Teoria de Enfermagem de Reabilitação para o Bem-Viver, com Enfermeira, Enfermagem de Reabilitação e Pessoa Cuidada no centro de um oval, atravessados por Ambiente e Tempo, sob o Bem-Viver." },
   explissit: { src: "assets/img/fig2-explissit-pt.webp", w: 881, h: 522, alt: "Figura 2 do manual: modelo EX-PLISSIT em português. Um círculo com o ciclo autoconsciência, reflexão, revisão, conhecimento e questionar pressupostos. No centro, a Permissão (P) com reflexão e revisão; ao redor, Terapia Intensiva (TI), Informação Limitada (IL) e Sugestões Específicas (SE), cada uma com reflexão e revisão." },
-  fluxograma: { src: "assets/img/fig3-fluxograma-v2.webp", w: 1299, h: 1726, alt: "Figura 3 do manual: fluxograma do programa, da consulta para admissão à Permissão, decisões sobre autorização, demandas específicas e suporte especializado, Informação Limitada, Sugestões Específicas, Terapia Intensiva e Avaliação, Revisão e Reflexão, com loop contínuo." },
+  fluxograma: { src: "assets/img/fig3-fluxograma-v2.webp", w: 1299, h: 1726, alt: "Figura 3 do manual: fluxograma do Programa, da consulta para admissão à Permissão, decisões sobre autorização, demandas específicas e suporte especializado, Informação Limitada, Sugestões Específicas, Terapia Intensiva e Avaliação, Revisão e Reflexão, com loop contínuo." },
   permissao: { src: "assets/img/fig4-permissao.webp", w: 1700, h: 1095, alt: "Figura 4 do manual: como aplicar a Permissão em cinco passos (prepare o ambiente, solicite permissão, respeite a escolha do indivíduo, inicie o diálogo, normalize e fortaleça) e dois exemplos para iniciar a discussão." },
   revisao: { src: "assets/img/fig5-revisao.webp", w: 1700, h: 945, alt: "Figura 5 do manual: Revisão em cinco passos (revisão contínua, monitoramento, avaliação, identificar, reorientar) e dois exemplos para iniciar a revisão." },
   rede: { src: "assets/img/fig6-rede.webp", w: 1700, h: 1456, alt: "Figura 6 do manual: rede de cuidados ao homem com estoma, com o homem ao centro como protagonista, ligado à Atenção Primária, serviços especializados, equipe multiprofissional, serviço de apoio e grupos de apoio, e os padrões intercolaborativos." }
@@ -21,7 +21,7 @@ export const AREAS = {
     ["permissao", "ellipse", 67.9, 51, 10.3, 12.6, "Permissão (P)"]
   ],
   fluxograma: [
-    ["admissao", "rect", 35.5, 0.7, 28.2, 6.3, "Consulta para admissão no programa"],
+    ["admissao", "rect", 35.5, 0.7, 28.2, 6.3, "Consulta para admissão no Programa"],
     ["permissao", "rect", 17.9, 9.3, 64.6, 6.4, "Permissão"],
     ["loop", "ellipse", 86.9, 12.4, 2.7, 2, "Loop"],
     ["d1", "diamond", 35.6, 17.5, 27.5, 7.6, "Usuário autoriza a discussão?"],
@@ -59,7 +59,7 @@ export function figuraInterativa(nome, attr = "data-node", { destaque = null } =
 export function figuraDestaque(nome, id) {
   const f = FIG[nome], ratio = f.h / f.w;
   const a = AREAS[nome].filter((x) => x[0] === id).map((x) => shape(x, ratio, "data-hl").replace('class="hot"', 'class="hl"').replace(/tabindex="0" role="button" /, "")).join("");
-  return raw(`<div class="fig-int fig-mini" style="aspect-ratio:${f.w}/${f.h}"><img src="${f.src}" alt="Fluxograma do programa com a etapa atual destacada" width="${f.w}" height="${f.h}" loading="lazy"><svg class="fig-int-svg" viewBox="0 0 100 ${(100 * ratio).toFixed(2)}" preserveAspectRatio="none" aria-hidden="true">${a}</svg></div>`);
+  return raw(`<div class="fig-int fig-mini" style="aspect-ratio:${f.w}/${f.h}"><img src="${f.src}" alt="Fluxograma do Programa com a etapa atual destacada" width="${f.w}" height="${f.h}" loading="lazy"><svg class="fig-int-svg" viewBox="0 0 100 ${(100 * ratio).toFixed(2)}" preserveAspectRatio="none" aria-hidden="true">${a}</svg></div>`);
 }
 
 export function figuraImg(nome, extra = "") {

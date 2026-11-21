@@ -14,7 +14,7 @@ const ETAPAS = [
   { id: "terapia", nome: "Terapia Intensiva", cor: "it", sub: "Encaminhar" }
 ];
 
-const registroRecusa = "Ofertada abordagem sobre sexualidade e saúde sexual, conforme programa H_Sex_Ostomy. Usuário optou por não conversar sobre o tema neste momento. Decisão acolhida sem julgamento; seguido o atendimento clínico. Orientado sobre a disponibilidade da equipe para retomar o tema em consultas futuras.";
+const registroRecusa = "Ofertada abordagem sobre sexualidade e saúde sexual, conforme Programa H_Sex_Ostomy. Usuário optou por não conversar sobre o tema neste momento. Decisão acolhida sem julgamento; seguido o atendimento clínico. Orientado sobre a disponibilidade da equipe para retomar o tema em consultas futuras.";
 
 const preparo = [
   "Ambiente privativo, acolhedor e acessível, com privacidade visual e auditiva",

@@ -10,7 +10,7 @@ function texto() {
   const para = st.para.length ? st.para.join(", ") : "[serviço ou profissional]";
   const mot = st.motivos.length ? st.motivos.map(low).join("; ") : "[motivo do encaminhamento]";
   return [
-    `Encaminho homem com estoma de eliminação, em acompanhamento de enfermagem no programa H_Sex_Ostomy, para avaliação e acompanhamento em ${para}.`,
+    `Encaminho homem com estoma de eliminação, em acompanhamento de enfermagem no Programa H_Sex_Ostomy, para avaliação e acompanhamento em ${para}.`,
     `Motivo: ${mot}.`,
     st.resumo.trim() ? `Resumo clínico: ${st.resumo.trim()}` : "Resumo clínico: [histórico pertinente, instrumentos aplicados e intervenções já realizadas].",
     st.objetivo.trim() ? `Objetivo do encaminhamento: ${st.objetivo.trim()}` : "",
@@ -23,7 +23,7 @@ function texto() {
 export default {
   render() {
     return html`<div class="page">
-      ${pageHead({ kicker: "Ferramentas · Terapia Intensiva", title: "Encaminhamento e rede", lead: "Quando a demanda excede o escopo de atuação autônoma do(a) enfermeiro(a), o encaminhamento qualificado garante acesso a cuidado especializado, sem encerrar o acompanhamento.", crumbs: [[null, "Encaminhamento"]], art: "homem-negro-fita" })}
+      ${pageHead({ kicker: "Ferramentas · Terapia Intensiva", title: "Encaminhamento e rede", lead: "Quando a demanda excede o escopo de atuação autônoma do(a) enfermeiro(a), o encaminhamento qualificado garante acesso a cuidado especializado, sem encerrar o acompanhamento.", crumbs: [[null, "Encaminhamento"]], art: "homem-negro-fita-v2" })}
       <div class="container">
         <section class="section">
           <h2 class="sr-only">Quando, como e para quem encaminhar</h2>

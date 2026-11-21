@@ -73,6 +73,9 @@ window.HSO_CONFIG = {
     linkMeet: limpo(W.linkMeet),
     linkPreTeste: limpo(W.linkPreTeste),
     linkPosTeste: limpo(W.linkPosTeste),
+    linkMural: limpo(W.linkMural),
+    muralTitulo: limpo(W.muralTitulo) || "Mural de opiniões",
+    muralTexto: txt(W.muralTexto),
     enderecoSite: limpo(W.enderecoSite) || "https://hsexostomy.github.io/hsexostomydigital/"
   },
   versao: txt(G.versao)

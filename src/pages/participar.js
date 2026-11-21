@@ -5,6 +5,8 @@ import { discussao } from "../data/workshop.js";
 import { novoMitos, viewMitos, bindMitos, novoFalas, viewFalas, bindFalas, listaCasos, viewCaso, bindCaso, novoCaso } from "./atividades.js";
 import { session } from "../core/store.js";
 
+const W = (window.HSO_CONFIG || {}).workshop || {};
+
 const sm = novoMitos(), sf = novoFalas(), sc = {};
 const reflexao = session.read("reflexao", {});
 
@@ -23,6 +25,7 @@ function hub() {
     ${topo("Bem-vindo(a) ao workshop!", false)}
     <div class="pt-body">
       <p class="pt-lead">Aqui ficam as atividades do encontro. Abra cada uma quando a facilitadora indicar. Suas respostas não são enviadas nem registradas.</p>
+      ${W.linkMural ? html`<a class="pt-item pt-mural" href="${W.linkMural}" target="_blank" rel="noopener"><span class="pt-ic">${icon("chat")}</span><span><strong>${W.muralTitulo}</strong><small>${W.muralTexto}</small></span><span class="tag tag-green">Ao vivo</span></a>` : ""}
       <ul class="pt-list">${itens.map(([href, ic, t, d, tag]) => html`<li><a class="pt-item" href="#${href}"><span class="pt-ic">${icon(ic)}</span><span><strong>${t}</strong><small>${d}</small></span><span class="tag">${tag}</span></a></li>`)}</ul>
       <div class="pt-more"><p class="small muted">Depois do encontro, explore a plataforma completa:</p>
         <div class="btn-row"><a class="btn btn-sm" href="#consulta">Na consulta</a><a class="btn btn-sm" href="#manual">Manual</a><a class="btn btn-sm" href="#capacitacao">Formação de Habilidades</a></div></div>

@@ -69,7 +69,7 @@ export async function copyText(text) {
 const LEADS = new Map(arr(C.paginas.paginas).filter((p) => p && txt(p.titulo) && txt(p.texto).trim()).map((p) => [txt(p.titulo), txt(p.texto)]));
 
 /* Ilustrações muito largas ficam menores para não passar por baixo do texto */
-const ART_LARGA = { "homem-negro-fita": "head-art-larga", "dupla-homens-fita": "head-art-larga head-art-espelho" };
+const ART_LARGA = { "homem-negro-fita-v2": "head-art-larga", "dupla-homens-fita": "head-art-larga head-art-espelho" };
 
 export function pageHead({ kicker, title, lead, crumbs = [], actions = "", art = "" }) {
   if (typeof title === "string" && LEADS.has(title)) lead = LEADS.get(title);

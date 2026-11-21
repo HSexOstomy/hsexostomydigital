@@ -96,6 +96,7 @@ export default {
               <div><strong>Inscrição e pré-teste</strong>${linkOu(W.linkPreTeste, "Formulário")}</div>
               <div><strong>Sala do encontro</strong>${linkOu(W.linkMeet, "Google Meet")}</div>
               <div><strong>Pós-teste e avaliação</strong>${linkOu(W.linkPosTeste, "Formulário")}</div>
+              <div><strong>${W.muralTitulo || "Mural de opiniões"}</strong>${linkOu(W.linkMural, "Mural")}</div>
             </div>
             <hr>
             <p class="kicker">Materiais para compartilhar</p>

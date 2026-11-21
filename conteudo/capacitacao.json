@@ -83,7 +83,7 @@
       "id": "fundamentos",
       "titulo": "Bem-Viver e EX-PLISSIT na prática",
       "min": 15,
-      "objetivo": "Traduzir os dois referenciais do programa em atitudes concretas durante a consulta.",
+      "objetivo": "Traduzir os dois referenciais do Programa em atitudes concretas durante a consulta.",
       "secoes": [
         "6-1",
         "6-2",
@@ -526,7 +526,7 @@
         },
         {
           "tipo": "etica",
-          "texto": "As classificações não restringem o programa: a CIPE® ou a linguagem institucional podem ser usadas, mantendo o raciocínio e a documentação."
+          "texto": "As classificações não restringem o Programa: a CIPE® ou a linguagem institucional podem ser usadas, mantendo o raciocínio e a documentação."
         }
       ],
       "vinheta": "Bruno relata vergonha do corpo, evita tirar a camisa e diz que a esposa “deve ter nojo”. IIEF-15 com função erétil 24/30.",
@@ -666,7 +666,7 @@
         },
         {
           "tipo": "erro",
-          "texto": "Presumir desinteresse sexual pela idade. Estigma ligado à idade está entre os que o programa pede para combater."
+          "texto": "Presumir desinteresse sexual pela idade. Estigma ligado à idade está entre os que o Programa pede para combater."
         },
         {
           "tipo": "dica",
@@ -691,7 +691,7 @@
             {
               "t": "Mudar de assunto para os cuidados com a bolsa.",
               "certo": false,
-              "feedback": "Desviar reforça o silêncio que o programa busca romper."
+              "feedback": "Desviar reforça o silêncio que o Programa busca romper."
             }
           ]
         },

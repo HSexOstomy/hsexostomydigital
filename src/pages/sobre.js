@@ -38,7 +38,7 @@ function sobre() {
       </section>
 
       <section class="section">
-        <div class="section-head"><div><p class="kicker">Público-alvo</p><h2>Para quem é o programa</h2></div></div>
+        <div class="section-head"><div><p class="kicker">Público-alvo</p><h2>Para quem é o Programa</h2></div></div>
         <div class="grid grid-2">${identidade.publico.map(([t, d], i) => html`<article class="card public-card"><span class="card-icon">${icon(i ? "heart" : "users")}</span><h3>${t}</h3><p>${d}</p></article>`)}</div>
       </section>
     </div>

@@ -8,7 +8,7 @@ const calc = quadro7.map((q, i) => ({ ...q, i })).filter((q) => q.calc);
 export default {
   render() {
     return html`<div class="page">
-      ${pageHead({ kicker: "Ferramentas · Capítulo 9", title: "Implantação e indicadores", lead: "Diretrizes norteadoras para incorporar o H_Sex_Ostomy ao serviço e indicadores de estrutura, processo e resultado para acompanhar sua execução. Adapte à realidade local, preservando os fundamentos do programa.", crumbs: [[null, "Implantação"]] })}
+      ${pageHead({ kicker: "Ferramentas · Capítulo 9", title: "Implantação e indicadores", lead: "Diretrizes norteadoras para incorporar o H_Sex_Ostomy ao serviço e indicadores de estrutura, processo e resultado para acompanhar sua execução. Adapte à realidade local, preservando os fundamentos do Programa.", crumbs: [[null, "Implantação"]] })}
       <div class="container">
         <section class="section">
           <div class="section-head"><div><p class="kicker">9.1</p><h2>Diretrizes para implantação</h2><p>Marque o que seu serviço já tem. Serve como checklist de prontidão.</p></div><span class="tag tag-green" id="pront">0 de ${diretrizesImplantacao.length}</span></div>
@@ -30,7 +30,7 @@ export default {
         <section class="section">
           <div class="section-head"><div><p class="kicker">Quadro 7</p><h2>Todos os indicadores sugeridos</h2></div><button class="btn" data-print>${icon("print")}Imprimir</button></div>
           ${tabela7()}
-          ${callout("info", "Ponto de partida, não regra", html`<p>Selecione os indicadores factíveis no seu contexto e acrescente outros que fizerem sentido, mantendo a coerência com os objetivos do programa.</p>`)}
+          ${callout("info", "Ponto de partida, não regra", html`<p>Selecione os indicadores factíveis no seu contexto e acrescente outros que fizerem sentido, mantendo a coerência com os objetivos do Programa.</p>`)}
         </section>
       </div>
     </div>`;

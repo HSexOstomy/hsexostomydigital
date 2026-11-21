@@ -13,13 +13,13 @@ export const partes = [
 export const secoes = [
   {
     id: "apresentacao", num: "", titulo: "Apresentação", paginas: "8–9", parte: "abertura",
-    resumo: "Por que o programa existe, de que pesquisas nasceu e como foi cocriado com enfermeiras da reabilitação.",
+    resumo: "Por que o Programa existe, de que pesquisas nasceu e como foi cocriado com enfermeiras da reabilitação.",
     blocos: [{ t: "apresentacao" }],
     ferramentas: [["sobre", "Conhecer o projeto"]]
   },
   {
     id: "identidade", num: "1–5", titulo: "Finalidade, missão, visão, valores e público-alvo", paginas: "10", parte: "abertura",
-    resumo: "O que o programa busca, para quem foi feito e quais valores orientam cada encontro.",
+    resumo: "O que o Programa busca, para quem foi feito e quais valores orientam cada encontro.",
     blocos: [{ t: "identidade" }],
     ferramentas: [["sobre", "Ver na página Sobre"]]
   },
@@ -41,10 +41,10 @@ export const secoes = [
       { t: "citacao", x: "A relação entre enfermeira e pessoa cuidada em reabilitação contribui para o Bem-Viver acontecer.", fonte: "Parcimônia da teoria (Schoeller, 2025)" },
       { t: "figura", fig: "teoria", legenda: "Figura 1. Diagrama de conceitos, definições e afirmações do modelo teórico da Teoria de Enfermagem de Reabilitação para o Bem-Viver.", fonte: "Fonte: Zuchetto (adaptado)." },
       { t: "h", x: "A teoria no H_Sex_Ostomy" },
-      { t: "p", x: "No programa, a teoria orienta a compreensão da sexualidade como uma dimensão constitutiva do processo de viver e de reabilitação dos homens com estomas de eliminação. As mudanças decorrentes da condição de saúde, do tratamento e da presença do estoma podem repercutir na imagem corporal, na identidade, na autoconfiança, no autorrespeito, na autoestima, na autonomia e nas relações afetivas e sexuais. Em homens, essas repercussões atingem também a construção da identidade masculina e são influenciadas pelas experiências individuais, pelo tempo de convivência com o estoma e pelos contextos familiar, conjugal, assistencial, cultural e social (Anjos et al., 2025; Santos, 2025; Araújo, 2022)." },
+      { t: "p", x: "No Programa, a teoria orienta a compreensão da sexualidade como uma dimensão constitutiva do processo de viver e de reabilitação dos homens com estomas de eliminação. As mudanças decorrentes da condição de saúde, do tratamento e da presença do estoma podem repercutir na imagem corporal, na identidade, na autoconfiança, no autorrespeito, na autoestima, na autonomia e nas relações afetivas e sexuais. Em homens, essas repercussões atingem também a construção da identidade masculina e são influenciadas pelas experiências individuais, pelo tempo de convivência com o estoma e pelos contextos familiar, conjugal, assistencial, cultural e social (Anjos et al., 2025; Santos, 2025; Araújo, 2022)." },
       { t: "quadro", q: "quadro1", legenda: "Quadro 1. Operacionalização dos conceitos da Teoria de Enfermagem de Reabilitação para o Bem-Viver no H_Sex_Ostomy (adaptado de Zuchetto, 2023)." },
       { t: "p", x: "No H_Sex_Ostomy, a pessoa é reconhecida em sua singularidade, história, identidade, corporeidade, sexualidade, desejos, valores e crenças. O ambiente compreende as relações e condições que favorecem ou obstaculizam essa vivência, como parceria, família, rede de apoio e aspectos sociais e culturais. O tempo é entendido como processo contínuo e não linear, no qual a reconstrução da sexualidade após o estoma produz novas necessidades ao longo do viver. A Enfermagem de Reabilitação articula esse processo por meio da relação intersubjetiva entre enfermeira(o) e pessoa cuidada, sustentada em escuta, diálogo e participação nas decisões." },
-      { t: "nota", x: "O programa não se configura como um roteiro rígido de condutas, mas como um direcionamento clínico-assistencial. O julgamento clínico do(a) enfermeiro(a) para avaliar, identificar diagnósticos e selecionar intervenções adequadas a cada encontro é condição indispensável, uma vez que o que se adequa a um homem em determinado contexto regional, cultural e socioeconômico pode não corresponder às necessidades de outro, mesmo dentro do mesmo território nacional." }
+      { t: "nota", x: "O Programa não se configura como um roteiro rígido de condutas, mas como um direcionamento clínico-assistencial. O julgamento clínico do(a) enfermeiro(a) para avaliar, identificar diagnósticos e selecionar intervenções adequadas a cada encontro é condição indispensável, uma vez que o que se adequa a um homem em determinado contexto regional, cultural e socioeconômico pode não corresponder às necessidades de outro, mesmo dentro do mesmo território nacional." }
     ],
     ferramentas: [["fundamentos", "Explorar os 41 conceitos"]]
   },
@@ -53,35 +53,36 @@ export const secoes = [
     resumo: "Modelo para abordar o bem-estar sexual em deficiência adquirida ou doença crônica, com a Permissão no centro e um ciclo contínuo de reflexão e revisão.",
     blocos: [
       { t: "p", x: "O Extended PLISSIT (EX-PLISSIT) é um modelo proposto para profissionais de saúde abordarem as necessidades de bem-estar sexual de indivíduos com deficiência adquirida ou doença crônica. Traz como foco a permissão e a revisão constante, de modo que todas as intervenções devem ser iniciadas com a permissão do indivíduo, dando a oportunidade para fazer perguntas e/ou expressar suas preocupações (Taylor; Davis, 2007)." },
-      { t: "figura", fig: "explissit", legenda: "Figura 2. Modelo EX-PLISSIT.", fonte: "Fonte: Taylor, B.; Davis, S. The Extended PLISSIT Model for Addressing the Sexual Wellbeing of Individuals with an Acquired Disability or Chronic Illness. Sex Disabil 25, 135–139 (2007)." },
+      { t: "figura", fig: "explissit", legenda: "Figura 2. Modelo EX-PLISSIT: tradução livre e adaptação para o português.", fonte: "Fonte: adaptado e traduzido de Taylor e Davis (2007)." },
       { t: "lista", itens: [
         "Informação Limitada: informações gerais, que precisam ser inclusivas e relevantes para o indivíduo. O profissional não deve presumir que os pacientes se sentirão capazes de revelar seus problemas e preocupações em um primeiro momento, o que evidencia a necessidade da permissão.",
         "Sugestões Específicas: abordagem baseada na resolução de problemas específicos do paciente, que requer mais conhecimento e habilidade. O profissional precisa realizar uma anamnese sexual para identificar problemas, preocupações e expectativas.",
         "Terapia Intensiva: pode ser oferecida em qualquer estágio. É primordial que os profissionais reconheçam seus pontos fortes e suas limitações e identifiquem a necessidade de encaminhamento a profissionais especializados (psicólogos, sexólogos, urologistas etc.)."
       ] },
-      { t: "p", x: "O modelo propõe um ciclo de reflexão e revisão, desafiando suposições para desenvolver conhecimento e autoconsciência. A reflexão é focada no paciente, enquanto a revisão é focada no profissional. Uma vez que determinado assunto tenha sido discutido, os profissionais não devem presumir que foi totalmente resolvido, porque a sexualidade é dinâmica e pode ser impactada por mudanças nas dimensões físicas, sociais e psicológicas. Os profissionais devem refletir sobre suas atitudes e os impactos que podem ter tido na consulta, individualmente ou com colegas, informalmente ou por meio de supervisão clínica. A revisão permite trabalhar em equipe para atender às necessidades de bem-estar sexual (Taylor; Davis, 2007)." }
+      { t: "p", x: "O modelo propõe um ciclo de reflexão e revisão, desafiando suposições para desenvolver conhecimento e autoconsciência. A reflexão é focada no paciente, enquanto a revisão é focada no profissional. Uma vez que determinado assunto tenha sido discutido, os profissionais não devem presumir que foi totalmente resolvido, porque a sexualidade é dinâmica e pode ser impactada por mudanças nas dimensões físicas, sociais e psicológicas. Os profissionais devem refletir sobre suas atitudes e os impactos que podem ter tido na consulta, individualmente ou com colegas, informalmente ou por meio de supervisão clínica. A revisão permite trabalhar em equipe para atender às necessidades de bem-estar sexual (Taylor; Davis, 2007)." },
+      { t: "p", x: "A Figura 2 apresenta o modelo EX-PLISSIT em tradução livre para o português." }
     ],
     ferramentas: [["programa", "Ver os cinco componentes"]]
   },
   {
     id: "7-1", num: "7–7.1", titulo: "Metodologia de aplicação, materiais e insumos", paginas: "20–21", parte: "metodo",
-    resumo: "Recursos humanos, tecnológicos e físicos necessários para aplicar o programa.",
+    resumo: "Recursos humanos, tecnológicos e físicos necessários para aplicar o Programa.",
     blocos: [
-      { t: "p", x: "O programa fundamenta-se na Teoria de Enfermagem de Reabilitação para o Bem-Viver (Schoeller, 2025), promovendo um cuidado pautado na intersubjetividade e na escuta qualificada da pessoa cuidada. Articulado ao modelo EX-PLISSIT (Taylor; Davis, 2007), o processo é conduzido por um fluxo contínuo de reflexão e revisão, no qual o(a) enfermeiro(a) atua como impulsionador(a) na busca pelo Bem-Viver." },
+      { t: "p", x: "O Programa fundamenta-se na Teoria de Enfermagem de Reabilitação para o Bem-Viver (Schoeller, 2025), promovendo um cuidado pautado na intersubjetividade e na escuta qualificada da pessoa cuidada. Articulado ao modelo EX-PLISSIT (Taylor; Davis, 2007), o processo é conduzido por um fluxo contínuo de reflexão e revisão, no qual o(a) enfermeiro(a) atua como impulsionador(a) na busca pelo Bem-Viver." },
       { t: "h", x: "Recursos humanos" },
-      { t: "lista", itens: ["Enfermeiros(as) capacitados(as) para aplicação do programa H_Sex_Ostomy."] },
+      { t: "lista", itens: ["Enfermeiros(as) capacitados(as) para aplicação do Programa H_Sex_Ostomy."] },
       { t: "h", x: "Recursos tecnológicos" },
-      { t: "lista", itens: ["Manual técnico-educativo do programa H_Sex_Ostomy.", "Formulários e instrumentos para levantamento do histórico sexual e identificação das necessidades da pessoa cuidada.", "Instrumentos validados para avaliação e acompanhamento da função e satisfação sexual, quando necessário, como o IIEF-15 e o QS-M.", "Formulários para registro dos diagnósticos de enfermagem, planejamento das intervenções e acompanhamento.", "Fluxo institucional de encaminhamento e acompanhamento multiprofissional, quando necessário.", "Materiais educativos complementares, como peças anatômicas, manequins, álbuns seriados, vídeos e infográficos, quando disponíveis ou elaborados pela equipe com base no conteúdo do programa.", "Para atendimentos remotos, plataforma digital segura, que assegure confidencialidade e proteção das informações."] },
+      { t: "lista", itens: ["Manual técnico-educativo do Programa H_Sex_Ostomy.", "Formulários e instrumentos para levantamento do histórico sexual e identificação das necessidades da pessoa cuidada.", "Instrumentos validados para avaliação e acompanhamento da função e satisfação sexual, quando necessário, como o IIEF-15 e o QS-M.", "Formulários para registro dos diagnósticos de enfermagem, planejamento das intervenções e acompanhamento.", "Fluxo institucional de encaminhamento e acompanhamento multiprofissional, quando necessário.", "Materiais educativos complementares, como peças anatômicas, manequins, álbuns seriados, vídeos e infográficos, quando disponíveis ou elaborados pela equipe com base no conteúdo do Programa.", "Para atendimentos remotos, plataforma digital segura, que assegure confidencialidade e proteção das informações."] },
       { t: "h", x: "Recursos físicos" },
       { t: "lista", itens: ["Ambiente privativo, acolhedor e acessível, que assegure confidencialidade, conforto e privacidade visual e auditiva.", "Para atendimentos remotos, dispositivo eletrônico com câmera, áudio e acesso à internet, como computador, tablet ou smartphone."] }
     ],
     ferramentas: [["calculadoras", "Instrumentos IIEF-15 e QS-M"], ["planejador", "Formulário de registro"]]
   },
   {
-    id: "7-2", num: "7.2", titulo: "Contextos de aplicação do programa", paginas: "21–22", parte: "metodo",
-    resumo: "Onde o programa pode acontecer e quais resoluções do COFEN amparam cada modalidade.",
+    id: "7-2", num: "7.2", titulo: "Contextos de aplicação do Programa", paginas: "21–22", parte: "metodo",
+    resumo: "Onde o Programa pode acontecer e quais resoluções do COFEN amparam cada modalidade.",
     blocos: [
-      { t: "p", x: "O programa pode ser aplicado por enfermeiros(as) em diferentes contextos assistenciais que atuem na reabilitação da pessoa com estoma, respeitando as especificidades de cada cenário:" },
+      { t: "p", x: "O Programa pode ser aplicado por enfermeiros(as) em diferentes contextos assistenciais que atuem na reabilitação da pessoa com estoma, respeitando as especificidades de cada cenário:" },
       { t: "lista", itens: [
         "Serviços de Reabilitação da Pessoa com Estoma: contexto primário de aplicação, com atendimento individualizado, contínuo e centrado nas necessidades de cada homem.",
         "Atenção Primária à Saúde: Unidades Básicas de Saúde, Estratégia Saúde da Família e demais serviços, favorecendo a identificação precoce das demandas relacionadas à sexualidade e intimidade, o acompanhamento longitudinal e a educação em saúde. O(a) enfermeiro(a) pode realizar acolhimento, avaliação das necessidades, orientações e encaminhamentos, articulando o cuidado com a Rede de Atenção à Saúde.",
@@ -89,7 +90,7 @@ export const secoes = [
         "Atenção Domiciliar: quando o contexto clínico ou a condição do usuário indicar, garantindo continuidade do cuidado com preservação da privacidade e do conforto.",
         "Teleatendimento: consultas por plataformas digitais seguras, como modalidade complementar ou substitutiva, ampliando o acesso independentemente de barreiras geográficas, de mobilidade ou de disponibilidade."
       ] },
-      { t: "nota", x: "O programa pode ser implementado na modalidade presencial ou, quando necessário, de forma remota ou domiciliar, em conformidade com os preceitos ético-legais da enfermagem. Resoluções que regulamentam essas modalidades: COFEN nº 568/2018, alterada pela nº 606/2019 (Consultórios e Clínicas de Enfermagem); COFEN nº 766/2024 (Atenção Domiciliar); COFEN nº 696/2022 (Saúde Digital e Telenfermagem); COFEN nº 728/2023, alterada pela nº 803/2026 (Enfermagem de Reabilitação); COFEN nº 735/2024 (Enfermeiro navegador e Enfermeiro clínico especialista)." }
+      { t: "nota", x: "O Programa pode ser implementado na modalidade presencial ou, quando necessário, de forma remota ou domiciliar, em conformidade com os preceitos ético-legais da enfermagem. Resoluções que regulamentam essas modalidades: COFEN nº 568/2018, alterada pela nº 606/2019 (Consultórios e Clínicas de Enfermagem); COFEN nº 766/2024 (Atenção Domiciliar); COFEN nº 696/2022 (Saúde Digital e Telenfermagem); COFEN nº 728/2023, alterada pela nº 803/2026 (Enfermagem de Reabilitação); COFEN nº 735/2024 (Enfermeiro navegador e Enfermeiro clínico especialista)." }
     ]
   },
   {
@@ -98,8 +99,8 @@ export const secoes = [
     blocos: [
       { t: "h", x: "7.3 Periodicidade recomendada" },
       { t: "lista", itens: [
-        "A temática pode ser introduzida de forma gradual, já na primeira consulta de enfermagem após admissão no serviço, permanecendo como componente longitudinal do cuidado nas consultas subsequentes, minimamente a cada três meses, podendo ser ajustada conforme as necessidades individuais (Distrito Federal, 2022).",
-        "O intervalo entre atendimentos deve ser ajustado conforme as demandas clínicas, emocionais e psicossociais da pessoa cuidada. Teleatendimentos intermediários podem ser ofertados sempre que o(a) enfermeiro(a) ou o próprio homem identificar necessidade."
+        "A temática pode ser introduzida de forma gradual, já na primeira consulta de enfermagem após admissão no serviço, permanecendo como componente longitudinal do cuidado nas consultas subsequentes, minimamente a cada três meses, podendo ser ajustada conforme as necessidades individuais (Distrito Federal, 2022; Paula; Moraes, 2022). Para homens submetidos à cirurgia recente, a abordagem inicial deve considerar suas condições clínicas e disponibilidade, podendo priorizar o acolhimento, as dúvidas imediatas e a oferta de oportunidade para conversar. Caso não se sinta preparado para responder aos itens ou aprofundar o tema, a avaliação detalhada poderá ser adiada, registrada e retomada em consulta posterior.",
+        "A duração de cada consulta e o intervalo entre os atendimentos devem ser ajustados às demandas clínicas, emocionais e psicossociais da pessoa cuidada e à organização do serviço. Teleatendimentos intermediários podem ser ofertados sempre que o(a) enfermeiro(a) ou o próprio homem identificar necessidade."
       ] },
       { t: "h", x: "7.4 Singularidades no processo de reabilitação sexual" },
       { t: "p", x: "Alguns homens poderão demonstrar maior abertura para discutir a sexualidade desde o primeiro atendimento, enquanto outros poderão necessitar de tempo, vínculo terapêutico e abordagens mais superficiais antes de aprofundar a temática. O(a) enfermeiro(a) deve:" },
@@ -137,7 +138,7 @@ export const secoes = [
       ] },
       { t: "nota", x: "Não há impedimento para a aplicação desses instrumentos por enfermeiros(as), uma vez que ambos são autoaplicáveis. A aplicação pode ocorrer de forma assistida em situações que envolvam dificuldades de leitura, compreensão ou necessidade de esclarecimentos. A utilização de instrumentos validados encontra respaldo na Resolução COFEN que trata do Processo de Enfermagem, segundo a qual o processo deve estar fundamentado em suporte teórico, incluindo instrumentos de avaliação e predição de risco validados." },
       { t: "p", x: "A partir das necessidades identificadas, o(a) enfermeiro(a) poderá desenvolver sugestões específicas e encaminhamentos especializados, utilizando o processo de enfermagem fundamentado nas taxonomias NANDA-I/INKA (diagnósticos), NOC (resultados) e NIC (intervenções)." },
-      { t: "nota", x: "A escolha das classificações NANDA-I/INKA, NOC e NIC não restringe a aplicação do programa a essas terminologias. Em outros contextos, o(a) enfermeiro(a) poderá utilizar os sistemas de linguagem adotados institucionalmente, como a CIPE®, desde que sejam mantidos o raciocínio clínico, a individualização do cuidado, a documentação das etapas do Processo de Enfermagem e a coerência com as necessidades identificadas." },
+      { t: "nota", x: "A escolha das classificações NANDA-I/INKA, NOC e NIC não restringe a aplicação do Programa a essas terminologias. Em outros contextos, o(a) enfermeiro(a) poderá utilizar os sistemas de linguagem adotados institucionalmente, como a CIPE®, desde que sejam mantidos o raciocínio clínico, a individualização do cuidado, a documentação das etapas do Processo de Enfermagem e a coerência com as necessidades identificadas." },
       { t: "h", x: "Condução flexível e não linear" },
       { t: "lista", itens: ["Adequar o conteúdo, a profundidade e a complexidade das abordagens às necessidades, condições clínicas e contexto da pessoa cuidada.", "Reconhecer os diferentes tempos, experiências e necessidades individuais.", "Reconhecer que a reabilitação sexual não ocorre de maneira sequencial ou progressiva para todos, podendo haver avanços, dificuldades, interrupções, novas demandas ou necessidade de revisitar conteúdos."] }
     ],
@@ -155,10 +156,10 @@ export const secoes = [
     ferramentas: [["fluxograma", "Explorar o fluxograma interativo"]]
   },
   {
-    id: "7-9", num: "7.9", titulo: "Estrutura do programa: fases e níveis de intervenção", paginas: "29", parte: "fases",
+    id: "7-9", num: "7.9", titulo: "Estrutura do Programa: fases e níveis de intervenção", paginas: "29", parte: "fases",
     resumo: "As fases se retroalimentam e podem ser retomadas a qualquer momento. Cada uma tem objetivo e meta orientadores.",
     blocos: [
-      { t: "p", x: "O programa está organizado em fases sequenciais e interdependentes, estruturadas a partir do modelo EX-PLISSIT e adaptadas ao contexto da reabilitação sexual do homem com estoma. Cada fase representa um nível crescente de complexidade e profundidade. A progressão não é rígida nem linear: o(a) enfermeiro(a) deve avaliar, a cada encontro, em qual nível o paciente se encontra e qual abordagem melhor responde às suas demandas naquele momento." },
+      { t: "p", x: "O Programa está organizado em fases sequenciais e interdependentes, estruturadas a partir do modelo EX-PLISSIT e adaptadas ao contexto da reabilitação sexual do homem com estoma. Cada fase representa um nível crescente de complexidade e profundidade. A progressão não é rígida nem linear: o(a) enfermeiro(a) deve avaliar, a cada encontro, em qual nível o paciente se encontra e qual abordagem melhor responde às suas demandas naquele momento." },
       { t: "p", x: "Parte-se do entendimento de que a sexualidade é um fenômeno complexo e singular, influenciado por fatores biológicos, emocionais, relacionais e sociais, que não pode ser reduzido a uma fase isolada do cuidado (WHO, 2006). As fases se retroalimentam e podem ser retomadas a qualquer momento." },
       { t: "nota", x: "O conteúdo apresentado é sugestivo, elaborado com base em dados empíricos de pesquisa de campo com homens com estomas de eliminação e enfermeiras do Serviço de Reabilitação, além da literatura científica. O(a) enfermeiro(a) deve exercer sua autonomia para escolher as abordagens mais pertinentes a cada situação." },
       { t: "componentes" }
@@ -168,6 +169,7 @@ export const secoes = [
     id: "7-9-1", num: "7.9.1", titulo: "Permissão", paginas: "29–31", parte: "fases", cor: "p",
     resumo: "Deve ser solicitada em todos os estágios. Todas as intervenções começam com a permissão do homem.",
     blocos: [
+      { t: "p", x: "A permissão deve ser solicitada em todos os estágios, de modo que todas as intervenções devem ser iniciadas com a permissão do homem. O(a) enfermeiro(a) pode iniciar o diálogo desde os primeiros contatos, sem aguardar que o homem tome a iniciativa ou adquira autonomia para o autocuidado. A abordagem deve respeitar sua permissão e disponibilidade, podendo ser retomada posteriormente." },
       { t: "objetivoMeta", ref: "permissao" },
       { t: "figura", fig: "permissao", legenda: "Figura 4. Estratégia de aplicação da etapa Permissão.", fonte: "Elaboração própria, 2026." },
       { t: "falas", ref: "permissao" },
@@ -181,6 +183,7 @@ export const secoes = [
     blocos: [
       { t: "objetivoMeta", ref: "revisao" },
       { t: "figura", fig: "revisao", legenda: "Figura 5. Estratégia de aplicação da fase da Revisão.", fonte: "Elaboração própria, 2026." },
+      { t: "p", x: "No âmbito do H_Sex_Ostomy, a fase de Revisão do modelo EX-PLISSIT articula-se à etapa de Evolução de Enfermagem, prevista na Resolução COFEN nº 736/2024." },
       { t: "falas", ref: "revisao" }
     ],
     ferramentas: [["consulta/revisao", "Usar na consulta"]]
@@ -207,7 +210,8 @@ export const secoes = [
       { t: "p", x: "Nas cirurgias pélvicas, a função sexual masculina pode ser comprometida por lesão de estruturas nervosas, cuja extensão depende da complexidade e do alcance da intervenção: nervos autonômicos, nervos hipogástricos superiores (próximos ao promontório sacral e à região pré-sacral), nervos esplâncnicos pélvicos e fibras simpáticas e parassimpáticas. Lesões nas fibras simpáticas podem comprometer a ejaculação (por exemplo, ejaculação retrógrada), enquanto lesões parassimpáticas tendem a resultar em disfunção erétil. Danos aos plexos adjacentes às vesículas seminais e à próstata, de inervação mista, também podem repercutir na função erétil." },
       { t: "citacao", x: "A vivência do orgasmo não está diretamente atrelada à ereção ou à ejaculação, pois essas funções são reguladas por vias nervosas distintas.", fonte: "Manual, p. 42" },
       { t: "p", x: "Alguns homens podem apresentar ejaculação retrógrada, redução da intensidade orgástica ou orgasmo seco e ainda assim experienciar o orgasmo. A recuperação da função sexual tende a ser gradual, especialmente quando sustentada por acompanhamento multiprofissional, manejo adequado das demandas físicas e emocionais e suporte contínuo ao longo da reabilitação." },
-      { t: "quadro", q: "quadro4", legenda: "Quadro 4. Disfunções sexuais masculinas comuns após estomia." }
+      { t: "quadro", q: "quadro4", legenda: "Quadro 4. Disfunções sexuais masculinas comuns após estomia." },
+      { t: "p", x: "Fonte: elaboração própria, com base em Ghomeshi et al., 2023; Pronk et al., 2023; Zigouras; Taylor, 2025." }
     ],
     ferramentas: [["orientacoes", "Consultar na prática"]]
   },
@@ -220,8 +224,10 @@ export const secoes = [
       { t: "falas", ref: "quadro5" },
       { t: "nota", x: "O Quadro 6 constitui um direcionamento clínico-assistencial, não um roteiro rígido de conduta. Os diagnósticos apresentados foram identificados a partir de problemas relatados por homens com estoma durante as entrevistas de um estudo de métodos mistos desenvolvido pela pesquisadora." },
       { t: "quadro", q: "quadro6", legenda: "Quadro 6. Plano de cuidados para a fase de Sugestões Específicas: histórico, diagnósticos de enfermagem, resultados e intervenções." },
+      { t: "nota", x: "Antes de aplicar o instrumento, o(a) enfermeiro(a) deverá verificar se ele é adequado à pessoa cuidada. Se necessário, poderá usar outro instrumento, considerando identidade de gênero, orientação sexual, características anatômicas e fisiológicas, além das necessidades individuais. Atentar para a cisgeneridade, transgeneridade e não-binaridade nesse contexto." },
       { t: "h", x: "Exemplo de registro (p. 59)" },
       { t: "p", x: "Na prática, o registro no prontuário deve contemplar todas as etapas do Processo de Enfermagem: os dados clínicos que fundamentam o diagnóstico, incluindo fatores relacionados e características definidoras; os resultados esperados e indicadores NOC; as atividades realizadas; os encaminhamentos; a resposta da pessoa e a evolução dos resultados, com data, hora e identificação do profissional." },
+      { t: "p", x: "O IIEF e o QS-M poderão ser utilizados para rastrear e avaliar aspectos da função e da satisfação sexual, sempre que o(a) enfermeiro(a), durante a avaliação clínica, considerar pertinente. O IIEF avalia a função erétil e o QS-M aborda aspectos do desempenho e da satisfação sexual masculina. A reaplicação poderá ocorrer quando necessária para acompanhar uma demanda ou intervenção acordada com o homem. Os resultados complementam, mas não substituem, a avaliação clínica." },
       { t: "registro" }
     ],
     ferramentas: [["planejador", "Montar o plano no Planejador"]]
@@ -230,7 +236,7 @@ export const secoes = [
     id: "7-9-5", num: "7.9.5", titulo: "Terapia Intensiva", paginas: "60–61", parte: "fases", cor: "it",
     resumo: "Não é fase obrigatória. Quando encaminhar, para quem, e por que o encaminhamento não encerra o cuidado.",
     blocos: [
-      { t: "p", x: "A Terapia Intensiva não constitui necessariamente uma fase obrigatória do programa. Ela é indicada quando as demandas identificadas excedem o escopo das intervenções realizadas pelo(a) enfermeiro(a), exigindo avaliação, acompanhamento ou tratamento especializado por outros profissionais ou serviços da rede de atenção à saúde." },
+      { t: "p", x: "A Terapia Intensiva não constitui necessariamente uma fase obrigatória do Programa. Ela é indicada quando as demandas identificadas excedem o escopo das intervenções realizadas pelo(a) enfermeiro(a), exigindo avaliação, acompanhamento ou tratamento especializado por outros profissionais ou serviços da rede de atenção à saúde." },
       { t: "objetivoMeta", ref: "terapia" },
       { t: "terapia" }
     ],
@@ -247,15 +253,15 @@ export const secoes = [
     ferramentas: [["encaminhamento", "Mapear a rede"]]
   },
   {
-    id: "9", num: "9", titulo: "Implantação e avaliação do programa", paginas: "63–66", parte: "gestao",
-    resumo: "Seis diretrizes norteadoras para implantar o programa e oito indicadores de estrutura, processo e resultado.",
+    id: "9", num: "9", titulo: "Implantação e avaliação do Programa", paginas: "63–66", parte: "gestao",
+    resumo: "Seis diretrizes norteadoras para implantar o Programa e oito indicadores de estrutura, processo e resultado.",
     blocos: [
-      { t: "p", x: "A incorporação do H_Sex_Ostomy aos serviços pressupõe um processo organizado, que envolve condições prévias para a implantação, operacionalização das ações assistenciais e acompanhamento sistemático da execução e dos resultados. As orientações têm caráter norteador e devem ser adequadas aos recursos de cada contexto, preservando os fundamentos teóricos, os componentes essenciais e a finalidade do programa." },
+      { t: "p", x: "A incorporação do H_Sex_Ostomy aos serviços pressupõe um processo organizado, que envolve condições prévias para a implantação, operacionalização das ações assistenciais e acompanhamento sistemático da execução e dos resultados. As orientações têm caráter norteador e devem ser adequadas aos recursos de cada contexto, preservando os fundamentos teóricos, os componentes essenciais e a finalidade do Programa." },
       { t: "h", x: "9.1 Diretrizes para implantação" },
       { t: "diretrizes" },
       { t: "h", x: "9.2 Indicadores de acompanhamento" },
-      { t: "p", x: "Os indicadores têm caráter propositivo e são um ponto de partida a ser ajustado conforme as especificidades de cada serviço. Recomenda-se que gestores e enfermeiros(as) selecionem aqueles factíveis de implementação e monitoramento contínuo, podendo incorporar outros que julgarem pertinentes, mantida a coerência com os objetivos do programa." },
-      { t: "quadro", q: "quadro7", legenda: "Quadro 7. Sugestão de indicadores de estrutura, processo e resultado para acompanhamento do programa." }
+      { t: "p", x: "Os indicadores têm caráter propositivo e são um ponto de partida a ser ajustado conforme as especificidades de cada serviço. Recomenda-se que gestores e enfermeiros(as) selecionem aqueles factíveis de implementação e monitoramento contínuo, podendo incorporar outros que julgarem pertinentes, mantida a coerência com os objetivos do Programa." },
+      { t: "quadro", q: "quadro7", legenda: "Quadro 7. Sugestão de indicadores de estrutura, processo e resultado para acompanhamento do Programa." }
     ],
     ferramentas: [["implantacao", "Calcular indicadores"]]
   },

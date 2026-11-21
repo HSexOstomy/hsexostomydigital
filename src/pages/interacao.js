@@ -91,7 +91,7 @@ function evento(e) {
 function listaNoticias() {
   return html`<div class="page">
     ${pageHead({ kicker: "Interação", title: "Notícias", lead: "Novidades, avisos e informações importantes do grupo H_Sex_Ostomy.", crumbs: [[null, CRUMB.noticias]], art: ART.noticias })}
-    <div class="container-narrow section">
+    <div class="container section">
       ${noticias.length ? html`<div class="stack ia-noticias">${noticias.map((n) => html`<article class="card card-link ia-noticia ${n.imagem ? "tem-img" : ""}">
           ${n.imagem ? html`<img class="ia-thumb" src="${n.imagem}" alt="" loading="lazy">` : ""}
           <div>
@@ -109,7 +109,7 @@ function listaNoticias() {
 function noticia(n) {
   return html`<div class="page">
     ${pageHead({ kicker: [n.categoria || "Notícia", n.data ? dataLonga(n.data) : ""].filter(Boolean).join(" · "), title: n.titulo, lead: n.resumo, crumbs: [["noticias", CRUMB.noticias], [null, n.titulo]] })}
-    <div class="container-narrow section stack-lg">
+    <div class="container section stack-lg ia-leitura">
       ${n.imagem ? html`<img class="ia-capa" src="${n.imagem}" alt="" loading="lazy">` : ""}
       ${n.texto ? html`<div class="prose ia-texto">${richText(n.texto)}</div>` : ""}
       <div class="btn-row">${n.linkUrl ? botao(n.linkUrl, n.linkTexto || "Saiba mais", "btn btn-primary") : ""}<a class="btn" href="#noticias">${icon("back")}Todas as notícias</a></div>
@@ -140,7 +140,7 @@ function paginaDocs() {
   const cats = Object.keys(CATEGORIAS_DOC).filter((c) => documentos.some((d) => d.categoria === c));
   return html`<div class="page">
     ${pageHead({ kicker: "Interação", title: "Documentos", lead: "Arquivos que o grupo disponibiliza: manuais, artigos, apresentações, formulários e materiais educativos.", crumbs: [[null, CRUMB.documentos]], art: ART.documentos })}
-    <div class="container-narrow section stack">
+    <div class="container section stack">
       ${documentos.length > 3 ? html`<div class="ia-filtros">
         <div class="field"><label class="sr-only" for="doc-busca">Buscar documento</label><input class="input" id="doc-busca" type="search" placeholder="Buscar por título ou descrição"></div>
         ${cats.length > 1 ? html`<div class="pills" role="group" aria-label="Filtrar por categoria"><button class="pill-btn" type="button" data-cat="" aria-pressed="true">Todos</button>${cats.map((c) => html`<button class="pill-btn" type="button" data-cat="${c}" aria-pressed="false">${CATEGORIAS_DOC[c]}</button>`)}</div>` : ""}

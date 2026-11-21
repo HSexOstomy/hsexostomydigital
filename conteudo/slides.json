@@ -22,9 +22,9 @@
       "texto": "",
       "pontos": [
         "Conhecer os fundamentos e componentes do H_Sex_Ostomy",
-        "Experimentar o programa em situações de cuidado",
+        "Experimentar o Programa em situações de cuidado",
         "Discutir aplicabilidade e possibilidades de implementação",
-        "Reunir contribuições para o aperfeiçoamento do programa"
+        "Reunir contribuições para o aperfeiçoamento do Programa"
       ],
       "fonte": "",
       "fig": "",
@@ -65,7 +65,7 @@
     {
       "bloco": "porque",
       "tipo": "percurso",
-      "kicker": "Como o programa foi construído",
+      "kicker": "Como o Programa foi construído",
       "titulo": "Da pesquisa à prática",
       "sub": "",
       "texto": "Cocriação com duas enfermeiras estomaterapeutas e pós-graduandas em reabilitação, uma especialista em reabilitação e uma enfermeira capacitada na área.",
@@ -73,7 +73,7 @@
       "fonte": "",
       "fig": "",
       "rota": "",
-      "notas": "Destaque a cocriação com enfermeiras do serviço de reabilitação: o programa nasce da prática."
+      "notas": "Destaque a cocriação com enfermeiras do serviço de reabilitação: o Programa nasce da prática."
     },
     {
       "bloco": "fundamentos",
@@ -117,7 +117,7 @@
     {
       "bloco": "acao",
       "tipo": "componentes",
-      "kicker": "O programa",
+      "kicker": "O Programa",
       "titulo": "Cinco componentes, um acompanhamento contínuo",
       "sub": "",
       "texto": "",
@@ -131,7 +131,7 @@
       "bloco": "acao",
       "tipo": "figura",
       "kicker": "Figura 3",
-      "titulo": "Fluxograma do programa",
+      "titulo": "Fluxograma do Programa",
       "sub": "",
       "texto": "",
       "pontos": [],
@@ -273,7 +273,7 @@
       "kicker": "",
       "titulo": "Obrigado pela participação!",
       "sub": "",
-      "texto": "Agora, responda ao pós-teste e à avaliação da aplicabilidade do programa.",
+      "texto": "Agora, responda ao pós-teste e à avaliação da aplicabilidade do Programa.",
       "pontos": [],
       "fonte": "",
       "fig": "",

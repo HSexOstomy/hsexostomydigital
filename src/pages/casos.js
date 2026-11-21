@@ -10,7 +10,7 @@ export default {
   render(ctx) {
     const c = casos.find((x) => x.id === ctx.params[0]);
     if (!c) return html`<div class="page">
-      ${pageHead({ kicker: "Aprenda", title: "Simulação clínica", lead: "Casos fictícios que evoluem conforme as suas decisões. Cada escolha muda a história, o vínculo com a pessoa e o desfecho. O fluxograma ao lado mostra em que fase do programa você está.", crumbs: [[null, "Simulação clínica"]], art: "dupla-homens-fita" })}
+      ${pageHead({ kicker: "Aprenda", title: "Simulação clínica", lead: "Casos fictícios que evoluem conforme as suas decisões. Cada escolha muda a história, o vínculo com a pessoa e o desfecho. O fluxograma ao lado mostra em que fase do Programa você está.", crumbs: [[null, "Simulação clínica"]], art: "dupla-homens-fita" })}
       <div class="container"><h2 class="sr-only">Escolha um caso</h2>${listaCasos()}
         <div style="margin-top:var(--sp-5)">${callout("info", "Casos fictícios", html`<p>Personagens e situações foram criados para fins didáticos. Não há nota: o objetivo é ver como cada decisão repercute no cuidado. Refaça por caminhos diferentes.</p>`)}</div>
       </div></div>`;

@@ -794,6 +794,16 @@ content:
       label: Link do pós-teste (Google Forms)
       description: Gera o QR code do último slide.
       type: string
+    - name: linkMural
+      label: Link do mural de opiniões (Padlet ou Mentimeter)
+      description: Quando preenchido, aparece um botão na área do participante e o QR code no slide da discussão. Sem link, nada aparece.
+      type: string
+    - name: muralTitulo
+      label: Nome do mural
+      type: string
+    - name: muralTexto
+      label: Convite para participar do mural
+      type: text
     - name: enderecoSite
       label: Endereço do site (QR code do modo participante)
       type: string

@@ -21,5 +21,5 @@ export function figSintese() {
 
 /* ---------- Percurso de construção ---------- */
 export function figPercurso() {
-  return html`<ol class="percurso">${PERC.map(([t, d], i) => html`<li><span class="dot">${i + 1}</span><strong>${t}</strong><span>${d}</span></li>`)}</ol>`;
+  return html`<ol class="percurso" style="--n:${PERC.length}">${PERC.map(([t, d], i) => html`<li><span class="dot">${i + 1}</span><strong>${t}</strong><span>${d}</span></li>`)}</ol>`;
 }

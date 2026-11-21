@@ -38,7 +38,7 @@ function encSugeridos() {
   if (sc.iief && sc.iief.valor <= 16) out.set("Urologia", "função erétil ≤ 16 no IIEF-15");
   if (S.sx.sofrimento === "Sim") out.set("Psicologia", "mudanças geram sofrimento ou preocupação");
   if (S.dx.includes("00400") || S.dx.includes("00390")) out.set("Psicologia", "ansiedade ou medo excessivos");
-  if (S.dx.includes("00449")) out.set("Terapia de casal/familiar", "conflito relacional com a parceria");
+  if (S.dx.includes("00449")) out.set("Terapia de casal ou familiar", "conflito relacional com a parceria");
   if (S.dx.includes("00494")) out.set("Sexologia", "identidade conturbada ligada à sexualidade");
   if (S.med.some((m) => ["Anti-hipertensivos", "Antidepressivos", "Opioides"].includes(m)) && S.sx.funcao === "Sim") out.set("Urologia", "possível causa iatrogênica a revisar com a equipe médica");
   return [...out].filter(([p]) => !S.enc.includes(p));
@@ -135,7 +135,7 @@ const low = (s) => s.charAt(0).toLowerCase() + s.slice(1);
 export function gerarTexto() {
   const linhas = [];
   const dataBr = S.data ? S.data.split("-").reverse().join("/") : "__/__/____";
-  linhas.push(`Consulta de enfermagem, programa H_Sex_Ostomy, em ${dataBr}.`);
+  linhas.push(`Consulta de enfermagem, Programa H_Sex_Ostomy, em ${dataBr}.`);
   const h = S.h, partes = [];
   if (h.idade) partes.push(`${h.idade} anos`);
   if (h.tipoEstoma) partes.push(low(h.tipoEstoma) + (h.tempo ? ` há ${h.tempo}` : ""));

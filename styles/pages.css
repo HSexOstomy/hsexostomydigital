@@ -42,7 +42,8 @@
 @media (max-width: 900px) { .comp-strip { grid-template-columns: 1fr 1fr; } }
 
 .band { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: var(--sp-7) 0; }
-.band .percurso { margin-top: var(--sp-5); }
+.band .percurso { margin-top: var(--sp-5); grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 760px) { .band .percurso { grid-template-columns: 1fr 1fr; } }
 .band-art { width: min(100%, 420px); justify-self: center; }
 .uses .card a { font-weight: 600; }
 .ws-banner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--sp-5); background: linear-gradient(120deg, var(--navy-900), var(--navy-700)); color: var(--on-dark-muted); border-radius: var(--radius-lg); padding: var(--sp-6); position: relative; overflow: hidden; }
@@ -454,10 +455,14 @@ mark { background: #fdf0b7; color: inherit; padding: 0 .1em; border-radius: 3px;
 .ia-enviar p { margin: 0; }
 .ia-honey { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .ia-noticia { display: grid; gap: var(--sp-4); align-items: start; }
-.ia-noticia.tem-img { grid-template-columns: 200px minmax(0, 1fr); }
-.ia-thumb { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 10px; min-height: 0; }
+.ia-noticia { padding: var(--sp-5) var(--sp-6); }
+.ia-noticia.tem-img { grid-template-columns: 240px minmax(0, 1fr); gap: var(--sp-6); align-items: center; }
+.ia-thumb { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: .5rem; min-height: 0; }
+.ia-leitura > * { max-width: 820px; }
+.ia-leitura .ia-capa { object-fit: contain; background: var(--paper); }
 .ia-noticia > div { display: flex; flex-direction: column; gap: .5rem; }
 .ia-filtros { display: grid; gap: var(--sp-3); }
+.ia-filtros { max-width: 820px; }
 .ia-docs { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-3); }
 .ia-doc { display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; gap: var(--sp-4); align-items: center; }
 .ia-doc h2 { margin: 0 0 .25rem; }

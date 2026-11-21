@@ -17,7 +17,7 @@ function dataWorkshop() {
 /* Textos editáveis em conteudo/inicio.json */
 const T = C.inicio || {};
 const g = (o, k) => txt(o?.[k]);
-/* *palavra* vira destaque; o nome do programa vira a marca */
+/* *palavra* vira destaque; o nome do Programa vira a marca */
 const destaque = (s) => raw(esc(s).replace(/\*([^*]+)\*/g, '<span class="hl">$1</span>'));
 const marca = (s) => raw(esc(s).replace(/H_Sex_Ostomy/g, '<span class="wordmark">H<i>_</i><b>Sex</b><i>_</i>Ostomy</span>'));
 
@@ -34,7 +34,7 @@ export default {
             <p class="lead">${marca(g(H, "texto"))}</p>
             <div class="btn-row">
               <a class="btn btn-primary btn-lg" href="#consulta">Usar na consulta <span class="arrow">${icon("arrow")}</span></a>
-              <a class="btn btn-lg" href="#programa">Conhecer o programa</a>
+              <a class="btn btn-lg" href="#programa">Conhecer o Programa</a>
             </div>
             <ul class="hero-facts">
               ${arr(H.numeros).filter((n) => n && (n.numero || n.rotulo)).map((n) => html`<li><strong>${txt(n.numero)}</strong><span>${txt(n.rotulo)}</span></li>

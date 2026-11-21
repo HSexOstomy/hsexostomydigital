@@ -44,7 +44,7 @@ function modulo(m) {
             ${q.opcoes.map((o, j) => html`<button type="button" class="option ${r[k] !== undefined && o.certo ? "is-right" : ""} ${r[k] === j && !o.certo ? "is-wrong" : ""}" data-resp="${k}|${j}" ${r[k] !== undefined ? "disabled" : ""}><span class="mark">${"ABC"[j]}</span><span>${o.t}</span></button>`)}
             ${r[k] !== undefined ? html`<div class="feedback ${q.opcoes[r[k]].certo ? "ok" : "no"}" role="status"><strong>${q.opcoes[r[k]].certo ? "Correto." : "Não é bem assim."}</strong>${q.opcoes[r[k]].feedback}${q.opcoes[r[k]].certo ? "" : html`<br><em>Resposta esperada: ${q.opcoes.find((x) => x.certo).t}</em>`}</div>` : ""}
           </div>`)}
-          ${feitas === m.pratique.length ? html`<p class="mod-score">${acertos} de ${m.pratique.length} respostas alinhadas ao programa.</p>` : ""}
+          ${feitas === m.pratique.length ? html`<p class="mod-score">${acertos} de ${m.pratique.length} respostas alinhadas ao Programa.</p>` : ""}
         </section>
         <div class="etapa-nav">
           ${i > 0 ? html`<a class="btn" href="#capacitacao/${modulos[i - 1].id}">${icon("back")}Anterior</a>` : html`<a class="btn" href="#capacitacao">${icon("list")}Todos os módulos</a>`}

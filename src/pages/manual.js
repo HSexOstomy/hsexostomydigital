@@ -96,7 +96,7 @@ export default {
   render(ctx) {
     const s = secoes.find((x) => x.id === ctx.params[0]);
     return html`<div class="page">
-      ${pageHead({ kicker: "O Programa", title: s ? "Manual H_Sex_Ostomy" : "Manual do programa", lead: s ? "" : "Leia o manual por seções, com os quadros completos, as figuras redesenhadas e atalhos para usar cada conteúdo na prática.", crumbs: s ? [["manual", "Manual"], [null, s.num || s.titulo]] : [[null, "Manual"]] })}
+      ${pageHead({ kicker: "O Programa", title: s ? "Manual H_Sex_Ostomy" : "Manual do Programa", lead: s ? "" : "Leia o manual por seções, com os quadros completos, as figuras redesenhadas e atalhos para usar cada conteúdo na prática.", crumbs: s ? [["manual", "Manual"], [null, s.num || s.titulo]] : [[null, "Manual"]] })}
       <div class="container with-sidebar manual-layout">
         <aside class="sidebar">${toc(s?.id)}</aside>
         <div class="manual-main">

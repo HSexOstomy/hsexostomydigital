@@ -2,7 +2,7 @@
   "hero": {
     "kicker": "Escola de Enfermagem da UFBA · PPGENF",
     "titulo": "A sexualidade também faz parte da *reabilitação*.",
-    "texto": "O H_Sex_Ostomy apoia enfermeiros(as) na abordagem da sexualidade de homens com estomas de eliminação. Estude o programa, use as ferramentas na consulta e forme sua equipe.",
+    "texto": "O H_Sex_Ostomy apoia enfermeiros(as) na abordagem da sexualidade de homens com estomas de eliminação. Estude o Programa, use as ferramentas na consulta e forme sua equipe.",
     "numeros": [
       {
         "numero": "5",
@@ -37,14 +37,14 @@
     }
   },
   "programa": {
-    "kicker": "O programa",
+    "kicker": "O Programa",
     "titulo": "Cinco componentes, um cuidado contínuo",
     "texto": "Adaptados do modelo EX-PLISSIT e sustentados pela Teoria de Enfermagem de Reabilitação para o Bem-Viver. Permissão e Revisão acontecem em todo encontro."
   },
   "pesquisa": {
     "kicker": "Da pesquisa à prática",
     "titulo": "Construído com quem cuida",
-    "texto": "O programa nasceu de uma revisão de escopo, de observação participante em um serviço de reabilitação, de um estudo de métodos mistos com homens com estomas e de um processo de cocriação com enfermeiras da reabilitação."
+    "texto": "O Programa nasceu de uma revisão de escopo, de observação participante em um serviço de reabilitação, de um estudo de métodos mistos com homens com estomas e de um processo de cocriação com enfermeiras da reabilitação."
   },
   "usos": {
     "estudar": {
@@ -65,7 +65,7 @@
   },
   "workshop": {
     "kicker": "Workshop participativo",
-    "texto": "Fundamentos, demonstração das ferramentas, casos clínicos em grupo e discussão sobre a aplicabilidade do programa."
+    "texto": "Fundamentos, demonstração das ferramentas, casos clínicos em grupo e discussão sobre a aplicabilidade do Programa."
   },
   "aviso": {
     "kicker": "",

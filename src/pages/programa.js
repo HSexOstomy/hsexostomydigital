@@ -34,7 +34,7 @@ export default {
         <div class="explorer">
           <figure class="explorer-fig">
             <div class="figure-box figure-orig" id="exp-holder">${figuraInterativa("explissit", "data-comp")}</div>
-            <figcaption class="small muted">Figura 2 do manual: Modelo EX-PLISSIT (Taylor; Davis, 2007). Toque em P, IL, SE, TI ou no círculo externo.</figcaption>
+            <figcaption class="small muted">Figura 2 do manual: Modelo EX-PLISSIT, tradução livre e adaptação para o português (Taylor; Davis, 2007). Toque em P, IL, SE, TI ou no círculo externo.</figcaption>
           </figure>
           <div id="comp-detail">${detalhe(sel)}</div>
         </div>
