@@ -36,6 +36,8 @@ O painel não edita o visual, a ordem das abas, as escalas e instrumentos (IIEF-
 
 Comentários dos eventos: enviados por e-mail pelo FormSubmit (formsubmit.co, gratuito). No primeiro comentário, o e-mail de destino recebe um pedido de ativação; clique em **Activate Form**. O destinatário é trocado em Interação > Comentários.
 
+Contador de visitas: GoatCounter (goatcounter.com, gratuito, sem cookies). Crie a conta e cole o nome dela em Textos do site > Contato e rodapé > Contador de visitas. Os números ficam em https://NOME.goatcounter.com. Cada página é contada pelo endereço (/manual, /workshop etc.); a apresentação conta uma vez por sessão.
+
 Para convidar outras pessoas a editar sem conta no GitHub: no painel, **Collaborators** > e-mail. O que elas salvam vai direto para o ar.
 
 ### Conteúdo técnico (no código)

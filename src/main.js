@@ -95,7 +95,34 @@ function setupFooter() {
 
 setupNav();
 setupGlobal();
+/* Contador de visitas (GoatCounter, sem cookies). Ativado pelo painel: Textos do site > Contato e rodapé.
+   O site usa endereços com #, então cada página é contada como /manual, /workshop etc. */
+function setupContador() {
+  const conta = cfg.contador;
+  if (!conta || !/^[a-z0-9-]+$/.test(conta) || /^(localhost|127\.)/.test(location.hostname)) return () => {};
+  window.goatcounter = { no_onload: true };
+  const fila = [];
+  let pronto = false, ultimo = "";
+  const enviar = () => {
+    const partes = decodeURIComponent(location.hash.replace(/^#\/?/, "")).split("/").filter(Boolean);
+    /* nos slides, conta a apresentação uma vez só (não cada slide) */
+    const path = "/" + (partes[0] === "apresentar" ? "apresentar" : partes.join("/") || "inicio");
+    if (path === ultimo) return;
+    ultimo = path;
+    if (pronto && window.goatcounter?.count) window.goatcounter.count({ path, title: document.title });
+    else fila.push({ path, title: document.title });
+  };
+  const s = document.createElement("script");
+  s.async = true;
+  s.src = "https://gc.zgo.at/count.js";
+  s.dataset.goatcounter = `https://${conta}.goatcounter.com/count`;
+  s.onload = () => { pronto = true; fila.splice(0).forEach((v) => window.goatcounter?.count?.(v)); };
+  document.head.appendChild(s);
+  return enviar;
+}
+const contar = setupContador();
+
 setupFooter();
-window.addEventListener("hashchange", navigate);
-navigate();
+window.addEventListener("hashchange", () => navigate().then(contar));
+navigate().then(contar);
 

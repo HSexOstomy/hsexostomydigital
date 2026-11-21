@@ -78,5 +78,7 @@ window.HSO_CONFIG = {
     muralTexto: txt(W.muralTexto),
     enderecoSite: limpo(W.enderecoSite) || "https://hsexostomy.github.io/hsexostomydigital/"
   },
+  /* Contador de visitas GoatCounter: só o nome da conta (ex.: hsexostomy) */
+  contador: limpo(G.contadorGoatcounter).toLowerCase().replace(/^https?:\/\//, "").replace(/\.goatcounter\.com.*$/, ""),
   versao: txt(G.versao)
 };

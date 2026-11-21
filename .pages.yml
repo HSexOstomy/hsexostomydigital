@@ -470,6 +470,10 @@ content:
       label: 'Rodapé: aviso legal'
       description: O texto entre asteriscos fica em itálico.
       type: text
+    - name: contadorGoatcounter
+      label: Contador de visitas (GoatCounter)
+      description: 'Cole só o nome da conta criada em goatcounter.com (ex.: hsexostomy). Os números ficam em https://NOME.goatcounter.com. Deixe vazio para desligar.'
+      type: string
 - name: manual
   label: Manual (PDF, capa e edição)
   type: file
