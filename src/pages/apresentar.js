@@ -83,6 +83,17 @@ export default {
     const toggleNotas = () => { notas = !notas; session.write("ws-notas", notas); $(".pr-notes", root).hidden = !notas; $("[data-pr-notes]", root).setAttribute("aria-pressed", String(notas)); };
     const full = () => { if (!document.fullscreenElement) document.documentElement.requestFullscreen?.(); else document.exitFullscreen?.(); };
     document.addEventListener("keydown", key);
+    /* Se o conteúdo do slide não couber (por exemplo, texto longo editado no painel), reduz só esse slide até caber */
+    const ajustar = () => {
+      const sl = $(".pr-slide .sl", root);
+      if (!sl) return;
+      sl.style.removeProperty("--z");
+      let z = 1;
+      for (let i = 0; i < 14 && sl.scrollHeight > sl.clientHeight + 1; i++) { z = Math.round((z - 0.04) * 100) / 100; sl.style.setProperty("--z", z); }
+    };
+    ajustar();
+    document.fonts?.ready.then(ajustar);
+    window.addEventListener("resize", ajustar);
     const offs = [
       on(root, "click", "[data-pr-notes]", toggleNotas),
       on(root, "click", "[data-pr-full]", full),
@@ -93,6 +104,6 @@ export default {
       }),
       on(root, "click", ".pr-stage", (ev) => { if (!ev.target.closest("a, button, .fig-hot")) go(ev.clientX > window.innerWidth * 0.5 ? 1 : -1); })
     ];
-    return () => { document.removeEventListener("keydown", key); offs.forEach((f) => f()); clearInterval(timer); clearInterval(count); };
+    return () => { window.removeEventListener("resize", ajustar); document.removeEventListener("keydown", key); offs.forEach((f) => f()); clearInterval(timer); clearInterval(count); };
   }
 };

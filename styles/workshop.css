@@ -146,7 +146,9 @@ body.mode-present { background: #0b1630; }
 .sl-percurso .percurso { --s: 1cqw; }
 .sl-percurso .percurso { gap: 1.4cqw; }
 .sl-percurso .percurso strong { font-size: 1.8cqw; }
-.sl-percurso .percurso span { font-size: 1.3cqw; line-height: 1.35; }
+.sl-percurso .percurso span { font-size: 1.2cqw; line-height: 1.3; }
+/* encolhe o conteúdo de um slide quando ele não cabe (ver apresentar.js) */
+.sl > * { zoom: var(--z, 1); }
 .sl-percurso .percurso .dot { width: 5cqw; height: 5cqw; font-size: 2cqw; }
 .sl-percurso .percurso::before { top: 2.5cqw; }
 .sl-note { font-size: 1.6cqw; color: var(--muted); margin-top: 3cqw; max-width: 80%; }
