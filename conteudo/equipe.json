@@ -5,8 +5,10 @@
       "nome": "Ariana Luiza Rabelo",
       "papel": "Autoria do manual",
       "titulacao": "Enfermeira. Doutoranda em Enfermagem e Saúde (PPGENF/UFBA)",
+      "foto": "assets/img/whatsapp-image-2026-11-20-at-200224.jpeg",
       "enquadramento": "centro",
-      "bio": "Autora do H_Sex_Ostomy: Programa de Reabilitação da Sexualidade Masculina, desenvolvido no doutorado."
+      "bio": "Autora do H_Sex_Ostomy: Programa de Reabilitação da Sexualidade Masculina, desenvolvido no doutorado.",
+      "link": "http://lattes.cnpq.br/1667637924671311"
     },
     {
       "grupo": "principal",
@@ -15,15 +17,18 @@
       "titulacao": "Prof. Dr., Escola de Enfermagem da UFBA",
       "foto": "assets/img/whatsapp-image-2026-11-20-at-200532-1.jpeg",
       "enquadramento": "centro",
-      "bio": "Orientador da pesquisa e coordenador do programa."
+      "bio": "Orientador da pesquisa e coordenador do programa.",
+      "link": "http://lattes.cnpq.br/0532233090665413"
     },
     {
       "grupo": "principal",
       "nome": "Óscar Javier Vergara Escobar",
       "papel": "Coorientação",
       "titulacao": "Enfermeiro, Universidad El Bosque (Bogotá, Colômbia)",
+      "foto": "assets/img/whatsapp-image-2026-11-20-at-200411.jpeg",
       "enquadramento": "centro",
-      "bio": "Coorientador da pesquisa. Pesquisador em enfermagem e saúde de homens."
+      "bio": "Coorientador da pesquisa. Pesquisador em enfermagem e saúde de homens.",
+      "link": "https://orcid.org/0000-0003-3158-9017"
     }
   ],
   "fichaTecnica": [
