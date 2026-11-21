@@ -24,7 +24,7 @@ const marca = (s) => raw(esc(s).replace(/H_Sex_Ostomy/g, '<span class="wordmark"
 export default {
   render() {
     const ws = dataWorkshop();
-    const H = T.hero || {}, A = T.atalhos || {}, PG = T.programa || {}, PQ = T.pesquisa || {}, U = T.usos || {}, WS = T.workshop || {};
+    const H = T.hero || {}, A = T.atalhos || {}, PG = T.programa || {}, PQ = T.pesquisa || {}, U = T.usos || {}, WS = T.workshop || {}, AV = T.aviso || {};
     return html`<div class="page home">
       <section class="hero">
         <div class="container hero-grid">
@@ -46,6 +46,15 @@ export default {
           </div>
         </div>
       </section>
+
+      ${g(AV, "titulo") ? html`<section class="container section">
+        <div class="ws-banner">
+          <div>${g(AV, "kicker") ? html`<p class="kicker kicker-light">${g(AV, "kicker")}</p>` : ""}<h2>${g(AV, "titulo")}</h2>${g(AV, "texto") ? html`<p>${g(AV, "texto")}</p>` : ""}</div>
+          ${g(AV, "botaoTexto") && g(AV, "botaoLink") ? (/^https?:/.test(g(AV, "botaoLink").trim())
+            ? html`<a class="btn btn-green btn-lg" href="${g(AV, "botaoLink").trim()}" target="_blank" rel="noopener">${g(AV, "botaoTexto")} <span class="arrow">${icon("arrow")}</span></a>`
+            : html`<a class="btn btn-green btn-lg" href="${g(AV, "botaoLink").trim()}">${g(AV, "botaoTexto")} <span class="arrow">${icon("arrow")}</span></a>`) : ""}
+        </div>
+      </section>` : ""}
 
       <section class="container section">
         <div class="quick-grid">

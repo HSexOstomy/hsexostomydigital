@@ -1,5 +1,6 @@
 /* Componentes de interface compartilhados */
 import { html, raw, esc } from "./dom.js";
+import { C, arr, txt } from "./content.js";
 
 export const ICONS = {
   copy: '<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/>',
@@ -64,7 +65,11 @@ export async function copyText(text) {
 }
 
 /* Cabeçalho de página padrão */
+/* Textos de abertura das páginas editáveis pelo painel (conteudo/paginas.json); vazio mantém o texto padrão */
+const LEADS = new Map(arr(C.paginas.paginas).filter((p) => p && txt(p.titulo) && txt(p.texto).trim()).map((p) => [txt(p.titulo), txt(p.texto)]));
+
 export function pageHead({ kicker, title, lead, crumbs = [], actions = "", art = "" }) {
+  if (typeof title === "string" && LEADS.has(title)) lead = LEADS.get(title);
   return html`<header class="page-head ${art ? "has-art" : ""}">
     ${art ? html`<img class="head-art" src="assets/img/${art}.webp" alt="" loading="lazy" decoding="async">` : ""}
     <div class="container">

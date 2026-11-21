@@ -1,6 +1,9 @@
 import { html } from "../core/dom.js";
 import { pageHead, icon, callout } from "../core/ui.js";
 import { quadro3, quadro4 } from "./blocos.js";
+import { C, txt } from "../core/content.js";
+
+const F = C.orientacoes || {};
 
 export default {
   render(ctx) {
@@ -12,12 +15,12 @@ export default {
         <article class="folheto print-area" aria-labelledby="folheto-t">
           <header class="folheto-head">
             <div><span class="wordmark wordmark-light">H<i>_</i><b>Sex</b><i>_</i>Ostomy</span>
-            <h2 id="folheto-t">Intimidade com mais conforto e segurança</h2>
-            <p>Orientações para homens com estoma. Use o que fizer sentido para você: são sugestões, não regras.</p></div>
+            <h2 id="folheto-t">${txt(F.titulo)}</h2>
+            <p>${txt(F.subtitulo)}</p></div>
             <img src="assets/img/rostos-linha.webp" alt="" width="640" height="160">
           </header>
           <div class="folheto-body">${quadro3({ imprimir: true })}
-            <p class="folheto-foot">Ter um estoma não significa o fim da vida sexual. Mudanças na ereção, no desejo ou na confiança podem ser conversadas com a equipe de enfermagem: existem possibilidades de cuidado e tratamento.</p>
+            <p class="folheto-foot">${txt(F.rodape)}</p>${txt(F.contatoServico).trim() ? html`<p class="folheto-foot"><strong>${txt(F.contatoServico)}</strong></p>` : ""}
           </div>
         </article>
 

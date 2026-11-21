@@ -66,5 +66,12 @@
   "workshop": {
     "kicker": "Workshop participativo",
     "texto": "Fundamentos, demonstração das ferramentas, casos clínicos em grupo e discussão sobre a aplicabilidade do programa."
+  },
+  "aviso": {
+    "kicker": "",
+    "titulo": "",
+    "texto": "",
+    "botaoTexto": "",
+    "botaoLink": ""
   }
 }

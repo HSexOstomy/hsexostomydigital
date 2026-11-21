@@ -17,12 +17,12 @@ function slide(s, n) {
   const k = s.kicker ? html`<p class="sl-kicker">${s.kicker}</p>` : "";
   switch (s.tipo) {
     case "capa": return html`<div class="sl sl-capa">
-      <div><p class="sl-kicker">Workshop participativo</p><h1 class="sl-word"><span class="wordmark">H<i>_</i><b>Sex</b><i>_</i>Ostomy</span></h1><p class="sl-sub">${s.sub}</p>
+      <div><p class="sl-kicker">${s.kicker}</p><h1 class="sl-word"><span class="wordmark">H<i>_</i><b>Sex</b><i>_</i>Ostomy</span></h1><p class="sl-sub">${s.sub}</p>
       <p class="sl-meta">${W.data ? new Date(`${W.data}T12:00:00-03:00`).toLocaleDateString("pt-BR", { day: "numeric", month: "long", year: "numeric" }) : ""} · ${W.modalidade || ""}</p>
       <div class="sl-logos">${(cfg.instituicoes || []).map((i) => html`<img src="${i.logo}" alt="${i.nome}">`)}</div></div>
       <img class="sl-art" src="assets/img/equipe-grupo.webp" alt=""></div>`;
     case "pontos": return html`<div class="sl sl-pontos">${k}<h2>${s.titulo}</h2><ul>${s.pontos.map((p) => html`<li>${p}</li>`)}</ul>${s.rota ? html`<a class="sl-demo" href="#${s.rota}" target="_blank" rel="noopener">${icon("external")}Demonstrar no site</a>` : ""}</div>`;
-    case "percurso": return html`<div class="sl sl-percurso">${k}<h2>${s.titulo}</h2>${figPercurso()}<p class="sl-note">Cocriação com duas enfermeiras estomaterapeutas e pós-graduandas em reabilitação, uma especialista em reabilitação e uma enfermeira capacitada na área.</p></div>`;
+    case "percurso": return html`<div class="sl sl-percurso">${k}<h2>${s.titulo}</h2>${figPercurso()}${s.texto ? html`<p class="sl-note">${s.texto}</p>` : ""}</div>`;
     case "citacao": return html`<div class="sl sl-citacao">${k}<blockquote><p>${s.titulo}</p><cite>${s.fonte}</cite></blockquote></div>`;
     case "figura": return html`<div class="sl sl-figura sl-fig-${s.fig}">${k}<h2>${s.titulo}</h2><div class="sl-figbox">${figura(s.fig, { legenda: false, lang: "pt" })}</div>${s.rota ? html`<a class="sl-demo" href="#${s.rota}" target="_blank" rel="noopener">${icon("external")}Abrir interativo</a>` : ""}</div>`;
     case "componentes": return html`<div class="sl sl-comp">${k}<h2>${s.titulo}</h2><div class="sl-comp-grid">${componentes.map((c) => html`<div class="sl-comp-card c-${c.cor}">${compBadge(c)}<h3>${c.nome}</h3><span>${c.rotulo}</span><p>${c.acao}</p></div>`)}</div></div>`;
@@ -36,7 +36,7 @@ function slide(s, n) {
 }
 
 function tela(n) {
-  const s = slides[n - 1], blocos = horarios(), b = blocos.find((x) => x.id === s.bloco), bi = blocos.indexOf(b);
+  const s = slides[n - 1], blocos = horarios(), b = blocos.find((x) => x.id === s.bloco) || blocos[0] || { titulo: "", ini: 0, min: 0 }, bi = blocos.indexOf(b);
   return html`<div class="present"><h1 class="sr-only">Apresentação do workshop, slide ${n} de ${slides.length}: ${s.titulo || ""}</h1>
     <header class="pr-bar">
       <a class="pr-exit" href="#workshop" aria-label="Sair da apresentação">${icon("x")}</a>

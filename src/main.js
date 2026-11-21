@@ -1,7 +1,7 @@
 /* Ponto de entrada da plataforma H_Sex_Ostomy Digital */
 import "./core/content.js"; /* carrega o conteúdo editável (pasta conteudo/) antes de tudo */
 import { navigate, closeMenus } from "./core/router.js";
-import { $, $$, on, html } from "./core/dom.js";
+import { $, $$, on, html, esc } from "./core/dom.js";
 import { copyText } from "./core/ui.js";
 
 const cfg = window.HSO_CONFIG || {};
@@ -84,6 +84,11 @@ function setupFooter() {
   if (box) box.innerHTML = String(html`
     <div class="logo-group"><p>Realização</p><div>${(cfg.instituicoes || []).map(logo)}</div></div>
     ${(cfg.apoio || []).length ? html`<div class="logo-group"><p>Apoio</p><div>${cfg.apoio.map(logo)}</div></div>` : ""}`);
+  /* Textos do rodapé (painel: Contato e rodapé). *texto* vira itálico */
+  const desc = $(".footer-brand > p:not(.footer-version)");
+  if (desc && cfg.rodape?.descricao) desc.textContent = cfg.rodape.descricao;
+  const aviso = $(".footer-legal p");
+  if (aviso && cfg.rodape?.aviso) aviso.innerHTML = esc(cfg.rodape.aviso).replace(/\*([^*]+)\*/g, "<em>$1</em>");
   const v = $("#footer-version");
   if (v && cfg.versao) v.textContent = "Versão " + cfg.versao;
 }

@@ -3,7 +3,7 @@
    editados pelo painel Pages CMS (app.pagescms.org). A configuração do painel está em .pages.yml.
    Este módulo carrega tudo antes da primeira página e monta window.HSO_CONFIG. */
 
-const ARQUIVOS = ["geral", "equipe", "instituicoes", "inicio", "sobre", "workshop", "capacitacao", "mitos"];
+const ARQUIVOS = ["geral", "equipe", "instituicoes", "inicio", "sobre", "paginas", "orientacoes", "workshop", "slides", "capacitacao", "mitos", "falas", "casos"];
 
 export const arr = (x) => (Array.isArray(x) ? x : []);
 export const txt = (x) => (x == null ? "" : String(x));
@@ -34,7 +34,7 @@ function dataISO(v) {
 const pessoa = (p) => ({
   grupo: limpo(p.grupo) || "principal",
   papel: txt(p.papel), nome: limpo(p.nome), titulacao: txt(p.titulacao),
-  foto: asset(p.foto), bio: txt(p.bio), link: limpo(p.link)
+  foto: asset(p.foto), enquadramento: limpo(p.enquadramento) || "centro", bio: txt(p.bio), link: limpo(p.link)
 });
 const marca = (i) => ({ nome: txt(i.nome), logo: asset(i.logo), url: limpo(i.url) });
 
@@ -49,6 +49,9 @@ window.HSO_CONFIG = {
   apoio: arr(C.instituicoes.apoio).filter((i) => i && limpo(i.nome)).map(marca),
   contato: { email: limpo(G.contato?.email), cepTelefone: txt(G.contato?.cepTelefone), cepEmail: limpo(G.contato?.cepEmail) },
   manualPdf: limpo(G.manualLink) || asset(G.manualArquivo),
+  materiais: arr(G.materiais).filter((m) => m && limpo(m.titulo) && (limpo(m.link) || limpo(m.arquivo)))
+    .map((m) => ({ titulo: limpo(m.titulo), url: limpo(m.link) || asset(m.arquivo) })),
+  rodape: { descricao: txt(G.rodapeDescricao), aviso: txt(G.rodapeAviso) },
   workshop: {
     data: dataISO(W.data),
     horario: limpo(W.horario) || "19:00",

@@ -22,16 +22,17 @@ Textos, fotos, links e equipe são editados com cliques pelo **Pages CMS** (grat
 1. Entre com a conta do GitHub que administra `hsexostomy`.
 2. Na primeira vez, instale o GitHub App do Pages CMS e libere o repositório `hsexostomydigital`.
 3. Abra o repositório. O menu mostra:
-   - **Equipe e parceiros**: equipe principal, bolsistas e colaboradores(as) (com foto, função, formação, minibiografia e link do currículo); ficha técnica; instituições de realização e apoio (com logos)
-   - **Textos do site**: página inicial, Sobre o programa, contato e o manual/guia em PDF (envio do arquivo ou link)
-   - **Workshop**: data, horário, links do Meet, pré-teste e pós-teste, roteiro, checklist e eixos da discussão
-   - **Capacitação profissional**: conteúdo, alertas e questões dos módulos
-   - **Mito ou fato**: afirmações e explicações
+   - **Equipe e parceiros**: equipe principal, bolsistas e colaboradores(as) (foto recortada automaticamente no círculo, enquadramento, função, formação, minibiografia e link do currículo); ficha técnica; instituições de realização e apoio (com logos)
+   - **Textos do site**: página inicial (incluindo um aviso em destaque opcional), Sobre o programa, textos de abertura de cada página, folheto de orientações ao paciente (com contato do serviço), contato, rodapé, manual/guia em PDF e materiais para download
+   - **Workshop**: data, horário, links do Meet, pré-teste e pós-teste, roteiro, checklist, eixos da discussão; slides (títulos, tópicos e notas do apresentador)
+   - **Capacitação e atividades**: módulos da capacitação, Mito ou fato, Escolha a melhor fala e textos dos casos da simulação clínica
 4. Altere, clique em **Save**. O site atualiza sozinho em 1 a 2 minutos.
 
 Os dados ficam em `conteudo/*.json` e a configuração do painel em `.pages.yml`. Fotos vão para `assets/img/` e PDFs para `assets/docs/`. Campos marcados "Não altere" são códigos internos.
 
-O painel não edita o visual, a ordem das abas, as escalas, os quadros do manual, o fluxograma nem os casos da simulação. Isso continua no código (`src/`).
+O painel não edita o visual, a ordem das abas, as escalas e instrumentos (IIEF-15, QS-M), os diagnósticos NANDA-I/NOC/NIC, o fluxograma, os textos e quadros do manual nem os caminhos da simulação. Isso continua no código (`src/`).
+
+Para convidar outras pessoas a editar sem conta no GitHub: no painel, **Collaborators** > e-mail. O que elas salvam vai direto para o ar.
 
 ### Conteúdo técnico (no código)
 Em `src/data/`:
@@ -44,8 +45,8 @@ Em `src/data/`:
 | `instrumentos.js` | IIEF-15 e QS-M (Anexos A e B), domínios e faixas |
 | `manual.js` | Seções do leitor do manual, textos e referências |
 | `capacitacao.js` | Leitura dos módulos de `conteudo/capacitacao.json` e tipos de alerta |
-| `aprendizagem.js` | Simulação clínica ramificada (casos e desfechos) e treino de falas; mito ou fato vem de `conteudo/` |
-| `workshop.js` | Slides com notas do apresentador e recursos de cada bloco; o roteiro vem de `conteudo/` |
+| `aprendizagem.js` | Leitura dos casos, falas e mitos de `conteudo/`; caminhos e efeitos da simulação ficam em `conteudo/casos.json` como campos travados |
+| `workshop.js` | Tipo e recursos de cada bloco do roteiro; roteiro e slides vêm de `conteudo/` |
 
 Se algo der errado, o histórico do GitHub permite voltar a qualquer versão anterior.
 

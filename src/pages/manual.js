@@ -39,6 +39,7 @@ function visaoGeral() {
         <div class="btn-row">
           <a class="btn btn-primary" href="#manual/apresentacao">Começar a leitura ${icon("arrow")}</a>
           ${cfg.manualPdf ? html`<a class="btn" href="${cfg.manualPdf}" target="_blank" rel="noopener">${icon("download")}Baixar PDF</a>` : ""}
+          ${(cfg.materiais || []).map((m) => html`<a class="btn" href="${m.url}" target="_blank" rel="noopener">${icon("download")}${m.titulo}</a>`)}
           <a class="btn" href="#sintese">${icon("print")}Síntese de bolso</a>
         </div>
       </div>

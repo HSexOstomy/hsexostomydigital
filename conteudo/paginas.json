@@ -1,0 +1,64 @@
+{
+  "paginas": [
+    {
+      "titulo": "Calculadoras",
+      "texto": "Instrumentos validados para a população brasileira que apoiam a avaliação da função e da satisfação sexual masculina. São autoaplicáveis e podem ser usados por enfermeiros(as), inclusive de forma assistida."
+    },
+    {
+      "titulo": "Simulação clínica",
+      "texto": "Casos fictícios que evoluem conforme as suas decisões. Cada escolha muda a história, o vínculo com a pessoa e o desfecho. O fluxograma ao lado mostra em que fase do programa você está."
+    },
+    {
+      "titulo": "Na consulta",
+      "texto": "Um roteiro para conduzir a abordagem da sexualidade, etapa por etapa, com as falas sugeridas pelo manual prontas para copiar. Não é um roteiro rígido: avance, volte ou pule conforme a pessoa."
+    },
+    {
+      "titulo": "Encaminhamento e rede",
+      "texto": "Quando a demanda excede o escopo de atuação autônoma do(a) enfermeiro(a), o encaminhamento qualificado garante acesso a cuidado especializado, sem encerrar o acompanhamento."
+    },
+    {
+      "titulo": "Fluxograma do cuidado",
+      "texto": "A Figura 3 do manual, interativa. Toque em qualquer etapa para ver o que fazer, um exemplo na prática e a dúvida mais comum."
+    },
+    {
+      "titulo": "Fundamentos do programa",
+      "texto": "O H_Sex_Ostomy articula a Teoria de Enfermagem de Reabilitação para o Bem-Viver, que sustenta o cuidado na relação intersubjetiva, e o modelo EX-PLISSIT, que orienta uma abordagem clínica progressiva e contínua."
+    },
+    {
+      "titulo": "Implantação e indicadores",
+      "texto": "Diretrizes norteadoras para incorporar o H_Sex_Ostomy ao serviço e indicadores de estrutura, processo e resultado para acompanhar sua execução. Adapte à realidade local, preservando os fundamentos do programa."
+    },
+    {
+      "titulo": "Mito ou fato?",
+      "texto": "Dez afirmações sobre sexualidade e estoma, com a explicação baseada no manual. Depois, treine a escolha das falas."
+    },
+    {
+      "titulo": "Manual do programa",
+      "texto": "Leia o manual por seções, com os quadros completos, as figuras redesenhadas e atalhos para usar cada conteúdo na prática."
+    },
+    {
+      "titulo": "Cinco componentes, um cuidado contínuo",
+      "texto": "O H_Sex_Ostomy adapta o modelo EX-PLISSIT à reabilitação sexual do homem com estoma. Toque em um componente da figura para ver objetivo, meta e como aplicar."
+    },
+    {
+      "titulo": "Orientações ao paciente",
+      "texto": "Dicas práticas para mais conforto, segurança e bem-estar na intimidade (Quadro 3), prontas para conversar e imprimir. Inclui o quadro de disfunções sexuais por tipo de cirurgia para consulta do(a) profissional."
+    },
+    {
+      "titulo": "Equipe e ficha técnica",
+      "texto": "Autoria, orientação e instituições envolvidas no desenvolvimento do H_Sex_Ostomy."
+    },
+    {
+      "titulo": "Contato",
+      "texto": "Dúvidas, sugestões e propostas de parceria para implantação ou pesquisa."
+    },
+    {
+      "titulo": "Síntese de bolso",
+      "texto": "O que fazer em cada etapa do encontro terapêutico, em uma página. Imprima e deixe no consultório."
+    },
+    {
+      "titulo": "Planejador de cuidados",
+      "texto": "Do histórico ao registro: organize avaliação, diagnósticos NANDA-I, resultados NOC com escala e prazo, intervenções NIC e pontos de atenção do Quadro 6, e gere o texto da evolução."
+    }
+  ]
+}

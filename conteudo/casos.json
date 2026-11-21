@@ -1,0 +1,581 @@
+{
+  "casos": [
+    {
+      "id": "bruno",
+      "nome": "Bruno",
+      "idade": 41,
+      "resumo": "Colostomia há 8 meses após ressecção por câncer colorretal. Casado, motorista de aplicativo. O caso evolui ao longo de vários encontros.",
+      "tags": [
+        "Colostomia",
+        "Longitudinal"
+      ],
+      "inicio": "b1",
+      "nos": [
+        {
+          "id": "b1",
+          "fase": "permissao",
+          "titulo": "Primeira consulta",
+          "cena": "Bruno conversa com tranquilidade sobre a troca da bolsa, mas desvia o olhar quando você menciona a vida a dois.",
+          "pergunta": "Como reconhecer a sexualidade como parte do cuidado sem invadir os limites dele?",
+          "opcoes": [
+            {
+              "t": "Normalizar o tema, explicar por que faz parte do cuidado e pedir Permissão.",
+              "resposta": "“Agradeço, mas hoje prefiro não falar disso.”",
+              "feedback": "A oportunidade foi oferecida com respeito. A recusa também é uma resposta que orienta o cuidado.",
+              "efeito": 1,
+              "next": "b2a"
+            },
+            {
+              "t": "Aproveitar a consulta para fazer o histórico sexual completo.",
+              "resposta": "“Eu não esperava essas perguntas. Podemos parar?”",
+              "feedback": "A relevância clínica não dispensa a Permissão. Bruno se sentiu invadido.",
+              "efeito": -1,
+              "next": "b2b"
+            },
+            {
+              "t": "Não mencionar a sexualidade, para evitar constrangimento.",
+              "resposta": "Bruno vai embora sem saber que podia falar disso aqui.",
+              "feedback": "A ausência de queixa não é ausência de necessidade (7.5).",
+              "efeito": -1,
+              "next": "b2c"
+            }
+          ]
+        },
+        {
+          "id": "b2a",
+          "fase": "nao1",
+          "titulo": "Ele disse não",
+          "cena": "Bruno recusou a conversa hoje.",
+          "pergunta": "Como encerrar este ponto?",
+          "opcoes": [
+            {
+              "t": "Acolher, seguir com o atendimento, informar disponibilidade e registrar a oferta e a decisão.",
+              "resposta": "“Bom saber que posso falar quando quiser.”",
+              "feedback": "Exatamente o que o manual orienta (p. 31).",
+              "efeito": 1,
+              "next": "b3"
+            },
+            {
+              "t": "Insistir um pouco, explicando como o tema é importante para a reabilitação.",
+              "resposta": "Bruno sorri sem graça e muda de assunto.",
+              "feedback": "Insistir após a recusa fragiliza a autonomia e o vínculo.",
+              "efeito": -1,
+              "next": "b3"
+            }
+          ]
+        },
+        {
+          "id": "b2b",
+          "fase": "permissao",
+          "titulo": "Dois meses depois",
+          "cena": "Bruno faltou ao retorno. Volta dois meses depois, com vazamentos frequentes e evitando contato visual.",
+          "pergunta": "Como retomar?",
+          "opcoes": [
+            {
+              "t": "Reconhecer o desconforto anterior, focar na demanda que ele traz (vazamento) e só ao final pedir Permissão para retomar outros temas.",
+              "resposta": "“Obrigado por perguntar antes desta vez.”",
+              "feedback": "Reparar a relação intersubjetiva é parte do cuidado. A Permissão reconstrói a confiança.",
+              "efeito": 1,
+              "next": "b3"
+            },
+            {
+              "t": "Retomar o histórico sexual de onde parou.",
+              "resposta": "Bruno pede transferência para outro serviço.",
+              "feedback": "Repetir o erro rompeu o vínculo.",
+              "efeito": -1,
+              "next": "fim_ruim"
+            }
+          ]
+        },
+        {
+          "id": "b2c",
+          "fase": "admissao",
+          "titulo": "Um telefonema",
+          "cena": "Seis semanas depois, a esposa liga: Bruno anda isolado e irritado, e o casal não conversa mais sobre intimidade.",
+          "pergunta": "O que fazer?",
+          "opcoes": [
+            {
+              "t": "Agradecer, agendar um retorno com Bruno e, na consulta, abrir o tema com Permissão.",
+              "resposta": "Na consulta, Bruno diz: “Achei que não fosse assunto para cá.”",
+              "feedback": "Antecipar o retorno e abrir o espaço corrige a omissão inicial.",
+              "efeito": 1,
+              "next": "b3"
+            },
+            {
+              "t": "Explicar que é uma questão do casal, fora do escopo da enfermagem.",
+              "resposta": "O casal deixa de procurar o serviço.",
+              "feedback": "A sexualidade é dimensão legítima do cuidado de enfermagem na reabilitação.",
+              "efeito": -1,
+              "next": "fim_ruim"
+            }
+          ]
+        },
+        {
+          "id": "b3",
+          "fase": "informacao",
+          "titulo": "Retorno",
+          "cena": "Bruno conta que sente falta da intimidade com a esposa, mas tem medo de a bolsa vazar durante a relação.",
+          "pergunta": "Qual o próximo movimento?",
+          "opcoes": [
+            {
+              "t": "Renovar a Permissão, explorar o medo e orientar cuidados práticos: esvaziar, verificar aderência, filtro, cinta, posições.",
+              "resposta": "“Ninguém tinha me explicado isso. Vou tentar.”",
+              "feedback": "Informação Limitada contextualizada ao que ele trouxe, com apoio do Quadro 3.",
+              "efeito": 1,
+              "next": "b4"
+            },
+            {
+              "t": "Repassar todas as orientações do manual, para garantir.",
+              "resposta": "“É coisa demais. Eu só queria me sentir seguro.”",
+              "feedback": "Informação Limitada responde ao momento da pessoa, não a todos os temas de uma vez.",
+              "efeito": 0,
+              "next": "b4"
+            },
+            {
+              "t": "Encaminhar direto à terapia sexual.",
+              "resposta": "“Pensei que você pudesse me orientar.”",
+              "feedback": "A dúvida está no escopo da enfermagem. Encaminhar sem orientar frustra a expectativa.",
+              "efeito": -1,
+              "next": "b4"
+            }
+          ]
+        },
+        {
+          "id": "b4",
+          "fase": "sugestoes",
+          "titulo": "Aprofundando",
+          "cena": "Bruno autoriza aprofundar. Relata menos desejo, dificuldade para manter a ereção, vergonha do corpo e conversas tensas com a esposa. Usa anti-hipertensivo.",
+          "pergunta": "Como organizar a avaliação?",
+          "opcoes": [
+            {
+              "t": "Histórico clínico e sexual, IIEF-15 e QS-M, revisão das medicações e diagnósticos discutidos com ele.",
+              "resposta": "Bruno: “O que mais me pesa é como eu me vejo.”",
+              "feedback": "Avaliação completa: o anti-hipertensivo é possível fator iatrogênico.",
+              "efeito": 1,
+              "next": "b5"
+            },
+            {
+              "t": "Aplicar só o IIEF-15 e decidir pelo escore.",
+              "resposta": "O escore sai, mas a vergonha do corpo não aparece no instrumento.",
+              "feedback": "Escores apoiam, mas não substituem a escuta.",
+              "efeito": 0,
+              "next": "b5"
+            },
+            {
+              "t": "Explicar que é esperado após a cirurgia.",
+              "resposta": "“Então não tem jeito?” Bruno se cala.",
+              "feedback": "A disfunção depende também de idade, comorbidades, medicação, saúde mental e relação (p. 42).",
+              "efeito": -1,
+              "next": "b5b"
+            }
+          ]
+        },
+        {
+          "id": "b5",
+          "fase": "sugestoes",
+          "titulo": "Plano de cuidados",
+          "cena": "IIEF-15: função erétil 14/30. QS-M: 44. Ele quer melhorar a relação com o corpo e com a esposa.",
+          "pergunta": "Qual plano inicial?",
+          "opcoes": [
+            {
+              "t": "Imagem corporal conturbada e Função sexual prejudicada, metas pequenas em 90 dias, incluir a esposa se ele quiser, retorno em 30 dias.",
+              "resposta": "Bruno concorda e sai com um plano que entende.",
+              "feedback": "Plano centrado na pessoa, com metas mensuráveis.",
+              "efeito": 1,
+              "next": "b6"
+            },
+            {
+              "t": "Plano centrado apenas na ereção.",
+              "resposta": "Bruno segue o plano, mas a vergonha continua.",
+              "feedback": "Reduzir a sexualidade à ereção deixa de fora o que ele priorizou.",
+              "efeito": 0,
+              "next": "b6"
+            }
+          ]
+        },
+        {
+          "id": "b5b",
+          "fase": "sugestoes",
+          "titulo": "Corrigindo o rumo",
+          "cena": "Bruno ficou desanimado com a explicação anterior.",
+          "pergunta": "Como reparar?",
+          "opcoes": [
+            {
+              "t": "Reconhecer que a explicação foi incompleta, falar dos múltiplos fatores e propor uma avaliação completa.",
+              "resposta": "“Então ainda tem o que fazer.”",
+              "feedback": "Reconhecer o erro fortalece a relação e reabre caminhos.",
+              "efeito": 1,
+              "next": "b5"
+            },
+            {
+              "t": "Reforçar que é efeito da cirurgia e que ele precisa se adaptar.",
+              "resposta": "Bruno desiste do acompanhamento.",
+              "feedback": "Promessas negativas também são irreais: o Esperançar se perdeu.",
+              "efeito": -1,
+              "next": "fim_ruim"
+            }
+          ]
+        },
+        {
+          "id": "b6",
+          "fase": "d3",
+          "titulo": "Três meses depois",
+          "cena": "A função erétil segue 14/30. Bruno dorme mal e diz que “não tem mais ânimo para nada”.",
+          "pergunta": "Como conduzir?",
+          "opcoes": [
+            {
+              "t": "Pactuar encaminhamento à urologia e avaliação em saúde mental, manter a Revisão e acompanhar a efetivação.",
+              "resposta": "“Quero ajuda, mas quero continuar vindo aqui.”",
+              "feedback": "Dois critérios de encaminhamento e continuidade garantida.",
+              "efeito": 1,
+              "next": "b7"
+            },
+            {
+              "t": "Encaminhar à urologia e encerrar o acompanhamento de enfermagem.",
+              "resposta": "Bruno não sabe a quem recorrer quando surgem dúvidas.",
+              "feedback": "O encaminhamento não encerra o cuidado (p. 61).",
+              "efeito": -1,
+              "next": "fim_parcial"
+            },
+            {
+              "t": "Não encaminhar: ele já recebeu orientações.",
+              "resposta": "O sofrimento se agrava.",
+              "feedback": "Disfunção persistente e sofrimento são critérios de Terapia Intensiva.",
+              "efeito": -1,
+              "next": "fim_ruim"
+            }
+          ]
+        },
+        {
+          "id": "b7",
+          "fase": "avaliacao",
+          "titulo": "Revisão",
+          "cena": "Bruno está em tratamento urológico e acompanhamento psicológico. Hoje, a esposa veio junto.",
+          "pergunta": "Como conduzir a Revisão?",
+          "opcoes": [
+            {
+              "t": "Retomar o plano, comparar os indicadores NOC, perguntar sobre novas dúvidas e, com o consentimento dele, incluir a esposa.",
+              "resposta": "A esposa: “Eu também tinha medo de machucar ele.”",
+              "feedback": "Revisão com indicadores e inclusão consentida da parceria.",
+              "efeito": 1,
+              "next": "fim_bom"
+            },
+            {
+              "t": "Considerar o caso resolvido e dar alta.",
+              "resposta": "Seis meses depois, novas dúvidas surgem e ele não sabe se pode voltar.",
+              "feedback": "A sexualidade é dinâmica: o processo é contínuo (loop).",
+              "efeito": 0,
+              "next": "fim_parcial"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "antonio",
+      "nome": "Seu Antônio",
+      "idade": 68,
+      "resumo": "Urostomia após cistectomia radical. Viúvo há dois anos, começou a namorar. Hipertenso, diabético, católico praticante.",
+      "tags": [
+        "Urostomia",
+        "Idade e religião"
+      ],
+      "inicio": "a1",
+      "nos": [
+        {
+          "id": "a1",
+          "fase": "permissao",
+          "titulo": "Consulta de rotina",
+          "cena": "Seu Antônio comenta, rindo, que “na idade dele isso não importa mais”, mas logo pergunta se a bolsa “atrapalha namorar”.",
+          "pergunta": "Como responder?",
+          "opcoes": [
+            {
+              "t": "Acolher a pergunta, pedir Permissão e explorar o que ele quer saber.",
+              "resposta": "“Pois é, enfermeira, a gente fica sem graça de perguntar.”",
+              "feedback": "A brincadeira era uma abertura.",
+              "efeito": 1,
+              "next": "a2"
+            },
+            {
+              "t": "Concordar que, na idade dele, não é prioridade.",
+              "resposta": "Ele ri, mas não pergunta mais nada.",
+              "feedback": "Presumir desinteresse pela idade é um estigma (Respeito social).",
+              "efeito": -1,
+              "next": "a1b"
+            }
+          ]
+        },
+        {
+          "id": "a1b",
+          "fase": "nao2",
+          "titulo": "Meses depois",
+          "cena": "Seu Antônio conta à técnica que terminou o namoro por vergonha da bolsa.",
+          "pergunta": "Como retomar?",
+          "opcoes": [
+            {
+              "t": "Chamar para uma conversa reservada, reconhecer que o assunto ficou de lado e pedir Permissão para falar dele.",
+              "resposta": "“Achei que era bobagem de velho.”",
+              "feedback": "Demandas tardias são esperadas; a Revisão permite retomá-las.",
+              "efeito": 1,
+              "next": "a2"
+            },
+            {
+              "t": "Seguir só com os cuidados da urostomia.",
+              "resposta": "O isolamento aumenta.",
+              "feedback": "O tema deixou de ser oferecido.",
+              "efeito": -1,
+              "next": "fim_ruim"
+            }
+          ]
+        },
+        {
+          "id": "a2",
+          "fase": "informacao",
+          "titulo": "Dúvidas sobre a função",
+          "cena": "Ele diz que não tem mais ejaculação e acha que “não sente mais nada”. Conta que pensa em se casar de novo, pela igreja.",
+          "pergunta": "Que informação é mais pertinente?",
+          "opcoes": [
+            {
+              "t": "Explicar que o orgasmo pode acontecer sem ejaculação e que as alterações têm abordagem clínica, respeitando seus valores religiosos.",
+              "resposta": "“Então eu posso me casar sem medo.”",
+              "feedback": "Vias nervosas distintas (p. 42) e Realidade social respeitada.",
+              "efeito": 1,
+              "next": "a3"
+            },
+            {
+              "t": "Dizer que a cistectomia encerra a vida sexual.",
+              "resposta": "Ele fica em silêncio.",
+              "feedback": "É um mito. Há possibilidades de cuidado.",
+              "efeito": -1,
+              "next": "a3"
+            },
+            {
+              "t": "Sugerir adiar o casamento até resolver a questão.",
+              "resposta": "“Isso é decisão minha, não?”",
+              "feedback": "Autonomia: o(a) enfermeiro(a) não decide pela pessoa.",
+              "efeito": -1,
+              "next": "a3"
+            }
+          ]
+        },
+        {
+          "id": "a3",
+          "fase": "sugestoes",
+          "titulo": "Avaliação",
+          "cena": "Desejo preservado; IIEF-15 com função erétil 9/30. Usa anti-hipertensivo. Ele quer tentar algum tratamento.",
+          "pergunta": "Qual conduta?",
+          "opcoes": [
+            {
+              "t": "Orientar, revisar as medicações com a equipe médica, pactuar encaminhamento urológico e manter a Revisão.",
+              "resposta": "“Vou levar a lista de remédios.”",
+              "feedback": "Disfunção erétil grave e possível fator iatrogênico justificam o encaminhamento.",
+              "efeito": 1,
+              "next": "a4"
+            },
+            {
+              "t": "Dizer que, na idade dele, é normal.",
+              "resposta": "Ele aceita, decepcionado.",
+              "feedback": "Normalizar a disfunção pela idade é estigma e omissão.",
+              "efeito": -1,
+              "next": "fim_parcial"
+            }
+          ]
+        },
+        {
+          "id": "a4",
+          "fase": "avaliacao",
+          "titulo": "Revisão",
+          "cena": "Seu Antônio volta com a namorada e pergunta se ela pode participar da conversa.",
+          "pergunta": "Como conduzir?",
+          "opcoes": [
+            {
+              "t": "Confirmar a vontade dele, incluir a namorada e falar de intimidade para além da penetração.",
+              "resposta": "A namorada: “Eu só queria saber como ajudar.”",
+              "feedback": "Inclusão consentida da parceria (pontos de atenção do 00449).",
+              "efeito": 1,
+              "next": "fim_bom"
+            },
+            {
+              "t": "Conversar apenas com a namorada, para não constrangê-lo.",
+              "resposta": "Ele se sente excluído do próprio cuidado.",
+              "feedback": "O homem é protagonista do seu cuidado.",
+              "efeito": -1,
+              "next": "fim_parcial"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rafael",
+      "nome": "Rafael",
+      "idade": 29,
+      "resumo": "Ileostomia por doença de Crohn, após proctocolectomia. Homem gay, namora há um ano. Designer.",
+      "tags": [
+        "Ileostomia",
+        "Diversidade"
+      ],
+      "inicio": "r1",
+      "nos": [
+        {
+          "id": "r1",
+          "fase": "permissao",
+          "titulo": "Primeiro encontro",
+          "cena": "Rafael diz que o parceiro “vai acabar indo embora”. Ao ser perguntado sobre a esposa, corrige: “é namorado”.",
+          "pergunta": "Como reagir?",
+          "opcoes": [
+            {
+              "t": "Pedir desculpas com naturalidade e seguir com linguagem neutra, sem presumir orientação nem modelo de relação.",
+              "resposta": "“Tranquilo. Ele é muito parceiro, eu é que tenho medo.”",
+              "feedback": "Diversidade e reconhecimento na prática.",
+              "efeito": 1,
+              "next": "r2"
+            },
+            {
+              "t": "Ignorar a correção e continuar.",
+              "resposta": "Rafael responde em monossílabos.",
+              "feedback": "Ignorar fragiliza o vínculo.",
+              "efeito": -1,
+              "next": "r1b"
+            }
+          ]
+        },
+        {
+          "id": "r1b",
+          "fase": "permissao",
+          "titulo": "Um silêncio",
+          "cena": "Rafael responde “tanto faz” a todas as perguntas.",
+          "pergunta": "O que fazer?",
+          "opcoes": [
+            {
+              "t": "Reconhecer o erro de antes e reabrir a conversa com Permissão.",
+              "resposta": "“Obrigado por perceber.”",
+              "feedback": "Reparar o erro restabelece a relação intersubjetiva.",
+              "efeito": 1,
+              "next": "r2"
+            },
+            {
+              "t": "Seguir com os cuidados da bolsa.",
+              "resposta": "Rafael não volta.",
+              "feedback": "O vínculo se perdeu.",
+              "efeito": -1,
+              "next": "fim_ruim"
+            }
+          ]
+        },
+        {
+          "id": "r2",
+          "fase": "informacao",
+          "titulo": "Pergunta específica",
+          "cena": "Com Permissão, Rafael pergunta se ainda poderá ter sexo anal receptivo e se o estoma poderia ser usado.",
+          "pergunta": "Como orientar?",
+          "opcoes": [
+            {
+              "t": "Explicar que, sem o reto, a prática pode ficar impossibilitada; que o estoma nunca deve ser penetrado; e explorar outras formas de prazer com ele e o parceiro.",
+              "resposta": "“Prefiro saber a verdade. Vamos conversar sobre o resto.”",
+              "feedback": "Quadros 2 e 3, sem julgamento.",
+              "efeito": 1,
+              "next": "r3"
+            },
+            {
+              "t": "Dizer que é um assunto delicado e encaminhar.",
+              "resposta": "“Achei que você ia me responder.”",
+              "feedback": "A orientação está no escopo da Informação Limitada.",
+              "efeito": -1,
+              "next": "r3"
+            },
+            {
+              "t": "Dizer que o estoma pode ser usado com cuidado.",
+              "resposta": "Rafael agradece a dica.",
+              "feedback": "Orientação perigosa: há risco de lesão e sangramento.",
+              "efeito": -1,
+              "next": "r2x"
+            }
+          ]
+        },
+        {
+          "id": "r2x",
+          "fase": "terapia",
+          "titulo": "Consequência",
+          "cena": "Duas semanas depois, Rafael chega com dor e sangramento no estoma.",
+          "pergunta": "O que fazer agora?",
+          "opcoes": [
+            {
+              "t": "Avaliar o estoma, encaminhar com urgência se necessário, corrigir a orientação sem culpabilizá-lo e registrar.",
+              "resposta": "“Eu achei que estava seguro.”",
+              "feedback": "A responsabilidade foi da orientação. Corrigir e proteger é prioridade.",
+              "efeito": 0,
+              "next": "r3"
+            }
+          ]
+        },
+        {
+          "id": "r3",
+          "fase": "sugestoes",
+          "titulo": "Instrumentos",
+          "cena": "No IIEF-15, Rafael marcou “sem atividade sexual” nas questões 1 a 5: função erétil 4/30. Ele não tem relações desde a cirurgia.",
+          "pergunta": "Como interpretar?",
+          "opcoes": [
+            {
+              "t": "Interpretação limitada: as respostas zero indicam ausência de atividade. Explorar os motivos e reavaliar depois.",
+              "resposta": "“É medo, não é falta de vontade.”",
+              "feedback": "Atenção às respostas zero do IIEF-15.",
+              "efeito": 1,
+              "next": "r4"
+            },
+            {
+              "t": "Disfunção erétil grave: encaminhar à urologia.",
+              "resposta": "“Mas eu não tenho problema de ereção…”",
+              "feedback": "O escore refletia ausência de atividade, não de função.",
+              "efeito": -1,
+              "next": "r4"
+            }
+          ]
+        },
+        {
+          "id": "r4",
+          "fase": "sugestoes",
+          "titulo": "O casal",
+          "cena": "Rafael traz o namorado. Os dois evitam falar de intimidade “para não magoar”.",
+          "pergunta": "Qual diagnóstico e intervenção priorizar?",
+          "opcoes": [
+            {
+              "t": "Relacionamento ineficaz com o parceiro íntimo, incluindo o parceiro na educação, avaliação e metas.",
+              "resposta": "O namorado: “A gente precisava dessa conversa.”",
+              "feedback": "Pontos de atenção do 00449.",
+              "efeito": 1,
+              "next": "fim_bom"
+            },
+            {
+              "t": "Conhecimento de saúde inadequado do namorado.",
+              "resposta": "A conversa fica técnica e o silêncio do casal continua.",
+              "feedback": "O foco é o padrão de mutualidade do casal.",
+              "efeito": 0,
+              "next": "fim_parcial"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "finais": [
+    {
+      "id": "fim_bom",
+      "tipo": "bom",
+      "titulo": "Cuidado contínuo",
+      "texto": "O acompanhamento seguiu com Permissão renovada, Revisão e articulação em rede. A história continua: o processo é um loop, e novas demandas serão acolhidas."
+    },
+    {
+      "id": "fim_parcial",
+      "tipo": "parcial",
+      "titulo": "Cuidado incompleto",
+      "texto": "Parte das necessidades foi atendida, mas a continuidade ou a centralidade da pessoa ficou comprometida. Reveja os pontos em que o vínculo caiu."
+    },
+    {
+      "id": "fim_ruim",
+      "tipo": "ruim",
+      "titulo": "Vínculo rompido",
+      "texto": "As escolhas afastaram a pessoa do cuidado. Na vida real, retomar exige reconhecer o erro e reconstruir a confiança. Refaça o caso e experimente outros caminhos."
+    }
+  ]
+}

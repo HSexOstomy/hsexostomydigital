@@ -54,8 +54,11 @@ function iniciais(nome) {
   return (q[0]?.[0] || "") + (q.length > 1 ? q[q.length - 1][0] : q[0]?.[0] || "");
 }
 
+/* Enquadramento da foto dentro do círculo (a foto é sempre recortada em círculo, de qualquer tamanho) */
+const POS = { alto: "50% 15%", baixo: "50% 85%" };
+
 const card = (a, nivel = 2) => html`<article class="card person">
-          ${a.foto ? html`<img class="person-photo" src="${a.foto}" alt="Fotografia de ${a.nome}" loading="lazy">` : html`<span class="person-initials" aria-hidden="true">${iniciais(a.nome)}</span>`}
+          ${a.foto ? (POS[a.enquadramento] ? html`<img class="person-photo" src="${a.foto}" alt="Fotografia de ${a.nome}" loading="lazy" style="object-position:${POS[a.enquadramento]}">` : html`<img class="person-photo" src="${a.foto}" alt="Fotografia de ${a.nome}" loading="lazy">`) : html`<span class="person-initials" aria-hidden="true">${iniciais(a.nome)}</span>`}
           <div><p class="kicker">${a.papel}</p>${nivel === 3 ? html`<h3>${a.nome}</h3>` : html`<h2 class="h3">${a.nome}</h2>`}<p class="muted">${a.titulacao}</p><p>${a.bio}</p>${a.link ? html`<p class="small"><a href="${a.link}" target="_blank" rel="noopener">Currículo e contato</a></p>` : ""}</div>
         </article>`;
 

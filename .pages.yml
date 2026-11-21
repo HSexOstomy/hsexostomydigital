@@ -63,10 +63,22 @@ content:
         type: string
       - name: foto
         label: Foto
-        description: Opcional. Prefira foto quadrada e leve (até 1 MB). Sem foto, aparecem as iniciais.
+        description: 'Opcional. Qualquer tamanho: o site recorta automaticamente dentro do círculo. Prefira fotos leves (até 1 MB). Sem foto, aparecem as iniciais.'
         type: image
         options:
           media: imagens
+      - name: enquadramento
+        label: Enquadramento da foto no círculo
+        description: Se o rosto ficar cortado, escolha onde ele está na foto.
+        type: select
+        options:
+          values:
+          - name: centro
+            label: Rosto no centro da foto
+          - name: alto
+            label: Rosto na parte de cima da foto
+          - name: baixo
+            label: Rosto na parte de baixo da foto
       - name: bio
         label: Minibiografia
         type: text
@@ -174,6 +186,27 @@ content:
         - name: rotulo
           label: Descrição
           type: string
+    - name: aviso
+      label: Aviso em destaque (opcional)
+      description: Faixa logo abaixo da abertura. Só aparece se tiver título; apague o título para esconder.
+      type: object
+      fields:
+      - name: kicker
+        label: Linha acima do título
+        type: string
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Texto
+        type: text
+      - name: botaoTexto
+        label: Texto do botão (opcional)
+        type: string
+      - name: botaoLink
+        label: Link do botão
+        description: 'Página do site (ex.: #workshop) ou endereço completo (https://...)'
+        type: string
     - name: atalhos
       label: Cartões de atalho
       type: object
@@ -362,8 +395,50 @@ content:
       - name: texto
         label: Texto
         type: text
+  - name: paginas
+    label: Textos de abertura das páginas
+    type: file
+    path: conteudo/paginas.json
+    format: json
+    fields:
+    - name: paginas
+      label: Páginas
+      description: O texto que aparece logo abaixo do título de cada página. Se apagar, volta o texto original.
+      type: object
+      list:
+        min: 0
+        collapsible:
+          collapsed: true
+          summary: '{titulo}'
+      fields:
+      - name: titulo
+        label: Página
+        type: string
+        readonly: true
+      - name: texto
+        label: Texto de abertura
+        type: text
+  - name: orientacoes
+    label: Folheto de orientações ao paciente
+    type: file
+    path: conteudo/orientacoes.json
+    format: json
+    fields:
+    - name: titulo
+      label: Título do folheto
+      type: string
+    - name: subtitulo
+      label: Subtítulo
+      type: text
+    - name: rodape
+      label: Frase final
+      type: text
+    - name: contatoServico
+      label: Contato do serviço (opcional)
+      description: 'Ex.: Ambulatório de Estomaterapia, (71) 0000-0000. Aparece no final do folheto impresso.'
+      type: text
   - name: geral
-    label: Contato e manual em PDF
+    label: Contato, rodapé e materiais (PDF)
     type: file
     path: conteudo/geral.json
     format: json
@@ -394,121 +469,9 @@ content:
     - name: versao
       label: Versão exibida no rodapé
       type: string
-- name: workshop
-  label: Workshop
-  type: file
-  path: conteudo/workshop.json
-  format: json
-  fields:
-  - name: data
-    label: Data
-    type: date
-  - name: horario
-    label: Horário de início
-    description: Formato 19:00
-    type: string
-  - name: duracaoMin
-    label: Duração total (minutos)
-    type: number
-  - name: modalidade
-    label: Modalidade
-    type: string
-  - name: linkMeet
-    label: Link do Google Meet
-    type: string
-  - name: linkPreTeste
-    label: Link do pré-teste (Google Forms)
-    type: string
-  - name: linkPosTeste
-    label: Link do pós-teste (Google Forms)
-    description: Gera o QR code do último slide.
-    type: string
-  - name: enderecoSite
-    label: Endereço do site (QR code do modo participante)
-    type: string
-  - name: agenda
-    label: Roteiro (blocos)
-    description: Edite título, duração e objetivo. Os horários são recalculados sozinhos.
-    type: object
-    list:
-      collapsible:
-        collapsed: true
-        summary: '{index}. {titulo} ({min} min)'
-    fields:
-    - name: id
-      label: Código interno
-      description: Não altere.
-      type: string
-      readonly: true
-    - name: titulo
-      label: Título
-      type: string
-    - name: min
-      label: Duração (minutos)
-      type: number
-    - name: objetivo
-      label: Objetivo
-      type: text
-  - name: checklistAntes
-    label: Checklist da equipe (antes do encontro)
-    type: string
-    list: true
-  - name: checklistCuidado
-    label: Alerta sobre o pré-teste
-    type: text
-  - name: discussao
-    label: Eixos da discussão participativa
-    type: object
-    list:
-      collapsible:
-        collapsed: true
-        summary: '{eixo}'
-    fields:
-    - name: eixo
-      label: Eixo
-      type: string
-    - name: pergunta
-      label: Pergunta disparadora
-      type: text
-    - name: apoio
-      label: Orientação para quem conduz
-      type: text
-- name: capacitacao
-  label: Capacitação profissional
-  type: file
-  path: conteudo/capacitacao.json
-  format: json
-  fields:
-  - name: modulos
-    label: Módulos
-    type: object
-    list:
-      collapsible:
-        collapsed: true
-        summary: '{index}. {titulo}'
-    fields:
-    - name: id
-      label: Código interno
-      description: Não altere (usado no endereço da página e no progresso salvo).
-      type: string
-      readonly: true
-    - name: titulo
-      label: Título do módulo
-      type: string
-    - name: min
-      label: Tempo estimado (minutos)
-      type: number
-    - name: objetivo
-      label: Objetivo
-      type: text
-    - name: secoes
-      label: Seções do manual relacionadas
-      description: Códigos internos. Não altere.
-      type: string
-      list: true
-      readonly: true
-    - name: blocos
-      label: Conteúdo
+    - name: materiais
+      label: Materiais para download
+      description: Aparecem como botões na página do Manual, ao lado de Baixar PDF.
       type: object
       list:
         collapsible:
@@ -516,83 +479,442 @@ content:
           summary: '{titulo}'
       fields:
       - name: titulo
-        label: Subtítulo
+        label: Nome do botão
+        description: 'Ex.: Guia rápido para enfermeiros(as)'
         type: string
-      - name: texto
-        label: Parágrafos
-        type: text
-        list: true
-    - name: alertas
-      label: Alertas de aprendizagem
-      type: object
-      list: true
-      fields:
-      - name: tipo
-        label: Tipo
-        type: select
+      - name: arquivo
+        label: Arquivo
+        type: file
         options:
-          values:
-          - name: seguranca
-            label: Segurança do paciente
-          - name: erro
-            label: Erro comum
-          - name: etica
-            label: Ética e registro
-          - name: dica
-            label: Pérola clínica
-      - name: texto
-        label: Texto
-        type: text
-    - name: vinheta
-      label: Situação para análise
+          media: documentos
+      - name: link
+        label: Ou link externo
+        description: Se preenchido, tem prioridade sobre o arquivo.
+        type: string
+    - name: rodapeDescricao
+      label: 'Rodapé: frase abaixo do nome do programa'
       type: text
-    - name: pratique
-      label: Questões
+    - name: rodapeAviso
+      label: 'Rodapé: aviso legal'
+      description: O texto entre asteriscos fica em itálico.
+      type: text
+- name: workshop
+  label: Workshop
+  type: group
+  items:
+  - name: workshop-dados
+    label: Data, links e roteiro
+    type: file
+    path: conteudo/workshop.json
+    format: json
+    fields:
+    - name: data
+      label: Data
+      type: date
+    - name: horario
+      label: Horário de início
+      description: Formato 19:00
+      type: string
+    - name: duracaoMin
+      label: Duração total (minutos)
+      type: number
+    - name: modalidade
+      label: Modalidade
+      type: string
+    - name: linkMeet
+      label: Link do Google Meet
+      type: string
+    - name: linkPreTeste
+      label: Link do pré-teste (Google Forms)
+      type: string
+    - name: linkPosTeste
+      label: Link do pós-teste (Google Forms)
+      description: Gera o QR code do último slide.
+      type: string
+    - name: enderecoSite
+      label: Endereço do site (QR code do modo participante)
+      type: string
+    - name: agenda
+      label: Roteiro (blocos)
+      description: Edite título, duração e objetivo. Os horários são recalculados sozinhos.
       type: object
       list:
         collapsible:
           collapsed: true
-          summary: '{pergunta}'
+          summary: '{index}. {titulo} ({min} min)'
       fields:
+      - name: id
+        label: Código interno
+        description: Não altere.
+        type: string
+        readonly: true
+      - name: titulo
+        label: Título
+        type: string
+      - name: min
+        label: Duração (minutos)
+        type: number
+      - name: objetivo
+        label: Objetivo
+        type: text
+    - name: checklistAntes
+      label: Checklist da equipe (antes do encontro)
+      type: string
+      list: true
+    - name: checklistCuidado
+      label: Alerta sobre o pré-teste
+      type: text
+    - name: discussao
+      label: Eixos da discussão participativa
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{eixo}'
+      fields:
+      - name: eixo
+        label: Eixo
+        type: string
       - name: pergunta
-        label: Pergunta
+        label: Pergunta disparadora
+        type: text
+      - name: apoio
+        label: Orientação para quem conduz
+        type: text
+  - name: slides
+    label: Slides da apresentação
+    type: file
+    path: conteudo/slides.json
+    format: json
+    fields:
+    - name: slides
+      label: Slides
+      description: Edite títulos, tópicos e notas. O tipo de cada slide e as figuras são fixos.
+      type: object
+      list:
+        min: 1
+        collapsible:
+          collapsed: true
+          summary: '{index}. {titulo}'
+      fields:
+      - name: tipo
+        label: Tipo de slide
+        description: Fixo. Slides novos entram como lista de tópicos.
+        type: string
+        readonly: true
+      - name: bloco
+        label: Bloco do roteiro
+        description: Não altere.
+        type: string
+        readonly: true
+      - name: kicker
+        label: Linha acima do título
+        type: string
+      - name: titulo
+        label: Título (no slide de citação, é a própria citação)
+        type: text
+      - name: sub
+        label: Subtítulo (só na capa)
+        type: string
+      - name: texto
+        label: Texto (atividades, pausa, encerramento e nota do percurso)
+        type: text
+      - name: pontos
+        label: Tópicos (slides de tópicos)
+        type: string
+        list: true
+      - name: fonte
+        label: Fonte da citação
+        type: string
+      - name: fig
+        label: Figura
+        description: Não altere.
+        type: string
+        readonly: true
+      - name: rota
+        label: Página demonstrada
+        description: Não altere.
+        type: string
+        readonly: true
+      - name: notas
+        label: Notas do apresentador
+        description: Aparecem só para quem apresenta (tecla N).
+        type: text
+- name: atividades
+  label: Capacitação e atividades
+  type: group
+  items:
+  - name: capacitacao
+    label: Capacitação profissional
+    type: file
+    path: conteudo/capacitacao.json
+    format: json
+    fields:
+    - name: modulos
+      label: Módulos
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{index}. {titulo}'
+      fields:
+      - name: id
+        label: Código interno
+        description: Não altere (usado no endereço da página e no progresso salvo).
+        type: string
+        readonly: true
+      - name: titulo
+        label: Título do módulo
+        type: string
+      - name: min
+        label: Tempo estimado (minutos)
+        type: number
+      - name: objetivo
+        label: Objetivo
+        type: text
+      - name: secoes
+        label: Seções do manual relacionadas
+        description: Códigos internos. Não altere.
+        type: string
+        list: true
+        readonly: true
+      - name: blocos
+        label: Conteúdo
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{titulo}'
+        fields:
+        - name: titulo
+          label: Subtítulo
+          type: string
+        - name: texto
+          label: Parágrafos
+          type: text
+          list: true
+      - name: alertas
+        label: Alertas de aprendizagem
+        type: object
+        list: true
+        fields:
+        - name: tipo
+          label: Tipo
+          type: select
+          options:
+            values:
+            - name: seguranca
+              label: Segurança do paciente
+            - name: erro
+              label: Erro comum
+            - name: etica
+              label: Ética e registro
+            - name: dica
+              label: Pérola clínica
+        - name: texto
+          label: Texto
+          type: text
+      - name: vinheta
+        label: Situação para análise
+        type: text
+      - name: pratique
+        label: Questões
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{pergunta}'
+        fields:
+        - name: pergunta
+          label: Pergunta
+          type: text
+        - name: opcoes
+          label: Alternativas
+          type: object
+          list: true
+          fields:
+          - name: t
+            label: Alternativa
+            type: text
+          - name: certo
+            label: É a resposta correta
+            type: boolean
+          - name: feedback
+            label: Comentário exibido após responder
+            type: text
+  - name: mitos
+    label: Mito ou fato
+    type: file
+    path: conteudo/mitos.json
+    format: json
+    fields:
+    - name: mitos
+      label: Afirmações
+      description: Usadas na página Mito ou fato e no quebra-gelo do workshop.
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{frase}'
+      fields:
+      - name: frase
+        label: Afirmação
+        type: text
+      - name: fato
+        label: É fato (verdadeira)
+        description: Desmarcado = mito.
+        type: boolean
+      - name: explica
+        label: Explicação
+        type: text
+  - name: falas
+    label: Escolha a melhor fala
+    type: file
+    path: conteudo/falas.json
+    format: json
+    fields:
+    - name: falas
+      label: Situações
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{situacao}'
+      fields:
+      - name: situacao
+        label: Situação
         type: text
       - name: opcoes
-        label: Alternativas
+        label: Falas possíveis
         type: object
         list: true
         fields:
         - name: t
-          label: Alternativa
+          label: Fala
           type: text
         - name: certo
-          label: É a resposta correta
+          label: É a fala adequada
           type: boolean
         - name: feedback
           label: Comentário exibido após responder
           type: text
-- name: mitos
-  label: Mito ou fato
-  type: file
-  path: conteudo/mitos.json
-  format: json
-  fields:
-  - name: mitos
-    label: Afirmações
-    description: Usadas na página Mito ou fato e no quebra-gelo do workshop.
-    type: object
-    list:
-      collapsible:
-        collapsed: true
-        summary: '{frase}'
+  - name: casos
+    label: Simulação clínica (casos)
+    type: file
+    path: conteudo/casos.json
+    format: json
     fields:
-    - name: frase
-      label: Afirmação
-      type: text
-    - name: fato
-      label: É fato (verdadeira)
-      description: Desmarcado = mito.
-      type: boolean
-    - name: explica
-      label: Explicação
-      type: text
+    - name: casos
+      label: Casos
+      description: Edite os textos. Os caminhos entre as escolhas e o efeito no vínculo são fixos.
+      type: object
+      list:
+        min: 1
+        max: 3
+        collapsible:
+          collapsed: true
+          summary: '{nome}'
+      fields:
+      - name: id
+        label: Código interno
+        description: Não altere.
+        type: string
+        readonly: true
+      - name: nome
+        label: Nome
+        type: string
+      - name: idade
+        label: Idade
+        type: number
+      - name: resumo
+        label: Resumo
+        type: text
+      - name: tags
+        label: Etiquetas
+        type: string
+        list: true
+      - name: inicio
+        label: Etapa inicial
+        description: Não altere.
+        type: string
+        readonly: true
+      - name: nos
+        label: Etapas da história
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{titulo}'
+        fields:
+        - name: id
+          label: Código da etapa
+          description: Não altere.
+          type: string
+          readonly: true
+        - name: fase
+          label: Fase do fluxograma
+          description: Não altere.
+          type: string
+          readonly: true
+        - name: titulo
+          label: Título da etapa
+          type: string
+        - name: cena
+          label: O que acontece
+          type: text
+        - name: pergunta
+          label: Pergunta
+          type: text
+        - name: opcoes
+          label: Escolhas
+          type: object
+          list:
+            collapsible:
+              collapsed: true
+              summary: '{t}'
+          fields:
+          - name: t
+            label: Escolha
+            type: text
+          - name: resposta
+            label: Reação da pessoa
+            type: text
+          - name: feedback
+            label: Comentário (por que é boa ou ruim)
+            type: text
+          - name: efeito
+            label: Efeito no vínculo
+            description: Fixo.
+            type: number
+            readonly: true
+          - name: next
+            label: Leva para a etapa
+            description: Não altere.
+            type: string
+            readonly: true
+    - name: finais
+      label: Desfechos
+      type: object
+      list:
+        min: 3
+        max: 3
+        collapsible:
+          collapsed: true
+          summary: '{titulo}'
+      fields:
+      - name: id
+        label: Código interno
+        description: Não altere.
+        type: string
+        readonly: true
+      - name: tipo
+        label: Tipo
+        description: Não altere.
+        type: string
+        readonly: true
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Texto
+        type: text

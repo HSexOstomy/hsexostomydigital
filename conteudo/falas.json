@@ -1,0 +1,64 @@
+{
+  "falas": [
+    {
+      "situacao": "Primeira consulta. Você quer abrir o tema da sexualidade.",
+      "opcoes": [
+        {
+          "t": "“Como a sexualidade é uma dimensão importante da saúde, costumo conversar sobre esse tema com todos os meus pacientes. Você se sente confortável para falarmos hoje?”",
+          "certo": true,
+          "feedback": "É a fala do Quadro 5: normaliza, explica e pede Permissão."
+        },
+        {
+          "t": "“Preciso fazer algumas perguntas sobre sua vida sexual. É rápido.”",
+          "certo": false,
+          "feedback": "Não pede Permissão nem explica por que o tema faz parte do cuidado."
+        },
+        {
+          "t": "“Você tem problemas de ereção?”",
+          "certo": false,
+          "feedback": "Começa pelo tópico mais sensível e sem Permissão. O NIC 5248 orienta ir dos menos para os mais sensíveis."
+        }
+      ]
+    },
+    {
+      "situacao": "Ele diz que evita se olhar no espelho desde a cirurgia.",
+      "opcoes": [
+        {
+          "t": "“Isso passa, logo você se acostuma.”",
+          "certo": false,
+          "feedback": "Minimiza e apressa o processo. O Quadro 2 pede acolher sem minimizar nem apressar."
+        },
+        {
+          "t": "“Sentir estranhamento no próprio corpo após uma mudança tão significativa é natural. Isso tende a se transformar com o tempo. Respeite seu tempo.”",
+          "certo": true,
+          "feedback": "É a fala do Quadro 2 para retirar o peso do processo de reconstrução."
+        },
+        {
+          "t": "“Você deveria se olhar mais para aceitar logo.”",
+          "certo": false,
+          "feedback": "Impõe ritmo e expectativa externa."
+        }
+      ]
+    },
+    {
+      "situacao": "Retorno. Na última consulta vocês falaram sobre medo de vazamento.",
+      "opcoes": [
+        {
+          "t": "“Então, aquilo já está resolvido?”",
+          "certo": false,
+          "feedback": "Presume resolução. O EX-PLISSIT alerta que o assunto discutido não está necessariamente resolvido."
+        },
+        {
+          "t": "“Na última vez conversamos sobre o medo de vazamento. Houve alguma mudança desde então? As dúvidas foram esclarecidas ou ainda permanecem?”",
+          "certo": true,
+          "feedback": "É o exemplo de Revisão da Figura 5."
+        },
+        {
+          "t": "“Hoje vamos falar de outro assunto.”",
+          "certo": false,
+          "feedback": "Ignora a Revisão no início do encontro."
+        }
+      ]
+    }
+  ]
+}

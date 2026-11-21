@@ -2,28 +2,31 @@
   "pessoas": [
     {
       "grupo": "principal",
-      "papel": "Autoria do manual",
       "nome": "Ariana Luiza Rabelo",
+      "papel": "Autoria do manual",
       "titulacao": "Enfermeira. Doutoranda em Enfermagem e Saúde (PPGENF/UFBA)",
       "foto": "",
+      "enquadramento": "centro",
       "bio": "Autora do H_Sex_Ostomy: Programa de Reabilitação da Sexualidade Masculina, desenvolvido no doutorado.",
       "link": ""
     },
     {
       "grupo": "principal",
-      "papel": "Orientação e coordenação",
       "nome": "Anderson Reis de Sousa",
+      "papel": "Orientação e coordenação",
       "titulacao": "Prof. Dr., Escola de Enfermagem da UFBA",
       "foto": "",
+      "enquadramento": "centro",
       "bio": "Orientador da pesquisa e coordenador do programa.",
       "link": ""
     },
     {
       "grupo": "principal",
-      "papel": "Coorientação",
       "nome": "Óscar Javier Vergara Escobar",
+      "papel": "Coorientação",
       "titulacao": "Enfermeiro, Universidad El Bosque (Bogotá, Colômbia)",
       "foto": "",
+      "enquadramento": "centro",
       "bio": "Coorientador da pesquisa. Pesquisador em enfermagem e saúde de homens.",
       "link": ""
     }
