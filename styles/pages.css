@@ -42,9 +42,11 @@
 @media (max-width: 900px) { .comp-strip { grid-template-columns: 1fr 1fr; } }
 
 .band { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: var(--sp-7) 0; }
-.band .percurso { margin-top: var(--sp-5); grid-template-columns: repeat(4, minmax(0, 1fr)); }
-@media (max-width: 760px) { .band .percurso { grid-template-columns: 1fr 1fr; } }
-.band-art { width: min(100%, 420px); justify-self: center; }
+.band .percurso { margin-top: var(--sp-6); }
+.band-top { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); align-items: end; }
+.band-art { width: min(100%, 280px); justify-self: end; }
+@media (max-width: 900px) { .band-top { grid-template-columns: 1fr; } .band-art { justify-self: center; width: min(70%, 240px); } }
+@media (max-width: 760px) { .band .percurso li:last-child:nth-child(odd) { grid-column: 1 / -1; max-width: 60%; justify-self: center; } }
 .uses .card a { font-weight: 600; }
 .ws-banner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--sp-5); background: linear-gradient(120deg, var(--navy-900), var(--navy-700)); color: var(--on-dark-muted); border-radius: var(--radius-lg); padding: var(--sp-6); position: relative; overflow: hidden; }
 .ws-banner::after { content: ""; position: absolute; right: -60px; bottom: -120px; width: 300px; height: 300px; border-radius: 50%; border: 22px solid rgba(124,198,240,.25); }

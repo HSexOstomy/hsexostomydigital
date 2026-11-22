@@ -74,14 +74,16 @@ export default {
       </section>
 
       <section class="section band">
-        <div class="container split">
-          <div>
-            <p class="kicker">${g(PQ, "kicker")}</p>
-            <h2>${g(PQ, "titulo")}</h2>
-            <p>${g(PQ, "texto")}</p>
-            ${figPercurso()}
+        <div class="container">
+          <div class="split band-top">
+            <div>
+              <p class="kicker">${g(PQ, "kicker")}</p>
+              <h2>${g(PQ, "titulo")}</h2>
+              <p>${g(PQ, "texto")}</p>
+            </div>
+            <img class="band-art" src="assets/img/homem-enfermeira.webp" alt="Ilustração do manual: um homem com bolsa de estomia ao lado de uma enfermeira" width="1200" height="1066" loading="lazy">
           </div>
-          <img class="band-art" src="assets/img/homem-enfermeira.webp" alt="Ilustração do manual: um homem com bolsa de estomia ao lado de uma enfermeira" width="1200" height="1066" loading="lazy">
+          ${figPercurso()}
         </div>
       </section>
 
